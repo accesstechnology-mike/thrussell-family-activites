@@ -9,6 +9,7 @@
     "lint": "eslint",
     "sync": "tsx scripts/sync.ts",
     "sync:refresh-cache": "tsx scripts/refresh-source-cache.ts",
+    "enrich:images": "tsx scripts/enrich-images.ts",
     "verify": "tsx scripts/verify.ts"
   },
   "dependencies": {
