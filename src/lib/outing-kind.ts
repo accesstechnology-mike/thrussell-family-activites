@@ -2,16 +2,20 @@ export type OutingKind = "walk" | "attraction";
 
 export type OutingKindFilter = "all" | "walks" | "attractions";
 
-/** Classify an outing as a walk/trail or a visitor attraction. */
+/** Classify an outing as a walk/trail/outdoor place or a visitor attraction. */
 export function outingKind(activity: {
   source: string;
   title: string;
   summary?: string | null;
+  cost?: string | null;
   categories: string[];
   distanceMiles: number | null;
 }): OutingKind {
   const title = activity.title;
   const categories = activity.categories.join(" ");
+  const summary = activity.summary || "";
+  const cost = activity.cost || "";
+  const blob = `${title}\n${categories}\n${summary}\n${cost}`;
 
   if (
     activity.source === "national-trust" ||
@@ -21,55 +25,62 @@ export function outingKind(activity: {
   }
 
   if (activity.source === "openstreetmap") {
+    if (/\bnature reserve\b/i.test(categories) || /\bnature reserve\b/i.test(summary)) {
+      return "walk";
+    }
     if (
-      /\b(zoo|museum|theme park|aquarium|petting|wildlife|gallery)\b/i.test(
+      /\b(zoo|museum|theme park|aquarium|petting|wildlife|gallery|attraction)\b/i.test(
         categories,
       )
     ) {
       return "attraction";
     }
     if (
-      /\b(house|hall|castle|palace|manor|gallery|falconry|birds? of prey|theme park|zoo|aquarium|museum)\b/i.test(
+      /\b(house|hall|castle|palace|manor|gallery|falconry|birds? of prey|theme park|zoo|aquarium|museum|visitor centre|maze|dungeon|brewery|farm park|walled garden|sculpture park|railway|caverns?|priory|arbour?etum|arboretum)\b/i.test(
         title,
-      ) &&
-      !/\b(walk|trail|circular|from|around)\b/i.test(title)
+      )
     ) {
       return "attraction";
     }
-    // Nature reserves / outdoor OSM places behave as walks/outdoor.
     return "walk";
   }
 
-  // Walk-oriented sources — treat as walks even when they visit an estate.
+  // Walk-oriented sources stay walks (including estate walks / free trails).
   if (
     /^(reluctant-explorers|alltrails|muddy-boots-mummy|little-vikings|yorkshire-tots|teesside-family-life)$/.test(
       activity.source,
     )
   ) {
+    // Ticketed adventure parks from walk blogs → attractions.
+    if (
+      /\b(farm park|theme park|zoo|aquarium|dungeon)\b/i.test(blob) &&
+      !/\b(walk|walking|circular|trails?)\b/i.test(title)
+    ) {
+      return "attraction";
+    }
+    if (
+      /\badventure trail\b/i.test(title) &&
+      /\b(ticket|£\d|entry price)\b/i.test(blob) &&
+      !/\bfree\b/i.test(blob)
+    ) {
+      return "attraction";
+    }
     return "walk";
   }
 
   if (activity.distanceMiles != null) return "walk";
 
   if (
-    /\b(walk|walks|trail|trails|circular|reservoir|moor|foss|force|falls|common|beck|bank|crag|wood|woods|woodland|stepping stones)\b/i.test(
-      title,
+    /\b(walk|walks|trail|trails|circular|reservoir|moor|foss|force|falls|common|beck|bank|crag|wood|woods|woodland|forest|stepping stones|nature reserve)\b/i.test(
+      blob,
     )
   ) {
     return "walk";
   }
 
   if (
-    /\b(house|hall|castle|palace|zoo|aquarium|museum|theme park|gallery|manor|falconry|birds? of prey)\b/i.test(
-      title,
-    )
-  ) {
-    return "attraction";
-  }
-
-  if (
-    /\b(zoo|museum|theme park|aquarium|national trust|english heritage|petting farm|attraction)\b/i.test(
-      categories,
+    /\b(house|hall|castle|palace|zoo|aquarium|museum|theme park|gallery|manor|falconry|birds? of prey|attraction)\b/i.test(
+      blob,
     )
   ) {
     return "attraction";
