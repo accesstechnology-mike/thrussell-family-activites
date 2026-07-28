@@ -95,15 +95,21 @@ export async function cacheRemoteImage(
   }
 }
 
-/** Look up a place photo from Wikipedia / Wikimedia Commons (live). */
+/** Look up a place photo from Wikipedia / Wikimedia Commons / site og:image. */
 export async function findPlaceImage(
   title: string,
+  opts?: { website?: string | null },
 ): Promise<{ url: string; alt: string } | null> {
   const cleaned = title
     .replace(/\b(circular|trail|walks?|family|friendly|kids)\b/gi, " ")
     .replace(/\s+/g, " ")
     .trim();
   if (cleaned.length < 4) return null;
+
+  if (opts?.website && /^https?:\/\//i.test(opts.website)) {
+    const og = await fetchOgImage(opts.website);
+    if (og) return { url: og, alt: title };
+  }
 
   const wiki = await wikipediaThumbnail(cleaned);
   if (wiki) return wiki;
@@ -117,6 +123,53 @@ export async function findPlaceImage(
   }
 
   return commonsSearch(cleaned);
+}
+
+async function fetchOgImage(website: string): Promise<string | null> {
+  try {
+    const res = await fetch(website, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (compatible; thrussell-family-activities/1.0; +local family app)",
+        Accept: "text/html",
+      },
+      redirect: "follow",
+    });
+    if (!res.ok) return null;
+    const html = await res.text();
+    const candidates = [
+      html.match(
+        /property=["']og:image["']\s+content=["']([^"']+)["']/i,
+      )?.[1],
+      html.match(
+        /content=["']([^"']+)["']\s+property=["']og:image["']/i,
+      )?.[1],
+      html.match(
+        /<img[^>]+class=["'][^"']*wp-post-image[^"']*["'][^>]+src=["']([^"']+)["']/i,
+      )?.[1],
+      html.match(
+        /<img[^>]+src=["']([^"']+)["'][^>]+class=["'][^"']*wp-post-image[^"']*["']/i,
+      )?.[1],
+      ...[
+        ...html.matchAll(
+          /https?:\/\/[^"' ]+\/(?:wp-content\/uploads|images)\/[^"' ]+\.(?:jpe?g|png|webp)/gi,
+        ),
+      ].map((m) => m[0]),
+    ].filter((u): u is string => Boolean(u));
+
+    for (const raw of candidates) {
+      const absolute = raw.startsWith("http")
+        ? raw
+        : new URL(raw, website).toString();
+      if (/\.pdf($|\?)/i.test(absolute)) continue;
+      if (/logo|icon|sprite|avatar|emoji/i.test(absolute)) continue;
+      if (/ChatGPT-Image/i.test(absolute)) continue;
+      return absolute;
+    }
+    return null;
+  } catch {
+    return null;
+  }
 }
 
 async function wikipediaThumbnail(
@@ -173,11 +226,24 @@ async function commonsSearch(
         >;
       };
     };
-    const page = Object.values(data.query?.pages ?? {})[0];
-    const info = page?.imageinfo?.[0];
-    const image = info?.thumburl || info?.url;
-    if (!image) return null;
-    return { url: image, alt: page?.title?.replace(/^File:/, "") || title };
+    const pages = Object.values(data.query?.pages ?? {});
+    for (const page of pages) {
+      const fileTitle = page?.title?.replace(/^File:/, "") || "";
+      if (/\.pdf/i.test(fileTitle)) continue;
+      const tokens = title
+        .toLowerCase()
+        .split(/\s+/)
+        .filter((t) => t.length > 3)
+        .slice(0, 3);
+      const hay = fileTitle.toLowerCase();
+      const overlap = tokens.filter((t) => hay.includes(t)).length;
+      if (tokens.length && overlap === 0) continue;
+      const info = page?.imageinfo?.[0];
+      const image = info?.thumburl || info?.url;
+      if (!image || /\.pdf($|\?)/i.test(image)) continue;
+      return { url: image, alt: fileTitle || title };
+    }
+    return null;
   } catch {
     return null;
   }
@@ -199,7 +265,11 @@ export async function enrichActivityImages(
     }
 
     if (!remote) {
-      const found = await findPlaceImage(activity.title);
+      const website =
+        activity.sourceUrl && !/openstreetmap\.org/i.test(activity.sourceUrl)
+          ? activity.sourceUrl
+          : null;
+      const found = await findPlaceImage(activity.title, { website });
       if (found) {
         remote = found.url;
         alt = alt || found.alt;
