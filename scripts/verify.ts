@@ -1,7 +1,10 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { interpretOutingRequest, rankSuggestions } from "../src/lib/suggest";
-import { queryActivities } from "../src/lib/query";
+import {
+  buildSuggestPool,
+  interpretOutingRequest,
+  rankSuggestions,
+} from "../src/lib/suggest";
 import type { ActivityStore } from "../src/lib/types";
 
 async function main() {
@@ -24,16 +27,16 @@ async function main() {
   if (interpreted.maxDrive !== 45) {
     throw new Error(`NL interpret maxDrive expected 45, got ${interpreted.maxDrive}`);
   }
-  const local = queryActivities(store, {
-    features: interpreted.features,
-    maxDrive: interpreted.maxDrive,
-  });
-  const ranked = rankSuggestions(local.activities, interpreted, 3);
+  const { pool, notes } = buildSuggestPool(store, interpreted);
+  const ranked = rankSuggestions(pool, interpreted, 3);
   if (!ranked.length) {
     throw new Error("Expected local suggest matches for stepping stones");
   }
+  if (!ranked[0]!.activity.features.includes("stepping stones")) {
+    throw new Error("Top local suggest missing stepping stones feature");
+  }
   console.log(
-    `suggest parse ok: ${ranked.length} hits (top: ${ranked[0]!.activity.title})`,
+    `suggest parse ok: ${ranked.length} hits (top: ${ranked[0]!.activity.title}${notes[0] ? `; ${notes[0]}` : ""})`,
   );
 
   const indexRes = await fetch(`${base}/api`);
