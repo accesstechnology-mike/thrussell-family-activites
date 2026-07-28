@@ -23,7 +23,7 @@ const OVERPASS_ENDPOINTS = [
  */
 export async function fetchOpenStreetMapAttractions(
   origin: LatLng,
-  radiusMeters = 55000,
+  radiusMeters = 85000,
 ): Promise<Activity[]> {
   const r = radiusMeters;
   const lat = origin.lat;

@@ -17,7 +17,7 @@ const body = Nunito({
 export const metadata: Metadata = {
   title: "Thrussell Outings",
   description:
-    "Family activities within 1.5 hours of Catton — kid-friendly picker with maps, parking, cost and weather for grown-ups.",
+    "Family activities within 1 hour 45 minutes of Catton — kid-friendly picker with maps, parking, cost and weather for grown-ups.",
 };
 
 export const viewport: Viewport = {

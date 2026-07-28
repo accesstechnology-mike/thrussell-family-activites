@@ -1,6 +1,6 @@
 # Thrussell Outings
 
-Family activity picker for outings within **~1.5 hours** of **Catton (`YO7 4SQ`)**.
+Family activity picker for outings within **~1 hour 45 minutes** of **Catton (`YO7 4SQ`)**.
 
 Kids browse big picture cards (fun bits, terrain, drive time). Grown-ups open the same outing on a phone for **Google Maps**, **Tesla postcode/coords**, parking, cost, weather, and a link back to the **original source**.
 

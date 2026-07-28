@@ -1,8 +1,8 @@
 /** Home base for drive-time filtering — Catton. Coordinates are never stored here. */
 export const HOME_POSTCODE = "YO7 4SQ";
 
-/** Family outings within about 1.5 hours' drive. */
-export const MAX_DRIVE_MINUTES = 90;
+/** Family outings within about 1 hour 45 minutes' drive. */
+export const MAX_DRIVE_MINUTES = 105;
 
 export const STORE_PATH = "data/activities.json";
 
