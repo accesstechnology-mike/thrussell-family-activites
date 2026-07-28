@@ -1,6 +1,7 @@
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { HOME_POSTCODE, MAX_DRIVE_MINUTES, STORE_PATH } from "./config";
+import { HOME_POSTCODE, MAX_DRIVE_MINUTES } from "./config";
+import { queryActivities, type ActivityQuery } from "./query";
 import type { Activity, ActivityStore, SourceStatus } from "./types";
 
 function resolveStorePath(): string {
@@ -43,53 +44,17 @@ export async function writeStore(store: ActivityStore): Promise<void> {
   await rename(tmp, full);
 }
 
-export async function listActivities(opts?: {
-  feature?: string | null;
-  q?: string | null;
-  maxDrive?: number | null;
-}): Promise<{ store: ActivityStore; activities: Activity[] }> {
+export async function listActivities(
+  opts?: ActivityQuery,
+): Promise<{
+  store: ActivityStore;
+  activities: Activity[];
+  total: number;
+  applied: ActivityQuery;
+}> {
   const store = await readStore();
-  let activities = [...store.activities];
-
-  const maxDrive = opts?.maxDrive ?? store.maxDriveMinutes;
-  activities = activities.filter(
-    (a) => a.driveMinutes != null && a.driveMinutes <= maxDrive,
-  );
-
-  if (opts?.feature) {
-    const needle = opts.feature.toLowerCase();
-    activities = activities.filter((a) =>
-      a.features.some((f) => f.toLowerCase() === needle),
-    );
-  }
-
-  if (opts?.q) {
-    const q = opts.q.toLowerCase();
-    activities = activities.filter((a) => {
-      const blob = [
-        a.title,
-        a.summary,
-        a.locationLabel,
-        a.parking,
-        a.cost,
-        ...a.features,
-        ...a.categories,
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
-      return blob.includes(q);
-    });
-  }
-
-  activities.sort((a, b) => {
-    const da = a.driveMinutes ?? 9999;
-    const db = b.driveMinutes ?? 9999;
-    if (da !== db) return da - db;
-    return a.title.localeCompare(b.title);
-  });
-
-  return { store, activities };
+  const { activities, total, applied } = queryActivities(store, opts ?? {});
+  return { store, activities, total, applied };
 }
 
 export async function getActivityById(id: string): Promise<Activity | null> {
