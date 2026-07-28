@@ -228,19 +228,75 @@ select {
   letter-spacing: -0.03em;
 }
 
-.free-badge {
+.card-badges {
   position: absolute;
   top: 0.7rem;
   left: 0.7rem;
   z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.free-badge,
+.kind-badge {
   padding: 0.28rem 0.65rem;
   border-radius: 999px;
-  background: rgba(36, 74, 42, 0.92);
-  color: #f4fff0;
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+
+.free-badge {
+  background: rgba(36, 74, 42, 0.92);
+  color: #f4fff0;
+}
+
+.detail-hero > .free-badge {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+  z-index: 2;
+}
+
+.kind-badge {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--moss);
+}
+
+.kind-badge[data-kind="attraction"] {
+  background: rgba(32, 67, 86, 0.92);
+  color: #f2f8fc;
+}
+
+.kind-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.55rem 0 0.35rem;
+}
+
+.kind-chip {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+
+.kind-chip:hover {
+  transform: translateY(-1px);
+}
+
+.kind-chip[data-active="true"] {
+  background: var(--moss);
+  border-color: var(--moss);
+  color: #f4fff0;
 }
 
 .filter-bar {

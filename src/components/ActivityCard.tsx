@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { OutingKind } from "@/lib/outing-kind";
 
 export type ActivityCardData = {
   id: string;
@@ -12,6 +13,7 @@ export type ActivityCardData = {
   features: string[];
   distanceMiles: number | null;
   isFree: boolean | null;
+  kind: OutingKind;
 };
 
 function terrainLabel(terrain: string): string {
@@ -58,7 +60,12 @@ export function ActivityCard({
             <span>{activity.title.slice(0, 1)}</span>
           </div>
         )}
-        {activity.isFree ? <span className="free-badge">Free</span> : null}
+        <div className="card-badges">
+          {activity.isFree ? <span className="free-badge">Free</span> : null}
+          <span className="kind-badge" data-kind={activity.kind}>
+            {activity.kind === "walk" ? "Walk" : "Attraction"}
+          </span>
+        </div>
       </div>
       <div className="card-body">
         <h2>{activity.title}</h2>
