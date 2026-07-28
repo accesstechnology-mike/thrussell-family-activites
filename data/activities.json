@@ -6,7 +6,7 @@
     "lng": -1.433966
   },
   "maxDriveMinutes": 105,
-  "syncedAt": "2026-07-28T19:38:55.327Z",
+  "syncedAt": "2026-07-28T21:36:54.367Z",
   "activities": [
     {
       "id": "openstreetmap-thirsk-birds-of-prey-centre-way-310380140",
@@ -75,7 +75,7 @@
       ],
       "driveMinutes": 16,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "578598744",
@@ -124,7 +124,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/332713734",
       "title": "Quarry Moor",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/cc5b13eb4f1ce7a3-card.webp",
       "imageAlt": "Quarry Moor",
       "locationLabel": null,
       "postcode": null,
@@ -149,7 +149,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "332713734",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Quarry_Moor_%2852%29.JPG/3840px-Quarry_Moor_%2852%29.JPG",
+        "imageDetail": "/media/cc5b13eb4f1ce7a3-detail.webp"
       }
     },
     {
@@ -232,7 +234,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/159109846",
       "title": "Wensleydale Railway",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/e89151a54c345022-card.webp",
       "imageAlt": "Wensleydale Railway",
       "locationLabel": null,
       "postcode": null,
@@ -257,7 +259,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "159109846",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Tornado_at_Newton-le-Willows_%28Yorkshire%29.jpg",
+        "imageDetail": "/media/e89151a54c345022-detail.webp"
       }
     },
     {
@@ -302,7 +306,7 @@
       "sourceUrl": "https://www.bigsheeplittlecow.co.uk/",
       "title": "Big Sheep and Little Cow Farm",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/4dba0cf65c782456-card.webp",
       "imageAlt": "Big Sheep and Little Cow Farm",
       "locationLabel": null,
       "postcode": null,
@@ -329,7 +333,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "197291144",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://static.wixstatic.com/media/e710fb_324575568c3d4b4194525af77d8d58e6~mv2.jpg",
+        "imageDetail": "/media/4dba0cf65c782456-detail.webp"
       }
     },
     {
@@ -338,7 +344,7 @@
       "sourceUrl": "https://www.theakstons.co.uk/pages/visitors-centre-homepage",
       "title": "Theakston Brewery Visitor Centre",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/3611a290c8cf02a5-card.webp",
       "imageAlt": "Theakston Brewery Visitor Centre",
       "locationLabel": "Masham",
       "postcode": "HG4 4YD",
@@ -363,7 +369,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "366911641",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/3/33/Theakston_Brewery_Reception_and_Visitor_Centre_-_geograph.org.uk_-_1956344.jpg",
+        "imageDetail": "/media/3611a290c8cf02a5-detail.webp"
       }
     },
     {
@@ -395,7 +403,7 @@
       ],
       "driveMinutes": 22,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "node",
         "osmId": "12049819368",
@@ -465,7 +473,7 @@
       ],
       "driveMinutes": 24,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1134021597",
@@ -478,7 +486,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/474558610",
       "title": "The Batts",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/c95f26212fc283ee-card.webp",
       "imageAlt": "The Batts",
       "locationLabel": null,
       "postcode": null,
@@ -499,11 +507,13 @@
       ],
       "driveMinutes": 25,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "474558610",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Escarpment_above_The_Batts%2C_Colburn_-_geograph.org.uk_-_4479693.jpg/1280px-Escarpment_above_The_Batts%2C_Colburn_-_geograph.org.uk_-_4479693.jpg",
+        "imageDetail": "/media/c95f26212fc283ee-detail.webp"
       }
     },
     {
@@ -521,9 +531,9 @@
         "lat": 54.240666,
         "lng": -1.209684
       },
-      "parking": null,
-      "cost": "Just pay to park.",
-      "isFree": false,
+      "parking": "Just pay to park.",
+      "cost": null,
+      "isFree": true,
       "distanceMiles": null,
       "terrain": "hilly",
       "terrainNotes": null,
@@ -543,10 +553,10 @@
     {
       "id": "openstreetmap-easingwold-maize-maze-way-124076717",
       "source": "openstreetmap",
-      "sourceUrl": "www.easingwoldmaze.co.uk",
+      "sourceUrl": "https://www.easingwoldmaze.co.uk",
       "title": "Easingwold Maize Maze",
       "summary": "Seasonal attraction: Maze, animal pen, go-karts, children's activities.",
-      "imageUrl": null,
+      "imageUrl": "/media/b6ffa6c5c9f378df-card.webp",
       "imageAlt": "Easingwold Maize Maze",
       "locationLabel": "York",
       "postcode": "YO61 3NG",
@@ -573,7 +583,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "124076717",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/6/62/Fireworks_at_the_Maize_Maze_-_geograph.org.uk_-_3210445.jpg",
+        "imageDetail": "/media/b6ffa6c5c9f378df-detail.webp"
       }
     },
     {
@@ -582,7 +594,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1025903869",
       "title": "Burton Leonard Nature Reserve",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/ea2e953047af478c-card.webp",
       "imageAlt": "Burton Leonard Nature Reserve",
       "locationLabel": null,
       "postcode": null,
@@ -603,11 +615,13 @@
       ],
       "driveMinutes": 26,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1025903869",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/6/61/Burton_Leonard.jpg",
+        "imageDetail": "/media/ea2e953047af478c-detail.webp"
       }
     },
     {
@@ -616,7 +630,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1417604396",
       "title": "Shaw's Gate Quarry",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/90424073c17877ab-card.webp",
       "imageAlt": "Shaw's Gate Quarry",
       "locationLabel": null,
       "postcode": null,
@@ -637,11 +651,13 @@
       ],
       "driveMinutes": 26,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1417604396",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Shaw%27s_Gate_Quarry_-_geograph.org.uk_-_4622924.jpg/1280px-Shaw%27s_Gate_Quarry_-_geograph.org.uk_-_4622924.jpg",
+        "imageDetail": "/media/90424073c17877ab-detail.webp"
       }
     },
     {
@@ -764,7 +780,7 @@
       "sourceUrl": "https://www.newburghpriory.co.uk/",
       "title": "Newburgh Priory",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/d4e902d84df1eb7b-card.webp",
       "imageAlt": "Newburgh Priory",
       "locationLabel": "York",
       "postcode": "YO61 4AS",
@@ -789,7 +805,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "136188479",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/0/03/Newburgh_Priory.jpg",
+        "imageDetail": "/media/d4e902d84df1eb7b-detail.webp"
       }
     },
     {
@@ -798,7 +816,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Hackfall Wood",
       "summary": "near Ripon has gorgeous trails and masses of character. It's not buggy friendly, with uneven and steep paths, but totally worth the effort.",
-      "imageUrl": null,
+      "imageUrl": "/media/c9521f93ebb53646-card.webp",
       "imageAlt": "Hackfall Wood",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -821,7 +839,10 @@
       ],
       "driveMinutes": 27,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/2/2e/HackfallsArboretum01.jpg",
+        "imageDetail": "/media/c9521f93ebb53646-detail.webp"
+      }
     },
     {
       "id": "openstreetmap-mouseman-visitor-centre-node-6250390368",
@@ -901,7 +922,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/437701195",
       "title": "Jervaulx Abbey",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/87b5f4e7eb1a4063-card.webp",
       "imageAlt": "Jervaulx Abbey",
       "locationLabel": null,
       "postcode": null,
@@ -924,11 +945,13 @@
       ],
       "driveMinutes": 28,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "437701195",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/6/68/Jervaulx_Abbey%2C_geograph.jpg",
+        "imageDetail": "/media/87b5f4e7eb1a4063-detail.webp"
       }
     },
     {
@@ -958,7 +981,7 @@
       ],
       "driveMinutes": 28,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1042053240",
@@ -973,7 +996,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1223322425",
       "title": "Hay-a-Park Gravel Pits",
       "summary": "Nature reserve",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Hay-a-Park_SSSI_nature_reserve_%2811%29.JPG/1280px-Hay-a-Park_SSSI_nature_reserve_%2811%29.JPG",
+      "imageUrl": "/media/5722b6846fe36f47-card.webp",
       "imageAlt": "Hay-a-Park Gravel Pits",
       "locationLabel": null,
       "postcode": null,
@@ -999,7 +1022,8 @@
         "osmType": "way",
         "osmId": "1223322425",
         "tourism": "nature_reserve",
-        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Hay-a-Park_SSSI_nature_reserve_%2811%29.JPG/1280px-Hay-a-Park_SSSI_nature_reserve_%2811%29.JPG"
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Hay-a-Park_SSSI_nature_reserve_%2811%29.JPG/1280px-Hay-a-Park_SSSI_nature_reserve_%2811%29.JPG",
+        "imageDetail": "/media/5722b6846fe36f47-detail.webp"
       }
     },
     {
@@ -1044,7 +1068,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1487807195",
       "title": "Farnham Gravel Pits",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/fcea1e8546d7a8f1-card.webp",
       "imageAlt": "Farnham Gravel Pits",
       "locationLabel": null,
       "postcode": null,
@@ -1065,11 +1089,13 @@
       ],
       "driveMinutes": 28,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1487807195",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Towards_Farnham_Gravel_Pits_-_geograph.org.uk_-_8291364.jpg",
+        "imageDetail": "/media/fcea1e8546d7a8f1-detail.webp"
       }
     },
     {
@@ -1131,8 +1157,8 @@
         "lng": -1.4760484
       },
       "parking": "Pay and Display parking at Conyngham Hall",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 1,
       "terrain": "gentle",
       "terrainNotes": "Easy footpaths underfoot. Well signposted, easy to navigate. Sturdy pushchair friendly.",
@@ -1201,7 +1227,7 @@
       "sourceUrl": "https://www.mothershipton.co.uk/",
       "title": "Mother Shiptons Cave",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/22f9068cda14a793-card.webp",
       "imageAlt": "Mother Shiptons Cave",
       "locationLabel": "Knaresborough",
       "postcode": "HG5 8DD",
@@ -1228,7 +1254,9 @@
       "rawFacts": {
         "osmType": "node",
         "osmId": "12409771546",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Charlotte-gale-mother-shiptons-12x8-4393.jpg",
+        "imageDetail": "/media/22f9068cda14a793-detail.webp"
       }
     },
     {
@@ -1276,7 +1304,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Knaresborough, Nidd Gorge, and Old Bilton Circular",
       "summary": "This is a lovely circular walk from Knaresborough, close to Harrogate in North Yorkshire. The Nidd Gorge is stunning and a magnet for walkers, while the pretty market town of Knaresborough has many dog-friendly places to pop in to for refreshments when you have finished. The route is mostly on grassy paths, tarmac lanes, and cycle tracks, but also includes some steep descents and climbs by the river, which may be very boggy and muddy after wet weather. Appropriate footwear is required. You...",
-      "imageUrl": null,
+      "imageUrl": "/media/0567285cdd60c784-card.webp",
       "imageAlt": "Knaresborough, Nidd Gorge, and Old Bilton Circular",
       "locationLabel": "North Yorkshire",
       "postcode": null,
@@ -1299,7 +1327,10 @@
       ],
       "driveMinutes": 29,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Knaresborough_Viaduct_from_River_Nidd.jpg/3840px-Knaresborough_Viaduct_from_River_Nidd.jpg",
+        "imageDetail": "/media/0567285cdd60c784-detail.webp"
+      }
     },
     {
       "id": "openstreetmap-old-mother-shipton-s-cave-park-way-165754239",
@@ -1307,7 +1338,7 @@
       "sourceUrl": "https://www.mothershipton.co.uk/",
       "title": "Old Mother Shipton's Cave Park",
       "summary": "Riverside park and wood surrounding Mother Shipton's Cave attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/f72d09c062caa992-card.webp",
       "imageAlt": "Old Mother Shipton's Cave Park",
       "locationLabel": null,
       "postcode": null,
@@ -1336,7 +1367,9 @@
         "osmType": "way",
         "osmId": "165754239",
         "tourism": "attraction",
-        "fee": "yes"
+        "fee": "yes",
+        "imageRemote": "https://www.mothershipton.co.uk/wp-content/uploads/2025/08/well-side-view-web-1.webp",
+        "imageDetail": "/media/f72d09c062caa992-detail.webp"
       }
     },
     {
@@ -1366,7 +1399,7 @@
       ],
       "driveMinutes": 30,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "846125087",
@@ -1419,7 +1452,7 @@
       "sourceUrl": "https://www.plumptonrocks.com/",
       "title": "Plumpton Rocks",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/7463aab179a98a52-card.webp",
       "imageAlt": "Plumpton Rocks",
       "locationLabel": "Knaresborough",
       "postcode": "HG5 8NA",
@@ -1445,7 +1478,9 @@
         "osmType": "node",
         "osmId": "7271544585",
         "tourism": "attraction",
-        "fee": "unknown"
+        "fee": "unknown",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/en/c/c6/Plompton-rocks-1798.png",
+        "imageDetail": "/media/7463aab179a98a52-detail.webp"
       }
     },
     {
@@ -1454,7 +1489,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/34954802",
       "title": "Old Spring Wood",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/a19465311ec46979-card.webp",
       "imageAlt": "Old Spring Wood",
       "locationLabel": null,
       "postcode": null,
@@ -1481,7 +1516,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "34954802",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/6/60/Bluebells%2C_Old_Spring_Wood_-_geograph.org.uk_-_440203.jpg",
+        "imageDetail": "/media/a19465311ec46979-detail.webp"
       }
     },
     {
@@ -1490,7 +1527,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1305558280",
       "title": "Aubert Ings SSSI",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/e763386df3d5e3ab-card.webp",
       "imageAlt": "Aubert Ings SSSI",
       "locationLabel": null,
       "postcode": null,
@@ -1511,11 +1548,13 @@
       ],
       "driveMinutes": 31,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1305558280",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Field_track_to_Aubert_Ings_-_geograph.org.uk_-_5031557.jpg/1280px-Field_track_to_Aubert_Ings_-_geograph.org.uk_-_5031557.jpg",
+        "imageDetail": "/media/e763386df3d5e3ab-detail.webp"
       }
     },
     {
@@ -1545,7 +1584,7 @@
       ],
       "driveMinutes": 31,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1352648298",
@@ -1613,7 +1652,7 @@
       ],
       "driveMinutes": 31,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1409853860",
@@ -1626,7 +1665,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Easby Abbey and Richmond Station",
       "summary": "Child-friendly trail in North Yorkshire on AllTrails: Easby Abbey and Richmond Station",
-      "imageUrl": null,
+      "imageUrl": "/media/949ff036ac47f515-card.webp",
       "imageAlt": "Easby Abbey and Richmond Station",
       "locationLabel": "North Yorkshire",
       "postcode": "DL10 7EU",
@@ -1649,7 +1688,10 @@
       ],
       "driveMinutes": 31,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Richmond_castle_viewed_from_Maison_Dieu.jpg",
+        "imageDetail": "/media/949ff036ac47f515-detail.webp"
+      }
     },
     {
       "id": "national-trust-braithwaite-hall-45",
@@ -1695,7 +1737,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/160142020",
       "title": "Staveley Nature Reserve",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/d929b334039de0c0-card.webp",
       "imageAlt": "Staveley Nature Reserve",
       "locationLabel": null,
       "postcode": null,
@@ -1716,11 +1758,13 @@
       ],
       "driveMinutes": 32,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "160142020",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Staveley_from_Reston_Scar.jpg",
+        "imageDetail": "/media/d929b334039de0c0-detail.webp"
       }
     },
     {
@@ -1803,7 +1847,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Cod Beck Reservoir Circular",
       "summary": "Child-friendly trail in North Yorkshire on AllTrails: Cod Beck Reservoir Circular",
-      "imageUrl": null,
+      "imageUrl": "/media/9c87d25d8b7d9fe9-card.webp",
       "imageAlt": "Cod Beck Reservoir Circular",
       "locationLabel": "North Yorkshire",
       "postcode": null,
@@ -1826,7 +1870,10 @@
       ],
       "driveMinutes": 32,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Cod_Beck%2C_looking_south_May_2018.jpg",
+        "imageDetail": "/media/9c87d25d8b7d9fe9-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-guisecliff-tarn-www-thereluctantexplorers-com-guisecliff-tarn-nidderdale",
@@ -1844,7 +1891,7 @@
         "lng": -1.7399463
       },
       "parking": "On street parking in Glasshouses near Glasshouses Dam. Do not block access to gateways or properties. It is limited, so if you can’t get parked, head into Pateley Bridge for either our Fishpond Woods Walk or our St Mary’s Ruins walk!",
-      "cost": "Often free (check parking)",
+      "cost": null,
       "isFree": true,
       "distanceMiles": 3,
       "terrain": "hilly",
@@ -1957,7 +2004,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/386975595",
       "title": "Spofforth Castle",
       "summary": "Attraction. Free entry",
-      "imageUrl": null,
+      "imageUrl": "/media/ea62a5ce340664cd-card.webp",
       "imageAlt": "Spofforth Castle",
       "locationLabel": null,
       "postcode": null,
@@ -1985,7 +2032,9 @@
         "osmType": "way",
         "osmId": "386975595",
         "tourism": "attraction",
-        "fee": "no"
+        "fee": "no",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Spofforth_Castle_Undercroft.jpg",
+        "imageDetail": "/media/ea62a5ce340664cd-detail.webp"
       }
     },
     {
@@ -1994,7 +2043,7 @@
       "sourceUrl": "https://www.spofforthvillage.org/",
       "title": "Ginny Greenholes Playground and Conservation Area",
       "summary": "Nature reserve. Free entry",
-      "imageUrl": null,
+      "imageUrl": "/media/41a974e7c89b2e12-card.webp",
       "imageAlt": "Ginny Greenholes Playground and Conservation Area",
       "locationLabel": null,
       "postcode": null,
@@ -2022,7 +2071,9 @@
         "osmType": "way",
         "osmId": "829991474",
         "tourism": "nature_reserve",
-        "fee": "no"
+        "fee": "no",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Protected_areas_by_percentage_per_country.svg/960px-Protected_areas_by_percentage_per_country.svg.png",
+        "imageDetail": "/media/41a974e7c89b2e12-detail.webp"
       }
     },
     {
@@ -2090,7 +2141,7 @@
       ],
       "driveMinutes": 33,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1427718645",
@@ -2105,7 +2156,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Swinton Bivouac, Druid's Temple, and Sole Beck",
       "summary": "This circular trail begins at the Swinton Bivouac site within Swinton Estate, North Yorkshire, near the Leighton Reservoir. This rewarding countryside trail takes you on a journey of discovery through rolling pastures and woodland with stunning views, taking in the Swinton Bivouac, Druid's Temple (one of Yorkshire's most interesting follies), and the ruins of Lobley Hall. This trail is part of the Swinton Estate Trails collection, published through a collaboration with Swinton Estate to...",
-      "imageUrl": null,
+      "imageUrl": "/media/391e3ba904e10c4a-card.webp",
       "imageAlt": "Swinton Bivouac, Druid's Temple, and Sole Beck",
       "locationLabel": "North Yorkshire",
       "postcode": "HG4 4JZ",
@@ -2130,7 +2181,10 @@
       ],
       "driveMinutes": 33,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Swinton_Bivouac%2C_Masham%2C_Yorkshire.jpg/1280px-Swinton_Bivouac%2C_Masham%2C_Yorkshire.jpg",
+        "imageDetail": "/media/391e3ba904e10c4a-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-richmond-fosse-to-easby-abbey-www-thereluctantexplorers-com-the-drummer-boy-stone-and-easby-abbey",
@@ -2193,8 +2247,8 @@
         "lng": -1.7614126
       },
       "parking": "Either Pateley Bridge Pay and Display (the closest is at the cricket club), or there is some limited on street parking at Bewerley. If you choose to park in Bewerley, be respectful to its residents, and do not block any access points to fields, roads or residential properties. If you park at Bewerley, you will miss out the park, which is at Pateley Bridge.",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 3,
       "terrain": "hilly",
       "terrainNotes": "Easy paths, can be muddy underfoot. Some ascent (250 feet). Some road walking dependant on starting point. There are pavements on all road walking.",
@@ -2307,7 +2361,7 @@
       "sourceUrl": "https://www.longlandscommon.org/",
       "title": "Long Lands Common",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/d3fab493c0c6f425-card.webp",
       "imageAlt": "Long Lands Common",
       "locationLabel": null,
       "postcode": null,
@@ -2332,7 +2386,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "904561102",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://static.wixstatic.com/media/d4a71e_60f016e5fedd4e94a32073870eb15a37~mv2.jpg/v1/fill/w_288,h_192,al_c,q_80,usm_0.66_1.00_0.01,blur_2,enc_avif,quality_auto/d4a71e_60f016e5fedd4e94a32073870eb15a37~mv2.jpg",
+        "imageDetail": "/media/d3fab493c0c6f425-detail.webp"
       }
     },
     {
@@ -2362,7 +2418,7 @@
       ],
       "driveMinutes": 34,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1417596697",
@@ -2396,7 +2452,7 @@
       ],
       "driveMinutes": 34,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1427715531",
@@ -2481,7 +2537,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Helmsley to Rievaulx Abbey",
       "summary": "Child-friendly trail in North Yorkshire on AllTrails: Helmsley to Rievaulx Abbey",
-      "imageUrl": null,
+      "imageUrl": "/media/48e2d8f8c6f539e4-card.webp",
       "imageAlt": "Helmsley to Rievaulx Abbey",
       "locationLabel": "North Yorkshire",
       "postcode": null,
@@ -2504,7 +2560,10 @@
       ],
       "driveMinutes": 34,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/7/72/Rievaulx_Terrace_%281%29.jpg",
+        "imageDetail": "/media/48e2d8f8c6f539e4-detail.webp"
+      }
     },
     {
       "id": "alltrails-bilton-greenway-and-river-nidd-circular-www-alltrails-com-en-gb-england-north-yorkshire-kids",
@@ -2512,7 +2571,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Bilton Greenway and River Nidd Circular",
       "summary": "Child-friendly trail in North Yorkshire on AllTrails: Bilton Greenway and River Nidd Circular",
-      "imageUrl": null,
+      "imageUrl": "/media/202e2467daae1b57-card.webp",
       "imageAlt": "Bilton Greenway and River Nidd Circular",
       "locationLabel": "North Yorkshire",
       "postcode": "HG1 3LR",
@@ -2535,7 +2594,10 @@
       ],
       "driveMinutes": 35,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Nidd_Gorge_Viaduct_-_geograph.org.uk_-_234724_%28cropped%29.jpg",
+        "imageDetail": "/media/202e2467daae1b57-detail.webp"
+      }
     },
     {
       "id": "openstreetmap-the-forbidden-corner-way-39249624",
@@ -2615,7 +2677,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/380760206",
       "title": "Stockeld Park Yew Tree Maze",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/9821b2a15e78f3f6-card.webp",
       "imageAlt": "Stockeld Park Yew Tree Maze",
       "locationLabel": null,
       "postcode": null,
@@ -2636,11 +2698,13 @@
       ],
       "driveMinutes": 36,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "380760206",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Stockeld_Park_House.jpg/3840px-Stockeld_Park_House.jpg",
+        "imageDetail": "/media/9821b2a15e78f3f6-detail.webp"
       }
     },
     {
@@ -2670,7 +2734,7 @@
       ],
       "driveMinutes": 36,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1342637953",
@@ -2683,7 +2747,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Aysgarth Woods and Waterfalls Circular",
       "summary": "This trail takes in lovely woodland paths and rolling farmland, with great views of Bolton Castle, plus one of the most spectacular attractions within the Dales, Aysgarth Falls on the River Ure. The waterfalls of High Force, Middle Force and Lower Force stretch along the river, and become even more spectacular after rain with the increased water falling over broad limestone slabs. A place of great inspiration, from Wordsworth to Turner and even a Hollywood film director, the falls are a...",
-      "imageUrl": null,
+      "imageUrl": "/media/f6813f295ede8657-card.webp",
       "imageAlt": "Aysgarth Woods and Waterfalls Circular",
       "locationLabel": "North Yorkshire",
       "postcode": "DL8 4HR",
@@ -2709,7 +2773,10 @@
       ],
       "driveMinutes": 36,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/en/8/85/Waterfalls_by_TLC_US_CD_maxi-single.jpg",
+        "imageDetail": "/media/f6813f295ede8657-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-properous-and-greenhow-lead-mines-www-thereluctantexplorers-com-greenhow-hill-lead-mines",
@@ -2806,7 +2873,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/215659424",
       "title": "Rossett Local Nature Reserve",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/9351f39500d2a655-card.webp",
       "imageAlt": "Rossett Local Nature Reserve",
       "locationLabel": null,
       "postcode": null,
@@ -2827,11 +2894,13 @@
       ],
       "driveMinutes": 37,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "215659424",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Pond_in_Rossett_Local_Nature_Reserve_-_geograph.org.uk_-_7053045.jpg",
+        "imageDetail": "/media/9351f39500d2a655-detail.webp"
       }
     },
     {
@@ -2840,7 +2909,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/241606734",
       "title": "Orchid Reserve",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/12a931edadb0e403-card.webp",
       "imageAlt": "Orchid Reserve",
       "locationLabel": null,
       "postcode": null,
@@ -2861,11 +2930,13 @@
       ],
       "driveMinutes": 37,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "241606734",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/3/34/Plant_Orchid_Cymbidium_aloifolium_P1110661_05_-_cropped.jpg",
+        "imageDetail": "/media/12a931edadb0e403-detail.webp"
       }
     },
     {
@@ -2895,7 +2966,7 @@
       ],
       "driveMinutes": 37,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1408454313",
@@ -2977,10 +3048,10 @@
     {
       "id": "openstreetmap-action-karts-node-29563640",
       "source": "openstreetmap",
-      "sourceUrl": "actionkarts.co.uk",
+      "sourceUrl": "https://actionkarts.co.uk",
       "title": "Action Karts",
       "summary": "Indoor go-kart track. Note: website no longer exists. Closed?",
-      "imageUrl": null,
+      "imageUrl": "/media/40a06bec5a85e14e-card.webp",
       "imageAlt": "Action Karts",
       "locationLabel": "Wetherby",
       "postcode": "LS23 7BJ",
@@ -3005,7 +3076,9 @@
       "rawFacts": {
         "osmType": "node",
         "osmId": "29563640",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/en/3/3c/Atari_Jaguar_Atari_Karts_cover_art.jpg",
+        "imageDetail": "/media/40a06bec5a85e14e-detail.webp"
       }
     },
     {
@@ -3014,7 +3087,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1428276662",
       "title": "Bellerby Fields",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/f2d9c2c7dc307f34-card.webp",
       "imageAlt": "Bellerby Fields",
       "locationLabel": null,
       "postcode": null,
@@ -3035,11 +3108,13 @@
       ],
       "driveMinutes": 38,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1428276662",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/8/84/Fields_on_Bellerby_Moor_-_geograph.org.uk_-_1411971.jpg",
+        "imageDetail": "/media/f2d9c2c7dc307f34-detail.webp"
       }
     },
     {
@@ -3058,8 +3133,8 @@
         "lng": -1.6998949
       },
       "parking": "Yorkshire water car parks located on the north and south sides of Swinsty. This walk begins at the north side. BOTH these car parks are now pay and display",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 4,
       "terrain": "gentle",
       "terrainNotes": "Easy underfoot. 🛑 Some brief road walking on circular route. Little to no ascent. The route is buggy friendly as long as you don’t mind a bit of mud and a few puddles!",
@@ -3102,7 +3177,7 @@
       },
       "parking": "parking Dogs allowed Except the hall, laundry and wilderness play area.",
       "cost": "Prices Free entry for National Trust members and under fives.",
-      "isFree": true,
+      "isFree": false,
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
@@ -3168,7 +3243,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/36728619",
       "title": "Ox Close Wood",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/325c1bfb69b82ec0-card.webp",
       "imageAlt": "Ox Close Wood",
       "locationLabel": null,
       "postcode": null,
@@ -3195,7 +3270,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "36728619",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Ruins_in_Upper_Ox_Close_Wood_-_geograph.org.uk_-_3948061.jpg/1280px-Ruins_in_Upper_Ox_Close_Wood_-_geograph.org.uk_-_3948061.jpg",
+        "imageDetail": "/media/325c1bfb69b82ec0-detail.webp"
       }
     },
     {
@@ -3225,7 +3302,7 @@
       ],
       "driveMinutes": 39,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "175340660",
@@ -3238,7 +3315,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/175340665",
       "title": "Smiths Field",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/d5445368f220558d-card.webp",
       "imageAlt": "Smiths Field",
       "locationLabel": null,
       "postcode": null,
@@ -3259,11 +3336,13 @@
       ],
       "driveMinutes": 39,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "175340665",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/en/1/13/The_Smiths_The_Smiths.jpg",
+        "imageDetail": "/media/d5445368f220558d-detail.webp"
       }
     },
     {
@@ -3272,7 +3351,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/175407454",
       "title": "Frank Shires Meadow",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/5dca6a046e08e163-card.webp",
       "imageAlt": "Frank Shires Meadow",
       "locationLabel": null,
       "postcode": null,
@@ -3293,11 +3372,13 @@
       ],
       "driveMinutes": 39,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "175407454",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Entrance_to_the_Frank_Shires_Meadow_and_Quarry_-_geograph.org.uk_-_3130245.jpg/1280px-Entrance_to_the_Frank_Shires_Meadow_and_Quarry_-_geograph.org.uk_-_3130245.jpg",
+        "imageDetail": "/media/5dca6a046e08e163-detail.webp"
       }
     },
     {
@@ -3306,7 +3387,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/180099655",
       "title": "Bardsey Fields",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/6f3ce41c93dfaafa-card.webp",
       "imageAlt": "Bardsey Fields",
       "locationLabel": null,
       "postcode": null,
@@ -3327,11 +3408,13 @@
       ],
       "driveMinutes": 39,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "180099655",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Fields_north_of_Holme_Farm_near_Bardsey_-_geograph.org.uk_-_2171917.jpg",
+        "imageDetail": "/media/6f3ce41c93dfaafa-detail.webp"
       }
     },
     {
@@ -3340,7 +3423,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1483951730",
       "title": "Fitts Fields",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/3e58de09d2d8df95-card.webp",
       "imageAlt": "Fitts Fields",
       "locationLabel": null,
       "postcode": null,
@@ -3361,11 +3444,13 @@
       ],
       "driveMinutes": 39,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1483951730",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Fitts_Law.svg/960px-Fitts_Law.svg.png",
+        "imageDetail": "/media/3e58de09d2d8df95-detail.webp"
       }
     },
     {
@@ -3480,7 +3565,7 @@
       ],
       "driveMinutes": 40,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1065794343",
@@ -3668,7 +3753,7 @@
       ],
       "driveMinutes": 41,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "175322384",
@@ -3702,7 +3787,7 @@
       ],
       "driveMinutes": 41,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "175340659",
@@ -3811,7 +3896,7 @@
       ],
       "driveMinutes": 42,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "61215723",
@@ -3863,7 +3948,7 @@
       "sourceUrl": "https://www.holgatewindmill.org/",
       "title": "Holgate Windmill",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/5e7af9750a52d801-card.webp",
       "imageAlt": "Holgate Windmill",
       "locationLabel": "York",
       "postcode": "YO26 4TX",
@@ -3888,7 +3973,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "443789299",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Holgate_Windmill_%288577%29.jpg",
+        "imageDetail": "/media/5e7af9750a52d801-detail.webp"
       }
     },
     {
@@ -3897,7 +3984,7 @@
       "sourceUrl": "http://www.cliftonbackies.org.uk/",
       "title": "Clifton Backies Local Nature Reserve",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/92ac953258d1252e-card.webp",
       "imageAlt": "Clifton Backies Local Nature Reserve",
       "locationLabel": null,
       "postcode": null,
@@ -3918,11 +4005,13 @@
       ],
       "driveMinutes": 42,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1176703813",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Clifton_Backies_-_geograph.org.uk_-_3383896.jpg",
+        "imageDetail": "/media/92ac953258d1252e-detail.webp"
       }
     },
     {
@@ -3931,7 +4020,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1417608051",
       "title": "Kirkdale Cave SSSI",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/eba8b0b1f5d29da8-card.webp",
       "imageAlt": "Kirkdale Cave SSSI",
       "locationLabel": null,
       "postcode": null,
@@ -3954,11 +4043,13 @@
       ],
       "driveMinutes": 42,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1417608051",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/6/69/Kirkdale_Cave_-_geograph.org.uk_-_1072214.jpg",
+        "imageDetail": "/media/eba8b0b1f5d29da8-detail.webp"
       }
     },
     {
@@ -3967,7 +4058,7 @@
       "sourceUrl": "https://www.openstreetmap.org/node/7141287878",
       "title": "Askham Bryan Wildlife and Conservation Park",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/244cb13a1a3d8cda-card.webp",
       "imageAlt": "Askham Bryan Wildlife and Conservation Park",
       "locationLabel": "York",
       "postcode": "YO23 3FR",
@@ -3988,11 +4079,13 @@
       ],
       "driveMinutes": 43,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "node",
         "osmId": "7141287878",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Wildlife_centre_building_%28geograph_7713402%29.jpg",
+        "imageDetail": "/media/244cb13a1a3d8cda-detail.webp"
       }
     },
     {
@@ -4001,7 +4094,7 @@
       "sourceUrl": "https://boltoncastle.co.uk/",
       "title": "Bolton Castle",
       "summary": "Attraction. Hours: Feb-Oct: Mo-Su 10:00-16:00",
-      "imageUrl": "https://boltoncastle.co.uk/wp-content/uploads/2026/04/cropped-cropped-Bolton-fav-32x32.webp",
+      "imageUrl": "/media/557936a8a21d366b-card.webp",
       "imageAlt": "Bolton Castle",
       "locationLabel": null,
       "postcode": null,
@@ -4031,7 +4124,8 @@
         "tourism": "attraction",
         "openingHours": "Feb-Oct: Mo-Su 10:00-16:00",
         "phone": "+44 1969 623 981",
-        "imageRemote": "https://boltoncastle.co.uk/wp-content/uploads/2026/04/cropped-cropped-Bolton-fav-32x32.webp"
+        "imageRemote": "https://boltoncastle.co.uk/wp-content/uploads/2026/02/Gardens_top-1024x768.webp",
+        "imageDetail": "/media/557936a8a21d366b-detail.webp"
       }
     },
     {
@@ -4135,7 +4229,7 @@
       ],
       "driveMinutes": 44,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "127586016",
@@ -4326,7 +4420,7 @@
       },
       "parking": "parking Public cycle parking is located approx.",
       "cost": "Prices Free entry for National Trust members and under fives.",
-      "isFree": true,
+      "isFree": false,
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
@@ -4429,7 +4523,7 @@
       "sourceUrl": "https://www.yorkminster.org/",
       "title": "York Minster",
       "summary": "Cathedral and seat of the Archbishop of York. Mostly build during the 1200s - 1300s in Gothic style.",
-      "imageUrl": null,
+      "imageUrl": "/media/4812ad8f30a770cc-card.webp",
       "imageAlt": "York Minster",
       "locationLabel": "York",
       "postcode": "YO1 7HH",
@@ -4454,7 +4548,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "28750371",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/1/14/York_Minster_%282797690%29.jpg",
+        "imageDetail": "/media/4812ad8f30a770cc-detail.webp"
       }
     },
     {
@@ -4510,9 +4606,9 @@
         "lat": 53.9590555,
         "lng": -1.0815361
       },
-      "parking": null,
-      "cost": "Admission is free, just pay to park (£4).",
-      "isFree": false,
+      "parking": "just pay to park (£4)",
+      "cost": "Free admission",
+      "isFree": true,
       "distanceMiles": null,
       "terrain": "flat",
       "terrainNotes": null,
@@ -4793,7 +4889,7 @@
       },
       "parking": "parking Racks available at the rear of the house.",
       "cost": "Prices Free entry for National Trust members and under fives.",
-      "isFree": true,
+      "isFree": false,
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
@@ -4858,7 +4954,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/59594867",
       "title": "Preston Park",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/19e9ff613f529772-card.webp",
       "imageAlt": "Preston Park",
       "locationLabel": null,
       "postcode": null,
@@ -4879,11 +4975,13 @@
       ],
       "driveMinutes": 46,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "59594867",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Eastward_view_across_Preston_Park_from_Dyke_Road_Drive%2C_Brighton_%28August_2016%29_%283%29.JPG",
+        "imageDetail": "/media/19e9ff613f529772-detail.webp"
       }
     },
     {
@@ -4892,7 +4990,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1344324793",
       "title": "Broughton Bank SSSI",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/f1868378c316e78b-card.webp",
       "imageAlt": "Broughton Bank SSSI",
       "locationLabel": null,
       "postcode": null,
@@ -4913,11 +5011,13 @@
       ],
       "driveMinutes": 46,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1344324793",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/8/8d/The_Bull%2C_Broughton_-_geograph.org.uk_-_76625.jpg",
+        "imageDetail": "/media/f1868378c316e78b-detail.webp"
       }
     },
     {
@@ -4926,7 +5026,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Lotherton Hall",
       "summary": "Lotherton Hall is a fantastic day out for the family, make sure you include this lovely short walk on your next visit.",
-      "imageUrl": null,
+      "imageUrl": "/media/da79ecd2c70d7684-card.webp",
       "imageAlt": "Lotherton Hall",
       "locationLabel": "Yorkshire",
       "postcode": "LS25 3EB",
@@ -4947,7 +5047,10 @@
       ],
       "driveMinutes": 46,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/5/54/Another_view_of_Lotherton_Hall_-_geograph.org.uk_-_886280.jpg",
+        "imageDetail": "/media/da79ecd2c70d7684-detail.webp"
+      }
     },
     {
       "id": "little-vikings-a-flat-walk-around-york-knavesmire-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
@@ -5126,7 +5229,7 @@
       "sourceUrl": "https://digyork.com/",
       "title": "Jorvik DIG",
       "summary": "Interactive archaelogy exhibit.",
-      "imageUrl": null,
+      "imageUrl": "/media/6e871c2b7de73836-card.webp",
       "imageAlt": "Jorvik DIG",
       "locationLabel": "York",
       "postcode": "YO1 8NN",
@@ -5153,7 +5256,9 @@
         "osmId": "12528757952",
         "tourism": "attraction",
         "openingHours": "10:00-17:00",
-        "phone": "+44 1904 615505"
+        "phone": "+44 1904 615505",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Jorvik_DIG_-_geograph.org.uk_-_8196028.jpg",
+        "imageDetail": "/media/6e871c2b7de73836-detail.webp"
       }
     },
     {
@@ -5162,7 +5267,7 @@
       "sourceUrl": "https://www.archbishopofyork.org/archbishop-york/about-bishopthorpe-palace",
       "title": "Bishopthorpe Palace",
       "summary": "Official residence of the Archbishop of York from 1241 to the present day.",
-      "imageUrl": null,
+      "imageUrl": "/media/76f3aaf51fdcffe5-card.webp",
       "imageAlt": "Bishopthorpe Palace",
       "locationLabel": "York",
       "postcode": "YO23 2GE",
@@ -5187,7 +5292,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "56338502",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/4/44/BishopthorpePlalce%28TomPennington%29Jul1995.jpg",
+        "imageDetail": "/media/76f3aaf51fdcffe5-detail.webp"
       }
     },
     {
@@ -5324,7 +5431,7 @@
       ],
       "driveMinutes": 48,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "241053722",
@@ -5385,8 +5492,8 @@
         "lng": -1.9972399
       },
       "parking": "Grassington Pay and Display. The Yorkshire Dales Centre.",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 4,
       "terrain": "hilly",
       "terrainNotes": "Rough and sometimes uneven underfoot in Grass Woods. Paths can be muddy, particularly at the riverside. There is some pavement walking/ road walking at the start and end of this walk in Grassington. Some limited ascent (approx. 650 feet) . Be aware that Grass Woods has been renowned for its population of ticks, so stick to the main paths and try to avoid brushing the undergrowth. Always thoroughly check for ticks after a walk.",
@@ -5500,7 +5607,7 @@
       "sourceUrl": "https://tropicalworld.leeds.gov.uk/",
       "title": "Tropical World",
       "summary": "\"One of the UK's most popular garden tourist attractions and home to the largest collection of tropical plants outside Kew Gardens.\" Includes animals and birds.",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Tropical_World_-_in_the_Swamp_House_-_geograph.org.uk_-_2275151.jpg/1280px-Tropical_World_-_in_the_Swamp_House_-_geograph.org.uk_-_2275151.jpg",
+      "imageUrl": "/media/5d8ced754ef18ee7-card.webp",
       "imageAlt": "Tropical World",
       "locationLabel": "Leeds",
       "postcode": "LS8 2ER",
@@ -5531,7 +5638,8 @@
         "fee": "yes",
         "openingHours": "10:00-18:00",
         "phone": "+44 113 535 2132",
-        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Tropical_World_-_in_the_Swamp_House_-_geograph.org.uk_-_2275151.jpg/1280px-Tropical_World_-_in_the_Swamp_House_-_geograph.org.uk_-_2275151.jpg"
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Tropical_World_-_in_the_Swamp_House_-_geograph.org.uk_-_2275151.jpg/1280px-Tropical_World_-_in_the_Swamp_House_-_geograph.org.uk_-_2275151.jpg",
+        "imageDetail": "/media/5d8ced754ef18ee7-detail.webp"
       }
     },
     {
@@ -5561,7 +5669,7 @@
       ],
       "driveMinutes": 49,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "182783805",
@@ -5576,7 +5684,7 @@
       "sourceUrl": "https://www.breezyknees.co.uk/",
       "title": "Breezy Knees Gardens",
       "summary": "Attraction",
-      "imageUrl": "https://irp.cdn-website.com//6e8edfce/dms3rep/multi/opt/iceland-july-2012-141-1920w.jpg",
+      "imageUrl": "/media/e142dfcc14228e8d-card.webp",
       "imageAlt": "Breezy Knees Gardens",
       "locationLabel": "York",
       "postcode": "YO19 5XS",
@@ -5603,7 +5711,8 @@
         "osmId": "1395060696",
         "tourism": "attraction",
         "phone": "+44 1904 488800",
-        "imageRemote": "https://irp.cdn-website.com//6e8edfce/dms3rep/multi/opt/iceland-july-2012-141-1920w.jpg"
+        "imageRemote": "https://lirp.cdn-website.com/6e8edfce/dms3rep/multi/opt/DSC00927-1152w.jpg",
+        "imageDetail": "/media/e142dfcc14228e8d-detail.webp"
       }
     },
     {
@@ -5612,7 +5721,7 @@
       "sourceUrl": "https://www.roundhaypark.org.uk/roundhay-park-virtual-tour/Canal-Gardens-and-Fountain.html",
       "title": "Canal Gardens",
       "summary": "\"Nicholson's canal garden is an example of the fashion during the 1830's to separate formal gardens from the immediate picturesque setting of the house and parkland. \"",
-      "imageUrl": null,
+      "imageUrl": "/media/64b728d0740675c6-card.webp",
       "imageAlt": "Canal Gardens",
       "locationLabel": null,
       "postcode": null,
@@ -5638,7 +5747,9 @@
         "osmType": "way",
         "osmId": "238845883",
         "tourism": "attraction",
-        "fee": "free ?"
+        "fee": "free ?",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/4/49/Canal%2C_Westbury_Court_Garden_-_geograph.org.uk_-_1416966.jpg",
+        "imageDetail": "/media/64b728d0740675c6-detail.webp"
       }
     },
     {
@@ -5684,7 +5795,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Grassington to Burnsall",
       "summary": "Child-friendly trail in North Yorkshire on AllTrails: Grassington to Burnsall",
-      "imageUrl": null,
+      "imageUrl": "/media/499e5f6b9ea51422-card.webp",
       "imageAlt": "Grassington to Burnsall",
       "locationLabel": "North Yorkshire",
       "postcode": null,
@@ -5705,7 +5816,10 @@
       ],
       "driveMinutes": 49,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Grassington_from_Burnsall_and_Thorpe_Fell_-_geograph.org.uk_-_6931221.jpg",
+        "imageDetail": "/media/499e5f6b9ea51422-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-mill-gill-force-and-whitfield-gill-www-thereluctantexplorers-com-mill-gill-and-whitfield-gill-force",
@@ -5827,7 +5941,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Otley Chevin",
       "summary": "Otley Chevin has lots of room to explore for little legs, with long and short routes. If you're taking a buggy be prepared for mud and try to stick to bridleways- not all paths are suitable for them.",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Otleychevin.jpg",
+      "imageUrl": "/media/f80b8bae87d80f50-card.webp",
       "imageAlt": "Otley Chevin",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -5849,7 +5963,8 @@
       "driveMinutes": 50,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
       "rawFacts": {
-        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/8/85/Otleychevin.jpg"
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/8/85/Otleychevin.jpg",
+        "imageDetail": "/media/f80b8bae87d80f50-detail.webp"
       }
     },
     {
@@ -5858,7 +5973,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Roundhay Park",
       "summary": "North Leeds has play areas, ducks, playing fields and even in peak times a train! This 4km buggy-friendly route might be a little long for very little legs but there are loads to do as shorter alternatives. The secret gorge walk is not suitable for buggies, but is only 2.7km and is definitely one of the most interesting (and quietest) parts of the park. For those little adventurers, you could also follow one of the free Adventure Trails on offer there.",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Roundhay_Park_Sign.jpg",
+      "imageUrl": "/media/d208f8138c341d3a-card.webp",
       "imageAlt": "Roundhay Park",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -5880,7 +5995,8 @@
       "driveMinutes": 50,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
       "rawFacts": {
-        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Roundhay_Park_Sign.jpg"
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Roundhay_Park_Sign.jpg",
+        "imageDetail": "/media/d208f8138c341d3a-detail.webp"
       }
     },
     {
@@ -6008,7 +6124,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1412670028",
       "title": "East Keswick Fitts",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/a0a1d59622e3612e-card.webp",
       "imageAlt": "East Keswick Fitts",
       "locationLabel": null,
       "postcode": null,
@@ -6029,11 +6145,13 @@
       ],
       "driveMinutes": 51,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1412670028",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Ebor_Way_near_Keswick_Fitts_-_geograph.org.uk_-_3126865.jpg/1280px-Ebor_Way_near_Keswick_Fitts_-_geograph.org.uk_-_3126865.jpg",
+        "imageDetail": "/media/a0a1d59622e3612e-detail.webp"
       }
     },
     {
@@ -6042,7 +6160,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Woodlesford Lock",
       "summary": "There are loads of walks starting from Woodlesford Lock, and this route is just under 2 miles, suitable for buggies, with lots to see along this great stretch of the canal.",
-      "imageUrl": null,
+      "imageUrl": "/media/9b8b1fd0904ab959-card.webp",
       "imageAlt": "Woodlesford Lock",
       "locationLabel": "Yorkshire",
       "postcode": "LS26",
@@ -6063,7 +6181,10 @@
       ],
       "driveMinutes": 51,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Woodlesford_Lock_No_4%2C_Aire_and_Calder_Canal%2C_Yorkshire_-_geograph.org.uk_-_57621.jpg",
+        "imageDetail": "/media/9b8b1fd0904ab959-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-burnsall-to-appletreewick-www-thereluctantexplorers-com-burnsall-to-appletreewick",
@@ -6081,8 +6202,8 @@
         "lng": -1.9530761
       },
       "parking": "Burnsall has 1 small pay and display car park. JULY 2026 UPDATE: The Riverside Field is now permanently shut. There is no ability to park there, or to turn up and BBQ. There is some limited on street parking, but be respectful to the residents and do not block access points to any fields, or roads.",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 4,
       "terrain": "hilly",
       "terrainNotes": "Easy identifiable paths, some ascent (700 feet). A short spell of road walking on a quiet country road.",
@@ -6213,7 +6334,7 @@
         "lng": -1.8817117
       },
       "parking": "Bolton Abbey, Riverside Car Park. A charge of £12.50 is made per car when booked in advance. It is £15 on the day. (Alternative parking at Barden Field - SUMMER ONLY) Also limited free parking at Barden Bridge.",
-      "cost": "Often free (check parking)",
+      "cost": null,
       "isFree": true,
       "distanceMiles": 5,
       "terrain": "steep",
@@ -6398,7 +6519,7 @@
       ],
       "driveMinutes": 52,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "719052340",
@@ -6423,8 +6544,8 @@
         "lng": -1.9997049
       },
       "parking": "Parking on both counts is pay and display.",
-      "cost": "pay and display.",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
@@ -6452,7 +6573,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Water Haigh Woodland Park",
       "summary": "Water Haigh Woodland Park is between Woodlesford Lock and Lemonroyd Marina, with lots of options for short trails up to 5km, and has plenty to see. Canal paths and Eshald Wood suitable for buggies.",
-      "imageUrl": null,
+      "imageUrl": "/media/f163775bbdbedd0b-card.webp",
       "imageAlt": "Water Haigh Woodland Park",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -6475,7 +6596,10 @@
       ],
       "driveMinutes": 52,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/b/b7/New_sign_marking_the_eastern_boundary_of_Haigh_-_geograph.org.uk_-_1045584.jpg",
+        "imageDetail": "/media/f163775bbdbedd0b-detail.webp"
+      }
     },
     {
       "id": "muddy-boots-mummy-rothwell-country-park-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
@@ -6515,7 +6639,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Rothwell Pastures",
       "summary": "Rothwell Pastures is a pretty reserve, with this walk to Robin Hood along the old railway line. If you have buggies or bikes, avoid the loop and just return on the same path.",
-      "imageUrl": null,
+      "imageUrl": "/media/2782d2a64a61fea5-card.webp",
       "imageAlt": "Rothwell Pastures",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -6536,7 +6660,10 @@
       ],
       "driveMinutes": 52,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Gated_entrance_to_Rothwell_Pastures_-_geograph.org.uk_-_4295043.jpg",
+        "imageDetail": "/media/2782d2a64a61fea5-detail.webp"
+      }
     },
     {
       "id": "muddy-boots-mummy-eccup-reservoir-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
@@ -6544,7 +6671,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Eccup Reservoir",
       "summary": "Eccup Reservoir is 4.5 miles to walk around, taking in the lovely countryside in North Leeds. Not a buggy walk.",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/58/Eccup_reservoir_%281950449053%29.jpg",
+      "imageUrl": "/media/09ea59a2dc352025-card.webp",
       "imageAlt": "Eccup Reservoir",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -6566,7 +6693,8 @@
       "driveMinutes": 52,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
       "rawFacts": {
-        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/5/58/Eccup_reservoir_%281950449053%29.jpg"
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/5/58/Eccup_reservoir_%281950449053%29.jpg",
+        "imageDetail": "/media/09ea59a2dc352025-detail.webp"
       }
     },
     {
@@ -6796,7 +6924,7 @@
       },
       "parking": "parking games and role play as they pretend to share tea and cakes with the characters.",
       "cost": "priced at £2.",
-      "isFree": false,
+      "isFree": true,
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
@@ -6820,7 +6948,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Meanwood Park",
       "summary": "North Leeds is a beautiful place to explore, with all lengths of routes. We like this 3.8km circular route that goes through the Hollies.",
-      "imageUrl": null,
+      "imageUrl": "/media/26a6028809bae620-card.webp",
       "imageAlt": "Meanwood Park",
       "locationLabel": "Yorkshire",
       "postcode": "LS6 4LT",
@@ -6841,7 +6969,10 @@
       ],
       "driveMinutes": 53,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/0/05/Meanwood_Institute.jpg",
+        "imageDetail": "/media/26a6028809bae620-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-ben-rhydding-nature-reserve-www-thereluctantexplorers-com-ben-rhydding-nature-reserve",
@@ -6893,7 +7024,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1311331025",
       "title": "Noddle End SSSI",
       "summary": "Nature reserve",
-      "imageUrl": null,
+      "imageUrl": "/media/1d3258824438a01e-card.webp",
       "imageAlt": "Noddle End SSSI",
       "locationLabel": null,
       "postcode": null,
@@ -6914,11 +7045,13 @@
       ],
       "driveMinutes": 54,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1311331025",
-        "tourism": "nature_reserve"
+        "tourism": "nature_reserve",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Field_barn_at_Noddle_End_-_geograph.org.uk_-_1833828.jpg/1280px-Field_barn_at_Noddle_End_-_geograph.org.uk_-_1833828.jpg",
+        "imageDetail": "/media/1d3258824438a01e-detail.webp"
       }
     },
     {
@@ -6927,7 +7060,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Temple Newsam",
       "summary": "Temple Newsam has lots of lovely walks for children. This 3.5km route is suitable for buggies (although can get muddy) and shows some of the best bits of this great estate. Add on a farm and cafe visit for a full day out.",
-      "imageUrl": null,
+      "imageUrl": "/media/5384f366985962f4-card.webp",
       "imageAlt": "Temple Newsam",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -6950,7 +7083,10 @@
       ],
       "driveMinutes": 54,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/8/83/Temple_Newsam_House_-_Front_view_-_geograph.org.uk_-_961464.jpg",
+        "imageDetail": "/media/5384f366985962f4-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-conistone-dib-and-pie-www-thereluctantexplorers-com-conistone-dib-and-conistone-pie",
@@ -7255,7 +7391,7 @@
       "sourceUrl": "https://www.castlehoward.co.uk/",
       "title": "Castle Howard",
       "summary": "Attraction",
-      "imageUrl": null,
+      "imageUrl": "/media/9431fe65ad7453d3-card.webp",
       "imageAlt": "Castle Howard",
       "locationLabel": "York",
       "postcode": "YO60 7DA",
@@ -7282,7 +7418,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "35902933",
-        "tourism": "attraction"
+        "tourism": "attraction",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/b/be/Castle_Howard_and_garden.jpg",
+        "imageDetail": "/media/9431fe65ad7453d3-detail.webp"
       }
     },
     {
@@ -7312,7 +7450,7 @@
       ],
       "driveMinutes": 56,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1377279697",
@@ -7325,7 +7463,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Bramley Fall",
       "summary": "At just 1 mile this route is a good one to start little legs off with! It includes pretty woodland and the canal, but isn't buggy friendly.",
-      "imageUrl": null,
+      "imageUrl": "/media/87a6b373590f6689-card.webp",
       "imageAlt": "Bramley Fall",
       "locationLabel": "Yorkshire",
       "postcode": "LS13 1ER",
@@ -7348,7 +7486,10 @@
       ],
       "driveMinutes": 56,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Bramley_Fall_Park_-_Leeds_and_Bradford_Road_-_geograph.org.uk_-_597940.jpg",
+        "imageDetail": "/media/87a6b373590f6689-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-gunnerside-gill-www-thereluctantexplorers-com-gunnerside-gill",
@@ -7412,8 +7553,8 @@
         "lng": -2.0896531
       },
       "parking": "Buckden pay and display car park which has plenty of parking. If the car park is full, please try somewhere else. Do not block access, or disregard the requests of the national park. There are wildflower areas that should not be parked on. If you’re stuck, try nearby Kettlewell for Great Whernside , the stepping stone walk or the circular to Starbotton .",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 6.5,
       "terrain": "steep",
       "terrainNotes": "Easily identifiable well walked paths with the exception of the steep section between the Lead Mine and the summit line. Uneven underfoot, muddy in places. Ascent is 502 metres, the summit being 702 metres high.",
@@ -7544,8 +7685,8 @@
         "lng": -2.0898481
       },
       "parking": "Buckden Pay and Display",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": null,
       "terrain": "steep",
       "terrainNotes": "Dependant on how far up you decide to go, some easily identifiable paths, the higher up the falls are more scrambly with some unguarded drops, so best suited for older adventurers. UPDATE: The path towards the top falls has become a little eroded in places, possibly due to small landslip. It is best to view the falls from below this point with the kids as there is a steep exposed drop and the path is very narrow.",
@@ -7589,8 +7730,8 @@
         "lng": -2.089714
       },
       "parking": "Buckden Pay and Display",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 5,
       "terrain": "flat",
       "terrainNotes": "Easily identifiable paths. Some quiet country road walking. Some rough terrain. To reach some of the falls, there is some walking off path. The only ascent is at the beginning of this walk, the rest is flat.",
@@ -7633,8 +7774,8 @@
         "lng": -2.0897515
       },
       "parking": "Buckden Pay and Display. There is some alternative road side parking just beyond the White Lion pub, but this is extremely limited and tight which is why we recommend doing this walk from Buckden Pay and Display.",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 4.5,
       "terrain": "gentle",
       "terrainNotes": "Mainly easily identifiable paths. Some ascent (380m), some off path walking, but this was over easy terrain at the time of walking and there is a visible well trodden path across open access land to the waterfall UPDATE October 2025. There has been a new gate put in the wall to access the waterfall. It is located on public access land, where you have the right to roam . Follow the countryside code at all time, be respectful of the countryside and the landowner, NEVER LEAVE RUBBISH! IT’S PROPER TERRIBLE BEHAVIOUR! LEAVE NO TRACE (shouty bit over!)",
@@ -7676,7 +7817,7 @@
         "lng": -1.8234388
       },
       "parking": "New Brook Street, some metered some free. On street. Or the central car park on West Street is nearby.",
-      "cost": "Often free (check parking)",
+      "cost": null,
       "isFree": true,
       "distanceMiles": 2,
       "terrain": "flat",
@@ -7791,7 +7932,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Skelton Lake",
       "summary": "sitting behind the M1 Skelton Lake services isn't the most obvious choice for a walk, but with a few routes to choose from and great facilities it's a great choice for families.",
-      "imageUrl": null,
+      "imageUrl": "/media/cf6366160dbdf73c-card.webp",
       "imageAlt": "Skelton Lake",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -7812,7 +7953,10 @@
       ],
       "driveMinutes": 57,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Skelton_Lake_services_%28geograph_7375219%29.jpg/3840px-Skelton_Lake_services_%28geograph_7375219%29.jpg",
+        "imageDetail": "/media/cf6366160dbdf73c-detail.webp"
+      }
     },
     {
       "id": "muddy-boots-mummy-calverly-to-apperley-bridge-circular-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
@@ -7820,7 +7964,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Calverly to Apperley Bridge Circular",
       "summary": "Calverly to Apperley Bridge Circular is 4.5 miles, walking along the canal on a buggy friendly path and back along the riverside (not suitable for buggies) in somewhat muddied conditions!",
-      "imageUrl": null,
+      "imageUrl": "/media/26163e44039b88b9-card.webp",
       "imageAlt": "Calverly to Apperley Bridge Circular",
       "locationLabel": "Yorkshire",
       "postcode": "LS13 1NP",
@@ -7841,7 +7985,10 @@
       ],
       "driveMinutes": 57,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Calverly_War_Memorial.jpg/1280px-Calverly_War_Memorial.jpg",
+        "imageDetail": "/media/26163e44039b88b9-detail.webp"
+      }
     },
     {
       "id": "muddy-boots-mummy-brayton-barff-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
@@ -7849,7 +7996,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Brayton Barff",
       "summary": "Brayton Barff is a lovely short buggy friendly 2km circular walk through woodland, with lots of woodland to explore if you have more time to spend there.",
-      "imageUrl": null,
+      "imageUrl": "/media/813a678430d5999f-card.webp",
       "imageAlt": "Brayton Barff",
       "locationLabel": "Yorkshire",
       "postcode": "YO8 9NJ",
@@ -7872,7 +8019,10 @@
       ],
       "driveMinutes": 57,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Brayton_Barff_-_geograph.org.uk_-_7816085.jpg/1280px-Brayton_Barff_-_geograph.org.uk_-_7816085.jpg",
+        "imageDetail": "/media/813a678430d5999f-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-muker-wildflower-circular-www-thereluctantexplorers-com-muker-circular",
@@ -7947,7 +8097,7 @@
       ],
       "driveMinutes": 58,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": false,
+      "isFree": true,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1312078331",
@@ -7971,7 +8121,7 @@
       },
       "parking": null,
       "cost": "entry point to the falls.",
-      "isFree": false,
+      "isFree": true,
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
@@ -7999,7 +8149,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Bishop Wood",
       "summary": "near Sherburn-in-Elmet, is a lovely area of woodland to explore. Many paths are buggy friendly, but it's probably somewhere to save for if you're already in the area or passing through.",
-      "imageUrl": null,
+      "imageUrl": "/media/292cb01986c13700-card.webp",
       "imageAlt": "Bishop Wood",
       "locationLabel": "Yorkshire",
       "postcode": "LS25 6HN",
@@ -8022,7 +8172,10 @@
       ],
       "driveMinutes": 58,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/0/00/Bishops_Wood_church_01.JPG",
+        "imageDetail": "/media/292cb01986c13700-detail.webp"
+      }
     },
     {
       "id": "muddy-boots-mummy-ardsley-reservoir-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
@@ -8030,7 +8183,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Ardsley Reservoir",
       "summary": "Tingley is a short, buggy friendly 2.5km route. Great for if you want a quick walk and you're in the area, or if you want a breath of fresh air after tackling the White Rose.",
-      "imageUrl": null,
+      "imageUrl": "/media/34baea07749e52bd-card.webp",
       "imageAlt": "Ardsley Reservoir",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -8051,7 +8204,10 @@
       ],
       "driveMinutes": 58,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Ardsley_Reservoir%2C_Tingley%2C_West_Yorkshire_-_geograph.org.uk_-_6556594.jpg/1280px-Ardsley_Reservoir%2C_Tingley%2C_West_Yorkshire_-_geograph.org.uk_-_6556594.jpg",
+        "imageDetail": "/media/34baea07749e52bd-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-ilkley-tarn-www-thereluctantexplorers-com-ilkley-tarn-from-darwin-gardens",
@@ -8101,7 +8257,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "St Aiden",
       "summary": "RSPB reserve in South East Leeds has some good paths that are suitable for buggies. If you want even more variety, this 5.5km route starting from Lemonroyd Marina takes in the canal, a Methley cafe and the best of St Aiden's.",
-      "imageUrl": null,
+      "imageUrl": "/media/96caa4a71fba6de7-card.webp",
       "imageAlt": "St Aiden",
       "locationLabel": "Yorkshire",
       "postcode": "WF5 0HB",
@@ -8124,7 +8280,10 @@
       ],
       "driveMinutes": 59,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/2/29/Aiden_Turner_Super_soap_weekend_2008_081.JPG",
+        "imageDetail": "/media/96caa4a71fba6de7-detail.webp"
+      }
     },
     {
       "id": "muddy-boots-mummy-pontefract-racecourse-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
@@ -8132,7 +8291,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Pontefract Racecourse",
       "summary": "Pontefract Racecourse has a 2mile circuit in pleasant surroundings, with a children's playground and duck lake next to the car park.",
-      "imageUrl": null,
+      "imageUrl": "/media/6c6918bad2995508-card.webp",
       "imageAlt": "Pontefract Racecourse",
       "locationLabel": "Yorkshire",
       "postcode": "WF8 4SR",
@@ -8155,7 +8314,10 @@
       ],
       "driveMinutes": 59,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/5/55/Grandstand_at_Pontefract_Racecourse_%28geograph_2465698%29.jpg",
+        "imageDetail": "/media/6c6918bad2995508-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-great-whernside-www-thereluctantexplorers-com-great-whernside",
@@ -8215,8 +8377,8 @@
         "lng": -2.0507758
       },
       "parking": "Kettlewell, Yorkshire Dales authority pay and display car park. If you find the car park busy, don’t contribute to antisocial parking. Have a plan B. Why not try down the road in Buckden and check out our Cray Gill waterfalls walk instead.",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 4.5,
       "terrain": "gentle",
       "terrainNotes": "Easy terrain but boots required. Clear identifiable footpaths and well signposted. Some ascent 700 feet. Extremely limited road walking (on quiet roads). Be aware there are lots of stiles on this walk. There are aften cows on this walk.",
@@ -8382,8 +8544,8 @@
         "lng": -2.050533
       },
       "parking": "Kettlewell, Yorkshire Dales Pay and Display",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 2,
       "terrain": "gentle",
       "terrainNotes": "Easy footpaths, easy terrain underfoot, little to no ascent. There is some (200 yards) of road walking. Whilst it is a very brief section, the road can be busy, so take care. NOTE: One of the stones has been displaced. Keep your eyes peeled for more. Update due June 2026.",
@@ -8545,7 +8707,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/189083576",
       "title": "Aquarium",
       "summary": "Aquarium",
-      "imageUrl": "/media/0d51a682e64847a0-card.webp",
+      "imageUrl": null,
       "imageAlt": "Aquarium",
       "locationLabel": null,
       "postcode": null,
@@ -8570,9 +8732,7 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "189083576",
-        "tourism": "aquarium",
-        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Amaterske_akvarium.jpg",
-        "imageDetail": "/media/0d51a682e64847a0-detail.webp"
+        "tourism": "aquarium"
       }
     },
     {
@@ -8581,7 +8741,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Thornton-le-Dale and Ellerburn",
       "summary": "Child-friendly trail in North Yorkshire on AllTrails: Thornton-le-Dale and Ellerburn",
-      "imageUrl": null,
+      "imageUrl": "/media/3dcf1482ab1149cc-card.webp",
       "imageAlt": "Thornton-le-Dale and Ellerburn",
       "locationLabel": "North Yorkshire",
       "postcode": "YO18 7RU",
@@ -8602,7 +8762,10 @@
       ],
       "driveMinutes": 61,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Beck_Isle_Cottage_-_geograph.org.uk_-_1719430.jpg",
+        "imageDetail": "/media/3dcf1482ab1149cc-detail.webp"
+      }
     },
     {
       "id": "muddy-boots-mummy-thornes-park-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
@@ -8610,7 +8773,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Thornes Park",
       "summary": "just outside the city centre is great for a potter. The perimeter walk is two miles and buggy friendly. Look out for the aviary, secret garden, duck lake and miniature railway in the summer.",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Thornes_Park_formal_gardens_-_geograph.org.uk_-_1443570.jpg",
+      "imageUrl": "/media/f68066037ae4652a-card.webp",
       "imageAlt": "Thornes Park",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -8632,7 +8795,8 @@
       "driveMinutes": 62,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
       "rawFacts": {
-        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Thornes_Park_formal_gardens_-_geograph.org.uk_-_1443570.jpg"
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Thornes_Park_formal_gardens_-_geograph.org.uk_-_1443570.jpg",
+        "imageDetail": "/media/f68066037ae4652a-detail.webp"
       }
     },
     {
@@ -8641,7 +8805,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Pugneys Country Park",
       "summary": "has a buggy-friendly 2.5k circular walk around the Lake. It has a great play area and LOADS of things to see. It's not the prettiest of Wakefield's parks but probably has the most to do. Pugney's Country Park to Sandal Castle walk is 4 miles and offers great views of the surrounding area. Not buggy friendly.",
-      "imageUrl": null,
+      "imageUrl": "/media/3b863cfc82e74423-card.webp",
       "imageAlt": "Pugneys Country Park",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -8664,7 +8828,10 @@
       ],
       "driveMinutes": 62,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/9/9c/PugneysCountryPark.jpg",
+        "imageDetail": "/media/3b863cfc82e74423-detail.webp"
+      }
     },
     {
       "id": "muddy-boots-mummy-stanley-ferry-and-southern-washlands-nature-reserve-muddybootsmummy-co-uk-family-friendly-walks-in-yor",
@@ -8672,7 +8839,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Stanley Ferry and Southern Washlands Nature Reserve",
       "summary": "Stanley Ferry and Southern Washlands Nature Reserve combines a walk along the canal with woodland, a river and a lake. The walk is just under 3 miles and can be started at the family-friendly Stanley Ferry pub.",
-      "imageUrl": null,
+      "imageUrl": "/media/f64d6d5092e034a0-card.webp",
       "imageAlt": "Stanley Ferry and Southern Washlands Nature Reserve",
       "locationLabel": "Yorkshire",
       "postcode": "WF3 4LT",
@@ -8697,7 +8864,10 @@
       ],
       "driveMinutes": 62,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Southern_Washlands_-_geograph.org.uk_-_1277803.jpg",
+        "imageDetail": "/media/f64d6d5092e034a0-detail.webp"
+      }
     },
     {
       "id": "muddy-boots-mummy-woodcock-way-trail-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
@@ -8705,7 +8875,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Woodcock Way Trail",
       "summary": "The Woodcock Way Trail in the beautiful Dalby Forest is 4.5 miles along forest tracks, with some pretty incredible views.",
-      "imageUrl": null,
+      "imageUrl": "/media/38ee1ff842f1adcd-card.webp",
       "imageAlt": "Woodcock Way Trail",
       "locationLabel": "Yorkshire",
       "postcode": "WF9 2TU",
@@ -8728,7 +8898,10 @@
       ],
       "driveMinutes": 62,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/3/36/Woodland_on_Yondhead_Rigg_by_the_Woodcock_Way_-_geograph.org.uk_-_4582247.jpg",
+        "imageDetail": "/media/38ee1ff842f1adcd-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-swinner-gill-and-crackpot-hall-www-thereluctantexplorers-com-swinner-gill-and-crackpot-hall",
@@ -8746,7 +8919,7 @@
         "lng": -2.1670017
       },
       "parking": "Rukins Campsite Honesty Box car park in Keld.",
-      "cost": "Often free (check parking)",
+      "cost": null,
       "isFree": true,
       "distanceMiles": 4,
       "terrain": "steep",
@@ -8912,7 +9085,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Rodley Nature Reserve",
       "summary": "Rodley Nature Reserve has a visitor's centre where you can pick up a Quiz Trail Guide for children. You can also try pond dipping (between April and October), do a mini beast hunt as well as spot wildlife. Until I get a blog up, visit the website for more details.",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/Rodley_Nature_Reserve_-_geograph.org.uk_-_132045.jpg",
+      "imageUrl": "/media/9a2518d22768d28f-card.webp",
       "imageAlt": "Rodley Nature Reserve",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -8934,7 +9107,8 @@
       "driveMinutes": 63,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
       "rawFacts": {
-        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/d/da/Rodley_Nature_Reserve_-_geograph.org.uk_-_132045.jpg"
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/d/da/Rodley_Nature_Reserve_-_geograph.org.uk_-_132045.jpg",
+        "imageDetail": "/media/9a2518d22768d28f-detail.webp"
       }
     },
     {
@@ -8943,7 +9117,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Oakwell Hall",
       "summary": "nature trail in Birstall is 2miles and heads towards the main facilities half way round to stop for refreshments! Steps and slopes may mean little ones need some help at times- and this route is not suitable for buggies.",
-      "imageUrl": null,
+      "imageUrl": "/media/2444ae16b6b0ea12-card.webp",
       "imageAlt": "Oakwell Hall",
       "locationLabel": "Yorkshire",
       "postcode": "WF17 9LG",
@@ -8964,7 +9138,10 @@
       ],
       "driveMinutes": 63,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/6/66/Oakwell_Hall%2C_west_side_-_geograph.org.uk_-_6515346.jpg",
+        "imageDetail": "/media/2444ae16b6b0ea12-detail.webp"
+      }
     },
     {
       "id": "openstreetmap-tweddle-farm-way-846893594",
@@ -9020,7 +9197,7 @@
         "lng": -1.562912
       },
       "parking": "Parking & Entry at Yorkshire Sculpture Park Parking is now free at Yorkshire Sculpture Park.",
-      "cost": "Entry at Yorkshire Sculpture Park Parking is now free at Yorkshire Sculpture Park.",
+      "cost": null,
       "isFree": true,
       "distanceMiles": null,
       "terrain": "unknown",
@@ -9213,7 +9390,7 @@
       },
       "parking": "parking in main car park, visitors with limited mobility may be dropped off near the house.",
       "cost": "Prices Free entry for National Trust members and under 5s.",
-      "isFree": true,
+      "isFree": false,
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
@@ -9279,7 +9456,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Skipwith Common",
       "summary": "Skipwith Common is a nature reserve-come WW2 bomber training camp. This gorgeous site is really peaceful with loads of interesting finds! The pushchair friendly 2 mile walk is well marked.",
-      "imageUrl": null,
+      "imageUrl": "/media/1c10a119aa10c7ff-card.webp",
       "imageAlt": "Skipwith Common",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -9302,7 +9479,10 @@
       ],
       "driveMinutes": 66,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Path_autumn_skipwith_common_nature_reserve_woods_2.jpg/3840px-Path_autumn_skipwith_common_nature_reserve_woods_2.jpg",
+        "imageDetail": "/media/1c10a119aa10c7ff-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-hell-gill-circular-www-thereluctantexplorers-com-hell-gill-circular-walk-mallerstang",
@@ -9382,7 +9562,7 @@
       "sourceUrl": "https://www.downatthefarm.co.uk/",
       "title": "Down at the Farm",
       "summary": "Petting farm",
-      "imageUrl": null,
+      "imageUrl": "/media/23ac4c103a868e21-card.webp",
       "imageAlt": "Down at the Farm",
       "locationLabel": null,
       "postcode": null,
@@ -9409,7 +9589,9 @@
       "rawFacts": {
         "osmType": "way",
         "osmId": "775325991",
-        "tourism": "zoo"
+        "tourism": "zoo",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/en/a/af/Little_Feat_-_Down_on_the_Farm.jpg",
+        "imageDetail": "/media/23ac4c103a868e21-detail.webp"
       }
     },
     {
@@ -9519,7 +9701,7 @@
       },
       "parking": "Parking is free for up to 2 hours, but you still need to get a ticket from the machine.",
       "cost": "cost to visit?",
-      "isFree": false,
+      "isFree": true,
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
@@ -9637,7 +9819,7 @@
         "lng": -2.3520983
       },
       "parking": "Short: The small car park next to the viaduct on Nateby Road. Longer: There is plenty of parking available in Kirkby Stephen town centre where the walk begins. We parked in the car park opposite the medical centre.",
-      "cost": "Often free (check parking)",
+      "cost": null,
       "isFree": true,
       "distanceMiles": 1.5,
       "terrain": "flat",
@@ -10032,7 +10214,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Ribblehead Viaduct Circular",
       "summary": "Child-friendly trail in North Yorkshire on AllTrails: Ribblehead Viaduct Circular",
-      "imageUrl": null,
+      "imageUrl": "/media/54e9aa246df11b04-card.webp",
       "imageAlt": "Ribblehead Viaduct Circular",
       "locationLabel": "North Yorkshire",
       "postcode": "LA6 3AU",
@@ -10053,7 +10235,10 @@
       ],
       "driveMinutes": 72,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Ribblehead_Viaduct_1.jpg/3840px-Ribblehead_Viaduct_1.jpg",
+        "imageDetail": "/media/54e9aa246df11b04-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-victoria-and-jubilee-caves-www-thereluctantexplorers-com-jubilee-cave-and-victoria-cave-settle",
@@ -10117,7 +10302,7 @@
       },
       "parking": null,
       "cost": "entry to Dalby Forest when you visit car-free.",
-      "isFree": true,
+      "isFree": false,
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
@@ -10144,7 +10329,7 @@
       "sourceUrl": "https://www.holmsidepark.co.uk/",
       "title": "Holmside Park",
       "summary": "Theme park",
-      "imageUrl": "/media/20ed2cc5f8c6d761-card.webp",
+      "imageUrl": "/media/e5f87be98194f160-card.webp",
       "imageAlt": "Holmside Park",
       "locationLabel": "Durham",
       "postcode": "DH7 6EY",
@@ -10165,13 +10350,13 @@
       ],
       "driveMinutes": 73,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1053413135",
         "tourism": "theme_park",
-        "imageRemote": "https://www.holmsidepark.co.uk/wp-content/uploads/2018/05/skbg3.jpg",
-        "imageDetail": "/media/20ed2cc5f8c6d761-detail.webp"
+        "imageRemote": "https://www.holmsidepark.co.uk/wp-content/uploads/2023/04/20-12.jpg",
+        "imageDetail": "/media/e5f87be98194f160-detail.webp"
       }
     },
     {
@@ -10180,7 +10365,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Deffer Wood",
       "summary": "Deffer Wood is simply glorious. Enjoy a 4km circular walk from Cannon Hall, enjoying good scenery and a good chance of animals.",
-      "imageUrl": null,
+      "imageUrl": "/media/f13bb6ae23507331-card.webp",
       "imageAlt": "Deffer Wood",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -10203,7 +10388,10 @@
       ],
       "driveMinutes": 73,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/5/58/Deffer_Wood_-_geograph.org.uk_-_95971.jpg",
+        "imageDetail": "/media/f13bb6ae23507331-detail.webp"
+      }
     },
     {
       "id": "alltrails-settle-clay-pits-and-victoria-cave-circular-www-alltrails-com-en-gb-england-north-yorkshire-kids",
@@ -10211,7 +10399,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Settle, Clay Pits, and Victoria Cave Circular",
       "summary": "This is a beautiful circular trail from Settle in the Yorkshire Dales in North Yorkshire. The highlights of this walk are the great views of Pen-y-ghent and Ingleborough, two of the three Yorkshire Peaks. The caves add intrigue to the walk and being so close to the Warrendale Knotts is awesome. The terrain is rugged in places, with some steep gradients so care is needed with footing, especially near the caves. You will need to negotiate several gates, some steps plus one stile. Appropriate... ### More child-friendly trails - Easby Abbey and Richmond Station - Helmsley to Rievaulx Abbey - Hackfall Explorer - Ribble Head Circular - Brimham Rocks and Brimham Moor Circular - Aysgarth Waterfalls ",
-      "imageUrl": null,
+      "imageUrl": "/media/ca4d3f9f80fd1810-card.webp",
       "imageAlt": "Settle, Clay Pits, and Victoria Cave Circular",
       "locationLabel": "North Yorkshire",
       "postcode": null,
@@ -10236,7 +10424,10 @@
       ],
       "driveMinutes": 73,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Matthew_Settle.jpg",
+        "imageDetail": "/media/ca4d3f9f80fd1810-detail.webp"
+      }
     },
     {
       "id": "national-trust-wentworth-castle-gardens-90008",
@@ -10484,8 +10675,8 @@
         "lng": -2.4556961
       },
       "parking": "The centre of Dent at the pay and display village car park. This car park is a decent size, if it’s full, try a walk in Sedbergh .",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 1,
       "terrain": "steep",
       "terrainNotes": "Well signposted clear and obvious tracks for the most part. There is some short road walking on an extremely quiet road. Part of the path by the river is prone to flooding and can get muddy but don’t worry, there’s a detour! There is a some steep ascent during the first stages of this walk. If you head to see the dancing flags, be aware that limestone can be very slippery when wet.",
@@ -10532,8 +10723,8 @@
         "lng": -2.2761813
       },
       "parking": "Stainforth Pay and Display. If you find the car park is too busy have a plan B! Why not try our Settle caves walk down the road, or a walk at the Ribblehead Viaduct ? In 2025, the renovations to the Langcliffe Quarry trail were completed and now there is a large car park located at the trail on Hoffman Kiln Road. If you’d rather park there, you can still do this walk, but start at point 3.",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 4,
       "terrain": "hilly",
       "terrainNotes": "Well signposted route. Defined footpaths.. Some brief road walking at the start, and there is the necessity to cross a road in the middle, but there are pavements. Otherwise grassy tracks with minimal ascent. This route can get extremely muddy by the river after wet weather so be prepared!",
@@ -10622,8 +10813,8 @@
         "lng": -2.2758165
       },
       "parking": "Stainforth Pay and Display. If the car park is full, try a different walk nearby, perhaps the Ribblehead Viaduct or the Settle Caves",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 1,
       "terrain": "unknown",
       "terrainNotes": null,
@@ -10655,7 +10846,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Grosmont to Goathland Rail Trail",
       "summary": "The Grosmont to Goathland Rail Trail is 3.6 miles, follows the old tramway line, built by George Stephenson. It's a lovely walk, with the added benefit of having an excuse to go on the train!",
-      "imageUrl": null,
+      "imageUrl": "/media/4cd6eb9aac2f5b3a-card.webp",
       "imageAlt": "Grosmont to Goathland Rail Trail",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -10676,7 +10867,10 @@
       ],
       "driveMinutes": 77,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Grosmont_railway_station_MMB_03.jpg",
+        "imageDetail": "/media/4cd6eb9aac2f5b3a-detail.webp"
+      }
     },
     {
       "id": "openstreetmap-yorkshire-wildlife-park-relation-14187082",
@@ -10724,7 +10918,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Rabbit Ings",
       "summary": "Rabbit Ings in Barnsley is a lovely little park if you're local and want somewhere with good views and masses of wildflowers!",
-      "imageUrl": null,
+      "imageUrl": "/media/8ac0c873bb06a26e-card.webp",
       "imageAlt": "Rabbit Ings",
       "locationLabel": "Yorkshire",
       "postcode": "S71 4BB",
@@ -10745,7 +10939,10 @@
       ],
       "driveMinutes": 79,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/0/09/Footpath_to_Rabbit_Ings_-_geograph.org.uk_-_2272205.jpg",
+        "imageDetail": "/media/8ac0c873bb06a26e-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-pen-y-ghent-and-hull-pot-www-thereluctantexplorers-com-pen-y-ghent-circular-walk",
@@ -10763,8 +10960,8 @@
         "lng": -2.295792
       },
       "parking": "There is plenty of parking available in Horton in Ribblesdale as it is the start of the Yorkshire Three Peaks challenge. However be aware that these parking areas can get busy in peak times, so we recommend getting there early! This walk starts and ends at the Yorkshire Dales Pay and Display Car Park where you’ll also find the toilets. Please also be respectful of the residents of Horton. They have a HUGE influx of visitors during peak seasons. Adhere to ay parking requests and don’t block any access points.",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 7,
       "terrain": "steep",
       "terrainNotes": "Very easy to identify and well walked and signposted paths. There is a scramble required to reach the top, which is why we recommend going up from the South face of Pen y Ghent with kids. There are steep unguarded drops.",
@@ -10852,8 +11049,8 @@
         "lng": -2.4686244
       },
       "parking": "Ingleton: One of the many pay and display car parks in Ingleton. This route starts from the bus stop in the Community Centre pay and display.",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 7,
       "terrain": "steep",
       "terrainNotes": "Ingleton and Clapham: Very well walked and signposted paths. In good visibility, this walk is very easy to navigate. In poor visibility, the summit of Ingleborough is a challenge, as it is a relatively flat and featureless plateau surrounded by steep drops, therefore navigation skills and a map are required (see pictures for poor visibility)",
@@ -11010,8 +11207,8 @@
         "lng": -2.5254471
       },
       "parking": "At Joss Lane pay and display car park in the centre of Sedbergh. This is a decent sized car park, but on the off-chance you do find it busy, make sure you have a plan B. Why not try one of our other Westmorland Dales walks.",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 4.5,
       "terrain": "hilly",
       "terrainNotes": "Varied. Mostly grassy paths, with muddy areas. Some limited road walking. A map and mapping app is essential as you will be climbing onto open fell although paths are largely clear to see. Ascent in the region of 360m.",
@@ -11057,8 +11254,8 @@
         "lng": -2.3906633
       },
       "parking": "Clapham Pay and Display (charges apply)",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 6,
       "terrain": "hilly",
       "terrainNotes": "Easily identifiable paths. Some signposting. Uneven ground underfoot. Some clambering involved at Trow Gill. Ascent just over 250m.",
@@ -11113,7 +11310,7 @@
       ],
       "driveMinutes": 82,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "185590965",
@@ -11129,7 +11326,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Ingleton Waterfalls Trail",
       "summary": "The Ingleton Waterfalls Trail is perhaps one of Yorkshire's most famous walks. You might have to share the path with others, but it's certainly worth it for those views!",
-      "imageUrl": null,
+      "imageUrl": "/media/52536c610f8b8fa4-card.webp",
       "imageAlt": "Ingleton Waterfalls Trail",
       "locationLabel": "Yorkshire",
       "postcode": "LA6 3JJ",
@@ -11152,7 +11349,10 @@
       ],
       "driveMinutes": 82,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Ingleton_Waterfalls_Walk_-_geograph.org.uk_-_2139987.jpg",
+        "imageDetail": "/media/52536c610f8b8fa4-detail.webp"
+      }
     },
     {
       "id": "alltrails-whitby-abbey-and-the-dracula-trail-www-alltrails-com-en-gb-england-north-yorkshire-kids",
@@ -11160,7 +11360,7 @@
       "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
       "title": "Whitby Abbey and The Dracula Trail",
       "summary": "Child-friendly trail in North Yorkshire on AllTrails: Whitby Abbey and The Dracula Trail",
-      "imageUrl": null,
+      "imageUrl": "/media/d318bbc897ce7552-card.webp",
       "imageAlt": "Whitby Abbey and The Dracula Trail",
       "locationLabel": "North Yorkshire",
       "postcode": "YO22 4JR",
@@ -11183,7 +11383,10 @@
       ],
       "driveMinutes": 82,
       "lastSyncedAt": "2026-07-28T19:37:33.950Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/125_Years_of_Dracula_at_Whitby_Abbey_-_geograph.org.uk_-_7249910.jpg/1280px-125_Years_of_Dracula_at_Whitby_Abbey_-_geograph.org.uk_-_7249910.jpg",
+        "imageDetail": "/media/d318bbc897ce7552-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-the-norber-erratics-www-thereluctantexplorers-com-the-norber-erratics",
@@ -11201,8 +11404,8 @@
         "lng": -2.3903039
       },
       "parking": "Clapham Pay and Display car park (What 3 Words dwelled.backers.aimlessly)",
-      "cost": "Parking charges may apply",
-      "isFree": false,
+      "cost": null,
+      "isFree": true,
       "distanceMiles": 5,
       "terrain": "unknown",
       "terrainNotes": "Easily identifiable paths. The Erratics themselves have many paths winding round them all, most of the route is on a wide stony track.",
@@ -11235,7 +11438,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Bronte Falls Circular Walk",
       "summary": "Bronte Falls Circular Walk is 8km, starting in Haworth and takes you through Penistone Country Park to the falls with views over Lower Laithe Reservoir.",
-      "imageUrl": null,
+      "imageUrl": "/media/3269c21ad51e6806-card.webp",
       "imageAlt": "Bronte Falls Circular Walk",
       "locationLabel": "Yorkshire",
       "postcode": "BD22 9RQ",
@@ -11256,7 +11459,10 @@
       ],
       "driveMinutes": 83,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Bronte_Falls_-_geograph.org.uk_-_90342.jpg",
+        "imageDetail": "/media/3269c21ad51e6806-detail.webp"
+      }
     },
     {
       "id": "muddy-boots-mummy-langsett-reservoir-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
@@ -11264,7 +11470,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Langsett Reservoir",
       "summary": "Langsett Reservoir is also 3 miles. It's more challenging for young children, (and not suitable for buggies), but is absolutely worth it!",
-      "imageUrl": null,
+      "imageUrl": "/media/6b8651169a8f3f15-card.webp",
       "imageAlt": "Langsett Reservoir",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -11285,7 +11491,10 @@
       ],
       "driveMinutes": 84,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Langsett_Reservoir_from_Hingcliff_Common.jpg/1280px-Langsett_Reservoir_from_Hingcliff_Common.jpg",
+        "imageDetail": "/media/6b8651169a8f3f15-detail.webp"
+      }
     },
     {
       "id": "openstreetmap-scarborough-sea-life-centre-way-101836220",
@@ -11443,7 +11652,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/571089415",
       "title": "Memorial Gardens Aviary",
       "summary": "Zoo / wildlife. Free entry",
-      "imageUrl": null,
+      "imageUrl": "/media/2349b3cc0e5905ad-card.webp",
       "imageAlt": "Memorial Gardens Aviary",
       "locationLabel": null,
       "postcode": null,
@@ -11471,7 +11680,9 @@
         "osmType": "way",
         "osmId": "571089415",
         "tourism": "zoo",
-        "fee": "no"
+        "fee": "no",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/6/63/Aviary_in_memorial_garden%2C_Murray_Street%2C_Filey_-_geograph.org.uk_-_6848173.jpg",
+        "imageDetail": "/media/2349b3cc0e5905ad-detail.webp"
       }
     },
     {
@@ -11480,7 +11691,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Northwood Trail",
       "summary": "The Northwood Trail outside York is a 1.5km woodland walk, with a touch of magic! Gorgeous intricate Fairy homes are dotted about along the trail. It's a bit pricey, so make the most of it if you go!",
-      "imageUrl": null,
+      "imageUrl": "/media/1386a2cdfe5841b7-card.webp",
       "imageAlt": "Northwood Trail",
       "locationLabel": "Yorkshire",
       "postcode": "S6 1RZ",
@@ -11503,7 +11714,10 @@
       ],
       "driveMinutes": 87,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/9/91/Former_Post_Office%2C_Northwood%2C_Middlesex.jpg",
+        "imageDetail": "/media/1386a2cdfe5841b7-detail.webp"
+      }
     },
     {
       "id": "reluctant-explorers-yordas-cave-www-thereluctantexplorers-com-yordas-cave",
@@ -11594,7 +11808,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Rother Valley Country Park",
       "summary": "Rother Valley Country Park is only a few minutes from the M1 but is a great easy-access walk with lots to see!",
-      "imageUrl": null,
+      "imageUrl": "/media/f3e4789c7a0ad1fd-card.webp",
       "imageAlt": "Rother Valley Country Park",
       "locationLabel": "Yorkshire",
       "postcode": "S26 5PQ",
@@ -11615,7 +11829,10 @@
       ],
       "driveMinutes": 88,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/en/f/fb/Rothervalley_1.jpg",
+        "imageDetail": "/media/f3e4789c7a0ad1fd-detail.webp"
+      }
     },
     {
       "id": "openstreetmap-playdale-farm-park-way-771362482",
@@ -11623,7 +11840,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/771362482",
       "title": "Playdale Farm Park",
       "summary": "Petting farm",
-      "imageUrl": null,
+      "imageUrl": "/media/385c25618c7a9573-card.webp",
       "imageAlt": "Playdale Farm Park",
       "locationLabel": null,
       "postcode": null,
@@ -11646,11 +11863,13 @@
       ],
       "driveMinutes": 89,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "771362482",
-        "tourism": "zoo"
+        "tourism": "zoo",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Go_karts_at_Playdale_Farm_Park_-_geograph.org.uk_-_4219134.jpg/1280px-Go_karts_at_Playdale_Farm_Park_-_geograph.org.uk_-_4219134.jpg",
+        "imageDetail": "/media/385c25618c7a9573-detail.webp"
       }
     },
     {
@@ -11810,7 +12029,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Harland Way",
       "summary": "between Wetherby and Spofforth is 3 miles in each direction… and a great route for the little bikers out there!",
-      "imageUrl": null,
+      "imageUrl": "/media/1da2fdd551a6d097-card.webp",
       "imageAlt": "Harland Way",
       "locationLabel": "Yorkshire",
       "postcode": "HU16 5PU",
@@ -11831,7 +12050,10 @@
       ],
       "driveMinutes": 92,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Harland_Way_-_Wetherby_triangle_-_geograph.org.uk_-_490858.jpg",
+        "imageDetail": "/media/1da2fdd551a6d097-detail.webp"
+      }
     },
     {
       "id": "muddy-boots-mummy-damflask-reservoir-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
@@ -11839,7 +12061,7 @@
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Damflask Reservoir",
       "summary": "Damflask Reservoir is 3.5 miles around its perimeter, suitable for buggies. Visit the School Rooms in Low Bradfield for family friendly food and a play area for under 10s.",
-      "imageUrl": null,
+      "imageUrl": "/media/aac15f8904404b62-card.webp",
       "imageAlt": "Damflask Reservoir",
       "locationLabel": "Yorkshire",
       "postcode": null,
@@ -11860,7 +12082,10 @@
       ],
       "driveMinutes": 92,
       "lastSyncedAt": "2026-07-28T19:37:26.012Z",
-      "rawFacts": {}
+      "rawFacts": {
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Damflask_Reservoir_-_geograph.org.uk_-_2195020.jpg",
+        "imageDetail": "/media/aac15f8904404b62-detail.webp"
+      }
     },
     {
       "id": "openstreetmap-let-loose-adventure-park-way-1445835698",
@@ -11868,7 +12093,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/1445835698",
       "title": "Let Loose! Adventure Park",
       "summary": "Theme park",
-      "imageUrl": null,
+      "imageUrl": "/media/7c02f058ab2d4d8e-card.webp",
       "imageAlt": "Let Loose! Adventure Park",
       "locationLabel": null,
       "postcode": null,
@@ -11889,11 +12114,13 @@
       ],
       "driveMinutes": 95,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "1445835698",
-        "tourism": "theme_park"
+        "tourism": "theme_park",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/en/8/88/Adventures_In_Babysitting.jpg",
+        "imageDetail": "/media/7c02f058ab2d4d8e-detail.webp"
       }
     },
     {
@@ -11948,9 +12175,9 @@
         "lat": 54.273796,
         "lng": -0.686289
       },
-      "parking": null,
-      "cost": "Admission to Dalby Forest is free, just pay to park.",
-      "isFree": false,
+      "parking": "Admission to Dalby Forest is free, just pay to park.",
+      "cost": null,
+      "isFree": true,
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
@@ -11975,7 +12202,7 @@
       "sourceUrl": "https://www.sewerbyhall.co.uk/zoo/",
       "title": "Sewerby Zoo",
       "summary": "Zoo / wildlife. Hours: Mar 23-Sep 29 10:00-16:30. Admission charged (see website)",
-      "imageUrl": null,
+      "imageUrl": "/media/09f749b9ce83a6ca-card.webp",
       "imageAlt": "Sewerby Zoo",
       "locationLabel": null,
       "postcode": null,
@@ -12004,7 +12231,9 @@
         "osmId": "316870160",
         "tourism": "zoo",
         "fee": "yes",
-        "openingHours": "Mar 23-Sep 29 10:00-16:30"
+        "openingHours": "Mar 23-Sep 29 10:00-16:30",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Polytelis_swainsonii_-Sewerby_Zoo_-Yorkshire-6a.jpg/1280px-Polytelis_swainsonii_-Sewerby_Zoo_-Yorkshire-6a.jpg",
+        "imageDetail": "/media/09f749b9ce83a6ca-detail.webp"
       }
     },
     {
@@ -12013,7 +12242,7 @@
       "sourceUrl": "https://www.openstreetmap.org/way/614823994",
       "title": "Bayside Fun Park",
       "summary": "Theme park",
-      "imageUrl": null,
+      "imageUrl": "/media/4d988fa8c43734cb-card.webp",
       "imageAlt": "Bayside Fun Park",
       "locationLabel": null,
       "postcode": null,
@@ -12034,11 +12263,13 @@
       ],
       "driveMinutes": 100,
       "lastSyncedAt": "2026-07-28T19:36:47.333Z",
-      "isFree": true,
+      "isFree": false,
       "rawFacts": {
         "osmType": "way",
         "osmId": "614823994",
-        "tourism": "theme_park"
+        "tourism": "theme_park",
+        "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Fairground_rides%2C_Bayside_Fun_Park_-_geograph.org.uk_-_7108896.jpg/1280px-Fairground_rides%2C_Bayside_Fun_Park_-_geograph.org.uk_-_7108896.jpg",
+        "imageDetail": "/media/4d988fa8c43734cb-detail.webp"
       }
     },
     {

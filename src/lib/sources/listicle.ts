@@ -60,6 +60,14 @@ export async function itemsToActivities(
 
     const terrainInfo = inferTerrain(item.terrainHint ?? null, ownText);
     const features = extractFeatures(title, ownText);
+    const parkingOnly = extractParkingOnlyCost(item.summary);
+    const rawCost = extractCost(item.summary);
+    // Keep parking-only wording out of "cost" so free/paid is about admission.
+    const cost =
+      parkingOnly && rawCost && /pay to park|parking/i.test(rawCost)
+        ? null
+        : rawCost;
+    const parking = extractParking(item.summary) || parkingOnly;
 
     activities.push({
       id: slugId(opts.source, title, opts.sourceUrl),
@@ -73,8 +81,8 @@ export async function itemsToActivities(
       postcode: postcode || coords.postcode || null,
       what3words: null,
       coordinates: { lat: coords.lat, lng: coords.lng },
-      parking: extractParking(item.summary),
-      cost: extractCost(item.summary),
+      parking,
+      cost,
       isFree: null,
       distanceMiles:
         parseDistanceMiles(item.distanceHint ?? "") ??
@@ -115,6 +123,13 @@ function extractParking(text: string): string | null {
 function extractCost(text: string): string | null {
   const m = text.match(
     /(?:Admission|Entry|Ticket|Free admission|just pay to park|pay to park)[^.?]{0,140}[.!?]/i,
+  );
+  return m?.[0]?.trim() ?? null;
+}
+
+function extractParkingOnlyCost(text: string): string | null {
+  const m = text.match(
+    /(?:just pay to park|pay to park|parking charges?|pay (?:and|&) display)[^.?]{0,140}[.!?]/i,
   );
   return m?.[0]?.trim() ?? null;
 }

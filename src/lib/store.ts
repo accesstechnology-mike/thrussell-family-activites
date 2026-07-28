@@ -31,7 +31,8 @@ export async function readStore(): Promise<ActivityStore> {
     }
     parsed.activities = parsed.activities.map((a) => ({
       ...a,
-      isFree: a.isFree ?? isFreeActivity(a),
+      // Always recompute — stored flags go stale when detection rules change.
+      isFree: isFreeActivity({ ...a, isFree: null }),
       rawFacts: a.rawFacts ?? {},
     }));
     return parsed;

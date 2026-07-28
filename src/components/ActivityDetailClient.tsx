@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {
+  DEFAULT_FILTERS,
+  homeHrefFromFilters,
+  readStoredFilters,
+} from "@/lib/filter-state";
 import { detailImageUrl } from "@/lib/image-urls";
 import type { Activity, DirectionsLinks, WeatherSnapshot } from "@/lib/types";
 
@@ -94,7 +99,12 @@ export function ActivityDetailClient({
   originPostcode,
 }: Props) {
   const [copied, setCopied] = useState(false);
+  const [backHref, setBackHref] = useState("/");
   const image = detailImageUrl(activity);
+
+  useEffect(() => {
+    setBackHref(homeHrefFromFilters(readStoredFilters() ?? DEFAULT_FILTERS));
+  }, []);
 
   async function copyTesla() {
     try {
@@ -108,7 +118,7 @@ export function ActivityDetailClient({
 
   return (
     <div className="page-shell">
-      <Link href="/" className="back-link">
+      <Link href={backHref} className="back-link">
         ← Back to outings
       </Link>
 

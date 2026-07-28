@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { serializeActivity } from "@/lib/agent";
 import {
+  matchesOutingKindFilter,
+  outingKind,
+  type OutingKindFilter,
+} from "@/lib/outing-kind";
+import {
   catalogueFromStore,
   isSource,
   isTerrain,
@@ -44,7 +49,10 @@ export async function GET(req: NextRequest) {
   const ids = parseCsv(searchParams.get("ids"));
 
   if (sourceRaw && !isSource(sourceRaw)) {
-    return NextResponse.json({ error: `Unknown source: ${sourceRaw}` }, { status: 400 });
+    return NextResponse.json(
+      { error: `Unknown source: ${sourceRaw}` },
+      { status: 400 },
+    );
   }
   for (const s of sourcesRaw) {
     if (!isSource(s)) {
@@ -52,7 +60,10 @@ export async function GET(req: NextRequest) {
     }
   }
   if (terrainRaw && !isTerrain(terrainRaw)) {
-    return NextResponse.json({ error: `Unknown terrain: ${terrainRaw}` }, { status: 400 });
+    return NextResponse.json(
+      { error: `Unknown terrain: ${terrainRaw}` },
+      { status: 400 },
+    );
   }
   for (const t of terrainsRaw) {
     if (!isTerrain(t)) {
@@ -72,10 +83,13 @@ export async function GET(req: NextRequest) {
   const freeOnly =
     parseBooleanFlag(searchParams.get("free")) ||
     parseBooleanFlag(searchParams.get("freeOnly"));
+  const kindRaw = searchParams.get("kind");
+  const kind: OutingKindFilter =
+    kindRaw === "walks" || kindRaw === "attractions" ? kindRaw : "all";
   const sort = parseSort(searchParams.get("sort"));
   const view = parseView(searchParams.get("view"));
 
-  const { store, activities, total, applied } = await listActivities({
+  const { store, activities: listed, applied } = await listActivities({
     feature,
     features,
     source: sourceRaw as ActivitySource | null,
@@ -92,9 +106,18 @@ export async function GET(req: NextRequest) {
         : null,
     freeOnly,
     sort,
-    limit,
-    offset,
+    // Apply kind filter before pagination so limit/offset stay correct.
+    limit: undefined,
+    offset: undefined,
   });
+
+  const kindFiltered = listed.filter((a) =>
+    matchesOutingKindFilter(outingKind(a), kind),
+  );
+  const total = kindFiltered.length;
+  const start = offset ?? 0;
+  const activities =
+    limit != null ? kindFiltered.slice(start, start + limit) : kindFiltered.slice(start);
 
   const catalogue = catalogueFromStore(store);
 
@@ -105,12 +128,15 @@ export async function GET(req: NextRequest) {
     count: activities.length,
     total,
     view,
-    applied,
+    applied: { ...applied, kind, limit: limit ?? null, offset: start },
     features: catalogue.features,
     sources: catalogue.sources,
     terrains: catalogue.terrains,
     categories: catalogue.categories,
     sourceStatuses: store.sourceStatuses,
-    activities: activities.map((a) => serializeActivity(a, view)),
+    activities: activities.map((a) => ({
+      ...serializeActivity(a, view),
+      kind: outingKind(a),
+    })),
   });
 }
