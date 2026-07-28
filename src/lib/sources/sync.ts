@@ -6,21 +6,24 @@ import type { Activity, SourceStatus, SyncResult } from "../types";
 import { fetchEnglishHeritage } from "./english-heritage";
 import { fetchNationalTrust } from "./national-trust";
 import { fetchReluctantExplorers } from "./reluctant-explorers";
+import { fetchTeessideFamilyLife } from "./teesside-family-life";
+import { fetchYorkshireTots } from "./yorkshire-tots";
 
 function dedupe(activities: Activity[]): Activity[] {
   const byKey = new Map<string, Activity>();
   for (const activity of activities) {
-    const key = `${activity.sourceUrl}|${activity.title.toLowerCase()}`;
+    // Collapse obvious same-place overlaps across blogs by normalised title.
+    const key = activity.title.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
     const existing = byKey.get(key);
     if (!existing) {
       byKey.set(key, activity);
       continue;
     }
-    // Prefer the richer record (more features / image / parking).
     const score = (a: Activity) =>
       (a.imageUrl ? 2 : 0) +
       (a.parking ? 1 : 0) +
-      (a.what3words ? 1 : 0) +
+      (a.what3words ? 2 : 0) +
+      (a.source === "reluctant-explorers" ? 3 : 0) +
       a.features.length;
     if (score(activity) > score(existing)) byKey.set(key, activity);
   }
@@ -62,9 +65,10 @@ async function runSource(
 
 export async function syncAllSources(): Promise<SyncResult> {
   const origin = await getOrigin();
-  // ~90 minutes driving ≈ ~80 miles upper bound for NT radius search
   const radiusMiles = 80;
 
+  // Core geo APIs in parallel; blog scrapers sequential so they don't trip
+  // WAF / Nominatim limits when competing with each other.
   const [tre, nt, eh] = await Promise.all([
     runSource("reluctant-explorers", () => fetchReluctantExplorers()),
     runSource("national-trust", () =>
@@ -74,11 +78,17 @@ export async function syncAllSources(): Promise<SyncResult> {
       fetchEnglishHeritage(origin.location),
     ),
   ]);
+  const yt = await runSource("yorkshire-tots", () => fetchYorkshireTots());
+  const tfl = await runSource("teesside-family-life", () =>
+    fetchTeessideFamilyLife(),
+  );
 
   const merged = dedupe([
     ...tre.activities,
     ...nt.activities,
     ...eh.activities,
+    ...yt.activities,
+    ...tfl.activities,
   ]);
 
   const driveTimes = await getDriveTimesMinutes(
@@ -95,12 +105,16 @@ export async function syncAllSources(): Promise<SyncResult> {
       (a) => a.driveMinutes != null && a.driveMinutes <= MAX_DRIVE_MINUTES,
     );
 
-  const statuses: SourceStatus[] = [tre.status, nt.status, eh.status].map(
-    (status) => ({
-      ...status,
-      kept: withinRange.filter((a) => a.source === status.source).length,
-    }),
-  );
+  const statuses: SourceStatus[] = [
+    tre.status,
+    nt.status,
+    eh.status,
+    yt.status,
+    tfl.status,
+  ].map((status) => ({
+    ...status,
+    kept: withinRange.filter((a) => a.source === status.source).length,
+  }));
 
   const store = {
     version: 1 as const,

@@ -6,7 +6,9 @@ export type LatLng = {
 export type ActivitySource =
   | "reluctant-explorers"
   | "national-trust"
-  | "english-heritage";
+  | "english-heritage"
+  | "yorkshire-tots"
+  | "teesside-family-life";
 
 export type TerrainLevel = "flat" | "gentle" | "hilly" | "steep" | "unknown";
 

@@ -7,6 +7,8 @@ Kids browse big picture cards (fun bits, terrain, drive time). Grown-ups open th
 ## Sources (polled, stored locally)
 
 - **The Reluctant Explorers** — Google My Maps KML + walk page enrichment (distance, terrain, parking, what3words, amenities)
+- **Yorkshire Tots to Teens** — family walk posts from their Yorkshire walks hubs
+- **Teesside Family Life** — North Yorkshire outdoor guides via WordPress API
 - **National Trust** — public places search near home
 - **English Heritage** — public places listing near home
 
