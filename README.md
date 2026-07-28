@@ -6,13 +6,17 @@ Kids browse big picture cards (fun bits, terrain, drive time). Grown-ups open th
 
 ## Sources (polled, stored locally)
 
-- **The Reluctant Explorers** — Google My Maps KML + walk page enrichment (distance, terrain, parking, what3words, amenities)
-- **Yorkshire Tots to Teens** — family walk posts from their Yorkshire walks hubs
+- **The Reluctant Explorers** — Google My Maps KML + walk page enrichment
+- **Yorkshire Tots to Teens** — family walk posts from Yorkshire walks hubs
 - **Teesside Family Life** — North Yorkshire outdoor guides via WordPress API
-- **National Trust** — public places search near home
-- **English Heritage** — public places listing near home
+- **Muddy Boots Mummy** — Yorkshire family walks roundup
+- **Little Vikings** — York & Yorkshire family walks guide
+- **AllTrails** — North Yorkshire child-friendly trails
+- **National Trust** / **English Heritage** — places near home
 
-Results are filtered by real **OSRM** drive time from the live geocode of `YO7 4SQ` (via postcodes.io). The local cache lives at `data/activities.json`.
+Cross-source duplicates are collapsed by normalised place name + proximity (richer records win; Reluctant Explorers preferred when tied).
+
+Results are filtered by real **OSRM** drive time from the live geocode of `YO7 4SQ` (via postcodes.io). Activity cache: `data/activities.json`. Cloudflare-prone pages also keep a last-good HTML snapshot under `data/source-cache/` (`npm run sync:refresh-cache`).
 
 ## Develop
 

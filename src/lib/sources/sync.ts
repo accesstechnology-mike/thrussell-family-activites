@@ -3,31 +3,79 @@ import { getDriveTimesMinutes } from "../drive-times";
 import { getOrigin } from "../origin";
 import { writeStore } from "../store";
 import type { Activity, SourceStatus, SyncResult } from "../types";
+import { fetchAllTrailsKids } from "./alltrails";
 import { fetchEnglishHeritage } from "./english-heritage";
+import { haversineKm, normalisedPlaceKey } from "./listicle";
+import { fetchLittleVikings } from "./little-vikings";
+import { fetchMuddyBootsMummy } from "./muddy-boots-mummy";
 import { fetchNationalTrust } from "./national-trust";
 import { fetchReluctantExplorers } from "./reluctant-explorers";
 import { fetchTeessideFamilyLife } from "./teesside-family-life";
 import { fetchYorkshireTots } from "./yorkshire-tots";
 
+function scoreActivity(a: Activity): number {
+  // Prefer detailed primary sources over listicle blurbs when places overlap.
+  const sourceBoost =
+    a.source === "reluctant-explorers"
+      ? 50
+      : a.source === "national-trust"
+        ? 20
+        : a.source === "yorkshire-tots"
+          ? 10
+          : 0;
+  return (
+    sourceBoost +
+    (a.imageUrl ? 2 : 0) +
+    (a.parking ? 2 : 0) +
+    (a.what3words ? 4 : 0) +
+    (a.distanceMiles != null ? 1 : 0) +
+    Math.min(a.features.length, 6)
+  );
+}
+
+/** Collapse same place across sources by normalised title and/or proximity. */
 function dedupe(activities: Activity[]): Activity[] {
-  const byKey = new Map<string, Activity>();
+  const kept: Activity[] = [];
+
   for (const activity of activities) {
-    // Collapse obvious same-place overlaps across blogs by normalised title.
-    const key = activity.title.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-    const existing = byKey.get(key);
-    if (!existing) {
-      byKey.set(key, activity);
+    const key = normalisedPlaceKey(activity.title);
+    const duplicateIndex = kept.findIndex((existing) => {
+      const existingKey = normalisedPlaceKey(existing.title);
+      if (key && existingKey && key === existingKey) return true;
+      if (
+        key &&
+        existingKey &&
+        (key.includes(existingKey) || existingKey.includes(key)) &&
+        Math.min(key.length, existingKey.length) >= 6
+      ) {
+        return haversineKm(existing.coordinates, activity.coordinates) < 1.2;
+      }
+      return (
+        haversineKm(existing.coordinates, activity.coordinates) < 0.45 &&
+        tokenOverlap(existingKey, key) >= 0.5
+      );
+    });
+
+    if (duplicateIndex < 0) {
+      kept.push(activity);
       continue;
     }
-    const score = (a: Activity) =>
-      (a.imageUrl ? 2 : 0) +
-      (a.parking ? 1 : 0) +
-      (a.what3words ? 2 : 0) +
-      (a.source === "reluctant-explorers" ? 3 : 0) +
-      a.features.length;
-    if (score(activity) > score(existing)) byKey.set(key, activity);
+
+    if (scoreActivity(activity) > scoreActivity(kept[duplicateIndex]!)) {
+      kept[duplicateIndex] = activity;
+    }
   }
-  return [...byKey.values()];
+
+  return kept;
+}
+
+function tokenOverlap(a: string, b: string): number {
+  const as = new Set(a.split(" ").filter((t) => t.length > 2));
+  const bs = new Set(b.split(" ").filter((t) => t.length > 2));
+  if (!as.size || !bs.size) return 0;
+  let overlap = 0;
+  for (const t of as) if (bs.has(t)) overlap += 1;
+  return overlap / Math.max(as.size, bs.size);
 }
 
 async function runSource(
@@ -67,8 +115,6 @@ export async function syncAllSources(): Promise<SyncResult> {
   const origin = await getOrigin();
   const radiusMiles = 80;
 
-  // Core geo APIs in parallel; blog scrapers sequential so they don't trip
-  // WAF / Nominatim limits when competing with each other.
   const [tre, nt, eh] = await Promise.all([
     runSource("reluctant-explorers", () => fetchReluctantExplorers()),
     runSource("national-trust", () =>
@@ -78,10 +124,17 @@ export async function syncAllSources(): Promise<SyncResult> {
       fetchEnglishHeritage(origin.location),
     ),
   ]);
+
+  // Blog / CF-prone sources sequential
   const yt = await runSource("yorkshire-tots", () => fetchYorkshireTots());
   const tfl = await runSource("teesside-family-life", () =>
     fetchTeessideFamilyLife(),
   );
+  const mbm = await runSource("muddy-boots-mummy", () =>
+    fetchMuddyBootsMummy(),
+  );
+  const lv = await runSource("little-vikings", () => fetchLittleVikings());
+  const at = await runSource("alltrails", () => fetchAllTrailsKids());
 
   const merged = dedupe([
     ...tre.activities,
@@ -89,6 +142,9 @@ export async function syncAllSources(): Promise<SyncResult> {
     ...eh.activities,
     ...yt.activities,
     ...tfl.activities,
+    ...mbm.activities,
+    ...lv.activities,
+    ...at.activities,
   ]);
 
   const driveTimes = await getDriveTimesMinutes(
@@ -111,6 +167,9 @@ export async function syncAllSources(): Promise<SyncResult> {
     eh.status,
     yt.status,
     tfl.status,
+    mbm.status,
+    lv.status,
+    at.status,
   ].map((status) => ({
     ...status,
     kept: withinRange.filter((a) => a.source === status.source).length,

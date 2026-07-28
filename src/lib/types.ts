@@ -8,7 +8,10 @@ export type ActivitySource =
   | "national-trust"
   | "english-heritage"
   | "yorkshire-tots"
-  | "teesside-family-life";
+  | "teesside-family-life"
+  | "muddy-boots-mummy"
+  | "little-vikings"
+  | "alltrails";
 
 export type TerrainLevel = "flat" | "gentle" | "hilly" | "steep" | "unknown";
 
