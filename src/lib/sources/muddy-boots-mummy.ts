@@ -6,6 +6,55 @@ const SOURCE_URL =
   "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/";
 const CACHE_KEY = "muddy-boots-mummy-yorkshire-walks";
 
+/** Capitalised place phrase, allowing "and" / "to" connectors. */
+const PLACE =
+  "([A-Z][\\w'’&()-]*(?:\\s+(?:(?:and|to|&)\\s+)?[A-Z][\\w'’&()-]*){0,8})";
+
+const TITLE_STOPWORDS = new Set(
+  [
+    "with",
+    "not",
+    "one",
+    "starting",
+    "for",
+    "the",
+    "this",
+    "these",
+    "also",
+    "adjacent",
+    "until",
+    "there",
+    "if",
+    "when",
+    "after",
+    "before",
+    "from",
+    "into",
+    "over",
+    "under",
+    "just",
+    "many",
+    "lots",
+    "look",
+    "finish",
+    "add",
+    "jump",
+    "make",
+    "try",
+    "read",
+    "visit",
+    "enjoy",
+    "hide",
+    "olaf",
+    "walking",
+    "buggy",
+    "family",
+    "elsewhere",
+    "navigate",
+    "i",
+  ].map((s) => s.toLowerCase()),
+);
+
 /**
  * Muddy Boots Mummy Yorkshire family walks roundup.
  * Cloudflare often blocks plain HTTP; Playwright + local source-cache fallback.
@@ -32,56 +81,76 @@ function parseMuddyBoots(text: string): ListicleItem[] {
     .map((l) => l.trim())
     .filter(Boolean);
 
-  // Prefer explicit place lines that look like outing blurbs.
-  const placeLine =
-    /^([A-Z][\w'’&()-]*(?:\s+[A-Z][\w'’&()-]*){0,6})(?:,\s*([A-Z]{1,2}\d{1,2}[A-Z]?(?:\s*\d[A-Z]{2})?))?\s+(.{40,})$/;
+  // Postcode form is unambiguous: "Woodlesford Lock, LS26 There are…"
+  const placeWithPostcode = new RegExp(
+    `^${PLACE},\\s*([A-Z]{1,2}\\d{1,2}[A-Z]?(?:\\s*\\d[A-Z]{2})?)\\s+(.{40,})$`,
+  );
+  const mComma = new RegExp(
+    `^${PLACE},\\s+(?![A-Z]{1,2}\\d)(.{40,})$`,
+  );
+  const mVerb = new RegExp(
+    `^${PLACE}\\s+(?:(?:in|near|between|outside|from|at)\\s+[\\w'’&(),\\s-]{0,40}?)?(?:is|has|provides|was|sits|sitting|comes|combines|also\\s+has)\\b(.{30,})$`,
+  );
+  const mDot = new RegExp(`^${PLACE}\\.\\s+(.{40,})$`);
+  const mParen = new RegExp(`^${PLACE}\\([^)]{0,40}\\)\\s*(.{30,})$`);
+  const mPossessive = new RegExp(`^${PLACE}'s\\s+(.{40,})$`);
 
   for (const line of lines) {
     if (/^family walks in /i.test(line)) continue;
     if (/^navigate to walks/i.test(line)) continue;
     if (/^these yorkshire walks/i.test(line)) continue;
-    if (/^olaf and stickman/i.test(line)) continue;
-    if (/^hide and seek/i.test(line)) continue;
-    if (/^walking the perimeter/i.test(line)) continue;
-    if (/^buggy friendly paths/i.test(line)) continue;
-    if (/^the treehouse/i.test(line)) continue;
-    if (/^for my favourite/i.test(line)) continue;
+    if (/^## /.test(line)) continue;
+    if (/^[-*]/.test(line)) continue;
 
-    const m = line.match(placeLine);
-    if (m) {
-      items.push({
-        title: m[1].trim(),
-        postcodeHint: m[2] ? m[2].toUpperCase().replace(/\s+/, " ") : null,
+    let matched: ListicleItem | null = null;
+
+    const m = line.match(placeWithPostcode);
+    if (m && isPlausibleTitle(m[1])) {
+      matched = {
+        title: cleanTitle(m[1]),
+        postcodeHint: m[2]!.toUpperCase().replace(/\s+/, " "),
         summary: m[3].trim(),
-      });
-      continue;
+      };
     }
 
-    // Fallback: "Place Name is/has/provides ..."
-    const m2 = line.match(
-      /^([A-Z][\w'’&()-]*(?:\s+[A-Z][\w'’&()-]*){0,7})\s+(?:is|has|provides|was|sits|comes)\b(.{30,})$/,
-    );
-    if (m2) {
-      items.push({
-        title: m2[1].trim(),
-        summary: line,
-      });
-      continue;
+    if (!matched) {
+      const c = line.match(mComma);
+      if (c && isPlausibleTitle(c[1])) {
+        matched = { title: cleanTitle(c[1]), summary: c[2].trim() };
+      }
     }
 
-    // "Yeadon Tarn. A walk around..."
-    const m3 = line.match(
-      /^([A-Z][\w'’&()-]*(?:\s+[A-Z][\w'’&()-]*){0,6})\.\s+(.{40,})$/,
-    );
-    if (m3) {
-      items.push({
-        title: m3[1].trim(),
-        summary: m3[2].trim(),
-      });
+    if (!matched) {
+      const v = line.match(mVerb);
+      if (v && isPlausibleTitle(v[1])) {
+        matched = { title: cleanTitle(v[1]), summary: line };
+      }
     }
+
+    if (!matched) {
+      const d = line.match(mDot);
+      if (d && isPlausibleTitle(d[1])) {
+        matched = { title: cleanTitle(d[1]), summary: d[2].trim() };
+      }
+    }
+
+    if (!matched) {
+      const p = line.match(mParen);
+      if (p && isPlausibleTitle(p[1])) {
+        matched = { title: cleanTitle(p[1]), summary: p[2].trim() };
+      }
+    }
+
+    if (!matched) {
+      const poss = line.match(mPossessive);
+      if (poss && isPlausibleTitle(poss[1])) {
+        matched = { title: cleanTitle(poss[1]), summary: poss[2].trim() };
+      }
+    }
+
+    if (matched) items.push(matched);
   }
 
-  // Deduplicate within page by title
   const seen = new Set<string>();
   return items.filter((item) => {
     const key = item.title.toLowerCase();
@@ -89,4 +158,34 @@ function parseMuddyBoots(text: string): ListicleItem[] {
     seen.add(key);
     return true;
   });
+}
+
+function cleanTitle(title: string): string {
+  return title
+    .replace(/^the\s+/i, "")
+    .replace(/'s$/i, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function isPlausibleTitle(title: string): boolean {
+  const t = title.trim();
+  if (t.length < 6) return false;
+  const words = t.split(/\s+/).filter((w) => !/^(and|to|&)$/i.test(w));
+  // Prefer multi-word place names; allow longer single tokens (Nostell, Ilkley).
+  if (words.length < 2 && t.length < 7) return false;
+  if (words.length === 1 && TITLE_STOPWORDS.has(words[0]!.toLowerCase())) {
+    return false;
+  }
+  if (TITLE_STOPWORDS.has(words[0]!.toLowerCase()) && words.length < 3) {
+    return false;
+  }
+  if (
+    /^(starting|walking|buggy|hide|olaf|for my|until|adjacent|also at|if you)\b/i.test(
+      t,
+    )
+  ) {
+    return false;
+  }
+  return true;
 }

@@ -120,16 +120,22 @@ function extractCost(text: string): string | null {
 
 /** Normalise a title for cross-source duplicate detection. */
 export function normalisedPlaceKey(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/&amp;/g, " and ")
+  let t = title.toLowerCase().replace(/&amp;/g, " and ");
+  // "Malham Walks: Malham Cove" → prefer the landmark after the colon
+  if (t.includes(":")) {
+    const after = t.split(":").slice(1).join(" ").trim();
+    if (after.length >= 4) t = after;
+  }
+  const tokens = t
     .replace(/[^a-z0-9\s]/g, " ")
     .replace(
-      /\b(the|a|an|walk|walks|walking|circular|trail|trails|family|friendly|kids|children|route|guide|short|easy|best|near|yorkshire|dales|moors|and|to|from|via)\b/g,
+      /\b(the|a|an|walk|walks|walking|circular|trail|trails|family|friendly|kids|children|route|guide|short|easy|best|near|yorkshire|dales|moors|and|to|from|via|among|ruins|around|with|gallery|gardens?|woodland|parkland|at|on|for|stunning|views?|fantastic|inspirational|flat|paddl(?:e|ing)|spot|some|birds)\b/g,
       " ",
     )
-    .replace(/\s+/g, " ")
-    .trim();
+    .split(/\s+/)
+    .filter(Boolean)
+    .filter((tok, i, arr) => tok !== arr[i - 1]);
+  return tokens.join(" ").trim();
 }
 
 export function haversineKm(

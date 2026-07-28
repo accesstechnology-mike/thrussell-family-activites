@@ -45,10 +45,11 @@ function dedupe(activities: Activity[]): Activity[] {
       if (
         key &&
         existingKey &&
+        key !== existingKey &&
         (key.includes(existingKey) || existingKey.includes(key)) &&
-        Math.min(key.length, existingKey.length) >= 6
+        Math.min(key.length, existingKey.length) >= 10
       ) {
-        return haversineKm(existing.coordinates, activity.coordinates) < 1.2;
+        return haversineKm(existing.coordinates, activity.coordinates) < 2;
       }
       return (
         haversineKm(existing.coordinates, activity.coordinates) < 0.45 &&

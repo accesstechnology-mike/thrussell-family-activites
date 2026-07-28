@@ -161,11 +161,17 @@ function geocodeQueryVariants(query: string): string[] {
       `${chunk}, North Yorkshire, UK`,
       `${chunk}, Yorkshire, UK`,
       `${chunk}, York, UK`,
+      `${chunk}, Cumbria, UK`,
     );
     const words = chunk.split(/\s+/).filter(Boolean);
-    for (let n = Math.min(words.length, 4); n >= 2; n--) {
+    for (let n = Math.min(words.length, 4); n >= 1; n--) {
       const short = words.slice(0, n).join(" ");
-      variants.push(`${short}, North Yorkshire, UK`, `${short}, Yorkshire, UK`);
+      if (short.length < 5) continue;
+      variants.push(
+        `${short}, North Yorkshire, UK`,
+        `${short}, Yorkshire, UK`,
+        `${short}, Cumbria, UK`,
+      );
     }
   }
 

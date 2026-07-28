@@ -6,94 +6,8 @@
     "lng": -1.433966
   },
   "maxDriveMinutes": 90,
-  "syncedAt": "2026-07-28T16:21:10.264Z",
+  "syncedAt": "2026-07-28T16:52:20.708Z",
   "activities": [
-    {
-      "id": "muddy-boots-mummy-bishop-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Bishop",
-      "summary": "Wood, near Sherburn-in-Elmet, is a lovely area of woodland to explore. Many paths are buggy friendly, but it's probably somewhere to save for if you're already in the area or passing through.",
-      "imageUrl": null,
-      "imageAlt": "Bishop",
-      "locationLabel": "Yorkshire",
-      "postcode": null,
-      "what3words": null,
-      "coordinates": {
-        "lat": 54.0905349,
-        "lng": -1.5011071
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [
-        "woodland"
-      ],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 20,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
-    },
-    {
-      "id": "muddy-boots-mummy-with-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "With",
-      "summary": "the towers of Drax looming, a circular walk around Barmby on the Marsh is pretty spectacular!",
-      "imageUrl": null,
-      "imageAlt": "With",
-      "locationLabel": "Yorkshire",
-      "postcode": null,
-      "what3words": null,
-      "coordinates": {
-        "lat": 54.2054706,
-        "lng": -1.267108
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 21,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
-    },
-    {
-      "id": "muddy-boots-mummy-skelton-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Skelton",
-      "summary": "Lake, sitting behind the M1 Skelton Lake services isn't the most obvious choice for a walk, but with a few routes to choose from and great facilities it's a great choice for families.",
-      "imageUrl": null,
-      "imageAlt": "Skelton",
-      "locationLabel": "Yorkshire",
-      "postcode": null,
-      "what3words": null,
-      "coordinates": {
-        "lat": 54.108787,
-        "lng": -1.4483733
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 23,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
-    },
     {
       "id": "little-vikings-family-walks-with-stunning-views-at-sutton-bank-little-vikings-co-uk-best-family-walks-york-yorkshire-kid",
       "source": "little-vikings",
@@ -121,7 +35,7 @@
         "Little Vikings"
       ],
       "driveMinutes": 25,
-      "lastSyncedAt": "2026-07-28T16:20:09.787Z",
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
       "rawFacts": {}
     },
     {
@@ -154,20 +68,20 @@
         "National Trust"
       ],
       "driveMinutes": 27,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Ripon",
         "county": "North Yorkshire"
       }
     },
     {
-      "id": "muddy-boots-mummy-hackfall-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "id": "muddy-boots-mummy-hackfall-wood-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Hackfall",
-      "summary": "Wood, near Ripon has gorgeous trails and masses of character. It's not buggy friendly, with uneven and steep paths, but totally worth the effort.",
+      "title": "Hackfall Wood",
+      "summary": "near Ripon has gorgeous trails and masses of character. It's not buggy friendly, with uneven and steep paths, but totally worth the effort.",
       "imageUrl": null,
-      "imageAlt": "Hackfall",
+      "imageAlt": "Hackfall Wood",
       "locationLabel": "Yorkshire",
       "postcode": null,
       "what3words": null,
@@ -187,7 +101,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 27,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -217,7 +131,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 29,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "2 miles",
         "Terrain": "Easily identifiable woodland tracks, well signposted. Can be muddy in places, some steps. Ascent just over 500 feet.",
@@ -258,7 +172,7 @@
         "Pushchair Friendly Walks"
       ],
       "driveMinutes": 29,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "less than 1 mile",
         "Terrain": "Easy footpaths underfoot. Well signposted, easy to navigate. Sturdy pushchair friendly.",
@@ -298,48 +212,50 @@
         "National Trust"
       ],
       "driveMinutes": 29,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Harrogate",
         "county": "North Yorkshire"
       }
     },
     {
-      "id": "muddy-boots-mummy-not-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Not",
-      "summary": "strictly Yorkshire, but not far away (!) in the Peaks is the beautiful Longshaw estate (NT) where you can hunt for Boggarts!",
+      "id": "alltrails-knaresborough-nidd-gorge-and-old-bilton-circular-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Knaresborough, Nidd Gorge, and Old Bilton Circular",
+      "summary": "This is a lovely circular walk from Knaresborough, close to Harrogate in North Yorkshire. The Nidd Gorge is stunning and a magnet for walkers, while the pretty market town of Knaresborough has many dog-friendly places to pop in to for refreshments when you have finished. The route is mostly on grassy paths, tarmac lanes, and cycle tracks, but also includes some steep descents and climbs by the river, which may be very boggy and muddy after wet weather. Appropriate footwear is required. You...",
       "imageUrl": null,
-      "imageAlt": "Not",
-      "locationLabel": "Yorkshire",
+      "imageAlt": "Knaresborough, Nidd Gorge, and Old Bilton Circular",
+      "locationLabel": "North Yorkshire",
       "postcode": null,
       "what3words": null,
       "coordinates": {
-        "lat": 54.089673,
-        "lng": -1.5946652
+        "lat": 54.0079228,
+        "lng": -1.4668254
       },
       "parking": null,
       "cost": null,
       "distanceMiles": null,
       "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [],
+      "terrainNotes": "Moderate",
+      "features": [
+        "stream / river"
+      ],
       "categories": [
-        "Muddy Boots Mummy"
+        "AllTrails Kids"
       ],
       "driveMinutes": 29,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
       "rawFacts": {}
     },
     {
-      "id": "muddy-boots-mummy-plumpton-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "id": "muddy-boots-mummy-plumpton-rocks-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Plumpton",
-      "summary": "Rocks, between Wetherby and Harrogate is less of a walk, more of an adventure. It's the perfect place if you're looking to spend a few hours with a picnic and do some serious exploration. Intrigued? Read more here.",
+      "title": "Plumpton Rocks",
+      "summary": "between Wetherby and Harrogate is less of a walk, more of an adventure. It's the perfect place if you're looking to spend a few hours with a picnic and do some serious exploration. Intrigued? Read more here.",
       "imageUrl": null,
-      "imageAlt": "Plumpton",
+      "imageAlt": "Plumpton Rocks",
       "locationLabel": "Yorkshire",
       "postcode": "HG5 8NA",
       "what3words": null,
@@ -357,7 +273,37 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 31,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "alltrails-easby-abbey-and-richmond-station-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Easby Abbey and Richmond Station",
+      "summary": "Child-friendly trail in North Yorkshire on AllTrails: Easby Abbey and Richmond Station",
+      "imageUrl": null,
+      "imageAlt": "Easby Abbey and Richmond Station",
+      "locationLabel": "North Yorkshire",
+      "postcode": "DL10 7EU",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.3978036,
+        "lng": -1.7168641
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "ruins"
+      ],
+      "categories": [
+        "AllTrails Kids"
+      ],
+      "driveMinutes": 31,
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
       "rawFacts": {}
     },
     {
@@ -369,7 +315,7 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/braithwaite-hall/library/south-front-braithwaite-hall-yorkshire-58112.jpg",
       "imageAlt": "View towards the south front of Braithwaite Hall, showing part of the driveway and lawn.",
       "locationLabel": "Leyburn, North Yorkshire",
-      "postcode": null,
+      "postcode": "DL8 4SY",
       "what3words": null,
       "coordinates": {
         "lat": 54.2668,
@@ -380,16 +326,50 @@
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 32,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Leyburn",
         "county": "North Yorkshire"
       }
+    },
+    {
+      "id": "alltrails-cod-beck-reservoir-circular-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Cod Beck Reservoir Circular",
+      "summary": "Child-friendly trail in North Yorkshire on AllTrails: Cod Beck Reservoir Circular",
+      "imageUrl": null,
+      "imageAlt": "Cod Beck Reservoir Circular",
+      "locationLabel": "North Yorkshire",
+      "postcode": null,
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.3828448,
+        "lng": -1.2856414
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "stream / river"
+      ],
+      "categories": [
+        "AllTrails Kids"
+      ],
+      "driveMinutes": 32,
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
+      "rawFacts": {}
     },
     {
       "id": "reluctant-explorers-guisecliff-tarn-www-thereluctantexplorers-com-guisecliff-tarn-nidderdale",
@@ -423,7 +403,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 33,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "3 miles",
         "Terrain": "For the most part, well walked footpaths. The paths through the woodland can get VERY muddy. There is some ascent at the start of this walk.",
@@ -434,6 +414,38 @@
         "Toilets/ Baby Change": "Nearest is Pateley Bridge.",
         "Nearest Cafe/ Amenities": "Nearest is Pateley Bridge."
       }
+    },
+    {
+      "id": "alltrails-swinton-bivouac-druid-s-temple-and-sole-beck-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Swinton Bivouac, Druid's Temple, and Sole Beck",
+      "summary": "This circular trail begins at the Swinton Bivouac site within Swinton Estate, North Yorkshire, near the Leighton Reservoir. This rewarding countryside trail takes you on a journey of discovery through rolling pastures and woodland with stunning views, taking in the Swinton Bivouac, Druid's Temple (one of Yorkshire's most interesting follies), and the ruins of Lobley Hall. This trail is part of the Swinton Estate Trails collection, published through a collaboration with Swinton Estate to...",
+      "imageUrl": null,
+      "imageAlt": "Swinton Bivouac, Druid's Temple, and Sole Beck",
+      "locationLabel": "North Yorkshire",
+      "postcode": "HG4 4JZ",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.2045827,
+        "lng": -1.7264165
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": "Moderate",
+      "features": [
+        "ruins",
+        "woodland",
+        "stream / river"
+      ],
+      "categories": [
+        "AllTrails Kids"
+      ],
+      "driveMinutes": 33,
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
+      "rawFacts": {}
     },
     {
       "id": "reluctant-explorers-richmond-fosse-to-easby-abbey-www-thereluctantexplorers-com-the-drummer-boy-stone-and-easby-abbey",
@@ -465,7 +477,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 34,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "3 miles",
         "Terrain": "Easily identifiable paths, some minimal ascent. Some of the woodland could become muddy after wet weather so walking boots or wellies for this one!",
@@ -504,7 +516,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 34,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "2 - 3 miles",
         "Terrain": "Easy paths, can be muddy underfoot. Some ascent (250 feet). Some road walking dependant on starting point. There are pavements on all road walking.",
@@ -544,7 +556,7 @@
         "Pushchair Friendly Walks"
       ],
       "driveMinutes": 34,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "less than 1km, suitable for the littlest of legs!",
         "Terrain": "Pushchair friendly paths (Do note there are some narrow parts, so single buggies only - there is one large and wide kissing gate to navigate). Easy underfoot. Little to no ascent.",
@@ -556,6 +568,127 @@
         "Toilets/ Baby Change": "Public Toilets are located at the park in Pateley Bridge",
         "Nearest Cafe/ Amenities": "Pateley Bridge"
       }
+    },
+    {
+      "id": "little-vikings-york-solar-system-walking-and-cycling-trail-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
+      "source": "little-vikings",
+      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
+      "title": "York Solar System Walking and Cycling Trail",
+      "summary": "The York Solar System route is arguably the best cycling route in York, and one that many families enjoy. It’s not just for cyclists though: it’s popular with walkers and runners as well (share with care!). The route is a scale model of the solar system, with all the planets there to spot along the 6.4 miles. The route runs from the Knavesmire/York racecourse to Riccall, and is almost entirely traffic-free. Read here about the time we hired a cargo bike to cycle the York to Selby route. More info – Discover more about the York to Selby route here",
+      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2020/09/D1C7139C-BEF3-44C7-890C-DD6E98D49CBA.jpeg?resize=1024%2C768&amp;ssl=1",
+      "imageAlt": "York Solar System Walking and Cycling Trail",
+      "locationLabel": "York, Yorkshire",
+      "postcode": "HG2 0NJ",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.991588,
+        "lng": -1.5469761
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": 6.4,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [],
+      "categories": [
+        "Little Vikings"
+      ],
+      "driveMinutes": 34,
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "alltrails-helmsley-to-rievaulx-abbey-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Helmsley to Rievaulx Abbey",
+      "summary": "Child-friendly trail in North Yorkshire on AllTrails: Helmsley to Rievaulx Abbey",
+      "imageUrl": null,
+      "imageAlt": "Helmsley to Rievaulx Abbey",
+      "locationLabel": "North Yorkshire",
+      "postcode": null,
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.246172,
+        "lng": -1.0612597
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "ruins"
+      ],
+      "categories": [
+        "AllTrails Kids"
+      ],
+      "driveMinutes": 34,
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "alltrails-bilton-greenway-and-river-nidd-circular-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Bilton Greenway and River Nidd Circular",
+      "summary": "Child-friendly trail in North Yorkshire on AllTrails: Bilton Greenway and River Nidd Circular",
+      "imageUrl": null,
+      "imageAlt": "Bilton Greenway and River Nidd Circular",
+      "locationLabel": "North Yorkshire",
+      "postcode": "HG1 3LR",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.0200703,
+        "lng": -1.5325878
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "stream / river"
+      ],
+      "categories": [
+        "AllTrails Kids"
+      ],
+      "driveMinutes": 35,
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "alltrails-aysgarth-woods-and-waterfalls-circular-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Aysgarth Woods and Waterfalls Circular",
+      "summary": "This trail takes in lovely woodland paths and rolling farmland, with great views of Bolton Castle, plus one of the most spectacular attractions within the Dales, Aysgarth Falls on the River Ure. The waterfalls of High Force, Middle Force and Lower Force stretch along the river, and become even more spectacular after rain with the increased water falling over broad limestone slabs. A place of great inspiration, from Wordsworth to Turner and even a Hollywood film director, the falls are a...",
+      "imageUrl": null,
+      "imageAlt": "Aysgarth Woods and Waterfalls Circular",
+      "locationLabel": "North Yorkshire",
+      "postcode": "DL8 4HR",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.303332,
+        "lng": -1.8590622
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": "Easy",
+      "features": [
+        "waterfall",
+        "ruins",
+        "woodland",
+        "stream / river"
+      ],
+      "categories": [
+        "AllTrails Kids"
+      ],
+      "driveMinutes": 36,
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
+      "rawFacts": {}
     },
     {
       "id": "reluctant-explorers-properous-and-greenhow-lead-mines-www-thereluctantexplorers-com-greenhow-hill-lead-mines",
@@ -585,7 +718,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 37,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4 miles (SHORT) 6 miles (LONG)",
         "Terrain": "Very well waymarked. The short route will follow the geology trail, the longer heads round both areas of ruins. There is some ascent, the terrain is often uneven underfoot, but the route is clearly signposted and well walked. Most of this walk is on open access land.",
@@ -627,7 +760,7 @@
         "Pushchair Friendly Walks"
       ],
       "driveMinutes": 37,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Less than 2 miles",
         "Terrain": "Easy underfoot, pushchair friendly (although steep, sturdy pushchairs only). Toft Gate Lime Kiln will be muddy underfoot after periods of wet weather. The path up to the Coldstones Cut is a fairly steep incline, but is only a short distance.",
@@ -649,23 +782,27 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/nunnington-hall/library/summer/nunnington-hall--garden-with-gardener.jpg",
       "imageAlt": "Nunnington Hall & garden",
       "locationLabel": "near York, North Yorkshire",
-      "postcode": null,
+      "postcode": "YO62 5UY",
       "what3words": null,
       "coordinates": {
         "lat": 54.204601,
         "lng": -0.97233
       },
-      "parking": null,
-      "cost": "National Trust membership / admission may apply",
+      "parking": "parking.",
+      "cost": "entry 1 hour before closing time.",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 38,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "near York",
         "county": "North Yorkshire"
@@ -698,7 +835,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 39,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "About 4 miles",
         "Terrain": "Easy underfoot. 🛑 Some brief road walking on circular route. Little to no ascent. The route is buggy friendly as long as you don’t mind a bit of mud and a few puddles!",
@@ -709,6 +846,41 @@
         "What 3 Words": "blazers.overjoyed.outgoing (car park)",
         "Toilets/ Baby Change": "At the main Fewston/ Swinsty Car Park.",
         "Nearest Cafe/ Amenities": "Fewston at the Heritage Centre. Ice cream at the main Fewston/ Swinsty car park."
+      }
+    },
+    {
+      "id": "national-trust-beningbrough-29",
+      "source": "national-trust",
+      "sourceUrl": "https://www.nationaltrust.org.uk/visit/yorkshire/beningbrough",
+      "title": "Beningbrough",
+      "summary": "Art exhibitions, history, and evolving gardens in the Yorkshire countryside",
+      "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/beningbrough/library/summer/visitors-pergola-garden-beningbrough-hall-north-yorkshire-1415063.jpg",
+      "imageAlt": "Visitors exploring the newly opened Pergola garden at Beningbrough Hall and Gardens, North Yorkshire",
+      "locationLabel": "York, North Yorkshire",
+      "postcode": "YO30 1DD",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.022099,
+        "lng": -1.21315
+      },
+      "parking": "parking Dogs allowed Except the hall, laundry and wilderness play area.",
+      "cost": "Prices Free entry for National Trust members and under fives.",
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "ruins",
+        "woodland",
+        "beach"
+      ],
+      "categories": [
+        "National Trust"
+      ],
+      "driveMinutes": 39,
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
+      "rawFacts": {
+        "town": "York",
+        "county": "North Yorkshire"
       }
     },
     {
@@ -739,7 +911,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 40,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4.5 miles",
         "Terrain": "Easy underfoot. Virtually impossible to get lost (don’t quote me on that though!)",
@@ -777,7 +949,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 40,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Less than 1 mile - dependant on how much exploring and clambering you do!",
         "Terrain": "Easily identifiable paths, uneven ground with some rock scrambling to reach the highest points. Ascent just over 100m, dependant on how far you climb up!",
@@ -789,66 +961,6 @@
         "Toilets/ Baby Change": "No",
         "Nearest Cafe/ Amenities": "North Rigton"
       }
-    },
-    {
-      "id": "little-vikings-a-family-walk-from-beningbrough-hall-gallery-gardens-little-vikings-co-uk-best-family-walks-york-yorkshir",
-      "source": "little-vikings",
-      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
-      "title": "A family walk from Beningbrough Hall, Gallery & Gardens",
-      "summary": "As well as the obvious strolls around the gardens of Beningbrough itself, there’s a lovely 3.5 mile circular walk around the river Ouse that starts from the Beningbrough car park too. It can be a bit uneven, so for little ones maybe take a baby carrier rather than a buggy. Keep your eyes peeled for wildlife – top marks to anyone who spots a kingfisher! Find all the details of the walk here Visitor details – Beningbrough&nbsp;Hall, Beningbrough, York YO30 1DD. Free parking . More info – Visit the Beningbrough Hall website for more details",
-      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2016/07/Beningbrough-Hall-family-776743-C-National-Trust-Images_John-Millar.jpg?resize=1000%2C562&amp;ssl=1",
-      "imageAlt": "A family walk from Beningbrough Hall, Gallery & Gardens",
-      "locationLabel": "York, Yorkshire",
-      "postcode": "YO30 1DD",
-      "what3words": null,
-      "coordinates": {
-        "lat": 54.020526,
-        "lng": -1.210104
-      },
-      "parking": "parking .",
-      "cost": null,
-      "distanceMiles": 3.5,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [
-        "stream / river"
-      ],
-      "categories": [
-        "Little Vikings"
-      ],
-      "driveMinutes": 40,
-      "lastSyncedAt": "2026-07-28T16:20:09.787Z",
-      "rawFacts": {}
-    },
-    {
-      "id": "muddy-boots-mummy-harewood-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Harewood",
-      "summary": "House, North of Leeds has a great circular rout e around the outskirts of the estate and through the Deer park and it's just under 10k. It can get muddy in places- so your buggy needs to be pretty robust.",
-      "imageUrl": null,
-      "imageAlt": "Harewood",
-      "locationLabel": "Yorkshire",
-      "postcode": null,
-      "what3words": null,
-      "coordinates": {
-        "lat": 53.9010717,
-        "lng": -1.5117022
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [
-        "animals"
-      ],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 40,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
     },
     {
       "id": "national-trust-rievaulx-terrace-278",
@@ -879,7 +991,7 @@
         "National Trust"
       ],
       "driveMinutes": 41,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Helmsley",
         "county": "North Yorkshire"
@@ -910,7 +1022,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 42,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "5-6 miles.",
         "Terrain": "Easily identifiable and well walked paths. A little ascent. Well maintained reservoir paths, and some moorland terrain.",
@@ -920,6 +1032,36 @@
         "What 3 Words": "conqueror.quibble.snoring",
         "Toilets/ Baby Change": "No"
       }
+    },
+    {
+      "id": "muddy-boots-mummy-harewood-house-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Harewood House",
+      "summary": "North of Leeds has a great circular rout e around the outskirts of the estate and through the Deer park and it's just under 10k. It can get muddy in places- so your buggy needs to be pretty robust.",
+      "imageUrl": null,
+      "imageAlt": "Harewood House",
+      "locationLabel": "Yorkshire",
+      "postcode": "LS17 9LF",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.8969227,
+        "lng": -1.5273143
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "animals"
+      ],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 42,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
     },
     {
       "id": "little-vikings-an-easy-circular-walk-around-askham-bog-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
@@ -949,7 +1091,35 @@
         "Little Vikings"
       ],
       "driveMinutes": 43,
-      "lastSyncedAt": "2026-07-28T16:20:09.787Z",
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "little-vikings-the-york-cat-trail-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
+      "source": "little-vikings",
+      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
+      "title": "The York Cat Trail",
+      "summary": "The best way to discover York is on foot: wind your way down the snickleways, canter down the cobbles and enjoy the street entertainment. One of the best ways to make a walk with kids even more fun is by following a trail, and the York Lucky Cat Trail is one of the best. It’s free too! Statues of cats have been placed on buildings in York for around two centuries, although statues since removed or rotted are thought to date from medieval times. The original cat statues were placed on buildings to frighten away rats and mice which can carry plague and illness. They were also thought to ward off wandering evil spirits and generally to bestow good luck and good health on citizens who needed fel",
+      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2020/08/York-Cat-Trail.jpg?resize=1024%2C879&amp;ssl=1",
+      "imageAlt": "The York Cat Trail",
+      "locationLabel": "York, Yorkshire",
+      "postcode": "YO23 3PN",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.9139709,
+        "lng": -1.1894098
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [],
+      "categories": [
+        "Little Vikings"
+      ],
+      "driveMinutes": 44,
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
       "rawFacts": {}
     },
     {
@@ -980,7 +1150,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 45,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "2-4 miles dependant on start point.",
         "Terrain": "Rough, easily identifiable paths, the Gill is a rocky riverbed in usual conditions, it floods after heavy rain (see pictures to get an idea of what that looks like!) There is some moderate ascent on this walk and there are some parts that are very muddy.",
@@ -1022,7 +1192,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 45,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "less than 2 miles",
         "Terrain": "Some quiet road walking, easily identifiable paths. Ascent 200ft.",
@@ -1063,7 +1233,7 @@
         "Pushchair Friendly Walks"
       ],
       "driveMinutes": 45,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Nature Reserve alone is less than 1 mile. The nature reserve, park and ducks is approximately 2 miles",
         "Terrain": "Easy well maintained pushchair friendly paths. Some may get muddy underfoot, so wellies are recommended!",
@@ -1085,23 +1255,28 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/treasurers-house-york/library/spring/the-south-front-of-treasurers-house-york-1629222.jpg",
       "imageAlt": "The garden at Treasurer's House in York in winter sunshine",
       "locationLabel": "York, North Yorkshire",
-      "postcode": null,
+      "postcode": "YO1 7JL",
       "what3words": null,
       "coordinates": {
         "lat": 53.962764,
         "lng": -1.080973
       },
-      "parking": null,
-      "cost": "National Trust membership / admission may apply",
+      "parking": "parking Public cycle parking is located approx.",
+      "cost": "Prices Free entry for National Trust members and under fives.",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "cafe / pub",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 45,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "York",
         "county": "North Yorkshire"
@@ -1138,7 +1313,216 @@
         "Yorkshire Tots"
       ],
       "driveMinutes": 45,
-      "lastSyncedAt": "2026-07-28T16:18:11.194Z",
+      "lastSyncedAt": "2026-07-28T16:51:52.244Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "little-vikings-spot-some-birds-on-a-walk-around-rspb-fairburn-ings-little-vikings-co-uk-best-family-walks-york-yorkshire",
+      "source": "little-vikings",
+      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
+      "title": "Spot some birds on a walk around RSPB Fairburn Ings",
+      "summary": "Around half an hour south of York, the Fairburn Ings RPSB Nature Reserve is a lovely place for a walk with children, and popular with local families (and serious birdwatchers, too). Flat paths and a choice of trails mean that there’s something for families with children of all ages. Not only will you get some fresh air and a decent stretch of the legs, but you could also spot some amazing wildlife too. Kingfishers, herons and bitterness all call Fairburn Ings home, so why not take your binoculars? Good to know – Admission is free, just pay to park (£4). There is a small visitor centre with a shop and drinks/snacks (including tea/coffee/hot chocolate). Loos and baby-changing. Visitor details ",
+      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2021/01/17BE09F5-3D1E-4244-8334-4D6822A083BA.jpeg?resize=1024%2C981&amp;ssl=1",
+      "imageAlt": "Spot some birds on a walk around RSPB Fairburn Ings",
+      "locationLabel": "York, Yorkshire",
+      "postcode": "YO1 8SG",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.9590555,
+        "lng": -1.0815361
+      },
+      "parking": null,
+      "cost": "Admission is free, just pay to park (£4).",
+      "distanceMiles": null,
+      "terrain": "flat",
+      "terrainNotes": null,
+      "features": [],
+      "categories": [
+        "Little Vikings"
+      ],
+      "driveMinutes": 45,
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "little-vikings-walk-around-york-s-city-walls-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
+      "source": "little-vikings",
+      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
+      "title": "Walk around York’s City Walls",
+      "summary": "Why not take a walk around York’s&nbsp;city walls? There’s almost 3.5km of medieval wall to choose from, all with fantastic views, and it’s totally free. If little feet aren’t up to a big hike, just choose a small section. It’s easy to hop off once you’ve had enough, and there are plenty of cafes, restaurants and tearooms for refreshments. Good to know – This is a brilliant way to get a different perspective on the city, but it’s better suited to older children. It can get crowded during peak visitor months, so perhaps try an early morning stroll for a more relaxing experience.&nbsp;There are some sections that don’t have railings, so it’s best for children who can be trusted to walk safely ",
+      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2017/10/York-City-Walls.jpg?resize=1000%2C563&amp;ssl=1",
+      "imageAlt": "Walk around York’s City Walls",
+      "locationLabel": "York, Yorkshire",
+      "postcode": "YO1 8SG",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.9590555,
+        "lng": -1.0815361
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "cafe / pub"
+      ],
+      "categories": [
+        "Little Vikings"
+      ],
+      "driveMinutes": 45,
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "little-vikings-the-little-vikings-i-spy-trail-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
+      "source": "little-vikings",
+      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
+      "title": "The Little Vikings I Spy Trail",
+      "summary": "I spy with my little eye a clock, a cat and a flag!&nbsp;The Little Vikings I Spy Trail is a new free walking trail for families around York. With the help of our own three children, we’ve put together a lovely circular route with twenty-two weird and wonderful things to spot along the way. Starting and ending on Museum Street, the I Spy Trail will have you strolling down snickleways, gaping at the city’s medieval gates and ambling down the Shambles, ticking off iconic and eccentric landmarks along the way. The Little Vikings I Spy Trail is available all year round – all you have to do is collect (or download) the map and get your shoes and coats on! The map should be all that you need – fol",
+      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2021/03/Little-Vikings-I-Spy-Trail-Map-York.jpg?resize=1024%2C724&amp;ssl=1",
+      "imageAlt": "The Little Vikings I Spy Trail",
+      "locationLabel": "York, Yorkshire",
+      "postcode": "YO1 8SG",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.9590555,
+        "lng": -1.0815361
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [],
+      "categories": [
+        "Little Vikings"
+      ],
+      "driveMinutes": 45,
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "little-vikings-a-walk-around-hagg-wood-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
+      "source": "little-vikings",
+      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
+      "title": "A walk around Hagg Wood",
+      "summary": "Hagg Wood is an ancient wood just outside Dunnington, and is somewhere we’d wholeheartedly recommend for a trip with kids. York isn’t short of beautiful places to visit, but Hagg Wood is pretty remarkable. The height and variety of the trees had our kids open-mouthed when we first visited. They loved looking for bluebells and seeing all the wild flowers, too. They clambered over tree trunks, jumped over roots and collected as many sticks and feathers as I could fit in my pocket. Good to know – Parking is free. There aren’t any loos, so go before you set off unless you want to co-ordinate wild wees! Visitor information – Hagg Wood, Dunnington, York (park legally in the village and walk to avo",
+      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2017/05/HaggWood6.jpg?resize=1000%2C563&amp;ssl=1",
+      "imageAlt": "A walk around Hagg Wood",
+      "locationLabel": "York, Yorkshire",
+      "postcode": "YO1 8SG",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.9590555,
+        "lng": -1.0815361
+      },
+      "parking": "Parking is free.",
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "woodland"
+      ],
+      "categories": [
+        "Little Vikings"
+      ],
+      "driveMinutes": 45,
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "little-vikings-walks-in-nature-at-moorlands-nature-reserve-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
+      "source": "little-vikings",
+      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
+      "title": "Walks in nature at Moorlands Nature Reserve",
+      "summary": "Just along from Haxby and Wigginton is Moorlands Nature Reserve. It’s a pretty, well-maintained area of Edwardian woodland looked after by Yorkshire Wildlife Trust. Embark on the short circular walk and see what you can spot, from wood carvings to snowdrops, birdlife to a big purpose-built treehouse. There’s lots of space to explore and plenty of opportunities for hide-and-seek. It’s a good distance for short legs, but you may want to leave the buggy behind for younger ones (unless the weather has been good and it’s dry) – a baby carrier would be better. The path is wide but not boarded (unlike Askham Bog). Good to know – With no loos, cafe or car park, you need to go prepared with empty bla",
+      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2020/05/IMG_3862.jpg?resize=1024%2C768&amp;ssl=1",
+      "imageAlt": "Walks in nature at Moorlands Nature Reserve",
+      "locationLabel": "York, Yorkshire",
+      "postcode": "YO1 8SG",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.9590555,
+        "lng": -1.0815361
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "woodland",
+        "cafe / pub"
+      ],
+      "categories": [
+        "Little Vikings"
+      ],
+      "driveMinutes": 45,
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "little-vikings-a-walk-and-a-paddle-at-falling-foss-near-whitby-little-vikings-co-uk-best-family-walks-york-yorkshire-kid",
+      "source": "little-vikings",
+      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
+      "title": "A walk and a paddle at Falling Foss near Whitby",
+      "summary": "Falling Foss is a really special place to visit, just outside Whitby. Lots of families visit to have a paddle in the water, but you can also have a lovely woodland walk. There’s a circular two-mile walk that takes in the woods, waterfall and ever-popular Falling Foss Tea Garden. Good to know – Falling Foss is very popular and parking is limited, so we always try to arrive early. Visitor information – Find details of the Falling Foss walks here More info – Read our five reasons to visit Falling Foss here",
+      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2018/05/Falling-Foss-trees.jpg?resize=1000%2C562&amp;ssl=1",
+      "imageAlt": "A walk and a paddle at Falling Foss near Whitby",
+      "locationLabel": "York, Yorkshire",
+      "postcode": "YO1 8SG",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.9590555,
+        "lng": -1.0815361
+      },
+      "parking": "parking is limited, so we always try to arrive early.",
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "waterfall",
+        "paddle",
+        "woodland"
+      ],
+      "categories": [
+        "Little Vikings"
+      ],
+      "driveMinutes": 45,
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "little-vikings-a-circular-walk-in-malton-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
+      "source": "little-vikings",
+      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
+      "title": "A circular walk in Malton",
+      "summary": "This 3 mile circular walk, starting from Malton, takes in the river Derwent and St Mary’s Priory. Malton is a great base for a walk, with plenty of places to eat and drink. More info – Follow this route on the AllTrails website or download the app so you can follow it on your phone easily.",
+      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2018/12/F851BBD9-A5E2-4C7E-8CC3-FF558ED2150F.jpeg?resize=1024%2C598&amp;ssl=1",
+      "imageAlt": "A circular walk in Malton",
+      "locationLabel": "York, Yorkshire",
+      "postcode": "YO1 8SG",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.9590555,
+        "lng": -1.0815361
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": 3,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "stream / river"
+      ],
+      "categories": [
+        "Little Vikings"
+      ],
+      "driveMinutes": 45,
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
       "rawFacts": {}
     },
     {
@@ -1170,7 +1554,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 46,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Terrain": "Easy underfoot, these trails are clear and well maintained. The route is waymarked, and clearly marked on signposts at the Yorkshire Dales Centre.",
         "Parking": "Yorkshire Dales Centre, Aysgarth Falls.",
@@ -1191,23 +1575,28 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/goddards/library/summer/1767725-looking-into-the-garden-at-goddards.jpg",
       "imageAlt": "View of a floral garden through a bricked arch",
       "locationLabel": "York, North Yorkshire",
-      "postcode": null,
+      "postcode": "YO24 1GG",
       "what3words": null,
       "coordinates": {
         "lat": 53.940102,
         "lng": -1.10261
       },
-      "parking": null,
-      "cost": "National Trust membership / admission may apply",
+      "parking": "parking Racks available at the rear of the house.",
+      "cost": "Prices Free entry for National Trust members and under fives.",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "stream / river",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 46,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "York",
         "county": "North Yorkshire"
@@ -1218,7 +1607,7 @@
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Lotherton Hall",
-      "summary": "is a fantastic day out for the family, make sure you include this lovely short walk on your next visit.",
+      "summary": "Lotherton Hall is a fantastic day out for the family, make sure you include this lovely short walk on your next visit.",
       "imageUrl": null,
       "imageAlt": "Lotherton Hall",
       "locationLabel": "Yorkshire",
@@ -1238,7 +1627,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 46,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -1269,7 +1658,7 @@
         "Little Vikings"
       ],
       "driveMinutes": 46,
-      "lastSyncedAt": "2026-07-28T16:20:09.787Z",
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
       "rawFacts": {}
     },
     {
@@ -1302,7 +1691,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 47,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "under 3 miles",
         "Terrain": "mainly grassy paths through fields, well signposted. Some ascent, 350 feet. Not pushchair friendly.",
@@ -1345,7 +1734,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 47,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4-5 miles dependant on how much of the lead mining trail you take in.",
         "Terrain": "Some ascent. Mostly easily identifiable paths and tracks. Some parts will get muddy after rain, and the trail around the lead mines has separate markers. I won’t cover the lead mine in the route instructions, so it’s up to you how much you take in. This is not pushchair friendly. Make sure you stick to the paths in the lead mining trail.",
@@ -1387,7 +1776,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 47,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "less than 2 miles",
         "Terrain": "Uneven underfoot. Some minor very quiet country road walking. Ascent approx. 150m. Do be mindful that the stepping stones will not be accessible after heavy rain.",
@@ -1426,7 +1815,7 @@
         "Teesside Family Life"
       ],
       "driveMinutes": 47,
-      "lastSyncedAt": "2026-07-28T16:18:32.593Z",
+      "lastSyncedAt": "2026-07-28T16:52:07.484Z",
       "rawFacts": {
         "slug": "teessaurus-park-free-day-out-in-teesside"
       }
@@ -1458,7 +1847,41 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 48,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "yorkshire-tots-11-reasons-to-try-the-bolton-abbey-welly-walk-yorkshiretots-com-bolton-abbey-welly-walk",
+      "source": "yorkshire-tots",
+      "sourceUrl": "https://yorkshiretots.com/bolton-abbey-welly-walk/",
+      "title": "11 reasons to try the Bolton Abbey Welly Walk",
+      "summary": "11 reasons the Bolton Abbey Welly Walk is a great family day out! Get muddy, climb, crawl, swing and hop your way through the 'deep dark woods'.",
+      "imageUrl": "https://yorkshiretots.com/wp-content/uploads/2018/06/www.yorkshiretots.com-58.png",
+      "imageAlt": "11 reasons to try the Bolton Abbey Welly Walk",
+      "locationLabel": null,
+      "postcode": null,
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.9822931,
+        "lng": -1.8912314
+      },
+      "parking": "Parking is £10 a car, but if you pack a picnic that’s all you need to spend for the family for the entire day.",
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "hilly",
+      "terrainNotes": null,
+      "features": [
+        "ice cream",
+        "play park",
+        "ruins",
+        "woodland",
+        "beach"
+      ],
+      "categories": [
+        "Yorkshire Tots"
+      ],
+      "driveMinutes": 48,
+      "lastSyncedAt": "2026-07-28T16:51:40.280Z",
       "rawFacts": {}
     },
     {
@@ -1466,7 +1889,7 @@
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Golden Acre Park",
-      "summary": "in North Leeds has decent paths and lots of beauty. Try this 5.5k route that visits the adjacent Breary Marsh to see the best of it. Buggy-friendly.",
+      "summary": "Golden Acre Park in North Leeds has decent paths and lots of beauty. Try this 5.5k route that visits the adjacent Breary Marsh to see the best of it. Buggy-friendly.",
       "imageUrl": null,
       "imageAlt": "Golden Acre Park",
       "locationLabel": "Yorkshire",
@@ -1486,68 +1909,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 48,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
-    },
-    {
-      "id": "muddy-boots-mummy-rspb-fairburn-ings-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "RSPB Fairburn Ings",
-      "summary": "also has good walks with buggy friendly paths, this 6km route gives great views as well as a pretty riverside path, but for little legs this is a great place to explore with lots of activities.",
-      "imageUrl": null,
-      "imageAlt": "RSPB Fairburn Ings",
-      "locationLabel": "Yorkshire",
-      "postcode": null,
-      "what3words": null,
-      "coordinates": {
-        "lat": 53.7392334,
-        "lng": -1.3359896
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 48,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
-    },
-    {
-      "id": "little-vikings-family-walking-trails-at-bolton-abbey-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
-      "source": "little-vikings",
-      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
-      "title": "Family walking trails at Bolton Abbey",
-      "summary": "Bolton Abbey is a stunning place to walk, and there are various routes from the car parks. Children love the stepping stones and throwing stones into the river. Keep an eye out for the fabulous welly walk during the spring/summer months. Reward yourselves at the end with a treat from the tearoom or a picnic by the river. It would be hard to find a more picturesque place to rest and it’s all free, just pay to park (£10 per car). Visitor details – Bolton Abbey, Skipton, North Yorkshire BD23 6EX. More info – Visit the Bolton Abbey website for more details",
-      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2018/12/Bolton-Abbey-stepping-stones.jpg?resize=1000%2C600&amp;ssl=1",
-      "imageAlt": "Family walking trails at Bolton Abbey",
-      "locationLabel": "York, Yorkshire",
-      "postcode": "BD23 6EX",
-      "what3words": null,
-      "coordinates": {
-        "lat": 53.981536,
-        "lng": -1.891033
-      },
-      "parking": null,
-      "cost": "just pay to park (£10 per car).",
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [
-        "stepping stones",
-        "ruins",
-        "stream / river",
-        "cafe / pub"
-      ],
-      "categories": [
-        "Little Vikings"
-      ],
-      "driveMinutes": 48,
-      "lastSyncedAt": "2026-07-28T16:20:09.787Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -1580,7 +1942,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 49,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4 miles",
         "Terrain": "Rough and sometimes uneven underfoot in Grass Woods. Paths can be muddy, particularly at the riverside. There is some pavement walking/ road walking at the start and end of this walk in Grassington. Some limited ascent (approx. 650 feet) . Be aware that Grass Woods has been renowned for its population of ticks, so stick to the main paths and try to avoid brushing the undergrowth. Always thoroughly check for ticks after a walk.",
@@ -1621,7 +1983,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 49,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "2.5 miles",
         "Terrain": "Well maintained paths, but it isn’t called the welly walk for nothing! it can be muddy in places. Approx 70m ascent. 🛑 There are steep drops to the sides of the paths. The paths are wide and very well maintained, but one to flag for those who are fearful of heights.",
@@ -1631,6 +1993,34 @@
         "Toilets/ Baby Change": "Yes, at the Post Office/ Village Store.",
         "Nearest Cafe/ Amenities": "Bolton Abbey Village, Cavendish Pavillion (half way point)"
       }
+    },
+    {
+      "id": "alltrails-grassington-to-burnsall-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Grassington to Burnsall",
+      "summary": "Child-friendly trail in North Yorkshire on AllTrails: Grassington to Burnsall",
+      "imageUrl": null,
+      "imageAlt": "Grassington to Burnsall",
+      "locationLabel": "North Yorkshire",
+      "postcode": null,
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.0722223,
+        "lng": -1.9975016
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [],
+      "categories": [
+        "AllTrails Kids"
+      ],
+      "driveMinutes": 49,
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
+      "rawFacts": {}
     },
     {
       "id": "reluctant-explorers-mill-gill-force-and-whitfield-gill-www-thereluctantexplorers-com-mill-gill-and-whitfield-gill-force",
@@ -1660,7 +2050,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 50,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4.5 miles, less if you don’t head to Whitfield Gill Force (that’s pictured above).",
         "Terrain": "The route to Mill Gill is very well signposted and the path well walked and defined. The ground is uneven underfoot and be warned there are some steep unguarded drops at points on the footpath. This walk can get muddy, so walking boots are a must.",
@@ -1673,11 +2063,39 @@
       }
     },
     {
+      "id": "muddy-boots-mummy-yeadon-tarn-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Yeadon Tarn",
+      "summary": "A walk around the tarn is just one mile, but there is a play area to extend the visit! Surfaced paths. Probably one to save when you're already in the area (or if your children are fans of planes- it's under the flight path of Leeds Bradford Airport).",
+      "imageUrl": null,
+      "imageAlt": "Yeadon Tarn",
+      "locationLabel": "Yorkshire",
+      "postcode": null,
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.8685025,
+        "lng": -1.6749111
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 50,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
+    },
+    {
       "id": "muddy-boots-mummy-otley-chevin-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Otley Chevin",
-      "summary": "has lots of room to explore for little legs, with long and short routes. If you're taking a buggy be prepared for mud and try to stick to bridleways- not all paths are suitable for them.",
+      "summary": "Otley Chevin has lots of room to explore for little legs, with long and short routes. If you're taking a buggy be prepared for mud and try to stick to bridleways- not all paths are suitable for them.",
       "imageUrl": null,
       "imageAlt": "Otley Chevin",
       "locationLabel": "Yorkshire",
@@ -1697,23 +2115,23 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 50,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
-      "id": "muddy-boots-mummy-roundhay-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "id": "muddy-boots-mummy-roundhay-park-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Roundhay",
-      "summary": "Park, North Leeds has play areas, ducks, playing fields and even in peak times a train! This 4km buggy-friendly route might be a little long for very little legs but there are loads to do as shorter alternatives. The secret gorge walk is not suitable for buggies, but is only 2.7km and is definitely one of the most interesting (and quietest) parts of the park. For those little adventurers, you could also follow one of the free Adventure Trails on offer there.",
+      "title": "Roundhay Park",
+      "summary": "North Leeds has play areas, ducks, playing fields and even in peak times a train! This 4km buggy-friendly route might be a little long for very little legs but there are loads to do as shorter alternatives. The secret gorge walk is not suitable for buggies, but is only 2.7km and is definitely one of the most interesting (and quietest) parts of the park. For those little adventurers, you could also follow one of the free Adventure Trails on offer there.",
       "imageUrl": null,
-      "imageAlt": "Roundhay",
+      "imageAlt": "Roundhay Park",
       "locationLabel": "Yorkshire",
       "postcode": null,
       "what3words": null,
       "coordinates": {
-        "lat": 53.8334657,
-        "lng": -1.5035315
+        "lat": 53.8393512,
+        "lng": -1.4978422
       },
       "parking": null,
       "cost": null,
@@ -1725,7 +2143,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 50,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -1756,7 +2174,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 51,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4.5 miles",
         "Terrain": "Easy underfoot, easily identifiable paths, well signposted. Minimal Ascent (600 feet). Can get muddy in places.",
@@ -1797,7 +2215,7 @@
         "National Trust"
       ],
       "driveMinutes": 51,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Northallerton",
         "county": "North Yorkshire"
@@ -1812,23 +2230,27 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/north-east/places/ormesby-hall/library/summer/family-running-nt22luzb-website.jpg",
       "imageAlt": "Young family running through the south facing formal gardens in front of Ormesby Hall",
       "locationLabel": "Middlesbrough, North Yorkshire",
-      "postcode": null,
+      "postcode": "TS3 0SR",
       "what3words": null,
       "coordinates": {
         "lat": 54.5432,
         "lng": -1.1829
       },
-      "parking": null,
-      "cost": "National Trust membership / admission may apply",
+      "parking": "parking, 150 metres from the house.",
+      "cost": "Prices See on map There&#x27;s plenty of space to enjoy the outdoors at Ormesby Hall this summer.",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 51,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Middlesbrough",
         "county": "North Yorkshire"
@@ -1859,35 +2281,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 51,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
-    },
-    {
-      "id": "muddy-boots-mummy-yeadon-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Yeadon",
-      "summary": "Tarn. A walk around the tarn is just one mile, but there is a play area to extend the visit! Surfaced paths. Probably one to save when you're already in the area (or if your children are fans of planes- it's under the flight path of Leeds Bradford Airport).",
-      "imageUrl": null,
-      "imageAlt": "Yeadon",
-      "locationLabel": "Yorkshire",
-      "postcode": "LS19 7RS",
-      "what3words": null,
-      "coordinates": {
-        "lat": 53.8636612,
-        "lng": -1.6850787
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 51,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -1919,7 +2313,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 52,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4 miles",
         "Terrain": "Easy identifiable paths, some ascent (700 feet). A short spell of road walking on a quiet country road.",
@@ -1961,7 +2355,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 52,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Short Route: 2 miles Longer Route to Askwith : 4.5 miles circular",
         "Terrain": "Concrete track, newly resurfaced path. The short version of this walk is pushchair friendly. Flat, little to no ascent. Some parts of this walk are on quiet residential roadways some parts can be muddy.",
@@ -2002,7 +2396,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 52,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "3 miles linear walk.",
         "Terrain": "Well maintained footpaths, some ascent. The route along the edge of the river and back is pushchair accessible 🛑 Some steep drops to the edge of the Upper footpaths, for those who are more wary of heights.",
@@ -2041,7 +2435,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 52,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "5 miles from the Cavendish - less than 1 miles if walked from Barden Field/ Bridge.",
         "Terrain": "Well maintained footpaths, some ascent. 🛑 Some steep drops to the edge of footpaths, for those who are more wary of heights. There is some short road walking between Barden Bridge and the ruins.",
@@ -2080,7 +2474,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 52,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "5 miles (dependant on how much exploring you do)",
         "Terrain": "Well maintained footpaths, some ascent. 🛑 Some steep drops to the edge of footpaths, for those who are more wary of heights.",
@@ -2121,7 +2515,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 52,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Option 1 - less than 2 miles",
         "Terrain": "Easy identifiable paths. Mainly flat terrain. A little warning for those who are not keen on our bovine friends, there are some cows located in the area by the riverside. They have never bothered us, but a heads up is always worth it!",
@@ -2161,7 +2555,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 52,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Under 2 miles",
         "Terrain": "Moorland peaky paths! Aka, rough underfoot, can be muddy and lots of stones to watch out for! Ascent is just over 150m.",
@@ -2174,11 +2568,46 @@
       }
     },
     {
+      "id": "yorkshire-tots-plan-your-linton-falls-waterfall-walk-near-grassington-north-yorkshire-yorkshiretots-com-linton-falls-wat",
+      "source": "yorkshire-tots",
+      "sourceUrl": "https://yorkshiretots.com/linton-falls-waterfall-walk/",
+      "title": "Plan Your Linton Falls Waterfall Walk near Grassington, North Yorkshire",
+      "summary": "Not only does the Linton Falls Waterfall walk take in the famous Linton Falls, but it also has stepping stones, an epic stone-throwing beach,",
+      "imageUrl": "https://yorkshiretots.com/wp-content/uploads/2022/02/linton-falls-waterfall-walk.jpg",
+      "imageAlt": "Plan Your Linton Falls Waterfall Walk near Grassington, North Yorkshire",
+      "locationLabel": null,
+      "postcode": "BD23 6BQ",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.0657771,
+        "lng": -1.9997049
+      },
+      "parking": "Parking on both counts is pay and display.",
+      "cost": "pay and display.",
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "stepping stones",
+        "waterfall",
+        "ice cream",
+        "play park",
+        "ruins",
+        "beach"
+      ],
+      "categories": [
+        "Yorkshire Tots"
+      ],
+      "driveMinutes": 52,
+      "lastSyncedAt": "2026-07-28T16:51:41.609Z",
+      "rawFacts": {}
+    },
+    {
       "id": "muddy-boots-mummy-water-haigh-woodland-park-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Water Haigh Woodland Park",
-      "summary": "is between Woodlesford Lock and Lemonroyd Marina, with lots of options for short trails up to 5km, and has plenty to see. Canal paths and Eshald Wood suitable for buggies.",
+      "summary": "Water Haigh Woodland Park is between Woodlesford Lock and Lemonroyd Marina, with lots of options for short trails up to 5km, and has plenty to see. Canal paths and Eshald Wood suitable for buggies.",
       "imageUrl": null,
       "imageAlt": "Water Haigh Woodland Park",
       "locationLabel": "Yorkshire",
@@ -2200,7 +2629,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 52,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -2208,7 +2637,7 @@
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Rothwell Country Park",
-      "summary": "has lots of little paths to follow, and with great views of the city as well as access to the canal, it's a good place to spend time exploring. Mostly suitable for buggies;",
+      "summary": "Rothwell Country Park has lots of little paths to follow, and with great views of the city as well as access to the canal, it's a good place to spend time exploring. Mostly suitable for buggies;",
       "imageUrl": null,
       "imageAlt": "Rothwell Country Park",
       "locationLabel": "Yorkshire",
@@ -2228,7 +2657,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 52,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -2236,7 +2665,7 @@
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Rothwell Pastures",
-      "summary": "is a pretty reserve, with this walk to Robin Hood along the old railway line. If you have buggies or bikes, avoid the loop and just return on the same path.",
+      "summary": "Rothwell Pastures is a pretty reserve, with this walk to Robin Hood along the old railway line. If you have buggies or bikes, avoid the loop and just return on the same path.",
       "imageUrl": null,
       "imageAlt": "Rothwell Pastures",
       "locationLabel": "Yorkshire",
@@ -2256,7 +2685,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 52,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -2264,7 +2693,7 @@
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Eccup Reservoir",
-      "summary": "is 4.5 miles to walk around, taking in the lovely countryside in North Leeds. Not a buggy walk.",
+      "summary": "Eccup Reservoir is 4.5 miles to walk around, taking in the lovely countryside in North Leeds. Not a buggy walk.",
       "imageUrl": null,
       "imageAlt": "Eccup Reservoir",
       "locationLabel": "Yorkshire",
@@ -2284,7 +2713,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 52,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -2314,7 +2743,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 53,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4 miles",
         "Terrain": "Signposted trails that are well walked and easy underfoot.",
@@ -2357,7 +2786,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 53,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "3.5 - 4 miles",
         "Terrain": "Well maintained footpaths, some ascent. 🛑 Some steep drops to the edge of footpaths, for those who are more wary of heights.",
@@ -2398,7 +2827,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 53,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Around 1 mile",
         "Terrain": "Woodland tracks, rough and uneven in places, and can be muddy after periods of heavy rain. Some ascent but nothing substantial. This is essentially a fancy trip to a rather muddy park!",
@@ -2420,7 +2849,7 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/roseberry-topping/library/autumn/dji_0401-website.jpg",
       "imageAlt": "Drone photo of Roseberry Topping in late November, looking east towards the North Sea",
       "locationLabel": "Newton-under-Roseberry, North Yorkshire",
-      "postcode": null,
+      "postcode": "TS9 6QR",
       "what3words": null,
       "coordinates": {
         "lat": 54.5056,
@@ -2429,14 +2858,18 @@
       "parking": null,
       "cost": "National Trust membership / admission may apply",
       "distanceMiles": null,
-      "terrain": "hilly",
+      "terrain": "steep",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 53,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Newton-under-Roseberry",
         "county": "North Yorkshire"
@@ -2474,7 +2907,7 @@
         "Yorkshire Tots"
       ],
       "driveMinutes": 53,
-      "lastSyncedAt": "2026-07-28T16:17:26.362Z",
+      "lastSyncedAt": "2026-07-28T16:51:36.197Z",
       "rawFacts": {}
     },
     {
@@ -2504,25 +2937,25 @@
         "Teesside Family Life"
       ],
       "driveMinutes": 53,
-      "lastSyncedAt": "2026-07-28T16:18:31.458Z",
+      "lastSyncedAt": "2026-07-28T16:52:07.483Z",
       "rawFacts": {
         "slug": "discover-rspb-saltholme-teesside"
       }
     },
     {
-      "id": "muddy-boots-mummy-meanwood-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "id": "muddy-boots-mummy-meanwood-park-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Meanwood",
-      "summary": "Park, North Leeds is a beautiful place to explore, with all lengths of routes. We like this 3.8km circular route that goes through the Hollies.",
+      "title": "Meanwood Park",
+      "summary": "North Leeds is a beautiful place to explore, with all lengths of routes. We like this 3.8km circular route that goes through the Hollies.",
       "imageUrl": null,
-      "imageAlt": "Meanwood",
+      "imageAlt": "Meanwood Park",
       "locationLabel": "Yorkshire",
-      "postcode": "LS6 4HJ",
+      "postcode": "LS6 4LT",
       "what3words": null,
       "coordinates": {
-        "lat": 53.8281685,
-        "lng": -1.5682466
+        "lat": 53.83234,
+        "lng": -1.5742324
       },
       "parking": null,
       "cost": null,
@@ -2534,7 +2967,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 53,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -2565,7 +2998,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 54,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Under 1 mile. Dependant how much exploring you do.",
         "Terrain": "Muddy in places in wet weather, but the paths are surfaced with hardcore. Pushchair-able with a sturdy pushchair. This walk is more or less flat the whole way round and is easy to navigate with plenty of stopping spots.",
@@ -2583,7 +3016,7 @@
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Temple Newsam",
-      "summary": "has lots of lovely walks for children. This 3.5km route is suitable for buggies (although can get muddy) and shows some of the best bits of this great estate. Add on a farm and cafe visit for a full day out.",
+      "summary": "Temple Newsam has lots of lovely walks for children. This 3.5km route is suitable for buggies (although can get muddy) and shows some of the best bits of this great estate. Add on a farm and cafe visit for a full day out.",
       "imageUrl": null,
       "imageAlt": "Temple Newsam",
       "locationLabel": "Yorkshire",
@@ -2605,7 +3038,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 54,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -2635,7 +3068,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 55,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "3 miles ( 5 km)",
         "Terrain": "Varied. Some rocky paths requiring some very simple clambering or scrambling (no exposed drops) wide grassy routes and some easy to navigate rocky tracks.",
@@ -2676,7 +3109,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 55,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "5.5 miles",
         "Terrain": "Mainly easy tracks underfoot. Some parts of the path can get quite muddy and wet on the return route. Some ascent (around 850 feet)",
@@ -2715,7 +3148,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 55,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "less than 1 mile",
         "Terrain": "Easy footpaths. Flat terrain, well signposted.",
@@ -2757,7 +3190,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 56,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "just over 5 miles",
         "Terrain": "Some uneven underfoot, muddy in places, particularly on the first and last stretch. There is a short section of road walking, which takes place on a quiet country road. On our most recent visit on a sunny Saturday, we encountered no cars. Be aware that the ford will flood after wet weather, so an alternative route will need to be taken, but details about that are below!",
@@ -2797,7 +3230,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 56,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "5.5miles",
         "Terrain": "Uneven moorland paths. This walk has an ascent of over 220m. The first half of the walk is on very clear and easy to spot paths, the seconf half is on slightly less obvious paths. If you have any navigation concerns simply head back the way you came.",
@@ -2837,7 +3270,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 56,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "2-3 miles",
         "Terrain": "Easy to spot paths, some minor rough walking to find the old weir, but otherwise, this is an easy to navigate walk. That said, a map is recommended. Ascent is 750 feet.",
@@ -2849,6 +3282,36 @@
         "Toilets/ Baby Change": "No",
         "Nearest Cafe/ Amenities": "Embsay"
       }
+    },
+    {
+      "id": "muddy-boots-mummy-bramley-fall-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Bramley Fall",
+      "summary": "At just 1 mile this route is a good one to start little legs off with! It includes pretty woodland and the canal, but isn't buggy friendly.",
+      "imageUrl": null,
+      "imageAlt": "Bramley Fall",
+      "locationLabel": "Yorkshire",
+      "postcode": "LS13 1ER",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.8232872,
+        "lng": -1.6273712
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": 1,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "woodland"
+      ],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 56,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
     },
     {
       "id": "little-vikings-walks-from-castle-howard-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
@@ -2879,7 +3342,7 @@
         "Little Vikings"
       ],
       "driveMinutes": 56,
-      "lastSyncedAt": "2026-07-28T16:20:09.787Z",
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
       "rawFacts": {}
     },
     {
@@ -2912,7 +3375,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "6-8 miles upwards (this will vary dependant on how much exploring you end up doing)",
         "Terrain": "A varied terrain. Some steep ascent, mostly easily identifiable paths and tracks. There are some steep unguarded drops (but this can be avoided if desired). This walk is on access land where you have the right to roam.",
@@ -2954,7 +3417,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "3.5 miles",
         "Terrain": "Well walked and way marked footpaths, some ascent (850 feet). Mainly rough and uneven footpaths, but all are clear and well signposted.",
@@ -2995,7 +3458,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Approximately 6.5 miles. Allow 4+ hours.",
         "Terrain": "Easily identifiable well walked paths with the exception of the steep section between the Lead Mine and the summit line. Uneven underfoot, muddy in places. Ascent is 502 metres, the summit being 702 metres high.",
@@ -3035,7 +3498,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "2 miles (ish) dependant on how much of the woods you take in. Less if you park on the verge.",
         "Terrain": "Some concrete paths, mostly muddy tracks round the woods (some VERY muddy). Some ascent in the woods, around 100m. DURING BLUEBELL SEASON make sure you stick to well walked paths to avoid trampling the bluebells.",
@@ -3078,7 +3541,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Terrain": "Dependant on how far up you decide to go, some easily identifiable paths, the higher up the falls are more scrambly with some unguarded drops, so best suited for older adventurers. UPDATE: The path towards the top falls has become a little eroded in places, possibly due to small landslip. It is best to view the falls from below this point with the kids as there is a steep exposed drop and the path is very narrow.",
         "Parking": "Buckden Pay and Display",
@@ -3118,7 +3581,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4-5 miles",
         "Terrain": "Easily identifiable paths. Some quiet country road walking. Some rough terrain. To reach some of the falls, there is some walking off path. The only ascent is at the beginning of this walk, the rest is flat.",
@@ -3159,7 +3622,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4.5 miles",
         "Terrain": "Mainly easily identifiable paths. Some ascent (380m), some off path walking, but this was over easy terrain at the time of walking and there is a visible well trodden path across open access land to the waterfall UPDATE October 2025. There has been a new gate put in the wall to access the waterfall. It is located on public access land, where you have the right to roam . Follow the countryside code at all time, be respectful of the countryside and the landowner, NEVER LEAVE RUBBISH! IT’S PROPER TERRIBLE BEHAVIOUR! LEAVE NO TRACE (shouty bit over!)",
@@ -3202,7 +3665,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "less than 2 miles",
         "Terrain": "Easy underfoot, well maintained paths. Mainly flat walk with no real incline. Paths can get muddy during periods of prolonged wet weather.",
@@ -3246,17 +3709,45 @@
         "Yorkshire Tots"
       ],
       "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:17:57.677Z",
+      "lastSyncedAt": "2026-07-28T16:51:45.675Z",
       "rawFacts": {}
     },
     {
-      "id": "muddy-boots-mummy-calverly-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "id": "muddy-boots-mummy-skelton-lake-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Calverly",
-      "summary": "to Apperley Bridge Circular is 4.5 miles, walking along the canal on a buggy friendly path and back along the riverside (not suitable for buggies) in somewhat muddied conditions!",
+      "title": "Skelton Lake",
+      "summary": "sitting behind the M1 Skelton Lake services isn't the most obvious choice for a walk, but with a few routes to choose from and great facilities it's a great choice for families.",
       "imageUrl": null,
-      "imageAlt": "Calverly",
+      "imageAlt": "Skelton Lake",
+      "locationLabel": "Yorkshire",
+      "postcode": null,
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.7691617,
+        "lng": -1.4709578
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 57,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "muddy-boots-mummy-calverly-to-apperley-bridge-circular-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Calverly to Apperley Bridge Circular",
+      "summary": "Calverly to Apperley Bridge Circular is 4.5 miles, walking along the canal on a buggy friendly path and back along the riverside (not suitable for buggies) in somewhat muddied conditions!",
+      "imageUrl": null,
+      "imageAlt": "Calverly to Apperley Bridge Circular",
       "locationLabel": "Yorkshire",
       "postcode": "LS13 1NP",
       "what3words": null,
@@ -3274,7 +3765,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -3282,7 +3773,7 @@
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Brayton Barff",
-      "summary": "is a lovely short buggy friendly 2km circular walk through woodland, with lots of woodland to explore if you have more time to spend there.",
+      "summary": "Brayton Barff is a lovely short buggy friendly 2km circular walk through woodland, with lots of woodland to explore if you have more time to spend there.",
       "imageUrl": null,
       "imageAlt": "Brayton Barff",
       "locationLabel": "Yorkshire",
@@ -3304,35 +3795,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
-    },
-    {
-      "id": "muddy-boots-mummy-one-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "One",
-      "summary": "of the most famous features in Yorkshire, Sutton Bank provides spectacular views with minimal effort. We love the three mile loop that passes under the White Horse, but a shorter buggy friendly route is also available.",
-      "imageUrl": null,
-      "imageAlt": "One",
-      "locationLabel": "Yorkshire",
-      "postcode": "WF1 2EB",
-      "what3words": null,
-      "coordinates": {
-        "lat": 53.6843172,
-        "lng": -1.5037184
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 57,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -3364,7 +3827,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 58,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "1.5 miles",
         "Terrain": "Easy footpaths, well signposted, little ascent 100 feet. Make sure you stick to the footpaths through the meadows, there are stunning protected wildflowers in the Spring/ early Summer.",
@@ -3375,6 +3838,99 @@
         "Toilets/ Baby Change": "Muker",
         "Nearest Cafe/ Amenities": "Muker - try the village store and the Farmers Arms"
       }
+    },
+    {
+      "id": "yorkshire-tots-hardraw-force-england-s-highest-single-drop-waterfall-yorkshiretots-com-hardraw-force-englands-highest-si",
+      "source": "yorkshire-tots",
+      "sourceUrl": "https://yorkshiretots.com/hardraw-force-englands-highest-single-drop-waterfall/",
+      "title": "Hardraw Force - England's Highest Single Drop Waterfall",
+      "summary": "Yorkshire never fails to impress me.&nbsp; Just when I feel that I’ve quite a lot, we find another new corner with something new and exciting to",
+      "imageUrl": "https://yorkshiretots.com/wp-content/uploads/2019/05/Hardraw-Force-waterfall-from-distance.jpg",
+      "imageAlt": "Hardraw Force - England's Highest Single Drop Waterfall",
+      "locationLabel": null,
+      "postcode": "DL8 3LY",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.3198038,
+        "lng": -2.2019924
+      },
+      "parking": null,
+      "cost": "entry point to the falls.",
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "waterfall",
+        "ice cream",
+        "play park",
+        "ruins",
+        "cafe / pub",
+        "beach"
+      ],
+      "categories": [
+        "Yorkshire Tots"
+      ],
+      "driveMinutes": 58,
+      "lastSyncedAt": "2026-07-28T16:51:46.083Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "muddy-boots-mummy-bishop-wood-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Bishop Wood",
+      "summary": "near Sherburn-in-Elmet, is a lovely area of woodland to explore. Many paths are buggy friendly, but it's probably somewhere to save for if you're already in the area or passing through.",
+      "imageUrl": null,
+      "imageAlt": "Bishop Wood",
+      "locationLabel": "Yorkshire",
+      "postcode": "LS25 6HN",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.7965771,
+        "lng": -1.1556169
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "woodland"
+      ],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 58,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "muddy-boots-mummy-ardsley-reservoir-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Ardsley Reservoir",
+      "summary": "Tingley is a short, buggy friendly 2.5km route. Great for if you want a quick walk and you're in the area, or if you want a breath of fresh air after tackling the White Rose.",
+      "imageUrl": null,
+      "imageAlt": "Ardsley Reservoir",
+      "locationLabel": "Yorkshire",
+      "postcode": null,
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.7200235,
+        "lng": -1.5614939
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 58,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
     },
     {
       "id": "reluctant-explorers-ilkley-tarn-www-thereluctantexplorers-com-ilkley-tarn-from-darwin-gardens",
@@ -3403,7 +3959,7 @@
         "Pushchair Friendly Walks"
       ],
       "driveMinutes": 59,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Less than 1 mile.",
         "Terrain": "Easy, tarmacked. Some gentle ascent, 30m. Pushchair friendly although the beginning is uphill.",
@@ -3416,15 +3972,45 @@
       }
     },
     {
+      "id": "muddy-boots-mummy-st-aiden-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "St Aiden",
+      "summary": "RSPB reserve in South East Leeds has some good paths that are suitable for buggies. If you want even more variety, this 5.5km route starting from Lemonroyd Marina takes in the canal, a Methley cafe and the best of St Aiden's.",
+      "imageUrl": null,
+      "imageAlt": "St Aiden",
+      "locationLabel": "Yorkshire",
+      "postcode": "WF5 0HB",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.6751842,
+        "lng": -1.5606341
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "cafe / pub"
+      ],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 59,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
+    },
+    {
       "id": "muddy-boots-mummy-pontefract-racecourse-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Pontefract Racecourse",
-      "summary": "has a 2mile circuit in pleasant surroundings, with a children's playground and duck lake next to the car park.",
+      "summary": "Pontefract Racecourse has a 2mile circuit in pleasant surroundings, with a children's playground and duck lake next to the car park.",
       "imageUrl": null,
       "imageAlt": "Pontefract Racecourse",
       "locationLabel": "Yorkshire",
-      "postcode": "WF10 5ZF",
+      "postcode": "WF8 4SR",
       "what3words": null,
       "coordinates": {
         "lat": 53.7010623,
@@ -3442,47 +4028,8 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 59,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
-    },
-    {
-      "id": "reluctant-explorers-great-whernside-www-thereluctantexplorers-com-great-whernside",
-      "source": "reluctant-explorers",
-      "sourceUrl": "https://www.thereluctantexplorers.com/great-whernside",
-      "title": "Great Whernside",
-      "summary": "This family friendly walk to Great Whernside in the Yorkshire Dales takes a circular route to the summit. You'll bag the trig point, find a cool paddle spot and the walk starts and ends with the park! You'll find the all important walk description with the details of all the kid friendly stuff (like",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6008124718739e1ddbd633d7/76c0cc3c-90ec-4f5a-87ac-aa0e3d29eefd/Great+Whernside+Updated+2.JPG",
-      "imageAlt": "Great Whernside",
-      "locationLabel": null,
-      "postcode": null,
-      "what3words": "tight.contain.duplicate",
-      "coordinates": {
-        "lat": 54.1466338,
-        "lng": -2.0502836
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": 6,
-      "terrain": "steep",
-      "terrainNotes": "The tracks and paths are pretty clear and easy to spot. There are good waymarkings and signposts on this walk too. Ascent is around 1800 feet. It is very boggy on the plateau up from Hag Dyke, before you reach the final ascent. Some bog hopping is required! Navigation skills and a map is a must, this is a mountain and in poor visibility will be tricky to navigate.",
-      "features": [
-        "ice cream",
-        "paddle",
-        "trig point",
-        "cafe / pub"
-      ],
-      "categories": [
-        "Family Friendly Walks around the Yorkshire Dales"
-      ],
-      "driveMinutes": 60,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
-      "rawFacts": {
-        "Distance": "Shorter: 5-6 miles Longer: 7-8 miles",
-        "Terrain": "The tracks and paths are pretty clear and easy to spot. There are good waymarkings and signposts on this walk too. Ascent is around 1800 feet. It is very boggy on the plateau up from Hag Dyke, before you reach the final ascent. Some bog hopping is required! Navigation skills and a map is a must, this is a mountain and in poor visibility will be tricky to navigate.",
-        "What 3 Words": "tight.contain.duplicate (car park and start point)",
-        "Toilets/ Baby Change": "Yes, at Kettlewell Car Park.",
-        "Nearest Cafe/ Amenities": "Kettlewell has pubs, shops and an ice cream kiosk."
-      }
     },
     {
       "id": "reluctant-explorers-kettlewell-to-starbotton-circular-www-thereluctantexplorers-com-kettlewell-to-starbotton",
@@ -3515,7 +4062,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 60,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4.5 miles",
         "Terrain": "Easy terrain but boots required. Clear identifiable footpaths and well signposted. Some ascent 700 feet. Extremely limited road walking (on quiet roads). Be aware there are lots of stiles on this walk. There are aften cows on this walk.",
@@ -3525,6 +4072,45 @@
         "What 3 Words": "tight.contain.duplicate (car park and start point)",
         "Toilets/ Baby Change": "At Kettlewell pay and display car park.",
         "Nearest Cafe/ Amenities": "In Kettlewell for pubs, cafes, ice cream and more."
+      }
+    },
+    {
+      "id": "reluctant-explorers-great-whernside-www-thereluctantexplorers-com-great-whernside",
+      "source": "reluctant-explorers",
+      "sourceUrl": "https://www.thereluctantexplorers.com/great-whernside",
+      "title": "Great Whernside",
+      "summary": "This family friendly walk to Great Whernside in the Yorkshire Dales takes a circular route to the summit. You'll bag the trig point, find a cool paddle spot and the walk starts and ends with the park! You'll find the all important walk description with the details of all the kid friendly stuff (like",
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6008124718739e1ddbd633d7/76c0cc3c-90ec-4f5a-87ac-aa0e3d29eefd/Great+Whernside+Updated+2.JPG",
+      "imageAlt": "Great Whernside",
+      "locationLabel": null,
+      "postcode": null,
+      "what3words": "tight.contain.duplicate",
+      "coordinates": {
+        "lat": 54.1466338,
+        "lng": -2.0502836
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": 6,
+      "terrain": "steep",
+      "terrainNotes": "The tracks and paths are pretty clear and easy to spot. There are good waymarkings and signposts on this walk too. Ascent is around 1800 feet. It is very boggy on the plateau up from Hag Dyke, before you reach the final ascent. Some bog hopping is required! Navigation skills and a map is a must, this is a mountain and in poor visibility will be tricky to navigate.",
+      "features": [
+        "ice cream",
+        "paddle",
+        "trig point",
+        "cafe / pub"
+      ],
+      "categories": [
+        "Family Friendly Walks around the Yorkshire Dales"
+      ],
+      "driveMinutes": 60,
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
+      "rawFacts": {
+        "Distance": "Shorter: 5-6 miles Longer: 7-8 miles",
+        "Terrain": "The tracks and paths are pretty clear and easy to spot. There are good waymarkings and signposts on this walk too. Ascent is around 1800 feet. It is very boggy on the plateau up from Hag Dyke, before you reach the final ascent. Some bog hopping is required! Navigation skills and a map is a must, this is a mountain and in poor visibility will be tricky to navigate.",
+        "What 3 Words": "tight.contain.duplicate (car park and start point)",
+        "Toilets/ Baby Change": "Yes, at Kettlewell Car Park.",
+        "Nearest Cafe/ Amenities": "Kettlewell has pubs, shops and an ice cream kiosk."
       }
     },
     {
@@ -3556,7 +4142,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 60,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "6.5 miles",
         "Terrain": "Uneven moorland paths, ascent to trig point of 402m. Mostly obvious and well walked routes, the paths around the Badger Stone can get very boggy and muddy in the winter months.",
@@ -3593,7 +4179,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 60,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {}
     },
     {
@@ -3626,7 +4212,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 60,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4 miles",
         "Terrain": "Well defined footpaths, and clear signposting. Some ascent (700 feet). Can be muddy and uneven underfoot, so walking boots/ or sturdy footwear is a must.",
@@ -3670,7 +4256,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 60,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "2 miles (short but sweet!)",
         "Terrain": "Easy footpaths, easy terrain underfoot, little to no ascent. There is some (200 yards) of road walking. Whilst it is a very brief section, the road can be busy, so take care. NOTE: One of the stones has been displaced. Keep your eyes peeled for more. Update due June 2026.",
@@ -3712,7 +4298,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 60,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Around 2 miles dependant on how much exploring goes on!",
         "Terrain": "A combination of wide moorland tracks and some uneven paths. Some newly stepped paths and around 170m ascent. There are some steep unguarded drops on this walk.",
@@ -3754,7 +4340,7 @@
         "Pushchair Friendly Walks"
       ],
       "driveMinutes": 60,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "less than 1 mile.",
         "Terrain": "Easy underfoot. Hard surface path. Pushchair/ wheelchair accessible, with plenty of benches and stop spots on the way. The area around the waterfall can get muddy after rain and to reach the plunge pool requires a clamber across the rocks (made harder by a recently fallen tree!) Little to no ascent.",
@@ -3765,94 +4351,6 @@
         "Toilets/ Baby Change": "None. Nearest is Hawes, less than 10 minute drive.",
         "Nearest Cafe/ Amenities": "Hawes town centre, where there is an array of cafes and pubs to choose from."
       }
-    },
-    {
-      "id": "muddy-boots-mummy-bramley-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Bramley",
-      "summary": "Fall. At just 1 mile this route is a good one to start little legs off with! It includes pretty woodland and the canal, but isn't buggy friendly.",
-      "imageUrl": null,
-      "imageAlt": "Bramley",
-      "locationLabel": "Yorkshire",
-      "postcode": "LS13 2TX",
-      "what3words": null,
-      "coordinates": {
-        "lat": 53.8118759,
-        "lng": -1.6251903
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": 1,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [
-        "woodland"
-      ],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 60,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
-    },
-    {
-      "id": "muddy-boots-mummy-starting-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Starting",
-      "summary": "at Pateley Bridge, there's a lovely short walk to Fishpond Wood… although there's some walking on a road, it's fairly quiet and the rest of the walk makes up for it! Not suitable for buggies.",
-      "imageUrl": null,
-      "imageAlt": "Starting",
-      "locationLabel": "Yorkshire",
-      "postcode": "BD10 8TY",
-      "what3words": null,
-      "coordinates": {
-        "lat": 53.8307847,
-        "lng": -1.7472225
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [
-        "woodland"
-      ],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 61,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
-    },
-    {
-      "id": "muddy-boots-mummy-oakwell-hall-s-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Oakwell Hall's",
-      "summary": "nature trail in Birstall is 2miles and heads towards the main facilities half way round to stop for refreshments! Steps and slopes may mean little ones need some help at times- and this route is not suitable for buggies.",
-      "imageUrl": null,
-      "imageAlt": "Oakwell Hall's",
-      "locationLabel": "Yorkshire",
-      "postcode": "WF17 9BN",
-      "what3words": null,
-      "coordinates": {
-        "lat": 53.7416818,
-        "lng": -1.6651945
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": 2,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 61,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
     },
     {
       "id": "alltrails-thornton-le-dale-and-ellerburn-www-alltrails-com-en-gb-england-north-yorkshire-kids",
@@ -3879,23 +4377,23 @@
         "AllTrails Kids"
       ],
       "driveMinutes": 61,
-      "lastSyncedAt": "2026-07-28T16:20:35.715Z",
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
       "rawFacts": {}
     },
     {
-      "id": "muddy-boots-mummy-thornes-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "id": "muddy-boots-mummy-thornes-park-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Thornes",
-      "summary": "Park, just outside the city centre is great for a potter. The perimeter walk is two miles and buggy friendly. Look out for the aviary, secret garden, duck lake and miniature railway in the summer.",
+      "title": "Thornes Park",
+      "summary": "just outside the city centre is great for a potter. The perimeter walk is two miles and buggy friendly. Look out for the aviary, secret garden, duck lake and miniature railway in the summer.",
       "imageUrl": null,
-      "imageAlt": "Thornes",
+      "imageAlt": "Thornes Park",
       "locationLabel": "Yorkshire",
-      "postcode": "WF2 8UT",
+      "postcode": null,
       "what3words": null,
       "coordinates": {
-        "lat": 53.668624,
-        "lng": -1.5088073
+        "lat": 53.6734294,
+        "lng": -1.510196
       },
       "parking": null,
       "cost": null,
@@ -3907,17 +4405,47 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 62,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
-      "id": "muddy-boots-mummy-stanley-ferry-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "id": "muddy-boots-mummy-pugneys-country-park-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Stanley Ferry",
-      "summary": "and Southern Washlands Nature Reserve combines a walk along the canal with woodland, a river and a lake. The walk is just under 3 miles and can be started at the family-friendly Stanley Ferry pub.",
+      "title": "Pugneys Country Park",
+      "summary": "has a buggy-friendly 2.5k circular walk around the Lake. It has a great play area and LOADS of things to see. It's not the prettiest of Wakefield's parks but probably has the most to do. Pugney's Country Park to Sandal Castle walk is 4 miles and offers great views of the surrounding area. Not buggy friendly.",
       "imageUrl": null,
-      "imageAlt": "Stanley Ferry",
+      "imageAlt": "Pugneys Country Park",
+      "locationLabel": "Yorkshire",
+      "postcode": null,
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.6577034,
+        "lng": -1.5049681
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": 4,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "ruins"
+      ],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 62,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "muddy-boots-mummy-stanley-ferry-and-southern-washlands-nature-reserve-muddybootsmummy-co-uk-family-friendly-walks-in-yor",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Stanley Ferry and Southern Washlands Nature Reserve",
+      "summary": "Stanley Ferry and Southern Washlands Nature Reserve combines a walk along the canal with woodland, a river and a lake. The walk is just under 3 miles and can be started at the family-friendly Stanley Ferry pub.",
+      "imageUrl": null,
+      "imageAlt": "Stanley Ferry and Southern Washlands Nature Reserve",
       "locationLabel": "Yorkshire",
       "postcode": "WF3 4LT",
       "what3words": null,
@@ -3939,7 +4467,37 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 62,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "muddy-boots-mummy-woodcock-way-trail-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Woodcock Way Trail",
+      "summary": "The Woodcock Way Trail in the beautiful Dalby Forest is 4.5 miles along forest tracks, with some pretty incredible views.",
+      "imageUrl": null,
+      "imageAlt": "Woodcock Way Trail",
+      "locationLabel": "Yorkshire",
+      "postcode": "WF9 2TU",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.6003803,
+        "lng": -1.2854042
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": 4.5,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "woodland"
+      ],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 62,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -3974,7 +4532,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 63,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4 miles",
         "Terrain": "Tricky underfoot in places. For the main part very clear and well-defined paths, although the path to the footbridge at Swinner Gill is narrow and has some steep unguarded drops to the side, best for more confident explorers. Total ascent 700 feet.",
@@ -4016,7 +4574,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 63,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4 miles",
         "Terrain": "The falls themselves are relatively easy to find, but the terrain is very varied. The path down to the base of the upper falls of Kisdon is steep, permanently muddy and has a rope to help you gain access. That said, we’re not talking climbing territory, it’s just to help steady you down the bank. We’ve been to the falls a few times now and it’s doable, but perhaps not with a very young child.",
@@ -4059,7 +4617,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 63,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "The full walk including the cave is 3-3.5 miles. The stepping stone circular is under 2 miles.",
         "Terrain": "Do not attempt this walk after significantly wet weather. Part of the path gets submerged next to the river and the stepping stones will be impassable, which is a disappointment for sure! We have walked this one several times now in all seasons. Believe me, when the path floods, there no chance of getting through - which always makes me question why on earth they put in the stepping stones in the first place, because most of the time, the River Skirfare is dry!",
@@ -4079,23 +4637,28 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/north-east/places/crook-hall-gardens/library/spring/crook-hall-gardens-wide-view-north-east-colin-davison.jpg",
       "imageAlt": "A wide aerial view over Crook Hall Gardens on a sunny spring day. Trees and shrubs are in full leaf, with colourful flowers in borders between green lawns. The roof of the café can be seen between the gardens and buildings on the edge of the city, with Durham Cathedral just visible in the distance",
       "locationLabel": "Durham",
-      "postcode": null,
+      "postcode": "DH1 5SZ",
       "what3words": null,
       "coordinates": {
         "lat": 54.782583,
         "lng": -1.575158
       },
-      "parking": null,
-      "cost": "National Trust membership / admission may apply",
+      "parking": "parking There are designated Blue Badge spaces in the car park Induction loop Ramped access/slopes Parts of the gardens can be accessed in a wheelchair.",
+      "cost": "entry to the gardens and medieval hall one hour before closing.",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "cafe / pub",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 63,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "",
         "county": "Durham"
@@ -4106,7 +4669,7 @@
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Rodley Nature Reserve",
-      "summary": "has a visitor's centre where you can pick up a Quiz Trail Guide for children. You can also try pond dipping (between April and October), do a mini beast hunt as well as spot wildlife. Until I get a blog up, visit the website for more details.",
+      "summary": "Rodley Nature Reserve has a visitor's centre where you can pick up a Quiz Trail Guide for children. You can also try pond dipping (between April and October), do a mini beast hunt as well as spot wildlife. Until I get a blog up, visit the website for more details.",
       "imageUrl": null,
       "imageAlt": "Rodley Nature Reserve",
       "locationLabel": "Yorkshire",
@@ -4126,7 +4689,35 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 63,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "muddy-boots-mummy-oakwell-hall-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Oakwell Hall",
+      "summary": "nature trail in Birstall is 2miles and heads towards the main facilities half way round to stop for refreshments! Steps and slopes may mean little ones need some help at times- and this route is not suitable for buggies.",
+      "imageUrl": null,
+      "imageAlt": "Oakwell Hall",
+      "locationLabel": "Yorkshire",
+      "postcode": "WF17 9LG",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.7400087,
+        "lng": -1.671925
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": 2,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 63,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -4159,7 +4750,7 @@
         "Yorkshire Tots"
       ],
       "driveMinutes": 64,
-      "lastSyncedAt": "2026-07-28T16:17:28.505Z",
+      "lastSyncedAt": "2026-07-28T16:51:38.626Z",
       "rawFacts": {}
     },
     {
@@ -4194,7 +4785,7 @@
         "Yorkshire Tots"
       ],
       "driveMinutes": 64,
-      "lastSyncedAt": "2026-07-28T16:17:50.974Z",
+      "lastSyncedAt": "2026-07-28T16:51:43.246Z",
       "rawFacts": {}
     },
     {
@@ -4224,7 +4815,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 65,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {}
     },
     {
@@ -4236,23 +4827,27 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/nostell/library/summer/view-of-the-east-front-nostell-250f5w.jpg",
       "imageAlt": "View of the east front with imposing curving staircase and balustrade at Nostell, Yorkshire",
       "locationLabel": "near Wakefield, West Yorkshire",
-      "postcode": null,
+      "postcode": "WF4 1QE",
       "what3words": null,
       "coordinates": {
         "lat": 53.652599,
         "lng": -1.38881
       },
-      "parking": null,
-      "cost": "National Trust membership / admission may apply",
+      "parking": "parking charge.",
+      "cost": "entry to the gardens is 1 hour before closing time.",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 65,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "near Wakefield",
         "county": "West Yorkshire"
@@ -4288,7 +4883,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 66,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "2 miles",
         "Terrain": "Easy footpaths, and some road walking. When I say road walking, it is a road, but it is the quietest road on the planet, being the ‘road to the end of the road at Foxup (which has about 3 houses in it!)’. We visited on a weekend and saw no cars on this stretch of road at all. Some minor ascent, but only 300 feet.",
@@ -4310,23 +4905,28 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/east-riddlesden-hall/library/summer/the-south-west-front-of-east-riddlesden-hall-west-yorkshire.jpg",
       "imageAlt": "The South West Front of East Riddlesden Hall, West Yorkshire",
       "locationLabel": "Keighley, West Yorkshire",
-      "postcode": null,
+      "postcode": "BD20 5EL",
       "what3words": null,
       "coordinates": {
         "lat": 53.873199,
         "lng": -1.87589
       },
-      "parking": null,
-      "cost": "National Trust membership / admission may apply",
+      "parking": "parking in main car park, visitors with limited mobility may be dropped off near the house.",
+      "cost": "Prices Free entry for National Trust members and under 5s.",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "cafe / pub",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 66,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Keighley",
         "county": "West Yorkshire"
@@ -4341,23 +4941,27 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/yorkshire-dales/library/summer/dog-walking-pennine-way-yorkshire-848998.jpg",
       "imageAlt": "A shot on the Pennine Way with a man walking two dogs in the distance on a sunny day",
       "locationLabel": "Settle, North Yorkshire",
-      "postcode": null,
+      "postcode": "BD24 9PU",
       "what3words": null,
       "coordinates": {
         "lat": 54.104698,
         "lng": -2.17682
       },
-      "parking": null,
+      "parking": "parking is at Waterhouses, Quarry or Watersinks car parks.",
       "cost": "National Trust membership / admission may apply",
       "distanceMiles": null,
       "terrain": "hilly",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 66,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Settle",
         "county": "North Yorkshire"
@@ -4368,7 +4972,7 @@
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Skipwith Common",
-      "summary": "is a nature reserve-come WW2 bomber training camp. This gorgeous site is really peaceful with loads of interesting finds! The pushchair friendly 2 mile walk is well marked.",
+      "summary": "Skipwith Common is a nature reserve-come WW2 bomber training camp. This gorgeous site is really peaceful with loads of interesting finds! The pushchair friendly 2 mile walk is well marked.",
       "imageUrl": null,
       "imageAlt": "Skipwith Common",
       "locationLabel": "Yorkshire",
@@ -4390,37 +4994,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 66,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
-    },
-    {
-      "id": "muddy-boots-mummy-cautley-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Cautley",
-      "summary": "Spout, Sedbergh is England's Highest Cascade waterfall above ground. It;s just 2km each way making this a great walk for families with little legs.",
-      "imageUrl": null,
-      "imageAlt": "Cautley",
-      "locationLabel": "Yorkshire",
-      "postcode": null,
-      "what3words": null,
-      "coordinates": {
-        "lat": 53.9837073,
-        "lng": -0.8054796
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [
-        "waterfall"
-      ],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 66,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -4450,7 +5024,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 67,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {}
     },
     {
@@ -4462,25 +5036,27 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/north-east/places/durham-coast/library/flora-beach-durham-coast-county-durham-1423697.jpg",
       "imageAlt": "Flora on the clifftops and a tranquil beach on the Durham Coast, County Durham",
       "locationLabel": "Seaham, County Durham",
-      "postcode": null,
+      "postcode": "SR7 7PS",
       "what3words": null,
       "coordinates": {
         "lat": 54.823619,
         "lng": -1.322313
       },
-      "parking": null,
+      "parking": "parking at Nose&#x27;s Point car park (Seaham, SR7 7PS).",
       "cost": "National Trust membership / admission may apply",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
       "features": [
+        "ruins",
+        "woodland",
         "beach"
       ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 68,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Seaham",
         "county": "County Durham"
@@ -4515,7 +5091,7 @@
         "Pushchair Friendly Walks"
       ],
       "driveMinutes": 69,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "2.5 miles (dependant on whether you take in the Limestone Pavement. If not, the walk will be 1.5-2 miles)",
         "Terrain": "Very well signposted routes. Part of this walk is pushchair and wheelchair accessible and this walk can be adapted to allow for this. The ascent to the limestone pavement and the pavement itself is EXTREMELY slippery underfoot when wet (and even when it’s not!) There is some road walking through Malham Village.",
@@ -4557,7 +5133,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 69,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Full Distance: 5 miles Short Cut: 4 miles Nature Reserve less than 2 miles.",
         "Terrain": "A combination of well surfaced tracks, wide grassy paths, boardwalk, and some road walking (less if you do the full route) Mostly well walked and well signposted and maintained paths. The final section (on the longer version) is less easy to navigate and isn’t as well walked although way-markers are present.",
@@ -4601,7 +5177,7 @@
         "Yorkshire Tots"
       ],
       "driveMinutes": 69,
-      "lastSyncedAt": "2026-07-28T16:17:28.080Z",
+      "lastSyncedAt": "2026-07-28T16:51:37.501Z",
       "rawFacts": {}
     },
     {
@@ -4634,7 +5210,7 @@
         "AllTrails Kids"
       ],
       "driveMinutes": 69,
-      "lastSyncedAt": "2026-07-28T16:20:35.715Z",
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
       "rawFacts": {}
     },
     {
@@ -4665,7 +5241,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 70,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Less than 1 mile",
         "Terrain": "Very steep narrow stepped path, rough underfoot. Some unguarded drops and will be slippery virtually all the time, so do be mindful of this wahen bringing kids.",
@@ -4709,7 +5285,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 70,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Short: 2 km (approximately 1.5 miles) Longer: 6 km (Approx 3.5 - 4 miles)",
         "Terrain": "Easy to follow and well walked paths. Some unevenness underfoot and can be muddy in places. Mainly flat with little ascent/ descent. Not pushchair friendly.",
@@ -4731,23 +5307,27 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/north-east/places/washington-old-hall/library/summer/washington-old-hall-from-garden-summer-annapurna-mellor-nt1ffv7.jpg",
       "imageAlt": "Late summer, blue sky with white clouds. The stone exterior and red tiled roof of Washington Old Hall viewed from gardens below with plants in bloom, topiary shrubs and a stone sundial in the foreground.",
       "locationLabel": "Washington, Tyne & Wear",
-      "postcode": null,
+      "postcode": "NE38 7LE",
       "what3words": null,
       "coordinates": {
         "lat": 54.9028,
         "lng": -1.5165
       },
-      "parking": null,
-      "cost": "National Trust membership / admission may apply",
+      "parking": "parking on onsite car park.",
+      "cost": "entry one hour before closing.",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 70,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Washington",
         "county": "Tyne & Wear"
@@ -4785,7 +5365,7 @@
         "Yorkshire Tots"
       ],
       "driveMinutes": 70,
-      "lastSyncedAt": "2026-07-28T16:17:28.902Z",
+      "lastSyncedAt": "2026-07-28T16:51:38.945Z",
       "rawFacts": {}
     },
     {
@@ -4797,25 +5377,28 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/north-east/places/penshaw-monument/library/1816496.resized.crop.jpg",
       "imageAlt": "View of a large grey columned building at dusk with some wooden steps going up to it.",
       "locationLabel": "Penshaw, Tyne & Wear",
-      "postcode": null,
+      "postcode": "DH4 7NJ",
       "what3words": null,
       "coordinates": {
         "lat": 54.883243,
         "lng": -1.48092
       },
-      "parking": null,
+      "parking": "Parking: Limited parking is available at the bottom of Penshaw Hill.",
       "cost": "National Trust membership / admission may apply",
       "distanceMiles": null,
-      "terrain": "hilly",
+      "terrain": "steep",
       "terrainNotes": null,
       "features": [
-        "trig point"
+        "ruins",
+        "woodland",
+        "trig point",
+        "beach"
       ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 71,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Penshaw",
         "county": "Tyne & Wear"
@@ -4851,7 +5434,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 72,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "8.5 miles",
         "Terrain": "Very well walked footpaths, very well waymarked, clear and fairly easy to navigate in good visibility. Obviously there is an ascent on this one of around 670m (you don’t start at sea level). The ascent itself is pretty easy, with no scrambling required at the summit. The route that I prefer and that this walk will do, takes a more steep ascent with a longer more gentle descent. With children, I find that this works best to avoid a steep downhill.",
@@ -4862,6 +5445,77 @@
         "Toilets/ Baby Change": "Toilets at Ribblehead Station and Pub for patrons only. There are public toilets in Horton in Ribblesdale, Settle and Ingleton.",
         "Nearest Cafe/ Amenities": "The Station Inn at the viaduct (it has an ace beer garden with a view) and there is a small cafe at the station."
       }
+    },
+    {
+      "id": "reluctant-explorers-force-gill-whernside-www-thereluctantexplorers-com-force-gill-whernside",
+      "source": "reluctant-explorers",
+      "sourceUrl": "https://www.thereluctantexplorers.com/force-gill-whernside",
+      "title": "Force Gill, Whernside",
+      "summary": "This family friendly waterfall walk takes you to Force Gill, which is located on the side of Whernside in the Yorkshire Dales. Here, you'll find all the essential need to know facts, like where to park, where to eat and what you can do to keep the kids entertained!",
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6008124718739e1ddbd633d7/28d996fe-ff7e-4e1b-8904-e4672f43a6ea/Summer+family+days+out+Yorkshire+Dales+24.jpg",
+      "imageAlt": "Force Gill, Whernside",
+      "locationLabel": "Ribblehead, Yorkshire Dales. The falls are located on Open Access Land and so you can exercise your right to roam.",
+      "postcode": null,
+      "what3words": "conducted.engine.recline",
+      "coordinates": {
+        "lat": 54.2096073,
+        "lng": -2.3589633
+      },
+      "parking": "Ribblehead viaduct. There is plenty of layby parking here. That said it can get busy, particularly in the Summer, so if you find it too busy to park, why not try nearby Horton in Ribblesdale for Pen y ghent or Settle to try the Settle Caves walk or Ingleton for the waterfalls trail . Always have a plan B is your plan A is too busy!",
+      "cost": null,
+      "distanceMiles": 6,
+      "terrain": "unknown",
+      "terrainNotes": "Wide, easily identifiable and well walked paths in the main. The offshoot to the waterfall, is smaller, but still clear.",
+      "features": [
+        "cave",
+        "waterfall",
+        "ice cream",
+        "cafe / pub"
+      ],
+      "categories": [
+        "Family Friendly Waterfall Walks"
+      ],
+      "driveMinutes": 72,
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
+      "rawFacts": {
+        "Distance": "5-6 miles. This is a there and back again, linear walk. For a circular, head to our Whernside circular walk .",
+        "Terrain": "Wide, easily identifiable and well walked paths in the main. The offshoot to the waterfall, is smaller, but still clear.",
+        "Parking": "Ribblehead viaduct. There is plenty of layby parking here. That said it can get busy, particularly in the Summer, so if you find it too busy to park, why not try nearby Horton in Ribblesdale for Pen y ghent or Settle to try the Settle Caves walk or Ingleton for the waterfalls trail . Always have a plan B is your plan A is too busy!",
+        "Public Transport": "An awesome alternative to taking the car! The Ribblehead train station is located right next to the start point of this walk. There are also buses that run to the area, but they are subject to seasonal timetables so check out the Dales Bus website for further information.",
+        "Location": "Ribblehead, Yorkshire Dales. The falls are located on Open Access Land and so you can exercise your right to roam.",
+        "Map": "Yorkshire Dales Southern and Western OL02 OS Explorer",
+        "What 3 Words": "conducted.engine.recline",
+        "Toilets/ Baby Change": "Station Pub and Ribblehead Station (toilets for customers only)",
+        "Nearest Cafe/ Amenities": "The Station Pub. There are also usually ice cream vans and sometimes a bacon sandwich van at the parking area (although from our experience the van isn’t the finest….) We recommend the pub! The beer garden has a cracking view and plenty of kid friendly options there on the menu too."
+      }
+    },
+    {
+      "id": "alltrails-ribblehead-viaduct-circular-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Ribblehead Viaduct Circular",
+      "summary": "Child-friendly trail in North Yorkshire on AllTrails: Ribblehead Viaduct Circular",
+      "imageUrl": null,
+      "imageAlt": "Ribblehead Viaduct Circular",
+      "locationLabel": "North Yorkshire",
+      "postcode": "LA6 3AU",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.2101724,
+        "lng": -2.3700923
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [],
+      "categories": [
+        "AllTrails Kids"
+      ],
+      "driveMinutes": 72,
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
+      "rawFacts": {}
     },
     {
       "id": "reluctant-explorers-victoria-and-jubilee-caves-www-thereluctantexplorers-com-jubilee-cave-and-victoria-cave-settle",
@@ -4892,7 +5546,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 73,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "7km or 10km dependant on the route you choose (the longer version takes in Warrendale Knotts)",
         "Terrain": "For all options: Rough paths, some steep climbs. To access parts of the caves, some steep climbing and exposed edges. Walking boots essential. All paths are clear and well walked. Inside the caves can be wet and muddy no matter how dry it’s been, so bring spare socks!",
@@ -4914,62 +5568,38 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/bridestones-crosscliff-and-blakey-topping/library/bridestones-path-yorkshire.jpg",
       "imageAlt": "A path leads up to a large rock formation with views to a green valley and moorland beyond",
       "locationLabel": "Pickering, North Yorkshire",
-      "postcode": null,
+      "postcode": "YO18 7LR",
       "what3words": null,
       "coordinates": {
         "lat": 54.302502,
         "lng": -0.66015
       },
       "parking": null,
-      "cost": "National Trust membership / admission may apply",
+      "cost": "entry to Dalby Forest when you visit car-free.",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 73,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Pickering",
         "county": "North Yorkshire"
       }
     },
     {
-      "id": "muddy-boots-mummy-ardsley-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
-      "source": "muddy-boots-mummy",
-      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "Ardsley",
-      "summary": "Reservoir, Tingley is a short, buggy friendly 2.5km route. Great for if you want a quick walk and you're in the area, or if you want a breath of fresh air after tackling the White Rose.",
-      "imageUrl": null,
-      "imageAlt": "Ardsley",
-      "locationLabel": "Yorkshire",
-      "postcode": "S71 5DN",
-      "what3words": null,
-      "coordinates": {
-        "lat": 53.546339,
-        "lng": -1.4244726
-      },
-      "parking": null,
-      "cost": null,
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [],
-      "categories": [
-        "Muddy Boots Mummy"
-      ],
-      "driveMinutes": 73,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
-      "rawFacts": {}
-    },
-    {
       "id": "muddy-boots-mummy-deffer-wood-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Deffer Wood",
-      "summary": "is simply glorious. Enjoy a 4km circular walk from Cannon Hall, enjoying good scenery and a good chance of animals.",
+      "summary": "Deffer Wood is simply glorious. Enjoy a 4km circular walk from Cannon Hall, enjoying good scenery and a good chance of animals.",
       "imageUrl": null,
       "imageAlt": "Deffer Wood",
       "locationLabel": "Yorkshire",
@@ -4991,7 +5621,39 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 73,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "alltrails-settle-clay-pits-and-victoria-cave-circular-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Settle, Clay Pits, and Victoria Cave Circular",
+      "summary": "This is a beautiful circular trail from Settle in the Yorkshire Dales in North Yorkshire. The highlights of this walk are the great views of Pen-y-ghent and Ingleborough, two of the three Yorkshire Peaks. The caves add intrigue to the walk and being so close to the Warrendale Knotts is awesome. The terrain is rugged in places, with some steep gradients so care is needed with footing, especially near the caves. You will need to negotiate several gates, some steps plus one stile. Appropriate... ### More child-friendly trails - Easby Abbey and Richmond Station - Helmsley to Rievaulx Abbey - Hackfall Explorer - Ribble Head Circular - Brimham Rocks and Brimham Moor Circular - Aysgarth Waterfalls ",
+      "imageUrl": null,
+      "imageAlt": "Settle, Clay Pits, and Victoria Cave Circular",
+      "locationLabel": "North Yorkshire",
+      "postcode": null,
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.0690631,
+        "lng": -2.2763604
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": "Moderate",
+      "features": [
+        "cave",
+        "waterfall",
+        "ruins"
+      ],
+      "categories": [
+        "AllTrails Kids"
+      ],
+      "driveMinutes": 73,
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
       "rawFacts": {}
     },
     {
@@ -5003,30 +5665,61 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/wentworth-castle-gardens/library/wcg-stainborough-castle.jpg",
       "imageAlt": "Visitors exploring the gothic folly 'Stainborough Castle' at Wentworth Castle Gardens, South Yorkshire",
       "locationLabel": "Barnsley, South Yorkshire",
-      "postcode": null,
+      "postcode": "S75 3EN",
       "what3words": null,
       "coordinates": {
         "lat": 53.527001,
         "lng": -1.5181156
       },
-      "parking": null,
-      "cost": "National Trust membership / admission may apply",
+      "parking": "parking Dogs allowed Dogs very welcome, but please keep them on a short lead at all times.",
+      "cost": "entry time - 3.",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
       "features": [
         "ruins",
-        "woodland"
+        "woodland",
+        "beach"
       ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 74,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Barnsley",
         "county": "South Yorkshire"
       }
+    },
+    {
+      "id": "alltrails-malham-walks-gordale-scar-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Malham Walks: Gordale Scar",
+      "summary": "This incredible hidden canyon at Gordale has amazed tourists for centuries and inspired notable painters and authors. The Middle Craven Fault formed this spectacular natural structure. Unlike Malham Cove, the torrents of glacial meltwater cut down via rock faults. Over thousands of years, successive Ice Ages cut it deeper and deeper into the valley you see today. It was not created by a massive cave collapse. Several smaller caves collapsing over time likely added to the gorge's depth. The...",
+      "imageUrl": null,
+      "imageAlt": "Malham Walks: Gordale Scar",
+      "locationLabel": "North Yorkshire",
+      "postcode": "BD23 4DL",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.0726558,
+        "lng": -2.1305677
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": "Easy",
+      "features": [
+        "cave"
+      ],
+      "categories": [
+        "AllTrails Kids"
+      ],
+      "driveMinutes": 74,
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
+      "rawFacts": {}
     },
     {
       "id": "reluctant-explorers-smardale-gill-viaduct-www-thereluctantexplorers-com-smardale-gill-viaduct",
@@ -5056,7 +5749,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 75,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "8km",
         "Terrain": "Mostly well walked paths, muddy underfoot and some steep exposed sections on the return from the Viaduct. If you wish to avoid that section, simply do the walk as a there and back again linear route to and from the viaduct. Limited ascent.",
@@ -5068,6 +5761,40 @@
         "Toilets/ Baby Change": "no public toilets on this walk. Facilities can be found at the Kings Head or Black Swan pubs (paying customers only)",
         "Nearest Cafe/ Amenities": "Ravenstonedale for pubs."
       }
+    },
+    {
+      "id": "yorkshire-tots-force-gill-waterfall-walk-whernside-yorkshire-dales-yorkshiretots-com-force-gill-waterfall-walk-whernside",
+      "source": "yorkshire-tots",
+      "sourceUrl": "https://yorkshiretots.com/force-gill-waterfall-walk-whernside/",
+      "title": "Force Gill Waterfall Walk | Whernside, Yorkshire Dales",
+      "summary": "This Force Gill Waterfall Walk has the perfect picnic spot that just so happens to be right next to a GIGANTIC Yorkshire Dales waterfall",
+      "imageUrl": "https://yorkshiretots.com/wp-content/uploads/2022/07/force-gill.jpg",
+      "imageAlt": "Force Gill Waterfall Walk | Whernside, Yorkshire Dales",
+      "locationLabel": null,
+      "postcode": "DL11 6LJ",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.4053284,
+        "lng": -2.1610951
+      },
+      "parking": "parking area at Ribblehead and takes you through the site of the old navvies camp (the workers who built the viaduct), which is now a Scheduled Ancient Monument.",
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "waterfall",
+        "ice cream",
+        "play park",
+        "ruins",
+        "beach"
+      ],
+      "categories": [
+        "Yorkshire Tots"
+      ],
+      "driveMinutes": 75,
+      "lastSyncedAt": "2026-07-28T16:51:40.555Z",
+      "rawFacts": {}
     },
     {
       "id": "teesside-family-life-how-to-find-the-egton-bridge-stepping-stones-www-teessidefamilylife-co-uk-2025-12-28-how-to-find-th",
@@ -5099,7 +5826,7 @@
         "Teesside Family Life"
       ],
       "driveMinutes": 75,
-      "lastSyncedAt": "2026-07-28T16:18:31.444Z",
+      "lastSyncedAt": "2026-07-28T16:52:07.478Z",
       "rawFacts": {
         "slug": "how-to-find-the-egton-bridge-stepping-stones"
       }
@@ -5136,7 +5863,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 76,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "SHORT 1 mile LONG 4-5 miles",
         "Terrain": "Well signposted clear and obvious tracks for the most part. There is some short road walking on an extremely quiet road. Part of the path by the river is prone to flooding and can get muddy but don’t worry, there’s a detour! There is a some steep ascent during the first stages of this walk. If you head to see the dancing flags, be aware that limestone can be very slippery when wet.",
@@ -5179,7 +5906,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 77,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4 miles",
         "Terrain": "Well signposted route. Defined footpaths.. Some brief road walking at the start, and there is the necessity to cross a road in the middle, but there are pavements. Otherwise grassy tracks with minimal ascent. This route can get extremely muddy by the river after wet weather so be prepared!",
@@ -5190,47 +5917,6 @@
         "What 3 Words": "share.relocated.grading",
         "Toilets/ Baby Change": "Stainforth Pay and Display Car Park",
         "Nearest Cafe/ Amenities": "Stainforth is a small village which has a local pub, Settle is a 5 minute drive and has loads of places to eat, drink and shop in the town centre."
-      }
-    },
-    {
-      "id": "reluctant-explorers-rutter-force-waterfall-www-thereluctantexplorers-com-rutter-force-waterfall",
-      "source": "reluctant-explorers",
-      "sourceUrl": "https://www.thereluctantexplorers.com/rutter-force-waterfall",
-      "title": "Rutter Force Waterfall",
-      "summary": "Rutter Force Waterfall is a spectacular cascade near Appleby in Westmorland and is found in the north western edge of the Yorkshire Dales National Park. This family friendly circular walk will take you right to it!",
-      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6008124718739e1ddbd633d7/a1c48099-d25e-4e62-b648-f87b5910a0ca/Rutter+Force+Walk+-+6+.jpeg",
-      "imageAlt": "Rutter Force Waterfall",
-      "locationLabel": "Hoff, near Appleby in Westmorland.",
-      "postcode": null,
-      "what3words": "path.jaundice.scary",
-      "coordinates": {
-        "lat": 54.5520878,
-        "lng": -2.5032107
-      },
-      "parking": "In a small parking area in Hoff (there is room enough for 5/6 cars. Park Respectfully and if you can’t find a spot check out another of our walks in the Westmorland Dales area.)",
-      "cost": null,
-      "distanceMiles": 4,
-      "terrain": "hilly",
-      "terrainNotes": "Well walked and signposted paths, with little ascent. The path can be muddy and wet in places after wet weather. The latter part of the walk is along an extremely quiet country lane.",
-      "features": [
-        "waterfall",
-        "cafe / pub"
-      ],
-      "categories": [
-        "Family Friendly Waterfall Walks"
-      ],
-      "driveMinutes": 77,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
-      "rawFacts": {
-        "Distance": "6km (Just under 4 miles)",
-        "Terrain": "Well walked and signposted paths, with little ascent. The path can be muddy and wet in places after wet weather. The latter part of the walk is along an extremely quiet country lane.",
-        "Parking": "In a small parking area in Hoff (there is room enough for 5/6 cars. Park Respectfully and if you can’t find a spot check out another of our walks in the Westmorland Dales area.)",
-        "Public Transport": "Sadly, there are no buses.",
-        "Location": "Hoff, near Appleby in Westmorland.",
-        "Map": "OS Explorer Map OL19 Upper Eden Valley and the Howgills affiliate link as an Ordnance Survey champion",
-        "What 3 Words": "path.jaundice.scary",
-        "Toilets/ Baby Change": "no. Toilets at the pub (for customers only)",
-        "Nearest Cafe/ Amenities": "Pub in Hoff which has a small beer garden, otherwise Appleby in Westmorland."
       }
     },
     {
@@ -5261,7 +5947,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 77,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Linear Walk: Less than 1 mile. There and back again. Circular Walk: Just over 2.5 miles circular.",
         "Parking": "Stainforth Pay and Display. If the car park is full, try a different walk nearby, perhaps the Ribblehead Viaduct or the Settle Caves",
@@ -5274,19 +5960,60 @@
       }
     },
     {
-      "id": "muddy-boots-mummy-the-grosmont-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "id": "reluctant-explorers-rutter-force-waterfall-www-thereluctantexplorers-com-rutter-force-waterfall",
+      "source": "reluctant-explorers",
+      "sourceUrl": "https://www.thereluctantexplorers.com/rutter-force-waterfall",
+      "title": "Rutter Force Waterfall",
+      "summary": "Rutter Force Waterfall is a spectacular cascade near Appleby in Westmorland and is found in the north western edge of the Yorkshire Dales National Park. This family friendly circular walk will take you right to it!",
+      "imageUrl": "https://images.squarespace-cdn.com/content/v1/6008124718739e1ddbd633d7/a1c48099-d25e-4e62-b648-f87b5910a0ca/Rutter+Force+Walk+-+6+.jpeg",
+      "imageAlt": "Rutter Force Waterfall",
+      "locationLabel": "Hoff, near Appleby in Westmorland.",
+      "postcode": null,
+      "what3words": "path.jaundice.scary",
+      "coordinates": {
+        "lat": 54.5520878,
+        "lng": -2.5032107
+      },
+      "parking": "In a small parking area in Hoff (there is room enough for 5/6 cars. Park Respectfully and if you can’t find a spot check out another of our walks in the Westmorland Dales area.)",
+      "cost": null,
+      "distanceMiles": 4,
+      "terrain": "hilly",
+      "terrainNotes": "Well walked and signposted paths, with little ascent. The path can be muddy and wet in places after wet weather. The latter part of the walk is along an extremely quiet country lane.",
+      "features": [
+        "waterfall",
+        "cafe / pub"
+      ],
+      "categories": [
+        "Family Friendly Waterfall Walks"
+      ],
+      "driveMinutes": 77,
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
+      "rawFacts": {
+        "Distance": "6km (Just under 4 miles)",
+        "Terrain": "Well walked and signposted paths, with little ascent. The path can be muddy and wet in places after wet weather. The latter part of the walk is along an extremely quiet country lane.",
+        "Parking": "In a small parking area in Hoff (there is room enough for 5/6 cars. Park Respectfully and if you can’t find a spot check out another of our walks in the Westmorland Dales area.)",
+        "Public Transport": "Sadly, there are no buses.",
+        "Location": "Hoff, near Appleby in Westmorland.",
+        "Map": "OS Explorer Map OL19 Upper Eden Valley and the Howgills affiliate link as an Ordnance Survey champion",
+        "What 3 Words": "path.jaundice.scary",
+        "Toilets/ Baby Change": "no. Toilets at the pub (for customers only)",
+        "Nearest Cafe/ Amenities": "Pub in Hoff which has a small beer garden, otherwise Appleby in Westmorland."
+      }
+    },
+    {
+      "id": "muddy-boots-mummy-grosmont-to-goathland-rail-trail-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
-      "title": "The Grosmont",
-      "summary": "to Goathland Rail Trail is 3.6 miles, follows the old tramway line, built by George Stephenson. It's a lovely walk, with the added benefit of having an excuse to go on the train!",
+      "title": "Grosmont to Goathland Rail Trail",
+      "summary": "The Grosmont to Goathland Rail Trail is 3.6 miles, follows the old tramway line, built by George Stephenson. It's a lovely walk, with the added benefit of having an excuse to go on the train!",
       "imageUrl": null,
-      "imageAlt": "The Grosmont",
+      "imageAlt": "Grosmont to Goathland Rail Trail",
       "locationLabel": "Yorkshire",
-      "postcode": "YO22 5QE",
+      "postcode": null,
       "what3words": null,
       "coordinates": {
-        "lat": 54.4358184,
-        "lng": -0.7252162
+        "lat": 54.4359097,
+        "lng": -0.7245145
       },
       "parking": null,
       "cost": null,
@@ -5298,7 +6025,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 77,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -5306,7 +6033,7 @@
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Rabbit Ings",
-      "summary": "in Barnsley is a lovely little park if you're local and want somewhere with good views and masses of wildflowers!",
+      "summary": "Rabbit Ings in Barnsley is a lovely little park if you're local and want somewhere with good views and masses of wildflowers!",
       "imageUrl": null,
       "imageAlt": "Rabbit Ings",
       "locationLabel": "Yorkshire",
@@ -5326,7 +6053,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 79,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -5359,7 +6086,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 80,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "7 miles",
         "Terrain": "Very easy to identify and well walked and signposted paths. There is a scramble required to reach the top, which is why we recommend going up from the South face of Pen y Ghent with kids. There are steep unguarded drops.",
@@ -5399,7 +6126,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 80,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4.5 miles",
         "Terrain": "Very easy to follow wide identifiable tracks and path. Some stony underfoot. Some areas can be muddy after wet weather, but on the whole the route is on either stony or surfaced tracks. Well signposted, with some ascent (850 feet).",
@@ -5441,7 +6168,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 81,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Ingleton: 7 miles linear walk Clapham: 10 miles.",
         "Terrain": "Ingleton and Clapham: Very well walked and signposted paths. In good visibility, this walk is very easy to navigate. In poor visibility, the summit of Ingleborough is a challenge, as it is a relatively flat and featureless plateau surrounded by steep drops, therefore navigation skills and a map are required (see pictures for poor visibility)",
@@ -5481,7 +6208,7 @@
         "Family Friendly Waterfall Walks"
       ],
       "driveMinutes": 81,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "4.5km (just under 3 miles)",
         "Terrain": "Very well walked route, uneven ground. The ascent, should you choose to do so, is extremely steep, climbing just less than 200m in half a kilometre. The path up is roughly stepped but has steep unguarded drops and can be slippery underfoot, therefore great care should be taken in the event you do decide to climb.",
@@ -5493,6 +6220,37 @@
         "Toilets/ Baby Change": "None. The nearest public toilers are in the centre of Sedbergh at Joss Lane Car Park",
         "Nearest Cafe/ Amenities": "Sedbergh. For places to eat and drink check out our Visit Sedbergh with Kids Guide ."
       }
+    },
+    {
+      "id": "little-vikings-a-riverside-walk-to-rowntree-park-little-vikings-co-uk-best-family-walks-york-yorkshire-kids",
+      "source": "little-vikings",
+      "sourceUrl": "https://little-vikings.co.uk/best-family-walks-york-yorkshire-kids/",
+      "title": "A riverside walk to Rowntree Park",
+      "summary": "If you’ve finished exploring York city centre and your kids need to let off some steam, why not walk along the Ouse to Rowntree Park? It’s a lovely route that’s under a mile each way, and you’ll spot boats, squirrels and trees along the way. From the city centre, head to Skeldergate Bridge and follow the river path until you reach the Millennium Bridge. Cross the bridge and you’ll see Rowntree Park on your right, with two play areas, tennis courts, skate park, late and cafe. There are lots of lovely cafes and shops on nearby Bishopthorpe Road. Check the park’s opening hours before you set off and don’t attempt if the Ouse is flooded!",
+      "imageUrl": "https://i0.wp.com/little-vikings.co.uk/wp-content/uploads/2019/01/IMG_0165.jpg?resize=1024%2C768&amp;ssl=1",
+      "imageAlt": "A riverside walk to Rowntree Park",
+      "locationLabel": "York, Yorkshire",
+      "postcode": "YO12 6UE",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.2992987,
+        "lng": -0.4416385
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "stream / river",
+        "cafe / pub"
+      ],
+      "categories": [
+        "Little Vikings"
+      ],
+      "driveMinutes": 81,
+      "lastSyncedAt": "2026-07-28T16:52:14.715Z",
+      "rawFacts": {}
     },
     {
       "id": "reluctant-explorers-winder-the-howgills-www-thereluctantexplorers-com-winder-circular",
@@ -5525,7 +6283,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 82,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "6.8km - 4.5 miles (shorter option is 2-3 miles)",
         "Terrain": "Varied. Mostly grassy paths, with muddy areas. Some limited road walking. A map and mapping app is essential as you will be climbing onto open fell although paths are largely clear to see. Ascent in the region of 360m.",
@@ -5567,7 +6325,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 82,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "5-6 miles",
         "Terrain": "Easily identifiable paths. Some signposting. Uneven ground underfoot. Some clambering involved at Trow Gill. Ascent just over 250m.",
@@ -5579,6 +6337,66 @@
         "Toilets/ Baby Change": "At Clapham Pay and Display",
         "Nearest Cafe/ Amenities": "Clapham for food and drinks, cafes and pubs."
       }
+    },
+    {
+      "id": "muddy-boots-mummy-ingleton-waterfalls-trail-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Ingleton Waterfalls Trail",
+      "summary": "The Ingleton Waterfalls Trail is perhaps one of Yorkshire's most famous walks. You might have to share the path with others, but it's certainly worth it for those views!",
+      "imageUrl": null,
+      "imageAlt": "Ingleton Waterfalls Trail",
+      "locationLabel": "Yorkshire",
+      "postcode": "LA6 3JJ",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.1577809,
+        "lng": -2.4714936
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "waterfall"
+      ],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 82,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
+    },
+    {
+      "id": "alltrails-whitby-abbey-and-the-dracula-trail-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+      "source": "alltrails",
+      "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+      "title": "Whitby Abbey and The Dracula Trail",
+      "summary": "Child-friendly trail in North Yorkshire on AllTrails: Whitby Abbey and The Dracula Trail",
+      "imageUrl": null,
+      "imageAlt": "Whitby Abbey and The Dracula Trail",
+      "locationLabel": "North Yorkshire",
+      "postcode": "YO22 4JR",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.4875836,
+        "lng": -0.6065728
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "ruins"
+      ],
+      "categories": [
+        "AllTrails Kids"
+      ],
+      "driveMinutes": 82,
+      "lastSyncedAt": "2026-07-28T16:52:19.959Z",
+      "rawFacts": {}
     },
     {
       "id": "reluctant-explorers-the-norber-erratics-www-thereluctantexplorers-com-the-norber-erratics",
@@ -5608,7 +6426,7 @@
         "Family Friendly Walks around the Yorkshire Dales"
       ],
       "driveMinutes": 83,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "5 miles",
         "Terrain": "Easily identifiable paths. The Erratics themselves have many paths winding round them all, most of the route is on a wide stony track.",
@@ -5622,11 +6440,39 @@
       }
     },
     {
+      "id": "muddy-boots-mummy-bronte-falls-circular-walk-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Bronte Falls Circular Walk",
+      "summary": "Bronte Falls Circular Walk is 8km, starting in Haworth and takes you through Penistone Country Park to the falls with views over Lower Laithe Reservoir.",
+      "imageUrl": null,
+      "imageAlt": "Bronte Falls Circular Walk",
+      "locationLabel": "Yorkshire",
+      "postcode": "BD22 9RQ",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.818814,
+        "lng": -2.0040675
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 83,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
+    },
+    {
       "id": "muddy-boots-mummy-langsett-reservoir-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Langsett Reservoir",
-      "summary": "is also 3 miles. It's more challenging for young children, (and not suitable for buggies), but is absolutely worth it!",
+      "summary": "Langsett Reservoir is also 3 miles. It's more challenging for young children, (and not suitable for buggies), but is absolutely worth it!",
       "imageUrl": null,
       "imageAlt": "Langsett Reservoir",
       "locationLabel": "Yorkshire",
@@ -5646,7 +6492,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 84,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -5682,7 +6528,7 @@
         "Yorkshire Tots"
       ],
       "driveMinutes": 86,
-      "lastSyncedAt": "2026-07-28T16:17:48.871Z",
+      "lastSyncedAt": "2026-07-28T16:51:42.567Z",
       "rawFacts": {}
     },
     {
@@ -5714,10 +6560,40 @@
         "Teesside Family Life"
       ],
       "driveMinutes": 86,
-      "lastSyncedAt": "2026-07-28T16:18:31.436Z",
+      "lastSyncedAt": "2026-07-28T16:52:07.477Z",
       "rawFacts": {
         "slug": "falling-foss-waterfall-north-yorkshire-a-complete-visitor-guide"
       }
+    },
+    {
+      "id": "muddy-boots-mummy-northwood-trail-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
+      "source": "muddy-boots-mummy",
+      "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
+      "title": "Northwood Trail",
+      "summary": "The Northwood Trail outside York is a 1.5km woodland walk, with a touch of magic! Gorgeous intricate Fairy homes are dotted about along the trail. It's a bit pricey, so make the most of it if you go!",
+      "imageUrl": null,
+      "imageAlt": "Northwood Trail",
+      "locationLabel": "Yorkshire",
+      "postcode": "S6 1RZ",
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.4197861,
+        "lng": -1.5185928
+      },
+      "parking": null,
+      "cost": null,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "woodland"
+      ],
+      "categories": [
+        "Muddy Boots Mummy"
+      ],
+      "driveMinutes": 87,
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
+      "rawFacts": {}
     },
     {
       "id": "reluctant-explorers-yordas-cave-www-thereluctantexplorers-com-yordas-cave",
@@ -5748,7 +6624,7 @@
         "Short Family Walks Under 2 Miles"
       ],
       "driveMinutes": 88,
-      "lastSyncedAt": "2026-07-28T16:17:17.633Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.152Z",
       "rawFacts": {
         "Distance": "Less than 1km. Yup, this one is one you can 100% call an adventure rather than a walk!",
         "Terrain": "Grassy hill, muddy in parts. Rocky cave that is uneven underfoot and obviously very dark! Headtorch/ Torch required to fully explore the cave. You will need sturdy footwear and probably wellies are best for kids as they will get wet feet. BE AWARE: caves come with a risk of falling rock and flooding. Wear a cycle helmet and do not enter after heavy rain as the water in the cave can rise quickly.",
@@ -5770,23 +6646,27 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/marsden-moor/library/spring/2021_05-pule-and-redbrook-copyright-nt_victoria-holland.jpg",
       "imageAlt": "A moorland landscape under a blue sky, with a reservoir in the foreground",
       "locationLabel": "Marsden, West Yorkshire",
-      "postcode": null,
+      "postcode": "HD7 6DH",
       "what3words": null,
       "coordinates": {
         "lat": 53.601845,
         "lng": -1.93045
       },
-      "parking": null,
+      "parking": "parking at Buckstones Car Park - A640 (junction with B6114).",
       "cost": "National Trust membership / admission may apply",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 88,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Marsden",
         "county": "West Yorkshire"
@@ -5797,7 +6677,7 @@
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
       "title": "Rother Valley Country Park",
-      "summary": "is only a few minutes from the M1 but is a great easy-access walk with lots to see!",
+      "summary": "Rother Valley Country Park is only a few minutes from the M1 but is a great easy-access walk with lots to see!",
       "imageUrl": null,
       "imageAlt": "Rother Valley Country Park",
       "locationLabel": "Yorkshire",
@@ -5817,7 +6697,7 @@
         "Muddy Boots Mummy"
       ],
       "driveMinutes": 88,
-      "lastSyncedAt": "2026-07-28T16:18:37.109Z",
+      "lastSyncedAt": "2026-07-28T16:52:11.990Z",
       "rawFacts": {}
     },
     {
@@ -5829,23 +6709,27 @@
       "imageUrl": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/hardcastle-crags/library/summer/visitors-walking-gibson-mill-hardcastle-crags-yorkshire-1096280.jpg",
       "imageAlt": "A family walking near Gibson Mill at Hardcastle Crags, West Yorkshire",
       "locationLabel": "Hebden Bridge, West Yorkshire",
-      "postcode": null,
+      "postcode": "HX7 7AW",
       "what3words": null,
       "coordinates": {
         "lat": 53.758548,
         "lng": -2.01806
       },
-      "parking": null,
+      "parking": "parking at Gibson Mill.",
       "cost": "National Trust membership / admission may apply",
       "distanceMiles": null,
       "terrain": "unknown",
       "terrainNotes": null,
-      "features": [],
+      "features": [
+        "ruins",
+        "woodland",
+        "beach"
+      ],
       "categories": [
         "National Trust"
       ],
       "driveMinutes": 90,
-      "lastSyncedAt": "2026-07-28T16:17:17.890Z",
+      "lastSyncedAt": "2026-07-28T16:51:25.567Z",
       "rawFacts": {
         "town": "Hebden Bridge",
         "county": "West Yorkshire"
@@ -5857,17 +6741,17 @@
       "source": "reluctant-explorers",
       "ok": true,
       "fetched": 91,
-      "kept": 84,
+      "kept": 85,
       "error": null,
-      "finishedAt": "2026-07-28T16:17:17.394Z"
+      "finishedAt": "2026-07-28T16:51:24.937Z"
     },
     {
       "source": "national-trust",
       "ok": true,
       "fetched": 24,
-      "kept": 21,
+      "kept": 22,
       "error": null,
-      "finishedAt": "2026-07-28T16:17:17.395Z"
+      "finishedAt": "2026-07-28T16:51:24.938Z"
     },
     {
       "source": "english-heritage",
@@ -5875,15 +6759,15 @@
       "fetched": 4,
       "kept": 0,
       "error": null,
-      "finishedAt": "2026-07-28T16:17:17.396Z"
+      "finishedAt": "2026-07-28T16:51:24.939Z"
     },
     {
       "source": "yorkshire-tots",
       "ok": true,
-      "fetched": 13,
-      "kept": 8,
+      "fetched": 21,
+      "kept": 12,
       "error": null,
-      "finishedAt": "2026-07-28T16:17:23.221Z"
+      "finishedAt": "2026-07-28T16:51:30.712Z"
     },
     {
       "source": "teesside-family-life",
@@ -5891,31 +6775,31 @@
       "fetched": 4,
       "kept": 4,
       "error": null,
-      "finishedAt": "2026-07-28T16:18:13.029Z"
+      "finishedAt": "2026-07-28T16:51:55.071Z"
     },
     {
       "source": "muddy-boots-mummy",
       "ok": true,
-      "fetched": 47,
+      "fetched": 50,
       "kept": 38,
       "error": null,
-      "finishedAt": "2026-07-28T16:18:32.593Z"
+      "finishedAt": "2026-07-28T16:52:07.484Z"
     },
     {
       "source": "little-vikings",
       "ok": true,
-      "fetched": 7,
-      "kept": 6,
+      "fetched": 19,
+      "kept": 14,
       "error": null,
-      "finishedAt": "2026-07-28T16:20:07.064Z"
+      "finishedAt": "2026-07-28T16:52:11.991Z"
     },
     {
       "source": "alltrails",
       "ok": true,
-      "fetched": 3,
-      "kept": 2,
+      "fetched": 21,
+      "kept": 14,
       "error": null,
-      "finishedAt": "2026-07-28T16:20:30.485Z"
+      "finishedAt": "2026-07-28T16:52:14.716Z"
     }
   ]
 }

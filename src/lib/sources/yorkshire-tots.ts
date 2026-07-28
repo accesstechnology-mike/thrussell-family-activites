@@ -184,15 +184,26 @@ async function enrichWalk(url: string): Promise<Activity | null> {
   };
 }
 
-export async function fetchYorkshireTots(): Promise<Activity[]> {
+async function collectHubUrls(): Promise<Set<string>> {
   const urls = new Set<string>();
   for (const hub of HUBS) {
     try {
       const html = await fetchHtml(hub);
       for (const url of collectWalkUrls(html)) urls.add(url);
+      await new Promise((r) => setTimeout(r, 400));
     } catch {
       // Continue with other hubs
     }
+  }
+  return urls;
+}
+
+export async function fetchYorkshireTots(): Promise<Activity[]> {
+  let urls = await collectHubUrls();
+  // Site occasionally WAF-throttles when sync hits many sources; one pause+retry.
+  if (urls.size === 0) {
+    await new Promise((r) => setTimeout(r, 2500));
+    urls = await collectHubUrls();
   }
 
   // Sequential: Nominatim needs polite pacing for pages without postcodes.
