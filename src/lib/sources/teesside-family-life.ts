@@ -138,6 +138,7 @@ async function toActivity(post: WpPost): Promise<Activity | null> {
     coordinates: { lat: coords.lat, lng: coords.lng },
     parking: parkingMatch?.[0]?.trim() ?? null,
     cost: costMatch?.[0]?.trim() ?? null,
+    isFree: null,
     distanceMiles: parseDistanceMiles(ownText),
     terrain: terrainInfo.terrain,
     terrainNotes: terrainInfo.notes,

@@ -11,7 +11,8 @@ export type ActivitySource =
   | "teesside-family-life"
   | "muddy-boots-mummy"
   | "little-vikings"
-  | "alltrails";
+  | "alltrails"
+  | "openstreetmap";
 
 export type TerrainLevel = "flat" | "gentle" | "hilly" | "steep" | "unknown";
 
@@ -29,6 +30,8 @@ export type Activity = {
   coordinates: LatLng;
   parking: string | null;
   cost: string | null;
+  /** True when the outing itself is free (parking may still cost). */
+  isFree: boolean | null;
   distanceMiles: number | null;
   terrain: TerrainLevel;
   terrainNotes: string | null;

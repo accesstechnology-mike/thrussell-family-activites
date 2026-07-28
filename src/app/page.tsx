@@ -21,6 +21,7 @@ export default async function HomePage() {
         terrain: a.terrain,
         features: a.features,
         distanceMiles: a.distanceMiles,
+        isFree: a.isFree,
       }))}
       features={features}
       syncedAt={store.syncedAt}

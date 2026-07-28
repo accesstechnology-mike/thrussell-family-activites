@@ -173,6 +173,7 @@ async function enrichWalk(url: string): Promise<Activity | null> {
     coordinates: { lat: coords.lat, lng: coords.lng },
     parking: extractParking(body),
     cost: extractCost(body),
+    isFree: null,
     distanceMiles: parseDistanceMiles(ownText),
     terrain: terrainInfo.terrain,
     terrainNotes: terrainInfo.notes,

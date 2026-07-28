@@ -11,6 +11,7 @@ export type ActivityCardData = {
   terrain: string;
   features: string[];
   distanceMiles: number | null;
+  isFree: boolean | null;
 };
 
 function terrainLabel(terrain: string): string {
@@ -41,7 +42,7 @@ export function ActivityCard({
       className="activity-card"
       style={{ animationDelay: `${Math.min(index, 12) * 40}ms` }}
     >
-      <div className="card-media">
+      <div className="card-media" data-has-image={Boolean(activity.imageUrl)}>
         {activity.imageUrl ? (
           <Image
             src={activity.imageUrl}
@@ -49,9 +50,15 @@ export function ActivityCard({
             fill
             sizes="(max-width: 700px) 100vw, 280px"
             style={{ objectFit: "cover" }}
-            unoptimized
+            unoptimized={activity.imageUrl.startsWith("/media/")}
+            priority={index < 4}
           />
-        ) : null}
+        ) : (
+          <div className="card-media-fallback" aria-hidden>
+            <span>{activity.title.slice(0, 1)}</span>
+          </div>
+        )}
+        {activity.isFree ? <span className="free-badge">Free</span> : null}
       </div>
       <div className="card-body">
         <h2>{activity.title}</h2>

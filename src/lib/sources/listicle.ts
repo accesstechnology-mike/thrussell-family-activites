@@ -75,6 +75,7 @@ export async function itemsToActivities(
       coordinates: { lat: coords.lat, lng: coords.lng },
       parking: extractParking(item.summary),
       cost: extractCost(item.summary),
+      isFree: null,
       distanceMiles:
         parseDistanceMiles(item.distanceHint ?? "") ??
         parseDistanceMiles(ownText),

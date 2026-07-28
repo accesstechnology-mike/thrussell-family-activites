@@ -7,12 +7,15 @@ export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
   const feature = searchParams.get("feature");
   const q = searchParams.get("q");
+  const freeOnly =
+    searchParams.get("free") === "1" || searchParams.get("freeOnly") === "1";
   const maxDriveRaw = searchParams.get("maxDrive");
   const maxDrive = maxDriveRaw ? Number(maxDriveRaw) : null;
 
   const { store, activities } = await listActivities({
     feature,
     q,
+    freeOnly,
     maxDrive: Number.isFinite(maxDrive) ? maxDrive : null,
   });
 
@@ -39,8 +42,10 @@ export async function GET(req: NextRequest) {
       terrain: a.terrain,
       features: a.features,
       cost: a.cost,
+      isFree: a.isFree,
       distanceMiles: a.distanceMiles,
       categories: a.categories,
+      sourceUrl: a.sourceUrl,
     })),
   });
 }

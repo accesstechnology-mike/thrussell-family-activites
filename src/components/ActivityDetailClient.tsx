@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { detailImageUrl } from "@/lib/image-urls";
 import type { Activity, DirectionsLinks, WeatherSnapshot } from "@/lib/types";
 
 type Props = {
@@ -29,6 +30,61 @@ function terrainLabel(terrain: string): string {
   }
 }
 
+function sourceLabel(source: string): string {
+  switch (source) {
+    case "reluctant-explorers":
+      return "The Reluctant Explorers";
+    case "national-trust":
+      return "National Trust";
+    case "english-heritage":
+      return "English Heritage";
+    case "yorkshire-tots":
+      return "Yorkshire Tots to Teens";
+    case "teesside-family-life":
+      return "Teesside Family Life";
+    case "muddy-boots-mummy":
+      return "Muddy Boots Mummy";
+    case "little-vikings":
+      return "Little Vikings";
+    case "alltrails":
+      return "AllTrails";
+    case "openstreetmap":
+      return "OpenStreetMap";
+    default:
+      return source.replace(/-/g, " ");
+  }
+}
+
+function ExpandableText({
+  label,
+  text,
+  collapseAt = 160,
+}: {
+  label: string;
+  text: string;
+  collapseAt?: number;
+}) {
+  const [open, setOpen] = useState(false);
+  const long = text.length > collapseAt;
+  const shown = !long || open ? text : `${text.slice(0, collapseAt).trim()}…`;
+
+  return (
+    <div className="note-block">
+      <div className="note-label">{label}</div>
+      <p className="note-body">{shown}</p>
+      {long ? (
+        <button
+          type="button"
+          className="note-toggle"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? "Show less" : "Read more"}
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
 export function ActivityDetailClient({
   activity,
   directions,
@@ -38,6 +94,7 @@ export function ActivityDetailClient({
   originPostcode,
 }: Props) {
   const [copied, setCopied] = useState(false);
+  const image = detailImageUrl(activity);
 
   async function copyTesla() {
     try {
@@ -57,17 +114,22 @@ export function ActivityDetailClient({
 
       <div className="detail-layout">
         <section className="detail-panel">
-          <div className="detail-hero" style={{ marginBottom: "1rem" }}>
-            {activity.imageUrl ? (
+          <div className="detail-hero" data-has-image={Boolean(image)}>
+            {image ? (
               <Image
-                src={activity.imageUrl}
+                src={image}
                 alt={activity.imageAlt || activity.title}
                 width={1200}
                 height={800}
-                unoptimized
+                unoptimized={image.startsWith("/media/")}
                 priority
               />
-            ) : null}
+            ) : (
+              <div className="detail-hero-fallback" aria-hidden>
+                <span>{activity.title}</span>
+              </div>
+            )}
+            {activity.isFree ? <span className="free-badge">Free activity</span> : null}
           </div>
 
           <h1>{activity.title}</h1>
@@ -79,7 +141,7 @@ export function ActivityDetailClient({
             ))}
           </div>
 
-          <dl className="fact-grid">
+          <dl className="fact-grid fact-grid-compact">
             <div className="fact">
               <dt>Drive</dt>
               <dd>
@@ -102,11 +164,11 @@ export function ActivityDetailClient({
             </div>
             <div className="fact">
               <dt>Cost</dt>
-              <dd>{activity.cost ?? "See source / often free outdoors"}</dd>
-            </div>
-            <div className="fact">
-              <dt>Parking</dt>
-              <dd>{activity.parking ?? "Check the source page"}</dd>
+              <dd>
+                {activity.isFree
+                  ? "Free activity"
+                  : activity.cost ?? "See source"}
+              </dd>
             </div>
             <div className="fact">
               <dt>Weather now</dt>
@@ -120,21 +182,46 @@ export function ActivityDetailClient({
                   : weatherError || "Unavailable"}
               </dd>
             </div>
+            {activity.postcode ? (
+              <div className="fact">
+                <dt>Postcode</dt>
+                <dd>{activity.postcode}</dd>
+              </div>
+            ) : null}
           </dl>
 
-          {activity.terrainNotes ? (
-            <p className="summary" style={{ marginTop: "1rem" }}>
-              <strong>Terrain notes:</strong> {activity.terrainNotes}
-            </p>
-          ) : null}
+          <div className="note-stack">
+            {activity.parking ? (
+              <ExpandableText label="Parking" text={activity.parking} />
+            ) : null}
+            {activity.terrainNotes ? (
+              <ExpandableText label="Terrain notes" text={activity.terrainNotes} />
+            ) : null}
+            {activity.rawFacts.openingHours ? (
+              <ExpandableText
+                label="Opening hours"
+                text={activity.rawFacts.openingHours}
+                collapseAt={120}
+              />
+            ) : null}
+            {activity.cost && !activity.isFree ? (
+              <ExpandableText label="Cost details" text={activity.cost} collapseAt={120} />
+            ) : null}
+          </div>
 
-          <p className="summary" style={{ marginTop: "0.8rem" }}>
-            Source:{" "}
-            <a href={activity.sourceUrl} target="_blank" rel="noreferrer">
-              {activity.source.replace(/-/g, " ")}
+          <div className="source-row">
+            <a
+              className="action-btn secondary source-btn"
+              href={activity.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open original source — {sourceLabel(activity.source)}
             </a>
-            {activity.locationLabel ? ` · ${activity.locationLabel}` : null}
-          </p>
+            {activity.locationLabel ? (
+              <p className="lede source-meta">{activity.locationLabel}</p>
+            ) : null}
+          </div>
         </section>
 
         <aside className="parent-panel">
@@ -160,9 +247,25 @@ export function ActivityDetailClient({
             >
               Open place pin
             </a>
+            <a
+              className="action-btn secondary"
+              href={directions.appleMaps}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open in Apple Maps
+            </a>
             <button type="button" className="action-btn ghost" onClick={copyTesla}>
               {copied ? "Copied for Tesla" : "Copy for Tesla"}
             </button>
+            <a
+              className="action-btn ghost"
+              href={activity.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Original guide / website
+            </a>
           </div>
 
           <div className="tesla-box" aria-label="Tesla destination">
@@ -178,6 +281,15 @@ export function ActivityDetailClient({
           ) : activity.postcode ? (
             <p className="lede" style={{ marginTop: "0.85rem" }}>
               Postcode: <strong>{activity.postcode}</strong>
+            </p>
+          ) : null}
+
+          {activity.rawFacts.phone ? (
+            <p className="lede" style={{ marginTop: "0.55rem" }}>
+              Phone:{" "}
+              <a href={`tel:${activity.rawFacts.phone.replace(/\s+/g, "")}`}>
+                {activity.rawFacts.phone}
+              </a>
             </p>
           ) : null}
         </aside>

@@ -2,7 +2,7 @@
 
 Family activity picker for outings within **~1.5 hours** of **Catton (`YO7 4SQ`)**.
 
-Kids browse big picture cards (fun bits, terrain, drive time). Grown-ups open the same outing on a phone for **Google Maps**, **Tesla postcode/coords**, parking, cost, and live weather.
+Kids browse big picture cards (fun bits, terrain, drive time). Grown-ups open the same outing on a phone for **Google Maps**, **Tesla postcode/coords**, parking, cost, weather, and a link back to the **original source**.
 
 ## Sources (polled, stored locally)
 
@@ -13,16 +13,27 @@ Kids browse big picture cards (fun bits, terrain, drive time). Grown-ups open th
 - **Little Vikings** — York & Yorkshire family walks guide
 - **AllTrails** — North Yorkshire child-friendly trails
 - **National Trust** / **English Heritage** — places near home
+- **OpenStreetMap** — zoos, attractions, museums, nature reserves near home (fills gaps walk blogs miss, e.g. Thirsk Birds of Prey Centre)
 
 Cross-source duplicates are collapsed by normalised place name + proximity (richer records win; Reluctant Explorers preferred when tied).
 
 Results are filtered by real **OSRM** drive time from the live geocode of `YO7 4SQ` (via postcodes.io). Activity cache: `data/activities.json`. Cloudflare-prone pages also keep a last-good HTML snapshot under `data/source-cache/` (`npm run sync:refresh-cache`).
 
+Photos are looked up from source pages / Wikipedia / Wikimedia when missing, then resized with **sharp** into local webp files under `public/media/` (card ~720px + detail ~1200px) so the browse grid stays fast.
+
+## When data refreshes
+
+1. **Daily cron** — Vercel hits `GET /api/sync` at **06:00 UTC** (`vercel.json`)
+2. **Manual** — `npm run sync` locally, or `GET|POST /api/sync`
+3. The UI footer shows the last successful `syncedAt` timestamp
+
+Sync re-polls every source, re-geocodes as needed (with `data/geocode-cache.json`), re-filters by drive time, refreshes image cache, and rewrites `data/activities.json`.
+
 ## Develop
 
 ```bash
 npm install
-npm run sync          # poll sources → data/activities.json
+npm run sync          # poll sources → data/activities.json + public/media
 npm run dev
 ```
 
@@ -30,7 +41,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ### Useful endpoints
 
-- `GET /api/activities` — list cached outings
+- `GET /api/activities` — list cached outings (`?free=1` for free-only)
 - `GET /api/activities/[id]` — detail + maps + weather
 - `GET|POST /api/sync` — refresh from sources (also on a daily Vercel cron)
 

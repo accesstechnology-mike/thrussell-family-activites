@@ -16,7 +16,11 @@ const FEATURE_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
   { label: "cafe / pub", pattern: /\bcafe\b|\bcafé\b|\bpubs?\b|\btea\s*room/i },
   { label: "pushchair friendly", pattern: /\bpushchair\b|\bpram\b|\bwheelchair\b/i },
   { label: "beach", pattern: /\bbeach(?:es)?\b|\bcoast(?:al)?\b/i },
-  { label: "animals", pattern: /\bdeer\b|\bfell\s+ponies?\b|\bfarm\s+animals?\b/i },
+  {
+    label: "animals",
+    pattern:
+      /\bdeer\b|\bfell\s+ponies?\b|\bfarm\s+animals?\b|\bbirds?\s+of\s+prey\b|\bfalcon(?:ry)?\b|\bowls?\b|\beagles?\b|\bzoo\b|\bpetting\b/i,
+  },
   { label: "rocks to scramble", pattern: /\bscrambl|\bboulders?\b/i },
 ];
 

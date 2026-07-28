@@ -1,6 +1,7 @@
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { HOME_POSTCODE, MAX_DRIVE_MINUTES, STORE_PATH } from "./config";
+import { HOME_POSTCODE, MAX_DRIVE_MINUTES } from "./config";
+import { isFreeActivity } from "./free";
 import type { Activity, ActivityStore, SourceStatus } from "./types";
 
 function resolveStorePath(): string {
@@ -27,6 +28,11 @@ export async function readStore(): Promise<ActivityStore> {
     if (parsed?.version !== 1 || !Array.isArray(parsed.activities)) {
       return emptyStore();
     }
+    parsed.activities = parsed.activities.map((a) => ({
+      ...a,
+      isFree: a.isFree ?? isFreeActivity(a),
+      rawFacts: a.rawFacts ?? {},
+    }));
     return parsed;
   } catch (err) {
     const code = (err as NodeJS.ErrnoException).code;
@@ -47,6 +53,7 @@ export async function listActivities(opts?: {
   feature?: string | null;
   q?: string | null;
   maxDrive?: number | null;
+  freeOnly?: boolean;
 }): Promise<{ store: ActivityStore; activities: Activity[] }> {
   const store = await readStore();
   let activities = [...store.activities];
@@ -55,6 +62,10 @@ export async function listActivities(opts?: {
   activities = activities.filter(
     (a) => a.driveMinutes != null && a.driveMinutes <= maxDrive,
   );
+
+  if (opts?.freeOnly) {
+    activities = activities.filter((a) => a.isFree);
+  }
 
   if (opts?.feature) {
     const needle = opts.feature.toLowerCase();

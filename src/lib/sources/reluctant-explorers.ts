@@ -316,6 +316,7 @@ export async function fetchReluctantExplorers(): Promise<Activity[]> {
         coordinates: pm.coordinates,
         parking: facts.Parking ?? null,
         cost: guessCost([facts.Parking, ownText].filter(Boolean).join("\n")),
+        isFree: null,
         distanceMiles: parseDistanceMiles(facts.Distance ?? ownText),
         terrain: terrainInfo.terrain,
         terrainNotes: terrainInfo.notes,

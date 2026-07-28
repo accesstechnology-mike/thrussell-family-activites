@@ -144,6 +144,7 @@ export async function fetchNationalTrust(
       },
       parking: enrichment.parking,
       cost: enrichment.cost ?? "National Trust membership / admission may apply",
+      isFree: null,
       distanceMiles: null,
       terrain: terrainInfo.terrain,
       terrainNotes: terrainInfo.notes,

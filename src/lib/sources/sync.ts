@@ -1,5 +1,7 @@
 import { HOME_POSTCODE, MAX_DRIVE_MINUTES } from "../config";
 import { getDriveTimesMinutes } from "../drive-times";
+import { withFreeFlag } from "../free";
+import { enrichActivityImages } from "../images";
 import { getOrigin } from "../origin";
 import { writeStore } from "../store";
 import type { Activity, SourceStatus, SyncResult } from "../types";
@@ -9,6 +11,7 @@ import { haversineKm, normalisedPlaceKey } from "./listicle";
 import { fetchLittleVikings } from "./little-vikings";
 import { fetchMuddyBootsMummy } from "./muddy-boots-mummy";
 import { fetchNationalTrust } from "./national-trust";
+import { fetchOpenStreetMapAttractions } from "./openstreetmap";
 import { fetchReluctantExplorers } from "./reluctant-explorers";
 import { fetchTeessideFamilyLife } from "./teesside-family-life";
 import { fetchYorkshireTots } from "./yorkshire-tots";
@@ -22,7 +25,9 @@ function scoreActivity(a: Activity): number {
         ? 20
         : a.source === "yorkshire-tots"
           ? 10
-          : 0;
+          : a.source === "openstreetmap"
+            ? 5
+            : 0;
   return (
     sourceBoost +
     (a.imageUrl ? 2 : 0) +
@@ -112,17 +117,25 @@ async function runSource(
   }
 }
 
+function ensureIsFree(activity: Activity): Activity {
+  if (activity.isFree != null) return activity;
+  return { ...activity, isFree: null };
+}
+
 export async function syncAllSources(): Promise<SyncResult> {
   const origin = await getOrigin();
   const radiusMiles = 80;
 
-  const [tre, nt, eh] = await Promise.all([
+  const [tre, nt, eh, osm] = await Promise.all([
     runSource("reluctant-explorers", () => fetchReluctantExplorers()),
     runSource("national-trust", () =>
       fetchNationalTrust(origin.location, radiusMiles),
     ),
     runSource("english-heritage", () =>
       fetchEnglishHeritage(origin.location),
+    ),
+    runSource("openstreetmap", () =>
+      fetchOpenStreetMapAttractions(origin.location),
     ),
   ]);
 
@@ -137,16 +150,19 @@ export async function syncAllSources(): Promise<SyncResult> {
   const lv = await runSource("little-vikings", () => fetchLittleVikings());
   const at = await runSource("alltrails", () => fetchAllTrailsKids());
 
-  const merged = dedupe([
-    ...tre.activities,
-    ...nt.activities,
-    ...eh.activities,
-    ...yt.activities,
-    ...tfl.activities,
-    ...mbm.activities,
-    ...lv.activities,
-    ...at.activities,
-  ]);
+  const merged = dedupe(
+    [
+      ...tre.activities,
+      ...nt.activities,
+      ...eh.activities,
+      ...osm.activities,
+      ...yt.activities,
+      ...tfl.activities,
+      ...mbm.activities,
+      ...lv.activities,
+      ...at.activities,
+    ].map(ensureIsFree),
+  );
 
   const driveTimes = await getDriveTimesMinutes(
     origin.location,
@@ -160,12 +176,18 @@ export async function syncAllSources(): Promise<SyncResult> {
     }))
     .filter(
       (a) => a.driveMinutes != null && a.driveMinutes <= MAX_DRIVE_MINUTES,
-    );
+    )
+    .map(withFreeFlag);
+
+  // Wikipedia fill + local webp cache (suitable card/detail sizes)
+  console.log(`Caching images for ${withinRange.length} activities…`);
+  const withImages = await enrichActivityImages(withinRange);
 
   const statuses: SourceStatus[] = [
     tre.status,
     nt.status,
     eh.status,
+    osm.status,
     yt.status,
     tfl.status,
     mbm.status,
@@ -173,7 +195,7 @@ export async function syncAllSources(): Promise<SyncResult> {
     at.status,
   ].map((status) => ({
     ...status,
-    kept: withinRange.filter((a) => a.source === status.source).length,
+    kept: withImages.filter((a) => a.source === status.source).length,
   }));
 
   const store = {
@@ -182,7 +204,7 @@ export async function syncAllSources(): Promise<SyncResult> {
     origin: origin.location,
     maxDriveMinutes: MAX_DRIVE_MINUTES,
     syncedAt: new Date().toISOString(),
-    activities: withinRange.sort(
+    activities: withImages.sort(
       (a, b) => (a.driveMinutes ?? 0) - (b.driveMinutes ?? 0),
     ),
     sourceStatuses: statuses,
