@@ -1,7 +1,7 @@
 import type { TerrainLevel } from "./types";
 
 /** Notable kid-interest cues extracted from source text (not a fixed activity list). */
-const FEATURE_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
+export const FEATURE_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
   { label: "stepping stones", pattern: /\bstepping\s+stones?\b/i },
   { label: "cave", pattern: /\bcaves?\b/i },
   { label: "waterfall", pattern: /\bwaterfalls?\b|\bforce\b|\bfoss\b/i },
@@ -23,6 +23,9 @@ const FEATURE_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
   },
   { label: "rocks to scramble", pattern: /\bscrambl|\bboulders?\b/i },
 ];
+
+/** Canonical feature labels agents can filter on. */
+export const FEATURE_LABELS: string[] = FEATURE_PATTERNS.map((f) => f.label);
 
 export function extractFeatures(...chunks: Array<string | null | undefined>): string[] {
   const hay = chunks.filter(Boolean).join("\n");

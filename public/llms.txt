@@ -1,0 +1,43 @@
+# Thrussell Outings
+
+Family outing picker for places within ~105 minutes of Catton (YO7 4SQ).
+
+This site is agent-friendly. Prefer JSON APIs over scraping the HTML UI.
+
+## Start here
+
+- API index (live catalogue + docs): `/api`
+- OpenAPI: `/api/openapi.json`
+- Natural-language ask/suggest: `/api/suggest?q=...`
+
+## Hermes workflow
+
+When a human asks a question or wants a suggestion:
+
+1. `GET /api/suggest?q=<their words>&limit=5`
+2. Answer from `suggestions[].activity`, `why`, and `directions`
+3. Only call `GET /api/activities/{id}` if you need live weather or a refined what3words pin
+
+Examples:
+
+- `/api/suggest?q=stepping%20stones%20under%2045%20minutes`
+- `/api/suggest?q=pushchair%20friendly%20with%20ice%20cream`
+- `/api/suggest?q=short%20waterfall%20walk%20free`
+- `/api/activities?features=cave,waterfall&maxDrive=60&view=card`
+- `/api/activities?q=malham&view=full&limit=5`
+
+## Structured list filters
+
+`GET /api/activities` supports: `q`, `feature`, `features`, `source`, `sources`,
+`terrain`, `terrains`, `maxDrive`, `minDrive`, `maxDistanceMiles`, `free`,
+`ids`, `sort` (`drive|title|distance|recent`), `limit`, `offset`, `view` (`card|full`).
+
+`view=card` (default) includes postcode, coordinates, parking, cost, isFree, terrain, and sourceUrl.
+`view=full` also includes `rawFacts` and `lastSyncedAt`.
+`free=1` / `freeOnly=1` filters to free outings (parking charges still OK).
+
+## Do not
+
+- Browse or scrape the kid card UI for data
+- Invent outings — only return activities from these endpoints
+- Call `/api/sync` unless explicitly asked to refresh sources

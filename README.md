@@ -4,6 +4,29 @@ Family activity picker for outings within **~1 hour 45 minutes** of **Catton (`Y
 
 Kids browse big picture cards (fun bits, terrain, drive time). Grown-ups open the same outing on a phone for **Google Maps**, **Tesla postcode/coords**, parking, cost, weather, and a link back to the **original source**.
 
+## Agent / Hermes access
+
+Prefer JSON over the HTML UI. Discovery:
+
+| URL | Purpose |
+|-----|---------|
+| [`/llms.txt`](./public/llms.txt) | Agent instructions |
+| `/api` | Live catalogue + endpoint docs |
+| `/api/openapi.json` | OpenAPI 3.1 |
+| `/api/suggest?q=...` | Natural-language ask / suggest |
+| `/api/activities` | Structured list + filters |
+| `/api/activities/[id]` | Detail + maps + Tesla + weather |
+
+Typical Hermes flow — one call:
+
+```bash
+curl -sS 'http://localhost:3000/api/suggest?q=stepping%20stones%20under%2045%20minutes&limit=5'
+```
+
+Response includes ranked `suggestions[]` with `why`, logistics fields, Maps links, and Tesla destination. Use `/api/activities/{id}` only when you need live weather or a refined what3words pin.
+
+Structured filters on `/api/activities`: `q`, `feature`, `features`, `source`, `sources`, `terrain`, `terrains`, `maxDrive`, `minDrive`, `maxDistanceMiles`, `free`, `ids`, `sort`, `limit`, `offset`, `view=card|full`.
+
 ## Sources (polled, stored locally)
 
 - **The Reluctant Explorers** — Google My Maps KML + walk page enrichment
@@ -39,11 +62,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-### Useful endpoints
+### Other endpoints
 
-- `GET /api/activities` — list cached outings (`?free=1` for free-only)
-- `GET /api/activities/[id]` — detail + maps + weather
 - `GET|POST /api/sync` — refresh from sources (also on a daily Vercel cron)
+- `GET /api/weather?activityId=` or `lat`/`lng` — weather only
 
 ## Directions
 
