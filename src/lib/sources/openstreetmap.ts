@@ -114,10 +114,12 @@ out center tags;
     const lngLng = el.lon ?? el.center?.lon;
     if (latLng == null || lngLng == null) continue;
 
-    const website =
-      tags.website ||
-      tags["contact:website"] ||
-      `https://www.openstreetmap.org/${el.type}/${el.id}`;
+    const rawWebsite = tags.website || tags["contact:website"] || "";
+    const website = rawWebsite
+      ? /^https?:\/\//i.test(rawWebsite)
+        ? rawWebsite
+        : `https://${rawWebsite.replace(/^\/\//, "")}`
+      : `https://www.openstreetmap.org/${el.type}/${el.id}`;
     const postcode = tags["addr:postcode"] || null;
     const description =
       tags.description ||

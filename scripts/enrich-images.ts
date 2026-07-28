@@ -10,17 +10,17 @@ async function main() {
   const onlyArg = process.argv.find((a) => a.startsWith("--only="));
   const only = onlyArg?.slice("--only=".length);
 
+  const force = process.argv.includes("--force-bad");
   let targets: Activity[] = store.activities;
   if (only) {
     targets = store.activities.filter((a) => a.id.includes(only));
     if (!targets.length) throw new Error(`No activities matching ${only}`);
   } else {
-    targets = store.activities.filter(
-      (a) =>
-        !a.imageUrl ||
-        !a.imageUrl.startsWith("/media/") ||
-        Boolean(a.rawFacts?.imageRemote && !a.imageUrl?.startsWith("/media/")),
-    );
+    targets = store.activities.filter((a) => {
+      if (!a.imageUrl) return true;
+      if (!a.imageUrl.startsWith("/media/")) return true;
+      return force;
+    });
   }
 
   console.log(`Enriching images for ${targets.length} activities…`);
