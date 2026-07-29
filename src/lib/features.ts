@@ -9,6 +9,11 @@ export const FEATURE_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
   { label: "ice cream", pattern: /\bice\s*creams?\b/i },
   { label: "play park", pattern: /\bplay\s*parks?\b|\bplaygrounds?\b/i },
   { label: "paddle", pattern: /\bpaddl(?:e|ing)\b|\bwild\s+swim/i },
+  {
+    label: "swimming",
+    pattern:
+      /\bswimming\b|\bswim\s+pool\b|\bswimming\s+pool\b|\bwater\s*park\b|\bleisure\s+(?:and\s+)?(?:wellbeing|wellness)\s+centre\b/i,
+  },
   { label: "ruins", pattern: /\bruins?\b|\babbey\b|\bcastles?\b/i },
   { label: "woodland", pattern: /\bwoodlands?\b|\bwoods?\b|\bforest\b/i },
   { label: "stream / river", pattern: /\brivers?\b|\bstreams?\b|\bbecks?\b/i },

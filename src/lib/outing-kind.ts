@@ -29,14 +29,14 @@ export function outingKind(activity: {
       return "walk";
     }
     if (
-      /\b(zoo|museum|theme park|aquarium|petting|wildlife|gallery|attraction)\b/i.test(
+      /\b(zoo|museum|theme park|aquarium|petting|wildlife|gallery|attraction|swimming|water park|leisure centre|holiday park|resort)\b/i.test(
         categories,
       )
     ) {
       return "attraction";
     }
     if (
-      /\b(house|hall|castle|palace|manor|gallery|falconry|birds? of prey|theme park|zoo|aquarium|museum|visitor centre|maze|dungeon|brewery|farm park|walled garden|sculpture park|railway|caverns?|priory|arbour?etum|arboretum)\b/i.test(
+      /\b(house|hall|castle|palace|manor|gallery|falconry|birds? of prey|theme park|zoo|aquarium|museum|visitor centre|maze|dungeon|brewery|farm park|walled garden|sculpture park|railway|caverns?|priory|arbour?etum|arboretum|swimming pool|leisure|wellbeing|wellness)\b/i.test(
         title,
       )
     ) {
@@ -79,7 +79,7 @@ export function outingKind(activity: {
   }
 
   if (
-    /\b(house|hall|castle|palace|zoo|aquarium|museum|theme park|gallery|manor|falconry|birds? of prey|attraction)\b/i.test(
+    /\b(house|hall|castle|palace|zoo|aquarium|museum|theme park|gallery|manor|falconry|birds? of prey|attraction|swimming pool|leisure centre|water park|wild swim)\b/i.test(
       blob,
     )
   ) {

@@ -30,6 +30,7 @@ export async function fetchOpenStreetMapAttractions(
   const lng = origin.lng;
 
   // Prefer small typed queries — large combined requests often 504.
+  const swimR = Math.min(r, 45000);
   const queries = [
     `
 [out:json][timeout:40];
@@ -60,6 +61,33 @@ out center tags;
 );
 out center tags;
 `.trim(),
+    // Keep swim/leisure queries small — large unions often 504 and drop everything.
+    `
+[out:json][timeout:40];
+(
+  node["leisure"="swimming_pool"]["name"](around:${swimR},${lat},${lng});
+  way["leisure"="swimming_pool"]["name"](around:${swimR},${lat},${lng});
+  node["leisure"="water_park"]["name"](around:${swimR},${lat},${lng});
+  way["leisure"="water_park"]["name"](around:${swimR},${lat},${lng});
+);
+out center tags;
+`.trim(),
+    `
+[out:json][timeout:40];
+(
+  node["leisure"="sports_centre"]["name"~"Leisure|Swim|Pool|Wellbeing|Wellness|Laugher",i](around:${swimR},${lat},${lng});
+  way["leisure"="sports_centre"]["name"~"Leisure|Swim|Pool|Wellbeing|Wellness|Laugher",i](around:${swimR},${lat},${lng});
+);
+out center tags;
+`.trim(),
+    `
+[out:json][timeout:40];
+(
+  node["leisure"="resort"]["name"](around:${Math.min(r, 35000)},${lat},${lng});
+  way["leisure"="resort"]["name"](around:${Math.min(r, 35000)},${lat},${lng});
+);
+out center tags;
+`.trim(),
   ];
 
   const elements: OverpassElement[] = [];
@@ -76,10 +104,28 @@ out center tags;
     await sleep(700);
   }
 
-  // Nominatim fallback for zoos if Overpass was empty/throttled.
-  if (!elements.some((el) => el.tags?.tourism === "zoo")) {
-    const nominatimZoos = await nominatimNearbyZoos(origin);
-    for (const el of nominatimZoos) {
+  // Nominatim fallback when Overpass is empty/throttled for key families.
+  const needsZooFallback = !elements.some((el) => el.tags?.tourism === "zoo");
+  const needsPoolFallback = !elements.some(
+    (el) => el.tags?.leisure === "swimming_pool",
+  );
+  const needsLeisureFallback = !elements.some((el) =>
+    /^(sports_centre|water_park)$/i.test(el.tags?.leisure || ""),
+  );
+  const needsResortFallback = !elements.some(
+    (el) => el.tags?.leisure === "resort",
+  );
+  if (
+    needsZooFallback ||
+    needsPoolFallback ||
+    needsLeisureFallback ||
+    needsResortFallback
+  ) {
+    const nominatimExtras = await nominatimNearbyAttractions(origin, {
+      zoos: needsZooFallback,
+      swimming: needsPoolFallback || needsLeisureFallback || needsResortFallback,
+    });
+    for (const el of nominatimExtras) {
       const key = `${el.type}/${el.id}`;
       if (seen.has(key)) continue;
       seen.add(key);
@@ -95,7 +141,7 @@ out center tags;
     const name = tags.name?.trim();
     if (!name || name.length < 3) continue;
     if (
-      /^(toilets|car park|parking|picnic|bench|memorial|monument|artwork|information)$/i.test(
+      /^(toilets|car park|parking|picnic|bench|memorial|monument|artwork|information|swimming pool|paddling pool|lido)$/i.test(
         name,
       )
     ) {
@@ -103,12 +149,21 @@ out center tags;
     }
 
     const kind = tags.tourism || tags.leisure || "attraction";
+    if (isPrivateNonPublicPool(tags, kind, name)) continue;
+
     const kidHint =
-      /zoo|farm|castle|abbey|railway|steam|bird|prey|falcon|park|beach|aquarium|theme/i.test(
+      /zoo|farm|castle|abbey|railway|steam|bird|prey|falcon|park|beach|aquarium|theme|swim|pool|leisure|wellbeing|wellness|resort|water.?park|laugher/i.test(
         `${name} ${kind} ${tags.zoo || ""} ${tags.attraction || ""}`,
       );
     if (kind === "museum" && !kidHint) continue;
     if (kind === "attraction" && !kidHint && !tags.website) continue;
+    // Skip generic gyms / unnamed hotel-style pools.
+    if (
+      kind === "sports_centre" &&
+      !/leisure|swim|pool|wellbeing|wellness|laugher/i.test(name)
+    ) {
+      continue;
+    }
 
     const latLng = el.lat ?? el.center?.lat;
     const lngLng = el.lon ?? el.center?.lon;
@@ -126,12 +181,25 @@ out center tags;
       tags["description:en"] ||
       [
         familyLabel(kind, tags),
+        kind === "swimming_pool" || kind === "water_park"
+          ? "Family swimming"
+          : kind === "sports_centre" && /leisure|swim|pool|wellbeing|wellness/i.test(name)
+            ? "Public leisure centre with swimming"
+            : kind === "resort" && /\blakes?\b/i.test(name)
+              ? "Holiday park with lakeside swimming and family activities"
+              : null,
+        tags.operator ? `Operator: ${tags.operator}` : null,
         tags.opening_hours ? `Hours: ${tags.opening_hours}` : null,
         tags.fee === "yes"
           ? "Admission charged (see website)"
           : tags.fee === "no"
             ? "Free entry"
-            : null,
+            : kind === "swimming_pool" ||
+                kind === "sports_centre" ||
+                kind === "water_park" ||
+                kind === "resort"
+              ? "Admission charged — see venue"
+              : null,
       ]
         .filter(Boolean)
         .join(". ");
@@ -142,10 +210,18 @@ out center tags;
       kind,
       tags.zoo || "",
       tags.attraction || "",
+      tags.sport || "",
     ].join("\n");
     const features = extractFeatures(name, ownText);
     if (/\b(bird|prey|falcon|owl|eagle|zoo|farm|animal)/i.test(ownText)) {
       if (!features.includes("animals")) features.push("animals");
+    }
+    if (
+      (/swim|pool|water.?park|paddle|sauna/i.test(ownText) ||
+        (kind === "resort" && /\blakes?\b/i.test(name))) &&
+      !features.includes("swimming")
+    ) {
+      features.push("swimming");
     }
 
     const terrainInfo = inferTerrain(null, ownText);
@@ -229,15 +305,30 @@ async function overpassQuery(query: string): Promise<OverpassElement[]> {
 }
 
 /** Nominatim fallback when Overpass is unavailable. */
-async function nominatimNearbyZoos(origin: LatLng): Promise<OverpassElement[]> {
+async function nominatimNearbyAttractions(
+  origin: LatLng,
+  opts: { zoos: boolean; swimming: boolean },
+): Promise<OverpassElement[]> {
   const placeHint = await reverseTownName(origin);
   const near = placeHint ? `near ${placeHint}` : "Yorkshire";
-  const queries = [
-    `zoo ${near}`,
-    `birds of prey ${near}`,
-    `petting zoo ${near}`,
-    `theme park ${near}`,
-  ];
+  const queries: string[] = [];
+  if (opts.zoos) {
+    queries.push(
+      `zoo ${near}`,
+      `birds of prey ${near}`,
+      `petting zoo ${near}`,
+      `theme park ${near}`,
+    );
+  }
+  if (opts.swimming) {
+    queries.push(
+      `swimming pool ${near}`,
+      `leisure centre ${near}`,
+      `leisure centre Ripon`,
+      `lakes ${near}`,
+      `holiday park ${near}`,
+    );
+  }
   const out: OverpassElement[] = [];
   const seen = new Set<string>();
 
@@ -289,20 +380,13 @@ async function nominatimNearbyZoos(origin: LatLng): Promise<OverpassElement[]> {
         seen.add(key);
         const name =
           row.name || row.display_name?.split(",")[0]?.trim() || "Attraction";
-        const tourism =
-          row.type === "zoo" || row.type === "theme_park" || row.type === "aquarium"
-            ? row.type
-            : "attraction";
+        const tags = nominatimTagsForRow(row.type, row.class, name, row.extratags);
         out.push({
           type,
           id: row.osm_id,
           lat: Number(row.lat),
           lon: Number(row.lon),
-          tags: {
-            name,
-            tourism,
-            ...(row.extratags || {}),
-          },
+          tags,
         });
       }
     } catch {
@@ -310,6 +394,57 @@ async function nominatimNearbyZoos(origin: LatLng): Promise<OverpassElement[]> {
     }
   }
   return out;
+}
+
+function nominatimTagsForRow(
+  type: string | undefined,
+  klass: string | undefined,
+  name: string,
+  extratags?: Record<string, string>,
+): Record<string, string> {
+  const base = { name, ...(extratags || {}) };
+  if (type === "zoo" || type === "theme_park" || type === "aquarium") {
+    return { ...base, tourism: type };
+  }
+  if (
+    type === "swimming_pool" ||
+    type === "sports_centre" ||
+    type === "water_park" ||
+    type === "resort" ||
+    type === "nature_reserve"
+  ) {
+    return { ...base, leisure: type };
+  }
+  if (klass === "leisure" && type) {
+    return { ...base, leisure: type };
+  }
+  if (/swim|pool|leisure|wellbeing|wellness|laugher/i.test(name)) {
+    return { ...base, leisure: "sports_centre" };
+  }
+  if (/lakes?|resort|lodge/i.test(name) && /woodland|holiday|park/i.test(name)) {
+    return { ...base, leisure: "resort" };
+  }
+  return { ...base, tourism: "attraction" };
+}
+
+function isPrivateNonPublicPool(
+  tags: Record<string, string>,
+  kind: string,
+  name: string,
+): boolean {
+  if (!/swimming_pool|sports_centre|water_park|resort/i.test(kind)) return false;
+  const access = (tags.access || "").toLowerCase();
+  if (access === "private" || access === "no") return true;
+  // Hotel / house pools that aren't public leisure venues.
+  if (
+    kind === "swimming_pool" &&
+    /hotel|inn|bnb|b&b|guest house|holiday cottage/i.test(name) &&
+    access !== "yes" &&
+    access !== "public"
+  ) {
+    return true;
+  }
+  return false;
 }
 
 async function reverseTownName(origin: LatLng): Promise<string | null> {
@@ -356,6 +491,10 @@ function familyLabel(tourism: string, tags: Record<string, string>): string {
   if (tourism === "aquarium") return "Aquarium";
   if (tourism === "museum") return "Museum";
   if (tourism === "nature_reserve") return "Nature reserve";
+  if (tourism === "swimming_pool") return "Swimming";
+  if (tourism === "water_park") return "Water park";
+  if (tourism === "sports_centre") return "Leisure centre";
+  if (tourism === "resort") return "Holiday park / resort";
   return "Attraction";
 }
 

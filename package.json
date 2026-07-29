@@ -11,6 +11,7 @@
     "sync:refresh-cache": "tsx scripts/refresh-source-cache.ts",
     "enrich:images": "tsx scripts/enrich-images.ts",
     "audit:images": "tsx scripts/audit-images.ts",
+    "merge:osm": "tsx scripts/merge-osm-swimming.ts",
     "verify": "tsx scripts/verify.ts"
   },
   "dependencies": {
