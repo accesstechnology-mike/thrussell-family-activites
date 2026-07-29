@@ -12,6 +12,7 @@
     "enrich:images": "tsx scripts/enrich-images.ts",
     "audit:images": "tsx scripts/audit-images.ts",
     "merge:osm": "tsx scripts/merge-osm-swimming.ts",
+    "merge:beaches": "tsx scripts/merge-beaches.ts",
     "verify": "tsx scripts/verify.ts"
   },
   "dependencies": {
