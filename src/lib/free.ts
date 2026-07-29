@@ -164,14 +164,20 @@ function isOutdoorFreeDefault(activity: Activity): boolean {
   const summary = activity.summary || "";
 
   if (
-    /\b(walk|walks|walking|trail|trails|circular|reservoir|moor|foss|force|falls|common|beck|bank|crag|wood|woods|woodland|forest|stepping stones|nature reserve|meadow|wetland|sssi|ings)\b/i.test(
+    /\b(walk|walks|walking|trail|trails|circular|reservoir|moor|foss|force|falls|common|beck|bank|crag|wood|woods|woodland|forest|stepping stones|nature reserve|meadow|wetland|sssi|ings|beach|sands)\b/i.test(
       `${title} ${categories} ${summary}`,
     )
   ) {
+    // Holiday parks named like "Woodland Lakes" are paid attractions, not free woods.
+    if (/\b(holiday park|resort|leisure centre|swimming)\b/i.test(categories)) {
+      return false;
+    }
     return true;
   }
 
-  if (activity.categories.some((c) => /nature reserve/i.test(c))) return true;
+  if (activity.categories.some((c) => /nature reserve|^beach$/i.test(c))) {
+    return true;
+  }
 
   return false;
 }

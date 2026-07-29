@@ -31,6 +31,7 @@ export async function fetchOpenStreetMapAttractions(
 
   // Prefer small typed queries — large combined requests often 504.
   const swimR = Math.min(r, 45000);
+  const beachR = Math.min(Math.max(r, 95000), 110000);
   const queries = [
     `
 [out:json][timeout:40];
@@ -88,6 +89,18 @@ out center tags;
 );
 out center tags;
 `.trim(),
+    // Named coastal beaches — wider radius so Yorkshire / Teesside coast is in range.
+    `
+[out:json][timeout:45];
+(
+  node["natural"="beach"]["name"](around:${beachR},${lat},${lng});
+  way["natural"="beach"]["name"](around:${beachR},${lat},${lng});
+  relation["natural"="beach"]["name"](around:${beachR},${lat},${lng});
+  node["leisure"="beach_resort"]["name"](around:${beachR},${lat},${lng});
+  way["leisure"="beach_resort"]["name"](around:${beachR},${lat},${lng});
+);
+out center tags;
+`.trim(),
   ];
 
   const elements: OverpassElement[] = [];
@@ -115,15 +128,21 @@ out center tags;
   const needsResortFallback = !elements.some(
     (el) => el.tags?.leisure === "resort",
   );
+  const needsBeachFallback = !elements.some(
+    (el) =>
+      el.tags?.natural === "beach" || el.tags?.leisure === "beach_resort",
+  );
   if (
     needsZooFallback ||
     needsPoolFallback ||
     needsLeisureFallback ||
-    needsResortFallback
+    needsResortFallback ||
+    needsBeachFallback
   ) {
     const nominatimExtras = await nominatimNearbyAttractions(origin, {
       zoos: needsZooFallback,
       swimming: needsPoolFallback || needsLeisureFallback || needsResortFallback,
+      beaches: needsBeachFallback,
     });
     for (const el of nominatimExtras) {
       const key = `${el.type}/${el.id}`;
@@ -148,11 +167,22 @@ out center tags;
       continue;
     }
 
-    const kind = tags.tourism || tags.leisure || "attraction";
+    const kind = tags.tourism || tags.leisure || tags.natural || "attraction";
     if (isPrivateNonPublicPool(tags, kind, name)) continue;
+    if (isUnsuitableBeach(tags, kind, name)) continue;
+
+    const latLng = el.lat ?? el.center?.lat;
+    const lngLng = el.lon ?? el.center?.lon;
+    if (latLng == null || lngLng == null) continue;
+    if (
+      (kind === "beach" || kind === "beach_resort") &&
+      !isLikelyCoastalOrLakesideBeach(latLng, lngLng, name)
+    ) {
+      continue;
+    }
 
     const kidHint =
-      /zoo|farm|castle|abbey|railway|steam|bird|prey|falcon|park|beach|aquarium|theme|swim|pool|leisure|wellbeing|wellness|resort|water.?park|laugher/i.test(
+      /zoo|farm|castle|abbey|railway|steam|bird|prey|falcon|park|beach|sands|bay|aquarium|theme|swim|pool|leisure|wellbeing|wellness|resort|water.?park|laugher/i.test(
         `${name} ${kind} ${tags.zoo || ""} ${tags.attraction || ""}`,
       );
     if (kind === "museum" && !kidHint) continue;
@@ -164,10 +194,6 @@ out center tags;
     ) {
       continue;
     }
-
-    const latLng = el.lat ?? el.center?.lat;
-    const lngLng = el.lon ?? el.center?.lon;
-    if (latLng == null || lngLng == null) continue;
 
     const rawWebsite = tags.website || tags["contact:website"] || "";
     const website = rawWebsite
@@ -187,7 +213,9 @@ out center tags;
             ? "Public leisure centre with swimming"
             : kind === "resort" && /\blakes?\b/i.test(name)
               ? "Holiday park with lakeside swimming and family activities"
-              : null,
+              : kind === "beach" || kind === "beach_resort"
+                ? beachSummary(tags)
+                : null,
         tags.operator ? `Operator: ${tags.operator}` : null,
         tags.opening_hours ? `Hours: ${tags.opening_hours}` : null,
         tags.fee === "yes"
@@ -199,7 +227,9 @@ out center tags;
                 kind === "water_park" ||
                 kind === "resort"
               ? "Admission charged — see venue"
-              : null,
+              : kind === "beach" || kind === "beach_resort"
+                ? "Free coastal beach"
+                : null,
       ]
         .filter(Boolean)
         .join(". ");
@@ -223,15 +253,25 @@ out center tags;
     ) {
       features.push("swimming");
     }
+    if (
+      (kind === "beach" || kind === "beach_resort" || /\bbeach\b|\bsands\b/i.test(name)) &&
+      !features.includes("beach")
+    ) {
+      features.push("beach");
+    }
 
-    const terrainInfo = inferTerrain(null, ownText);
+    const terrainInfo = inferTerrain(
+      kind === "beach" || kind === "beach_resort" ? "flat" : null,
+      ownText,
+    );
+    const isBeach = kind === "beach" || kind === "beach_resort";
     const cost =
-      tags.fee === "no"
-        ? "Free entry"
-        : tags.fee === "yes"
-          ? tags["fee:conditional"]
-            ? `Admission charged (${tags["fee:conditional"]})`
-            : "Admission charged — see website"
+      tags.fee === "yes"
+        ? tags["fee:conditional"]
+          ? `Admission charged (${tags["fee:conditional"]})`
+          : "Admission charged — see website"
+        : tags.fee === "no" || isBeach
+          ? "Free entry"
           : null;
 
     activities.push({
@@ -255,7 +295,8 @@ out center tags;
       categories: ["OpenStreetMap", familyLabel(kind, tags)],
       driveMinutes: null,
       lastSyncedAt: now,
-      isFree: tags.fee === "no" ? true : tags.fee === "yes" ? false : null,
+      isFree:
+        tags.fee === "yes" ? false : tags.fee === "no" || isBeach ? true : null,
       rawFacts: {
         osmType: el.type,
         osmId: String(el.id),
@@ -274,30 +315,43 @@ out center tags;
 
 async function overpassQuery(query: string): Promise<OverpassElement[]> {
   let lastError = "unknown";
-  for (const endpoint of OVERPASS_ENDPOINTS) {
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "User-Agent": USER_AGENT,
-          "Content-Type": "application/x-www-form-urlencoded",
-          Accept: "application/json",
-        },
-        body: `data=${encodeURIComponent(query)}`,
-      });
-      const text = await res.text();
-      if (!res.ok) {
-        lastError = `${endpoint} → ${res.status}`;
-        continue;
+  // Two passes — Overpass often 504s on the first hit when busy.
+  for (let pass = 0; pass < 2; pass++) {
+    for (const endpoint of OVERPASS_ENDPOINTS) {
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "User-Agent": USER_AGENT,
+            "Content-Type": "application/x-www-form-urlencoded",
+            Accept: "application/json",
+          },
+          body: `data=${encodeURIComponent(query)}`,
+        });
+        const text = await res.text();
+        if (!res.ok) {
+          lastError = `${endpoint} → ${res.status}`;
+          await sleep(500 + pass * 800);
+          continue;
+        }
+        if (text.trimStart().startsWith("<")) {
+          lastError = `${endpoint} → HTML error body`;
+          await sleep(500 + pass * 800);
+          continue;
+        }
+        const data = JSON.parse(text) as { elements?: OverpassElement[] };
+        const elements = data.elements ?? [];
+        // Empty payloads are often overloaded mirrors; prefer another endpoint.
+        if (!elements.length) {
+          lastError = `${endpoint} → empty`;
+          await sleep(500 + pass * 800);
+          continue;
+        }
+        return elements;
+      } catch (err) {
+        lastError = err instanceof Error ? err.message : String(err);
+        await sleep(400);
       }
-      if (text.trimStart().startsWith("<")) {
-        lastError = `${endpoint} → HTML error body`;
-        continue;
-      }
-      const data = JSON.parse(text) as { elements?: OverpassElement[] };
-      return data.elements ?? [];
-    } catch (err) {
-      lastError = err instanceof Error ? err.message : String(err);
     }
   }
   console.warn(`Overpass query failed (${lastError})`);
@@ -307,45 +361,71 @@ async function overpassQuery(query: string): Promise<OverpassElement[]> {
 /** Nominatim fallback when Overpass is unavailable. */
 async function nominatimNearbyAttractions(
   origin: LatLng,
-  opts: { zoos: boolean; swimming: boolean },
+  opts: { zoos: boolean; swimming: boolean; beaches?: boolean },
 ): Promise<OverpassElement[]> {
   const placeHint = await reverseTownName(origin);
   const near = placeHint ? `near ${placeHint}` : "Yorkshire";
-  const queries: string[] = [];
+  const queries: Array<{ q: string; viewbox: string; limit: string }> = [];
+  const inlandBox = [
+    origin.lng - 0.9,
+    origin.lat + 0.55,
+    origin.lng + 0.9,
+    origin.lat - 0.55,
+  ].join(",");
+  // Stretch east so Yorkshire / Teesside beaches stay inside the search window.
+  const coastBox = [
+    origin.lng - 0.7,
+    origin.lat + 0.75,
+    origin.lng + 1.5,
+    origin.lat - 0.55,
+  ].join(",");
+
   if (opts.zoos) {
-    queries.push(
+    for (const q of [
       `zoo ${near}`,
       `birds of prey ${near}`,
       `petting zoo ${near}`,
       `theme park ${near}`,
-    );
+    ]) {
+      queries.push({ q, viewbox: inlandBox, limit: "10" });
+    }
   }
   if (opts.swimming) {
-    queries.push(
+    for (const q of [
       `swimming pool ${near}`,
       `leisure centre ${near}`,
       `leisure centre Ripon`,
       `lakes ${near}`,
       `holiday park ${near}`,
-    );
+    ]) {
+      queries.push({ q, viewbox: inlandBox, limit: "10" });
+    }
+  }
+  if (opts.beaches) {
+    for (const q of [
+      `beach ${near}`,
+      `beach Filey`,
+      `beach Scarborough`,
+      `beach Whitby`,
+      `beach Saltburn`,
+      `beach Hornsea`,
+      `sands Yorkshire`,
+    ]) {
+      queries.push({ q, viewbox: coastBox, limit: "20" });
+    }
   }
   const out: OverpassElement[] = [];
   const seen = new Set<string>();
 
-  for (const q of queries) {
+  for (const item of queries) {
     const url =
       "https://nominatim.openstreetmap.org/search?" +
       new URLSearchParams({
         format: "json",
-        limit: "10",
+        limit: item.limit,
         countrycodes: "gb",
-        q,
-        viewbox: [
-          origin.lng - 0.9,
-          origin.lat + 0.55,
-          origin.lng + 0.9,
-          origin.lat - 0.55,
-        ].join(","),
+        q: item.q,
+        viewbox: item.viewbox,
         bounded: "1",
         extratags: "1",
         namedetails: "0",
@@ -369,6 +449,10 @@ async function nominatimNearbyAttractions(
       }>;
       for (const row of rows) {
         if (!row.osm_id || !row.lat || !row.lon) continue;
+        // Beach discovery must be actual beaches, not cafes/roads with "beach" in the name.
+        if (item.q.startsWith("beach") || item.q.startsWith("sands")) {
+          if (row.type !== "beach") continue;
+        }
         const type =
           row.osm_type === "relation"
             ? "relation"
@@ -411,18 +495,28 @@ function nominatimTagsForRow(
     type === "sports_centre" ||
     type === "water_park" ||
     type === "resort" ||
-    type === "nature_reserve"
+    type === "nature_reserve" ||
+    type === "beach_resort"
   ) {
     return { ...base, leisure: type };
   }
+  if (type === "beach" || (klass === "natural" && type === "beach")) {
+    return { ...base, natural: "beach" };
+  }
   if (klass === "leisure" && type) {
     return { ...base, leisure: type };
+  }
+  if (klass === "natural" && type) {
+    return { ...base, natural: type };
   }
   if (/swim|pool|leisure|wellbeing|wellness|laugher/i.test(name)) {
     return { ...base, leisure: "sports_centre" };
   }
   if (/lakes?|resort|lodge/i.test(name) && /woodland|holiday|park/i.test(name)) {
     return { ...base, leisure: "resort" };
+  }
+  if (/\bbeach\b|\bsands\b|\bbay\b/i.test(name)) {
+    return { ...base, natural: "beach" };
   }
   return { ...base, tourism: "attraction" };
 }
@@ -444,6 +538,62 @@ function isPrivateNonPublicPool(
   ) {
     return true;
   }
+  return false;
+}
+
+/** Drop nude, private, industrial, or too-generic beach fragments. */
+function isUnsuitableBeach(
+  tags: Record<string, string>,
+  kind: string,
+  name: string,
+): boolean {
+  if (kind !== "beach" && kind !== "beach_resort") return false;
+  const access = (tags.access || "").toLowerCase();
+  if (access === "private" || access === "no") return true;
+  const nudism = (tags.nudism || "").toLowerCase();
+  if (nudism && nudism !== "no") return true;
+  if (/chemical|blast beach|sewage|nude|naturist|dogging/i.test(name)) {
+    return true;
+  }
+  if (
+    /^(the beach|car park beach|shingles|stone beach|shingle beach|pebble beach|sea lions|wader point|sands)$/i.test(
+      name.trim(),
+    )
+  ) {
+    return true;
+  }
+  if (/creek\s+beach/i.test(name)) return true;
+  // Nominatim sometimes returns cafes, huts, lifts, and roads for "beach" queries.
+  if (
+    /beach\s*(cafe|café|hut|huts|chalet|chalets|road|car\s*park)|^(lift to|access to)\b/i.test(
+      name,
+    )
+  ) {
+    return true;
+  }
+  return false;
+}
+
+function beachSummary(tags: Record<string, string>): string {
+  const surface = (tags.surface || "").toLowerCase();
+  if (/sand/.test(surface)) return "Sandy beach for a family day out";
+  if (/pebble|shingle|stone/.test(surface)) {
+    return "Pebbly beach — rockpooling and coastal exploring";
+  }
+  if (/rock/.test(surface)) return "Rocky beach — coastal exploring";
+  return "Coastal beach for a family day out";
+}
+
+/** Keep North Sea coast + lakeside beaches; drop Vale of York sandpits etc. */
+function isLikelyCoastalOrLakesideBeach(
+  lat: number,
+  lng: number,
+  name: string,
+): boolean {
+  if (/lakeside/i.test(name)) return true;
+  if (lat >= 53.85 && lat <= 54.35 && lng < -0.85) return false;
+  if (lng > -1.55 && lat > 54.45 && lat < 55.15) return true;
+  if (lng > -1.2 && lat > 53.45 && lat < 54.55) return true;
   return false;
 }
 
@@ -495,6 +645,7 @@ function familyLabel(tourism: string, tags: Record<string, string>): string {
   if (tourism === "water_park") return "Water park";
   if (tourism === "sports_centre") return "Leisure centre";
   if (tourism === "resort") return "Holiday park / resort";
+  if (tourism === "beach" || tourism === "beach_resort") return "Beach";
   return "Attraction";
 }
 

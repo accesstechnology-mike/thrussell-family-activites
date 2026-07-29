@@ -25,6 +25,12 @@ export function outingKind(activity: {
   }
 
   if (activity.source === "openstreetmap") {
+    if (
+      /\bbeach\b/i.test(categories) ||
+      /\bbeach\b|\bsands\b/i.test(title)
+    ) {
+      return "walk";
+    }
     if (/\bnature reserve\b/i.test(categories) || /\bnature reserve\b/i.test(summary)) {
       return "walk";
     }
