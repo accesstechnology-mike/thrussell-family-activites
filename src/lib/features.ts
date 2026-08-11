@@ -34,15 +34,20 @@ export const FEATURE_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
 export const FEATURE_LABELS: string[] = FEATURE_PATTERNS.map((f) => f.label);
 
 export function extractFeatures(...chunks: Array<string | null | undefined>): string[] {
-  const hay = chunks.filter(Boolean).join("\n");
+  const parts = chunks.filter((c): c is string => Boolean(c && c.trim()));
+  const hay = parts.join("\n");
+  // Title + summary only — scraped page bodies often contain nav links
+  // like "Beaches" that falsely tag abbeys and halls.
+  const primary = parts.slice(0, 2).join("\n");
   const found: string[] = [];
   for (const { label, pattern } of FEATURE_PATTERNS) {
-    if (!pattern.test(hay)) continue;
+    const text = label === "beach" ? primary : hay;
+    if (!pattern.test(text)) continue;
     // Ignore metaphorical / river "beaches" (stone-throwing beach, etc.).
     if (
       label === "beach" &&
-      /\b(?:stone[- ]throwing|pebble[- ]throwing)\s+beach\b/i.test(hay) &&
-      !/\b(?:coast|coastal|seafront|sea\s+front|sands|bay|cliff)\b/i.test(hay)
+      /\b(?:stone[- ]throwing|pebble[- ]throwing)\s+beach\b/i.test(text) &&
+      !/\b(?:coast|coastal|seafront|sea\s+front|sands|bay|cliff)\b/i.test(text)
     ) {
       continue;
     }
