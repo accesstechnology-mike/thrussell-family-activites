@@ -20,7 +20,8 @@ export const FEATURE_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
   { label: "trig point", pattern: /\btrig(?:\s+point)?\b|\bpeak\s+to\s+bag\b|\bsummit\b/i },
   { label: "cafe / pub", pattern: /\bcafe\b|\bcafé\b|\bpubs?\b|\btea\s*room/i },
   { label: "pushchair friendly", pattern: /\bpushchair\b|\bpram\b|\bwheelchair\b/i },
-  { label: "beach", pattern: /\bbeach(?:es)?\b|\bcoast(?:al)?\b/i },
+  // Actual beaches / sands — not bare "coastal" (that tagged inland halls & walks).
+  { label: "beach", pattern: /\bbeach(?:es)?\b|\bsands\b|\bseafront\b|\bsea\s+front\b/i },
   {
     label: "animals",
     pattern:
@@ -36,7 +37,16 @@ export function extractFeatures(...chunks: Array<string | null | undefined>): st
   const hay = chunks.filter(Boolean).join("\n");
   const found: string[] = [];
   for (const { label, pattern } of FEATURE_PATTERNS) {
-    if (pattern.test(hay)) found.push(label);
+    if (!pattern.test(hay)) continue;
+    // Ignore metaphorical / river "beaches" (stone-throwing beach, etc.).
+    if (
+      label === "beach" &&
+      /\b(?:stone[- ]throwing|pebble[- ]throwing)\s+beach\b/i.test(hay) &&
+      !/\b(?:coast|coastal|seafront|sea\s+front|sands|bay|cliff)\b/i.test(hay)
+    ) {
+      continue;
+    }
+    found.push(label);
   }
   return found;
 }

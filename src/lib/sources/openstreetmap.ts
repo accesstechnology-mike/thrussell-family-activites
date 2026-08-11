@@ -563,6 +563,9 @@ function isUnsuitableBeach(
     return true;
   }
   if (/creek\s+beach/i.test(name)) return true;
+  if (/lakeside|reservoir|marina\s+beach|boating\s+lake/i.test(name)) {
+    return true;
+  }
   // Nominatim sometimes returns cafes, huts, lifts, and roads for "beach" queries.
   if (
     /beach\s*(cafe|café|hut|huts|chalet|chalets|road|car\s*park)|^(lift to|access to)\b/i.test(
@@ -584,15 +587,20 @@ function beachSummary(tags: Record<string, string>): string {
   return "Coastal beach for a family day out";
 }
 
-/** Keep North Sea coast + lakeside beaches; drop Vale of York sandpits etc. */
+/** Keep North Sea / east-coast beaches; drop inland sandpits and lakeside beaches. */
 function isLikelyCoastalOrLakesideBeach(
   lat: number,
   lng: number,
   name: string,
 ): boolean {
-  if (/lakeside/i.test(name)) return true;
+  if (/lakeside|reservoir|marina\s+beach|boating\s+lake/i.test(name)) {
+    return false;
+  }
+  // Vale of York / inland belt between the Dales and the coast.
   if (lat >= 53.85 && lat <= 54.35 && lng < -0.85) return false;
+  // Teesside / Durham / Tyneside coast
   if (lng > -1.55 && lat > 54.45 && lat < 55.15) return true;
+  // Yorkshire / Holderness / Filey–Bridlington coast
   if (lng > -1.2 && lat > 53.45 && lat < 54.55) return true;
   return false;
 }

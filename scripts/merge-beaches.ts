@@ -43,6 +43,9 @@ function unsuitable(name: string, tags: Record<string, string>): boolean {
     return true;
   }
   if (/creek\s+beach/i.test(name)) return true;
+  if (/lakeside|reservoir|marina\s+beach|boating\s+lake/i.test(name)) {
+    return true;
+  }
   if (
     /beach\s*(cafe|café|hut|huts|chalet|chalets|road|car\s*park)|^(lift to|access to)\b/i.test(
       name,
@@ -53,13 +56,15 @@ function unsuitable(name: string, tags: Record<string, string>): boolean {
   return false;
 }
 
-/** Keep North Sea coast + known inland lakeside beaches; drop Vale of York sandpits etc. */
+/** Keep North Sea / east-coast beaches; drop inland sandpits and lakeside beaches. */
 function isLikelyCoastalOrLakesideBeach(
   lat: number,
   lng: number,
   name: string,
 ): boolean {
-  if (/lakeside/i.test(name)) return true;
+  if (/lakeside|reservoir|marina\s+beach|boating\s+lake/i.test(name)) {
+    return false;
+  }
   // Vale of York / inland belt between the Dales and the coast.
   if (lat >= 53.85 && lat <= 54.35 && lng < -0.85) return false;
   // Teesside / Durham / Tyneside coast
