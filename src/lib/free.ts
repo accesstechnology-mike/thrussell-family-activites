@@ -50,11 +50,11 @@ export function isFreeActivity(activity: Activity): boolean {
     return false;
   }
 
+  // Visitor attractions / leisure venues default to paid (before woodland-name walks).
+  if (isVisitorAttraction(activity)) return false;
+
   // Walks, nature reserves, forests: free unless admission charged above.
   if (isOutdoorFreeDefault(activity)) return true;
-
-  // Visitor attractions / estates default to paid.
-  if (isVisitorAttraction(activity)) return false;
 
   // Unknown leftovers with no clear admission signal → free.
   return true;
@@ -164,14 +164,20 @@ function isOutdoorFreeDefault(activity: Activity): boolean {
   const summary = activity.summary || "";
 
   if (
-    /\b(walk|walks|walking|trail|trails|circular|reservoir|moor|foss|force|falls|common|beck|bank|crag|wood|woods|woodland|forest|stepping stones|nature reserve|meadow|wetland|sssi|ings)\b/i.test(
+    /\b(walk|walks|walking|trail|trails|circular|reservoir|moor|foss|force|falls|common|beck|bank|crag|wood|woods|woodland|forest|stepping stones|nature reserve|meadow|wetland|sssi|ings|beach|sands)\b/i.test(
       `${title} ${categories} ${summary}`,
     )
   ) {
+    // Holiday parks named like "Woodland Lakes" are paid attractions, not free woods.
+    if (/\b(holiday park|resort|leisure centre|swimming)\b/i.test(categories)) {
+      return false;
+    }
     return true;
   }
 
-  if (activity.categories.some((c) => /nature reserve/i.test(c))) return true;
+  if (activity.categories.some((c) => /nature reserve|^beach$/i.test(c))) {
+    return true;
+  }
 
   return false;
 }
@@ -192,7 +198,7 @@ function isVisitorAttraction(activity: Activity): boolean {
 
   const categories = activity.categories.join(" ");
   if (
-    /\b(zoo|museum|theme park|aquarium|petting farm|zoo \/ wildlife|visitor centre)\b/i.test(
+    /\b(zoo|museum|theme park|aquarium|petting farm|zoo \/ wildlife|visitor centre|swimming|water park|leisure centre|holiday park \/ resort)\b/i.test(
       categories,
     )
   ) {
@@ -210,7 +216,7 @@ function isVisitorAttraction(activity: Activity): boolean {
   if (isWalkSource(activity.source)) return false;
 
   const title = activity.title;
-  return /\b(house|hall|castle|palace|zoo|aquarium|museum|theme park|gallery|stately|manor|falconry|birds? of prey|visitor centre|maze|dungeon|brewery|farm park|walled garden|sculpture park|show cave|caverns?)\b/i.test(
+  return /\b(house|hall|castle|palace|zoo|aquarium|museum|theme park|gallery|stately|manor|falconry|birds? of prey|visitor centre|maze|dungeon|brewery|farm park|walled garden|sculpture park|show cave|caverns?|swimming pool|leisure|wellbeing|wellness)\b/i.test(
     title,
   );
 }

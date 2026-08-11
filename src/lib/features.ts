@@ -9,13 +9,19 @@ export const FEATURE_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
   { label: "ice cream", pattern: /\bice\s*creams?\b/i },
   { label: "play park", pattern: /\bplay\s*parks?\b|\bplaygrounds?\b/i },
   { label: "paddle", pattern: /\bpaddl(?:e|ing)\b|\bwild\s+swim/i },
+  {
+    label: "swimming",
+    pattern:
+      /\bswimming\b|\bswim\s+pool\b|\bswimming\s+pool\b|\bwater\s*park\b|\bleisure\s+(?:and\s+)?(?:wellbeing|wellness)\s+centre\b/i,
+  },
   { label: "ruins", pattern: /\bruins?\b|\babbey\b|\bcastles?\b/i },
   { label: "woodland", pattern: /\bwoodlands?\b|\bwoods?\b|\bforest\b/i },
   { label: "stream / river", pattern: /\brivers?\b|\bstreams?\b|\bbecks?\b/i },
   { label: "trig point", pattern: /\btrig(?:\s+point)?\b|\bpeak\s+to\s+bag\b|\bsummit\b/i },
   { label: "cafe / pub", pattern: /\bcafe\b|\bcafé\b|\bpubs?\b|\btea\s*room/i },
   { label: "pushchair friendly", pattern: /\bpushchair\b|\bpram\b|\bwheelchair\b/i },
-  { label: "beach", pattern: /\bbeach(?:es)?\b|\bcoast(?:al)?\b/i },
+  // Actual beaches / sands — not bare "coastal" (that tagged inland halls & walks).
+  { label: "beach", pattern: /\bbeach(?:es)?\b|\bsands\b|\bseafront\b|\bsea\s+front\b/i },
   {
     label: "animals",
     pattern:
@@ -28,10 +34,24 @@ export const FEATURE_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
 export const FEATURE_LABELS: string[] = FEATURE_PATTERNS.map((f) => f.label);
 
 export function extractFeatures(...chunks: Array<string | null | undefined>): string[] {
-  const hay = chunks.filter(Boolean).join("\n");
+  const parts = chunks.filter((c): c is string => Boolean(c && c.trim()));
+  const hay = parts.join("\n");
+  // Title + summary only — scraped page bodies often contain nav links
+  // like "Beaches" that falsely tag abbeys and halls.
+  const primary = parts.slice(0, 2).join("\n");
   const found: string[] = [];
   for (const { label, pattern } of FEATURE_PATTERNS) {
-    if (pattern.test(hay)) found.push(label);
+    const text = label === "beach" ? primary : hay;
+    if (!pattern.test(text)) continue;
+    // Ignore metaphorical / river "beaches" (stone-throwing beach, etc.).
+    if (
+      label === "beach" &&
+      /\b(?:stone[- ]throwing|pebble[- ]throwing)\s+beach\b/i.test(text) &&
+      !/\b(?:coast|coastal|seafront|sea\s+front|sands|bay|cliff)\b/i.test(text)
+    ) {
+      continue;
+    }
+    found.push(label);
   }
   return found;
 }
