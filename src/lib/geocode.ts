@@ -83,12 +83,17 @@ export async function geocodePostcode(
 /** Nominatim geocode with polite pacing and query fallbacks. */
 export async function geocodePlaceName(
   query: string,
+  opts?: { maxVariants?: number },
 ): Promise<(LatLng & { postcode: string | null }) | null> {
   const cache = await loadCache();
   const primaryKey = `place:${cacheKey(query)}`;
   if (primaryKey in cache) return cache[primaryKey] ?? null;
 
-  for (const q of geocodeQueryVariants(query)) {
+  const variants = geocodeQueryVariants(query).slice(
+    0,
+    opts?.maxVariants ?? 8,
+  );
+  for (const q of variants) {
     const key = `place:${cacheKey(q)}`;
     if (key in cache) {
       const cached = cache[key];

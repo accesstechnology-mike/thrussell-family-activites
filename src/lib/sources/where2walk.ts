@@ -50,9 +50,15 @@ export async function fetchWhere2walk(): Promise<Activity[]> {
 
   const now = new Date().toISOString();
   const activities: Activity[] = [];
-  for (const post of byId.values()) {
+  const posts = [...byId.values()];
+  let i = 0;
+  for (const post of posts) {
+    i += 1;
     const activity = await toActivity(post, now);
     if (activity) activities.push(activity);
+    if (i % 20 === 0) {
+      console.log(`Where2walk ${i}/${posts.length} (${activities.length} kept)`);
+    }
   }
   return activities;
 }
@@ -111,7 +117,9 @@ async function toActivity(
   let postcode = extractPostcode(body) || extractPostcode(excerpt);
   let coords = postcode ? await geocodePostcode(postcode) : null;
   if (!coords) {
-    const place = await geocodePlaceName(`${title}, Yorkshire, UK`);
+    const place = await geocodePlaceName(`${title}, Yorkshire, UK`, {
+      maxVariants: 2,
+    });
     if (!place) return null;
     coords = {
       lat: place.lat,
