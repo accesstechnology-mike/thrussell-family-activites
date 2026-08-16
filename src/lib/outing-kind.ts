@@ -53,7 +53,7 @@ export function outingKind(activity: {
 
   // Walk-oriented sources stay walks (including estate walks / free trails).
   if (
-    /^(reluctant-explorers|alltrails|muddy-boots-mummy|little-vikings|yorkshire-tots|teesside-family-life)$/.test(
+    /^(reluctant-explorers|alltrails|muddy-boots-mummy|little-vikings|yorkshire-tots|teesside-family-life|walkiees|outdoor-guide|where2walk)$/.test(
       activity.source,
     )
   ) {

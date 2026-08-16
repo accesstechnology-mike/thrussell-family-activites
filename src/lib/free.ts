@@ -183,7 +183,7 @@ function isOutdoorFreeDefault(activity: Activity): boolean {
 }
 
 function isWalkSource(source: string): boolean {
-  return /^(reluctant-explorers|alltrails|muddy-boots-mummy|little-vikings|yorkshire-tots|teesside-family-life)$/.test(
+  return /^(reluctant-explorers|alltrails|muddy-boots-mummy|little-vikings|yorkshire-tots|teesside-family-life|walkiees|outdoor-guide|where2walk)$/.test(
     source,
   );
 }

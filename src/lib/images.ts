@@ -89,7 +89,7 @@ function isJunkImageUrl(url: string): boolean {
 }
 
 function isListicleOrAggregatorUrl(url: string): boolean {
-  return /muddybootsmummy|alltrails\.com|yorkshiretots|thereluctantexplorers|teessidefamilylife|littlevikings|nationaltrust\.org|english-heritage\.org/i.test(
+  return /muddybootsmummy|alltrails\.com|yorkshiretots|thereluctantexplorers|teessidefamilylife|littlevikings|nationaltrust\.org|english-heritage\.org|walkiees|theoutdoorguide|dogfriendly|where2walk/i.test(
     url,
   );
 }

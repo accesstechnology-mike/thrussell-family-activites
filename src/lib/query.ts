@@ -66,6 +66,10 @@ const SOURCES = new Set<ActivitySource>([
   "little-vikings",
   "alltrails",
   "openstreetmap",
+  "walkiees",
+  "outdoor-guide",
+  "dog-friendly",
+  "where2walk",
 ]);
 
 export function isTerrain(value: string): value is TerrainLevel {

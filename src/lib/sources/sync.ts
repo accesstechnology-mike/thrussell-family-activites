@@ -6,14 +6,18 @@ import { getOrigin } from "../origin";
 import { writeStore } from "../store";
 import type { Activity, SourceStatus, SyncResult } from "../types";
 import { fetchAllTrailsKids } from "./alltrails";
+import { fetchDogFriendly } from "./dog-friendly";
 import { fetchEnglishHeritage } from "./english-heritage";
 import { haversineKm, normalisedPlaceKey } from "./listicle";
 import { fetchLittleVikings } from "./little-vikings";
 import { fetchMuddyBootsMummy } from "./muddy-boots-mummy";
 import { fetchNationalTrust } from "./national-trust";
 import { fetchOpenStreetMapAttractions } from "./openstreetmap";
+import { fetchOutdoorGuide } from "./outdoor-guide";
 import { fetchReluctantExplorers } from "./reluctant-explorers";
 import { fetchTeessideFamilyLife } from "./teesside-family-life";
+import { fetchWalkiees } from "./walkiees";
+import { fetchWhere2walk } from "./where2walk";
 import { fetchYorkshireTots } from "./yorkshire-tots";
 
 function scoreActivity(a: Activity): number {
@@ -25,9 +29,13 @@ function scoreActivity(a: Activity): number {
         ? 20
         : a.source === "yorkshire-tots"
           ? 10
-          : a.source === "openstreetmap"
-            ? 5
-            : 0;
+          : a.source === "walkiees"
+            ? 8
+            : a.source === "outdoor-guide" || a.source === "where2walk"
+              ? 6
+              : a.source === "openstreetmap"
+                ? 5
+                : 0;
   return (
     sourceBoost +
     (a.imageUrl ? 2 : 0) +
@@ -149,6 +157,12 @@ export async function syncAllSources(): Promise<SyncResult> {
   );
   const lv = await runSource("little-vikings", () => fetchLittleVikings());
   const at = await runSource("alltrails", () => fetchAllTrailsKids());
+  const wk = await runSource("walkiees", () => fetchWalkiees());
+  const tog = await runSource("outdoor-guide", () => fetchOutdoorGuide());
+  const df = await runSource("dog-friendly", () =>
+    fetchDogFriendly(origin.location),
+  );
+  const w2w = await runSource("where2walk", () => fetchWhere2walk());
 
   const merged = dedupe(
     [
@@ -161,6 +175,10 @@ export async function syncAllSources(): Promise<SyncResult> {
       ...mbm.activities,
       ...lv.activities,
       ...at.activities,
+      ...wk.activities,
+      ...tog.activities,
+      ...df.activities,
+      ...w2w.activities,
     ].map(ensureIsFree),
   );
 
@@ -193,6 +211,10 @@ export async function syncAllSources(): Promise<SyncResult> {
     mbm.status,
     lv.status,
     at.status,
+    wk.status,
+    tog.status,
+    df.status,
+    w2w.status,
   ].map((status) => ({
     ...status,
     kept: withImages.filter((a) => a.source === status.source).length,
