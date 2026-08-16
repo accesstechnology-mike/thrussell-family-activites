@@ -5,7 +5,7 @@ import {
   geocodePlaceName,
   geocodePostcode,
 } from "../geocode";
-import { metaContent, sleep, stripTags } from "../html";
+import { fetchText, metaContent, sleep, stripTags } from "../html";
 import type { Activity, LatLng } from "../types";
 
 /**
@@ -117,9 +117,7 @@ async function enrichListing(
 }
 
 async function fetchHtml(url: string): Promise<string> {
-  const res = await fetch(url, {
+  return fetchText(url, {
     headers: { "User-Agent": USER_AGENT, Accept: "text/html" },
   });
-  if (!res.ok) throw new Error(`DogFriendly fetch failed (${res.status})`);
-  return res.text();
 }

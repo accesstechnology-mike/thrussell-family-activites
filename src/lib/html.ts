@@ -84,3 +84,18 @@ export function asStringArray(value: unknown): string[] {
 export function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
+
+export async function fetchText(
+  url: string,
+  init: RequestInit & { timeoutMs?: number } = {},
+): Promise<string> {
+  const { timeoutMs = 20000, ...rest } = init;
+  const res = await fetch(url, {
+    ...rest,
+    signal: AbortSignal.timeout(timeoutMs),
+  });
+  if (!res.ok) {
+    throw new Error(`Fetch failed ${res.status} ${url}`);
+  }
+  return res.text();
+}

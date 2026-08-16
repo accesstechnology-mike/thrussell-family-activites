@@ -62,7 +62,10 @@ async function discoverYorkshireTypeIds(): Promise<number[]> {
   for (let page = 1; page <= 5; page += 1) {
     const res = await fetch(
       `${API}/walk_type?per_page=100&page=${page}`,
-      { headers: { "User-Agent": USER_AGENT, Accept: "application/json" } },
+      {
+        headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+        signal: AbortSignal.timeout(20000),
+      },
     );
     if (!res.ok) break;
     const batch = (await res.json()) as WpTerm[];
@@ -81,6 +84,7 @@ async function fetchWalksForType(typeId: number): Promise<WpWalk[]> {
     const url = `${API}/walk?walk_type=${typeId}&per_page=50&page=${page}&_embed=1`;
     const res = await fetch(url, {
       headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+      signal: AbortSignal.timeout(20000),
     });
     if (!res.ok) break;
     const batch = (await res.json()) as WpWalk[];

@@ -2,6 +2,7 @@ import { USER_AGENT } from "../config";
 import { extractFeatures, inferTerrain, slugId } from "../features";
 import {
   asStringArray,
+  fetchText,
   jsonLdGraph,
   metaContent,
   sleep,
@@ -168,9 +169,7 @@ function amenityNames(value: unknown): string[] {
 }
 
 async function fetchHtml(url: string): Promise<string> {
-  const res = await fetch(url, {
+  return fetchText(url, {
     headers: { "User-Agent": USER_AGENT, Accept: "text/html" },
   });
-  if (!res.ok) throw new Error(`Walkiees fetch failed (${res.status})`);
-  return res.text();
 }

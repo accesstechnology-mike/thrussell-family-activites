@@ -10,7 +10,7 @@ import {
   geocodePlaceName,
   geocodePostcode,
 } from "../geocode";
-import { metaContent, sleep, stripTags } from "../html";
+import { fetchText, metaContent, sleep, stripTags } from "../html";
 import type { Activity } from "../types";
 
 const REGION_INDEX =
@@ -26,21 +26,28 @@ export async function fetchOutdoorGuide(): Promise<Activity[]> {
   for (const hub of hubs) {
     try {
       const html = await fetchHtml(hub);
-      for (const url of collectWalkUrls(html, hub)) walkUrls.add(url);
+      const found = collectWalkUrls(html, hub);
+      console.log(`Outdoor Guide hub ${hub} → ${found.length} walks`);
+      for (const url of found) walkUrls.add(url);
       await sleep(350);
-    } catch {
-      // Continue with other hubs
+    } catch (err) {
+      console.warn(`Outdoor Guide hub failed ${hub}`, err);
     }
   }
 
   const now = new Date().toISOString();
   const activities: Activity[] = [];
+  let i = 0;
   for (const url of walkUrls) {
+    i += 1;
     try {
       const activity = await enrichWalk(url, now);
       if (activity) activities.push(activity);
-    } catch {
-      // Skip failed walk pages
+    } catch (err) {
+      console.warn(`Outdoor Guide skip ${url}`, err);
+    }
+    if (i % 10 === 0) {
+      console.log(`Outdoor Guide ${i}/${walkUrls.size} (${activities.length} kept)`);
     }
     await sleep(250);
   }
@@ -152,9 +159,8 @@ async function enrichWalk(url: string, now: string): Promise<Activity | null> {
 }
 
 async function fetchHtml(url: string): Promise<string> {
-  const res = await fetch(url, {
+  return fetchText(url, {
     headers: { "User-Agent": USER_AGENT, Accept: "text/html" },
+    timeoutMs: 15000,
   });
-  if (!res.ok) throw new Error(`Outdoor Guide fetch failed (${res.status})`);
-  return res.text();
 }
