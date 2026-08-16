@@ -28,6 +28,10 @@ export const FEATURE_PATTERNS: Array<{ label: string; pattern: RegExp }> = [
       /\bdeer\b|\bfell\s+ponies?\b|\bfarm\s+animals?\b|\bbirds?\s+of\s+prey\b|\bfalcon(?:ry)?\b|\bowls?\b|\beagles?\b|\bzoo\b|\bpetting\b/i,
   },
   { label: "rocks to scramble", pattern: /\bscrambl|\bboulders?\b/i },
+  {
+    label: "dog friendly",
+    pattern: /\bdog(?:s)?[- ]friendly\b|\bdog\s+walks?\b|\boff[- ]lead\b/i,
+  },
 ];
 
 /** Canonical feature labels agents can filter on. */

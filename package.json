@@ -13,6 +13,7 @@
     "audit:images": "tsx scripts/audit-images.ts",
     "merge:osm": "tsx scripts/merge-osm-swimming.ts",
     "merge:beaches": "tsx scripts/merge-beaches.ts",
+    "merge:walks": "tsx scripts/merge-walk-databases.ts",
     "verify": "tsx scripts/verify.ts"
   },
   "dependencies": {

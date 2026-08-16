@@ -55,6 +55,14 @@ function sourceLabel(source: string): string {
       return "AllTrails";
     case "openstreetmap":
       return "OpenStreetMap";
+    case "walkiees":
+      return "Walkiees";
+    case "outdoor-guide":
+      return "The Outdoor Guide";
+    case "dog-friendly":
+      return "DogFriendly";
+    case "where2walk":
+      return "Where2walk";
     default:
       return source.replace(/-/g, " ");
   }

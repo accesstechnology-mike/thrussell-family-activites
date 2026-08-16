@@ -12,7 +12,11 @@ export type ActivitySource =
   | "muddy-boots-mummy"
   | "little-vikings"
   | "alltrails"
-  | "openstreetmap";
+  | "openstreetmap"
+  | "walkiees"
+  | "outdoor-guide"
+  | "dog-friendly"
+  | "where2walk";
 
 export type TerrainLevel = "flat" | "gentle" | "hilly" | "steep" | "unknown";
 

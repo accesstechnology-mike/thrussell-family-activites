@@ -35,6 +35,10 @@ Structured filters on `/api/activities`: `q`, `feature`, `features`, `source`, `
 - **Muddy Boots Mummy** — Yorkshire family walks roundup
 - **Little Vikings** — York & Yorkshire family walks guide
 - **AllTrails** — North Yorkshire child-friendly trails
+- **Walkiees** — community dog walks (Yorkshire / Cleveland / Durham)
+- **The Outdoor Guide** — Yorkshire & Durham walk database
+- **DogFriendly.co.uk** — dog-friendly days out near home
+- **Where2walk** — Yorkshire Dales / North York Moors / Wolds walks
 - **National Trust** / **English Heritage** — places near home
 - **OpenStreetMap** — zoos, attractions, museums, nature reserves near home (fills gaps walk blogs miss, e.g. Thirsk Birds of Prey Centre)
 

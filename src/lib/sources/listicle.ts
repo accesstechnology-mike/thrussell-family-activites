@@ -145,7 +145,7 @@ export function normalisedPlaceKey(title: string): string {
   const tokens = t
     .replace(/[^a-z0-9\s]/g, " ")
     .replace(
-      /\b(the|a|an|walk|walks|walking|circular|trail|trails|family|friendly|kids|children|route|guide|short|easy|best|near|yorkshire|dales|moors|and|to|from|via|among|ruins|around|with|gallery|gardens?|woodland|parkland|at|on|for|stunning|views?|fantastic|inspirational|flat|paddl(?:e|ing)|spot|some|birds)\b/g,
+      /\b(the|a|an|walk|walks|walking|circular|trail|trails|family|friendly|kids|children|route|guide|short|easy|best|near|yorkshire|dales|moors|and|to|from|via|among|ruins|around|with|gallery|gardens?|woodland|parkland|at|on|for|stunning|views?|fantastic|inspirational|flat|paddl(?:e|ing)|spot|some|birds|dog|dogs)\b/g,
       " ",
     )
     .split(/\s+/)

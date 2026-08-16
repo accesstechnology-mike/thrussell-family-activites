@@ -54,6 +54,10 @@ const SOURCE_ALIASES: Array<{ source: ActivitySource; pattern: RegExp }> = [
   { source: "little-vikings", pattern: /\blittle\s+vikings?\b/i },
   { source: "alltrails", pattern: /\ball\s*trails?\b/i },
   { source: "openstreetmap", pattern: /\bopen\s*street\s*map\b|\bosm\b/i },
+  { source: "walkiees", pattern: /\bwalkiees?\b/i },
+  { source: "outdoor-guide", pattern: /\boutdoor\s+guide\b|\bjulia\s+bradbury\b/i },
+  { source: "dog-friendly", pattern: /\bdog\s*friendly\.co\.uk\b|\bdogfriendly\b/i },
+  { source: "where2walk", pattern: /\bwhere\s*2\s*walk\b|\bwhere2walk\b/i },
 ];
 
 const STOPWORDS = new Set([
