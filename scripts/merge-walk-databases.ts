@@ -27,21 +27,22 @@ async function main() {
   const store = JSON.parse(await readFile(storePath, "utf8")) as ActivityStore;
   const origin = await getOrigin();
 
-  console.log("Fetching Walkiees…");
-  const walkiees = await fetchWalkiees();
-  console.log(`Walkiees ${walkiees.length}`);
+  async function pull(
+    label: string,
+    fn: () => Promise<Activity[]>,
+  ): Promise<Activity[]> {
+    console.log(`Fetching ${label}…`);
+    const rows = await fn();
+    console.log(`${label} ${rows.length}`);
+    return rows;
+  }
 
-  console.log("Fetching The Outdoor Guide…");
-  const outdoor = await fetchOutdoorGuide();
-  console.log(`Outdoor Guide ${outdoor.length}`);
-
-  console.log("Fetching DogFriendly…");
-  const dogFriendly = await fetchDogFriendly(origin.location);
-  console.log(`DogFriendly ${dogFriendly.length}`);
-
-  console.log("Fetching Where2walk…");
-  const where2walk = await fetchWhere2walk();
-  console.log(`Where2walk ${where2walk.length}`);
+  const walkiees = await pull("Walkiees", () => fetchWalkiees());
+  const outdoor = await pull("The Outdoor Guide", () => fetchOutdoorGuide());
+  const dogFriendly = await pull("DogFriendly", () =>
+    fetchDogFriendly(origin.location),
+  );
+  const where2walk = await pull("Where2walk", () => fetchWhere2walk());
 
   const incoming = [...walkiees, ...outdoor, ...dogFriendly, ...where2walk];
   const byId = new Map(store.activities.map((a) => [a.id, a]));

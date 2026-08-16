@@ -116,7 +116,9 @@ async function enrichWalk(url: string, now: string): Promise<Activity | null> {
   let postcode = extractPostcode(parking || "") || extractPostcode(body);
   let coords = postcode ? await geocodePostcode(postcode) : null;
   if (!coords) {
-    const place = await geocodePlaceName(`${title}, Yorkshire, UK`);
+    const place = await geocodePlaceName(`${title}, Yorkshire, UK`, {
+      maxVariants: 3,
+    });
     if (!place) return null;
     coords = {
       lat: place.lat,
