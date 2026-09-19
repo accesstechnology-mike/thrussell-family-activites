@@ -1,5 +1,13 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { getDriveTimesMinutes } from "../src/lib/drive-times";
+import {
+  cleanPlacePhrase,
+  geocodePlaceName,
+  geocodeQueryVariants,
+  nominatimNameFitsQuery,
+} from "../src/lib/geocode";
+import { haversineKm } from "../src/lib/sources/listicle";
 import {
   buildSuggestPool,
   interpretOutingRequest,
@@ -17,6 +25,27 @@ async function main() {
     throw new Error("Local store is empty — run npm run sync first");
   }
   console.log(`store ok: ${store.activities.length} activities`);
+
+  const skiVariants = geocodeQueryVariants("Walk on Skipton Moor, Yorkshire, UK");
+  if (!skiVariants.some((v) => /^skipton moor\b/i.test(v))) {
+    throw new Error("geocode variants should try 'Skipton Moor', not only the walk title");
+  }
+  if (skiVariants.some((v) => /^on skipton\b/i.test(v))) {
+    throw new Error("geocode variants must not emit 'on Skipton' (Skipton-on-Swale homonym)");
+  }
+  if (cleanPlacePhrase("Walk on Skipton Moor, Yorkshire, UK") !== "Skipton Moor") {
+    throw new Error("cleanPlacePhrase should strip Walk/on/region from Skipton Moor");
+  }
+  if (nominatimNameFitsQuery("Skipton Moor", "Skipton-on-Swale")) {
+    throw new Error("Skipton-on-Swale must not match query Skipton Moor");
+  }
+  if (nominatimNameFitsQuery("Calf Top", "Calf Close Top")) {
+    throw new Error("Calf Close Top (Dishforth meadow) must not match Calf Top");
+  }
+  if (!nominatimNameFitsQuery("Calf Top and Barbondale", "Calf Top")) {
+    throw new Error("Calf Top should match the Calf Top / Barbondale title");
+  }
+  console.log("geocode variant / match rules ok");
 
   const interpreted = interpretOutingRequest(
     "stepping stones under 45 minutes near a cafe",
@@ -133,6 +162,58 @@ async function main() {
     throw new Error("Home page missing expected kid-facing copy");
   }
   console.log("home ok");
+
+  const skiStored = store.activities.find((a) => /skipton moor/i.test(a.title));
+  const calfStored = store.activities.find((a) =>
+    /calf top and barbondale/i.test(a.title),
+  );
+  if (!skiStored || !calfStored) {
+    throw new Error("Store missing Skipton Moor or Calf Top / Barbondale");
+  }
+
+  const skiLive = await geocodePlaceName("Walk on Skipton Moor, Yorkshire, UK");
+  const calfLive = await geocodePlaceName("Calf Top and Barbondale, Yorkshire, UK");
+  if (!skiLive || !calfLive) {
+    throw new Error("Live Nominatim failed for Skipton Moor or Calf Top");
+  }
+  if (haversineKm(skiStored.coordinates, skiLive) > 3) {
+    throw new Error(
+      `Skipton Moor store pin is ${haversineKm(skiStored.coordinates, skiLive).toFixed(1)}km from live Nominatim`,
+    );
+  }
+  if (haversineKm(calfStored.coordinates, calfLive) > 5) {
+    throw new Error(
+      `Calf Top store pin is ${haversineKm(calfStored.coordinates, calfLive).toFixed(1)}km from live Nominatim`,
+    );
+  }
+  if (haversineKm(store.origin, skiLive) < 20) {
+    throw new Error("Live Skipton Moor geocode is implausibly close to YO7 4SQ");
+  }
+  if (haversineKm(store.origin, calfLive) < 40) {
+    throw new Error("Live Calf Top geocode is implausibly close to YO7 4SQ");
+  }
+
+  const osrm = await getDriveTimesMinutes(store.origin, [
+    { id: "ski", location: skiLive },
+    { id: "calf", location: calfLive },
+  ]);
+  if (osrm.ski == null || osrm.calf == null) {
+    throw new Error("OSRM returned no drive times for the two walks");
+  }
+  if (Math.abs((skiStored.driveMinutes ?? 0) - osrm.ski) > 5) {
+    throw new Error(
+      `Skipton Moor badge ${skiStored.driveMinutes} min != OSRM ${osrm.ski} min`,
+    );
+  }
+  if (Math.abs((calfStored.driveMinutes ?? 0) - osrm.calf) > 5) {
+    throw new Error(
+      `Calf Top badge ${calfStored.driveMinutes} min != OSRM ${osrm.calf} min`,
+    );
+  }
+  console.log(
+    `drive pins ok: Skipton Moor ${skiStored.driveMinutes} min (OSRM ${osrm.ski}); Calf Top ${calfStored.driveMinutes} min (OSRM ${osrm.calf})`,
+  );
+
   console.log("verify passed");
 }
 
