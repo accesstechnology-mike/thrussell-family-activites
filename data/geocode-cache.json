@@ -4224,5 +4224,116 @@
     "postcode": null
   },
   "place:grass woods near grassington walk, yorkshire, uk": null,
-  "place:grass woods near grassington, yorkshire, uk": null
+  "place:grass woods near grassington, yorkshire, uk": null,
+  "placev2:skipton moor": {
+    "lat": 53.9543114,
+    "lng": -1.9801307,
+    "postcode": null,
+    "name": "Skipton Moor"
+  },
+  "placev2:walk on skipton moor, uk": {
+    "lat": 53.9543114,
+    "lng": -1.9801307,
+    "postcode": null,
+    "name": "Skipton Moor"
+  },
+  "placev2:calf top and barbondale": null,
+  "placev2:calf top": {
+    "lat": 54.265217,
+    "lng": -2.5166085,
+    "postcode": null,
+    "name": "Calf Top"
+  },
+  "placev2:calf top and barbondale, uk": {
+    "lat": 54.265217,
+    "lng": -2.5166085,
+    "postcode": null,
+    "name": "Calf Top"
+  },
+  "placev2:ripon canal accessible": null,
+  "placev2:ripon canal accessible, uk": null,
+  "placev2:ripon canal accessible, yorkshire dales, uk": null,
+  "placev2:ripon canal accessible, cumbria, uk": null,
+  "placev2:ripon canal accessible, north yorkshire, uk": null,
+  "placev2:ripon canal accessible, yorkshire, uk": null,
+  "placev2:canal accessible": null,
+  "placev2:canal accessible, uk": null,
+  "placev2:canal accessible, yorkshire dales, uk": null,
+  "placev2:canal accessible, cumbria, uk": null,
+  "placev2:canal accessible, north yorkshire, uk": null,
+  "placev2:canal accessible, yorkshire, uk": null,
+  "placev2:ripon canal accessible walk, north yorkshire, uk": null,
+  "placev2:durham coastal footpath": {
+    "lat": 54.8154471,
+    "lng": -1.3202501,
+    "postcode": "SR7 8SW",
+    "name": "Durham Coastal Footpath"
+  },
+  "placev2:durham coastal footpath, county durham, uk": {
+    "lat": 54.8154471,
+    "lng": -1.3202501,
+    "postcode": "SR7 8SW",
+    "name": "Durham Coastal Footpath"
+  },
+  "placev2:coxwold and beacon banks": {
+    "lat": 54.1707083,
+    "lng": -1.1882708,
+    "postcode": null,
+    "name": "Beacon Banks"
+  },
+  "placev2:coxwold and beacon banks, uk": {
+    "lat": 54.1707083,
+    "lng": -1.1882708,
+    "postcode": null,
+    "name": "Beacon Banks"
+  },
+  "placev2:hackfall wood": {
+    "lat": 54.1919925,
+    "lng": -1.6429546,
+    "postcode": null,
+    "name": "Hackfall"
+  },
+  "placev2:hackfall wood, uk": {
+    "lat": 54.1919925,
+    "lng": -1.6429546,
+    "postcode": null,
+    "name": "Hackfall"
+  },
+  "placev2:hackfall woods near masham": null,
+  "placev2:hackfall woods near masham, uk": null,
+  "placev2:hackfall woods near masham, yorkshire dales, uk": null,
+  "placev2:hackfall woods near masham, cumbria, uk": null,
+  "placev2:hackfall woods near masham, north yorkshire, uk": null,
+  "placev2:hackfall woods near masham, yorkshire, uk": null,
+  "placev2:woods near masham": null,
+  "placev2:woods near masham, uk": null,
+  "placev2:woods near masham, yorkshire dales, uk": null,
+  "placev2:woods near masham, cumbria, uk": null,
+  "placev2:woods near masham, north yorkshire, uk": null,
+  "placev2:woods near masham, yorkshire, uk": null,
+  "placev2:druid’s temple at masham": null,
+  "placev2:druid’s temple at masham, uk": null,
+  "placev2:druid’s temple at masham, yorkshire dales, uk": null,
+  "placev2:druid’s temple at masham, cumbria, uk": null,
+  "placev2:druid’s temple at masham, north yorkshire, uk": null,
+  "placev2:druid’s temple at masham, yorkshire, uk": null,
+  "placev2:temple at masham": null,
+  "placev2:temple at masham, uk": null,
+  "placev2:temple at masham, yorkshire dales, uk": null,
+  "placev2:temple at masham, cumbria, uk": null,
+  "placev2:temple at masham, north yorkshire, uk": null,
+  "placev2:temple at masham, yorkshire, uk": null,
+  "placev2:arden hall and coomb hill": null,
+  "placev2:arden hall": {
+    "lat": 54.3085242,
+    "lng": -1.2031688,
+    "postcode": null,
+    "name": "Arden Hall"
+  },
+  "placev2:arden hall and coomb hill, uk": {
+    "lat": 54.3085242,
+    "lng": -1.2031688,
+    "postcode": null,
+    "name": "Arden Hall"
+  }
 }

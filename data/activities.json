@@ -6,44 +6,8 @@
     "lng": -1.433966
   },
   "maxDriveMinutes": 105,
-  "syncedAt": "2026-08-16T11:45:06.278Z",
+  "syncedAt": "2026-09-19T13:57:24.587Z",
   "activities": [
-    {
-      "id": "where2walk-walk-on-skipton-moor-where2walk-co-uk-walk-discover-walk-skipton-moor",
-      "source": "where2walk",
-      "sourceUrl": "https://where2walk.co.uk/walk/discover-walk-skipton-moor/",
-      "title": "Walk on Skipton Moor",
-      "summary": "To the east of the market town of Skipton is some peaceful moorland. Any walk on Skipton Moor has excellent views over the town and some pleasant walking on its broad summit area. The Walk The residents of Skipton are very fortunate. From their doorstep, certainly those living to the east of the town centre,",
-      "imageUrl": "/media/250e9179463804c0-card.webp",
-      "imageAlt": "Skipton",
-      "locationLabel": null,
-      "postcode": null,
-      "what3words": null,
-      "coordinates": {
-        "lat": 54.2151505,
-        "lng": -1.4304506
-      },
-      "parking": null,
-      "cost": null,
-      "isFree": true,
-      "distanceMiles": null,
-      "terrain": "steep",
-      "terrainNotes": null,
-      "features": [
-        "woodland",
-        "trig point"
-      ],
-      "categories": [
-        "Where2walk"
-      ],
-      "driveMinutes": 8,
-      "lastSyncedAt": "2026-08-16T11:03:53.440Z",
-      "rawFacts": {
-        "wpId": "805",
-        "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2018/05/Skipton-Holy-Trinity-Church.jpg",
-        "imageDetail": "/media/250e9179463804c0-detail.webp"
-      }
-    },
     {
       "id": "openstreetmap-woodland-lakes-way-804978034",
       "source": "openstreetmap",
@@ -265,42 +229,6 @@
         "tourism": "sports_centre",
         "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Pictou_County_Wellness_Centre.jpg",
         "imageDetail": "/media/3db07c418e886331-detail.webp"
-      }
-    },
-    {
-      "id": "where2walk-calf-top-and-barbondale-where2walk-co-uk-walk-calf-top-barbondale-walk",
-      "source": "where2walk",
-      "sourceUrl": "https://where2walk.co.uk/walk/calf-top-barbondale-walk/",
-      "title": "Calf Top and Barbondale",
-      "summary": "Calf Top lies on the ridge to the north of Barbondale. It is the lowest of the ‘Dales 30’ mountains but the tranquility and peace on its slopes makes it one of the most enjoyable. The climb is obvious and straightforward but there is a choice on the descent (see below). The Walk Calf Top",
-      "imageUrl": "/media/f30c7275baf2da7e-card.webp",
-      "imageAlt": "Calf Top and Barbondale",
-      "locationLabel": null,
-      "postcode": null,
-      "what3words": null,
-      "coordinates": {
-        "lat": 54.1470304,
-        "lng": -1.4067548
-      },
-      "parking": null,
-      "cost": null,
-      "isFree": true,
-      "distanceMiles": null,
-      "terrain": "steep",
-      "terrainNotes": null,
-      "features": [
-        "cave",
-        "stream / river"
-      ],
-      "categories": [
-        "Where2walk"
-      ],
-      "driveMinutes": 17,
-      "lastSyncedAt": "2026-08-16T11:03:53.440Z",
-      "rawFacts": {
-        "wpId": "894",
-        "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2019/06/Viewpoint-on-north-of-Farleton-Fell-scaled.jpg",
-        "imageDetail": "/media/f30c7275baf2da7e-detail.webp"
       }
     },
     {
@@ -907,41 +835,6 @@
         "osmType": "way",
         "osmId": "1134021597",
         "tourism": "nature_reserve"
-      }
-    },
-    {
-      "id": "outdoor-guide-durham-coastal-footpath-county-durham-theoutdoorguide-co-uk-walking-routes-walks-by-region-north-east-engl",
-      "source": "outdoor-guide",
-      "sourceUrl": "https://theoutdoorguide.co.uk/walking-routes/walks-by-region/north-east-england/walks-in-county-durham/britains-favourite-durham-coastal-walk/",
-      "title": "Durham Coastal Footpath, County Durham",
-      "summary": "The Durham Coastal Footpath is an 11-mile walk from Seaham to Crimdon, exploring spectacular grasslands, sand dunes and wildlife along the way.",
-      "imageUrl": "/media/9ea0a5e14bbaad97-card.webp",
-      "imageAlt": "Durham Coastal Footpath, County Durham",
-      "locationLabel": null,
-      "postcode": null,
-      "what3words": null,
-      "coordinates": {
-        "lat": 54.2394763,
-        "lng": -1.6917236
-      },
-      "parking": null,
-      "cost": null,
-      "isFree": true,
-      "distanceMiles": null,
-      "terrain": "unknown",
-      "terrainNotes": null,
-      "features": [
-        "woodland",
-        "dog friendly"
-      ],
-      "categories": [
-        "The Outdoor Guide"
-      ],
-      "driveMinutes": 24,
-      "lastSyncedAt": "2026-08-16T11:02:40.748Z",
-      "rawFacts": {
-        "imageRemote": "https://theoutdoorguide.co.uk/wp-content/uploads/2025/06/Durham-Coastal-Path-Feature.jpg",
-        "imageDetail": "/media/9ea0a5e14bbaad97-detail.webp"
       }
     },
     {
@@ -11975,6 +11868,42 @@
       }
     },
     {
+      "id": "where2walk-walk-on-skipton-moor-where2walk-co-uk-walk-discover-walk-skipton-moor",
+      "source": "where2walk",
+      "sourceUrl": "https://where2walk.co.uk/walk/discover-walk-skipton-moor/",
+      "title": "Walk on Skipton Moor",
+      "summary": "To the east of the market town of Skipton is some peaceful moorland. Any walk on Skipton Moor has excellent views over the town and some pleasant walking on its broad summit area. The Walk The residents of Skipton are very fortunate. From their doorstep, certainly those living to the east of the town centre,",
+      "imageUrl": "/media/250e9179463804c0-card.webp",
+      "imageAlt": "Skipton",
+      "locationLabel": null,
+      "postcode": null,
+      "what3words": null,
+      "coordinates": {
+        "lat": 53.9543114,
+        "lng": -1.9801307
+      },
+      "parking": null,
+      "cost": null,
+      "isFree": true,
+      "distanceMiles": null,
+      "terrain": "steep",
+      "terrainNotes": null,
+      "features": [
+        "woodland",
+        "trig point"
+      ],
+      "categories": [
+        "Where2walk"
+      ],
+      "driveMinutes": 55,
+      "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+      "rawFacts": {
+        "wpId": "805",
+        "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2018/05/Skipton-Holy-Trinity-Church.jpg",
+        "imageDetail": "/media/250e9179463804c0-detail.webp"
+      }
+    },
+    {
       "id": "reluctant-explorers-conistone-dib-and-pie-www-thereluctantexplorers-com-conistone-dib-and-conistone-pie",
       "source": "reluctant-explorers",
       "sourceUrl": "https://www.thereluctantexplorers.com/conistone-dib-and-conistone-pie",
@@ -21562,6 +21491,41 @@
       }
     },
     {
+      "id": "outdoor-guide-durham-coastal-footpath-county-durham-theoutdoorguide-co-uk-walking-routes-walks-by-region-north-east-engl",
+      "source": "outdoor-guide",
+      "sourceUrl": "https://theoutdoorguide.co.uk/walking-routes/walks-by-region/north-east-england/walks-in-county-durham/britains-favourite-durham-coastal-walk/",
+      "title": "Durham Coastal Footpath, County Durham",
+      "summary": "The Durham Coastal Footpath is an 11-mile walk from Seaham to Crimdon, exploring spectacular grasslands, sand dunes and wildlife along the way.",
+      "imageUrl": "/media/9ea0a5e14bbaad97-card.webp",
+      "imageAlt": "Durham Coastal Footpath, County Durham",
+      "locationLabel": null,
+      "postcode": "SR7 8SW",
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.8154471,
+        "lng": -1.3202501
+      },
+      "parking": null,
+      "cost": null,
+      "isFree": true,
+      "distanceMiles": null,
+      "terrain": "unknown",
+      "terrainNotes": null,
+      "features": [
+        "woodland",
+        "dog friendly"
+      ],
+      "categories": [
+        "The Outdoor Guide"
+      ],
+      "driveMinutes": 79,
+      "lastSyncedAt": "2026-08-16T11:02:40.748Z",
+      "rawFacts": {
+        "imageRemote": "https://theoutdoorguide.co.uk/wp-content/uploads/2025/06/Durham-Coastal-Path-Feature.jpg",
+        "imageDetail": "/media/9ea0a5e14bbaad97-detail.webp"
+      }
+    },
+    {
       "id": "muddy-boots-mummy-rabbit-ings-muddybootsmummy-co-uk-family-friendly-walks-in-yorkshire",
       "source": "muddy-boots-mummy",
       "sourceUrl": "https://muddybootsmummy.co.uk/family-friendly-walks-in-yorkshire/",
@@ -22045,6 +22009,42 @@
         "wpId": "10057",
         "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2016/11/Cleveland-Way-signpost-scaled.jpg",
         "imageDetail": "/media/de48db47b2000ec4-detail.webp"
+      }
+    },
+    {
+      "id": "where2walk-calf-top-and-barbondale-where2walk-co-uk-walk-calf-top-barbondale-walk",
+      "source": "where2walk",
+      "sourceUrl": "https://where2walk.co.uk/walk/calf-top-barbondale-walk/",
+      "title": "Calf Top and Barbondale",
+      "summary": "Calf Top lies on the ridge to the north of Barbondale. It is the lowest of the ‘Dales 30’ mountains but the tranquility and peace on its slopes makes it one of the most enjoyable. The climb is obvious and straightforward but there is a choice on the descent (see below). The Walk Calf Top",
+      "imageUrl": "/media/f30c7275baf2da7e-card.webp",
+      "imageAlt": "Calf Top and Barbondale",
+      "locationLabel": null,
+      "postcode": null,
+      "what3words": null,
+      "coordinates": {
+        "lat": 54.265217,
+        "lng": -2.5166085
+      },
+      "parking": null,
+      "cost": null,
+      "isFree": true,
+      "distanceMiles": null,
+      "terrain": "steep",
+      "terrainNotes": null,
+      "features": [
+        "cave",
+        "stream / river"
+      ],
+      "categories": [
+        "Where2walk"
+      ],
+      "driveMinutes": 81,
+      "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+      "rawFacts": {
+        "wpId": "894",
+        "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2019/06/Viewpoint-on-north-of-Farleton-Fell-scaled.jpg",
+        "imageDetail": "/media/f30c7275baf2da7e-detail.webp"
       }
     },
     {
