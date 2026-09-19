@@ -117,9 +117,7 @@ async function toActivity(
   let postcode = extractPostcode(body) || extractPostcode(excerpt);
   let coords = postcode ? await geocodePostcode(postcode) : null;
   if (!coords) {
-    const place = await geocodePlaceName(`${title}, Yorkshire, UK`, {
-      maxVariants: 2,
-    });
+    const place = await geocodePlaceName(`${title}, Yorkshire, UK`);
     if (!place) return null;
     coords = {
       lat: place.lat,
