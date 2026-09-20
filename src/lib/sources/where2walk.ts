@@ -5,12 +5,11 @@ import {
   parseDistanceMiles,
   slugId,
 } from "../features";
+import { decodeEntities, sleep, stripTags } from "../html";
 import {
-  extractPostcode,
-  geocodePlaceName,
-  geocodePostcode,
-} from "../geocode";
-import { decodeEntities, stripTags } from "../html";
+  locationRawFacts,
+  resolvePageLocation,
+} from "../page-location";
 import type { Activity } from "../types";
 
 const API = "https://where2walk.co.uk/wp-json/wp/v2";
@@ -56,6 +55,7 @@ export async function fetchWhere2walk(): Promise<Activity[]> {
     i += 1;
     const activity = await toActivity(post, now);
     if (activity) activities.push(activity);
+    await sleep(200);
     if (i % 20 === 0) {
       console.log(`Where2walk ${i}/${posts.length} (${activities.length} kept)`);
     }
@@ -114,18 +114,13 @@ async function toActivity(
     post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ?? null;
   const ownText = [title, summary, body.slice(0, 1800)].join("\n");
 
-  let postcode = extractPostcode(body) || extractPostcode(excerpt);
-  let coords = postcode ? await geocodePostcode(postcode) : null;
-  if (!coords) {
-    const place = await geocodePlaceName(`${title}, Yorkshire, UK`);
-    if (!place) return null;
-    coords = {
-      lat: place.lat,
-      lng: place.lng,
-      postcode: place.postcode ?? postcode ?? "",
-    };
-    postcode = place.postcode ?? postcode;
-  }
+  const resolved = await resolvePageLocation({
+    html: post.content?.rendered || "",
+    pageUrl: post.link,
+    title,
+    regionSuffix: "Yorkshire",
+  });
+  if (!resolved) return null;
 
   const terrainInfo = inferTerrain(null, ownText);
   const features = extractFeatures(title, summary, ownText);
@@ -142,9 +137,9 @@ async function toActivity(
     imageAlt:
       post._embedded?.["wp:featuredmedia"]?.[0]?.alt_text || title,
     locationLabel: null,
-    postcode: postcode || coords.postcode || null,
-    what3words: null,
-    coordinates: { lat: coords.lat, lng: coords.lng },
+    postcode: resolved.postcode,
+    what3words: resolved.what3words,
+    coordinates: { lat: resolved.lat, lng: resolved.lng },
     parking,
     cost: null,
     isFree: null,
@@ -155,6 +150,6 @@ async function toActivity(
     categories: ["Where2walk"],
     driveMinutes: null,
     lastSyncedAt: now,
-    rawFacts: { wpId: String(post.id) },
+    rawFacts: { wpId: String(post.id), ...locationRawFacts(resolved) },
   };
 }

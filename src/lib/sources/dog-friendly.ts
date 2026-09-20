@@ -1,11 +1,10 @@
 import { USER_AGENT } from "../config";
 import { extractFeatures, inferTerrain, slugId } from "../features";
-import {
-  extractPostcode,
-  geocodePlaceName,
-  geocodePostcode,
-} from "../geocode";
 import { fetchText, metaContent, sleep, stripTags } from "../html";
+import {
+  locationRawFacts,
+  resolvePageLocation,
+} from "../page-location";
 import type { Activity, LatLng } from "../types";
 
 /**
@@ -59,29 +58,12 @@ async function enrichListing(
     body.match(/Where are dogs allowed\?\s*([^.!?]{8,200})/i)?.[1]?.trim() ||
     `Dog-friendly day out: ${title}`;
   const image = metaContent(html, "og:image");
-  const postcode = extractPostcode(body);
-  const lat = Number(
-    html.match(/lat(?:itude)?["\s:=]+([0-9.-]+)/i)?.[1] ?? "",
-  );
-  const lng = Number(
-    html.match(/lon(?:gitude)?["\s:=]+([0-9.-]+)/i)?.[1] ?? "",
-  );
-
-  let coords =
-    Number.isFinite(lat) && Number.isFinite(lng)
-      ? { lat, lng, postcode: postcode ?? "" }
-      : postcode
-        ? await geocodePostcode(postcode)
-        : null;
-  if (!coords) {
-    const place = await geocodePlaceName(`${title}, Yorkshire, UK`);
-    if (!place) return null;
-    coords = {
-      lat: place.lat,
-      lng: place.lng,
-      postcode: place.postcode ?? postcode ?? "",
-    };
-  }
+  const resolved = await resolvePageLocation({
+    html,
+    title,
+    regionSuffix: "Yorkshire",
+  });
+  if (!resolved) return null;
 
   const parking =
     body.match(/Car Parking\s+([A-Za-z][^.]{0,80})/i)?.[0]?.trim() ?? null;
@@ -99,9 +81,9 @@ async function enrichListing(
     imageUrl: image,
     imageAlt: title,
     locationLabel: null,
-    postcode: postcode || coords.postcode || null,
-    what3words: null,
-    coordinates: { lat: coords.lat, lng: coords.lng },
+    postcode: resolved.postcode,
+    what3words: resolved.what3words,
+    coordinates: { lat: resolved.lat, lng: resolved.lng },
     parking,
     cost: null,
     isFree: null,
@@ -112,7 +94,7 @@ async function enrichListing(
     categories: ["DogFriendly"],
     driveMinutes: null,
     lastSyncedAt: now,
-    rawFacts: {},
+    rawFacts: locationRawFacts(resolved),
   };
 }
 
