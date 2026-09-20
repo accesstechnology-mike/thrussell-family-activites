@@ -119,21 +119,23 @@ function assertPlaceMerge(fixtures: Activity[], store: ActivityStore) {
   }
 
   const storeBrimham = cardsMatching(store.activities, /brimham/i);
-  if (storeBrimham.length === 1) {
-    if (!(storeBrimham[0]!.sources?.length ?? 0)) {
-      throw new Error("Store Brimham card missing sources[]");
-    }
-    if (storeBrimham[0]!.driveMinutes == null) {
-      throw new Error("Canonical Brimham pin lost its YO7 4SQ drive time");
-    }
-  } else if (storeBrimham.some((a) => (a.sources?.length ?? 0) > 1)) {
+  if (storeBrimham.length !== 1) {
     throw new Error(
-      `Store should show one Brimham card after merge, got ${storeBrimham.length}`,
+      `Store should show one Brimham card, got ${storeBrimham.length}`,
     );
+  }
+  if ((storeBrimham[0]!.sources?.length ?? 0) < 4) {
+    throw new Error("Store Brimham card missing origin sources[]");
+  }
+  if (storeBrimham[0]!.driveMinutes == null) {
+    throw new Error("Canonical Brimham pin lost its YO7 4SQ drive time");
+  }
+  if (store.activities.filter((a) => !a.imageUrl).length >= 81) {
+    throw new Error("Missing-image count did not fall after merge/backfill");
   }
 
   console.log(
-    `place merge ok: fixtures ${stats.before}→${stats.after}; store cards=${store.activities.length}`,
+    `place merge ok: fixtures ${stats.before}→${stats.after}; store ${store.activities.length} cards; Brimham sources=${storeBrimham[0]!.sources!.length}`,
   );
 }
 
