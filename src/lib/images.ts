@@ -73,7 +73,7 @@ export function isJunkImageUrl(url: string): boolean {
   if (/tripadvisor|trip-advisor/i.test(url)) return true;
   if (/(?:movie|film|teaser|poster|dvd|bluray)/i.test(url)) return true;
   if (
-    /(?:advert|advertisement|warning|weather|notice|flyer|announcement|timetable|strong-?winds?|site-?map|venue-?map|centre-?map|center-?map|-map-)/i.test(
+    /(?:advert|advertisement|warning|weather|notice|flyer|announcement|timetable|strong-?winds?|site-?map|venue-?map|centre-?map|center-?map|-map-|toilet|lavatory|restroom|bathroom|handicap|pumpkin|halloween|incorporated_and_unincorporated|highlighted\.svg|locator)/i.test(
       url,
     )
   ) {
@@ -105,6 +105,7 @@ export async function looksLikeGraphicNotice(buf: Buffer): Promise<boolean> {
   const n = info.width * info.height;
   let warningYellow = 0;
   let graphicRed = 0;
+  let graphicOrange = 0;
   let nearWhite = 0;
   let nearBlack = 0;
   let midPhoto = 0;
@@ -121,9 +122,11 @@ export async function looksLikeGraphicNotice(buf: Buffer): Promise<boolean> {
     else if (sat < 0.45 && lum > 40 && lum < 210) midPhoto += 1;
     if (r > 175 && g > 145 && b < 95 && sat > 0.45) warningYellow += 1;
     if (r > 150 && g < 70 && b < 70) graphicRed += 1;
+    if (r > 180 && g > 70 && g < 170 && b < 80 && sat > 0.45) graphicOrange += 1;
   }
   const yellow = warningYellow / n;
   const red = graphicRed / n;
+  const orange = graphicOrange / n;
   const white = nearWhite / n;
   const black = nearBlack / n;
   const flat = white + black;
@@ -135,6 +138,21 @@ export async function looksLikeGraphicNotice(buf: Buffer): Promise<boolean> {
   if (yellow > 0.11) return true;
   if (flat > 0.5 && red > 0.05 && photo < 0.25) return true;
   if (white > 0.12 && black > 0.12 && red > 0.03 && yellow > 0.03) return true;
+  // Illustrated event flyers: cream/white field, cartoon colour, little photo.
+  if (flat > 0.45 && photo < 0.18 && (orange > 0.08 || yellow > 0.05 || red > 0.04)) {
+    return true;
+  }
+  // Wikipedia locator maps and line diagrams: mostly paper + ink, little photo.
+  if (flat > 0.7 && photo < 0.18) return true;
+  const quant = new Map<number, number>();
+  for (let i = 0; i < data.length; i += 3) {
+    const key =
+      ((data[i]! >> 4) << 8) | ((data[i + 1]! >> 4) << 4) | (data[i + 2]! >> 4);
+    quant.set(key, (quant.get(key) ?? 0) + 1);
+  }
+  const topShare = Math.max(...quant.values()) / n;
+  // Cartoon logos / clip-art headers: one huge flat fill (e.g. a drawn sky).
+  if (topShare > 0.55) return true;
   return false;
 }
 
@@ -295,7 +313,7 @@ function scoreImageCandidate(url: string, title?: string): number {
     score -= 40;
   }
   if (
-    /(?:warning|weather|notice|advert|flyer|july|saturday|sunday|calendar|closed|timetable|map)/i.test(
+    /(?:warning|weather|notice|advert|flyer|july|saturday|sunday|calendar|closed|timetable|map|pumpkin|halloween|toilet)/i.test(
       url,
     )
   ) {
@@ -331,6 +349,7 @@ const GENERIC_TITLE_TOKENS = new Set([
   "yorkshire",
   "swimming",
   "pool",
+  "lakes",
   "leisure",
   "centre",
   "center",
@@ -339,6 +358,23 @@ const GENERIC_TITLE_TOKENS = new Set([
   "with",
   "from",
   "near",
+]);
+
+const ACTIVITY_TYPE_TOKENS = new Set([
+  "accessible",
+  "lead",
+  "smelting",
+  "smelter",
+  "mill",
+  "mills",
+  "quarry",
+  "sssi",
+  "beach",
+  "sands",
+  "zoo",
+  "aquarium",
+  "handicap",
+  "toilet",
 ]);
 
 function titleTokens(value: string): string[] {
@@ -360,17 +396,23 @@ function titlesRelated(place: string, pageTitle: string): boolean {
       .trim();
     return Boolean(norm) && hay.includes(norm);
   }
-  const overlap = tokens.filter((t) => hay.includes(t)).length;
-  if (overlap === 0) return false;
+  const overlap = tokens.filter((t) => hay.includes(t));
+  if (overlap.length === 0) return false;
+  const distinctive = tokens.filter((t) => !ACTIVITY_TYPE_TOKENS.has(t));
+  if (distinctive.length && !distinctive.some((t) => hay.includes(t))) {
+    return false;
+  }
   // Short place names must match all distinctive tokens (avoids "Ladybird" → beetle).
-  if (tokens.length <= 2) return overlap === tokens.length && hay.includes(tokens[0]!);
-  return overlap >= 2;
+  if (tokens.length <= 2) {
+    return overlap.length === tokens.length && hay.includes(tokens[0]!);
+  }
+  return overlap.length >= 2;
 }
 
 function wikiPageLooksGeographic(pageTitle: string): boolean {
-  // Reject obvious non-place Wikipedia targets (species, films, etc).
+  // Reject obvious non-place Wikipedia targets (species, films, locator maps).
   if (
-    /\b(coccinella|species|genus|aquarium|amaterske|septempunctata|movie|film|album|song|novel)\b/i.test(
+    /\b(coccinella|species|genus|aquarium|amaterske|septempunctata|movie|film|album|song|novel|incorporated|unincorporated|locator)\b/i.test(
       pageTitle,
     )
   ) {
@@ -393,7 +435,9 @@ function placeTitleVariants(title: string): string[] {
     .split(/\s*(?:,|\/|\band\b|\bto\b)\s*/i)
     .map((p) => p.trim())
     .filter((p) => p.length > 4);
-  return [...new Set([cleaned, stripped, ...parts].filter((v) => v.length > 4))];
+  return [
+    ...new Set([cleaned, stripped, ...parts].filter((v) => v.length > 4)),
+  ].filter((v) => titleTokens(v).length >= 2 || v === cleaned);
 }
 
 const SITE_FETCH_HEADERS = {
@@ -666,6 +710,7 @@ async function collectPlaceImageCandidates(
 
   if (allowWiki) {
     for (const variant of variants.slice(0, 4)) {
+      if (titleTokens(variant).length < 2) continue;
       const wikiExact = await wikipediaThumbnail(variant);
       if (
         wikiExact &&
@@ -912,7 +957,11 @@ export async function enrichActivityImages(
     const rawFacts = { ...activity.rawFacts };
     const current = activity.imageUrl;
 
-    if (current?.startsWith("/media/")) {
+    const priorIsJunk =
+      typeof rawFacts.imageRemote === "string" &&
+      (isJunkImageUrl(rawFacts.imageRemote) ||
+        !remoteLooksRelated(activity.title, rawFacts.imageRemote));
+    if (current?.startsWith("/media/") && !priorIsJunk) {
       const file = path.join(MEDIA_DIR, path.basename(current));
       if ((await exists(file)) && (await localCardIsGood(file))) {
         return activity;
@@ -978,6 +1027,13 @@ export async function enrichActivityImages(
       };
     }
 
+    if (current?.startsWith("/media/") && !priorIsJunk) {
+      const file = path.join(MEDIA_DIR, path.basename(current));
+      if ((await exists(file)) && (await localCardIsGood(file))) {
+        return activity;
+      }
+    }
+
     delete rawFacts.imageRemote;
     delete rawFacts.imageDetail;
     return {
@@ -992,6 +1048,12 @@ export async function enrichActivityImages(
 export async function activityImageNeedsRefresh(
   activity: Activity,
 ): Promise<boolean> {
+  const remote =
+    typeof activity.rawFacts?.imageRemote === "string"
+      ? activity.rawFacts.imageRemote
+      : null;
+  if (remote && isJunkImageUrl(remote)) return true;
+  if (remote && !remoteLooksRelated(activity.title, remote)) return true;
   if (!activity.imageUrl) return true;
   if (!activity.imageUrl.startsWith("/media/")) return true;
   const file = path.join(MEDIA_DIR, path.basename(activity.imageUrl));

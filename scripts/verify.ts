@@ -165,6 +165,19 @@ async function main() {
   ) {
     throw new Error("Venue adverts must be rejected as junk images");
   }
+  if (
+    !isJunkImageUrl(
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Handicap_toilet_2.jpg",
+    ) ||
+    !isJunkImageUrl(
+      "https://www.holmsidepark.co.uk/wp-content/uploads/2026/09/Pumpkin-Patch-Event.jpg",
+    ) ||
+    !isJunkImageUrl(
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Pike_County_Pennsylvania_incorporated_and_unincorporated_areas_Pocono_Woodland_Lakes_highlighted.svg/map.png",
+    )
+  ) {
+    throw new Error("Toilet, flyer, and locator-map images must be junk");
+  }
   const noticeCard = store.activities.find((a) =>
     /thirsk birds of prey/i.test(a.title),
   );
