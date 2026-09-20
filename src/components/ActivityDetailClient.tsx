@@ -145,7 +145,7 @@ export function ActivityDetailClient({
               />
             ) : (
               <div className="detail-hero-fallback" aria-hidden>
-                <span>{activity.title}</span>
+                <span className="card-media-fallback-label">No photo yet</span>
               </div>
             )}
             {activity.isFree ? <span className="free-badge">Free activity</span> : null}

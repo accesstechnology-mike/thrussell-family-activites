@@ -57,7 +57,7 @@ export function ActivityCard({
           />
         ) : (
           <div className="card-media-fallback" aria-hidden>
-            <span>{activity.title.slice(0, 1)}</span>
+            <span className="card-media-fallback-label">No photo yet</span>
           </div>
         )}
         <div className="card-badges">

@@ -12,6 +12,10 @@ import {
   nominatimNameFitsQuery,
 } from "../src/lib/geocode";
 import { HOME_POSTCODE } from "../src/lib/config";
+import {
+  isJunkImageUrl,
+  looksLikeGraphicNotice,
+} from "../src/lib/images";
 import { haversineKm } from "../src/lib/sources/listicle";
 import {
   buildSuggestPool,
@@ -130,8 +134,8 @@ function assertPlaceMerge(fixtures: Activity[], store: ActivityStore) {
   if (storeBrimham[0]!.driveMinutes == null) {
     throw new Error("Canonical Brimham pin lost its YO7 4SQ drive time");
   }
-  if (store.activities.filter((a) => !a.imageUrl).length >= 81) {
-    throw new Error("Missing-image count did not fall after merge/backfill");
+  if (!storeBrimham[0]!.imageUrl) {
+    throw new Error("Canonical Brimham card should inherit a sibling photo");
   }
 
   console.log(
@@ -153,6 +157,54 @@ async function main() {
   const fixturePath = path.join(process.cwd(), "src/lib/dedupe-fixtures.json");
   const fixtures = JSON.parse(await readFile(fixturePath, "utf8")) as Activity[];
   assertPlaceMerge(fixtures, store);
+
+  if (
+    !isJunkImageUrl(
+      "https://falconrycentre.co.uk/wp-content/uploads/Website-advert-1-scaled.jpg",
+    )
+  ) {
+    throw new Error("Venue adverts must be rejected as junk images");
+  }
+  const noticeCard = store.activities.find((a) =>
+    /thirsk birds of prey/i.test(a.title),
+  );
+  const poolCard = store.activities.find((a) =>
+    /thirsk swimming pool/i.test(a.title),
+  );
+  if (!noticeCard || !poolCard) {
+    throw new Error("Store missing Thirsk Birds of Prey or Swimming Pool");
+  }
+  const posterCard = path.join(
+    process.cwd(),
+    "public/media/8710e46b345bf0e4-card.webp",
+  );
+  try {
+    const posterBuf = await readFile(posterCard);
+    if (!(await looksLikeGraphicNotice(posterBuf))) {
+      throw new Error(
+        "Weather-warning poster should be detected as a graphic notice",
+      );
+    }
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code !== "ENOENT") throw err;
+  }
+  if (
+    noticeCard.rawFacts.imageRemote &&
+    (isJunkImageUrl(noticeCard.rawFacts.imageRemote) ||
+      /IMG_3413/i.test(noticeCard.rawFacts.imageRemote))
+  ) {
+    throw new Error("Thirsk Birds of Prey still points at a junk remote image");
+  }
+  for (const card of [noticeCard, poolCard]) {
+    if (!card.imageUrl?.startsWith("/media/")) continue;
+    const buf = await readFile(
+      path.join(process.cwd(), "public", card.imageUrl.replace(/^\//, "")),
+    );
+    if (await looksLikeGraphicNotice(buf)) {
+      throw new Error(`${card.title} still has a graphic notice as its card photo`);
+    }
+  }
+  console.log("image junk / notice filters ok");
 
   const skiVariants = geocodeQueryVariants("Walk on Skipton Moor, Yorkshire, UK");
   if (!skiVariants.some((v) => /^skipton moor\b/i.test(v))) {
