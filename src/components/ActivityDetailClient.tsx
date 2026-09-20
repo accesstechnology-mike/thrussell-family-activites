@@ -9,6 +9,7 @@ import {
   readStoredFilters,
 } from "@/lib/filter-state";
 import { detailImageUrl } from "@/lib/image-urls";
+import { activitySourceList } from "@/lib/dedupe";
 import type { Activity, DirectionsLinks, WeatherSnapshot } from "@/lib/types";
 
 type Props = {
@@ -228,14 +229,19 @@ export function ActivityDetailClient({
           </div>
 
           <div className="source-row">
-            <a
-              className="action-btn secondary source-btn"
-              href={activity.sourceUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Open original source — {sourceLabel(activity.source)}
-            </a>
+            {activitySourceList(activity).map((ref) => (
+              <a
+                key={ref.sourceUrl}
+                className="action-btn secondary source-btn"
+                href={ref.sourceUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {activitySourceList(activity).length > 1
+                  ? `Open ${sourceLabel(ref.source)}`
+                  : `Open original source — ${sourceLabel(ref.source)}`}
+              </a>
+            ))}
             {activity.locationLabel ? (
               <p className="lede source-meta">{activity.locationLabel}</p>
             ) : null}

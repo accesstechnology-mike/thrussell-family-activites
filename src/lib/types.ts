@@ -20,10 +20,20 @@ export type ActivitySource =
 
 export type TerrainLevel = "flat" | "gentle" | "hilly" | "steep" | "unknown";
 
+/** One origin listing that was merged into a canonical place card. */
+export type ActivitySourceRef = {
+  source: ActivitySource;
+  sourceUrl: string;
+  title: string;
+  id: string;
+};
+
 export type Activity = {
   id: string;
   source: ActivitySource;
   sourceUrl: string;
+  /** Every origin listing for this place, including the canonical one. */
+  sources?: ActivitySourceRef[];
   title: string;
   summary: string;
   imageUrl: string | null;

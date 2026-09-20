@@ -617,6 +617,148 @@ function activityWebsite(activity: Activity): string | null {
   );
 }
 
+function osmLookupId(osmType: string, osmId: string): string | null {
+  const prefix =
+    osmType === "relation" || osmType === "r"
+      ? "R"
+      : osmType === "way" || osmType === "w"
+        ? "W"
+        : osmType === "node" || osmType === "n"
+          ? "N"
+          : null;
+  if (!prefix || !/^\d+$/.test(osmId)) return null;
+  return `${prefix}${osmId}`;
+}
+
+function parseWikipediaTag(tag: string): string | null {
+  const trimmed = tag.trim();
+  if (!trimmed) return null;
+  const m = trimmed.match(/^(?:[a-z]{2,3}:)?(.+)$/i);
+  const title = m?.[1]?.replace(/_/g, " ").trim();
+  return title && title.length > 2 ? title : null;
+}
+
+function commonsFileUrl(fileTitle: string): string | null {
+  const name = fileTitle.replace(/^File:/i, "").trim();
+  if (!name || /\.pdf($|\?)/i.test(name) || /^Category:/i.test(fileTitle)) {
+    return null;
+  }
+  return normalizeImageUrl(
+    `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(name)}?width=1280`,
+  );
+}
+
+async function wikidataP18Url(qid: string): Promise<string | null> {
+  const id = qid.trim();
+  if (!/^Q\d+$/i.test(id)) return null;
+  const url =
+    "https://www.wikidata.org/w/api.php?" +
+    new URLSearchParams({
+      action: "wbgetclaims",
+      entity: id,
+      property: "P18",
+      format: "json",
+      origin: "*",
+    });
+  try {
+    const res = await fetchWithRetry(url, {
+      headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+    });
+    if (!res?.ok) return null;
+    const data = (await res.json()) as {
+      claims?: {
+        P18?: Array<{ mainsnak?: { datavalue?: { value?: string } } }>;
+      };
+    };
+    const file = data.claims?.P18?.[0]?.mainsnak?.datavalue?.value;
+    return file ? commonsFileUrl(file) : null;
+  } catch {
+    return null;
+  }
+}
+
+async function nominatimOsmExtratags(
+  osmType: string,
+  osmId: string,
+): Promise<Record<string, string>> {
+  const osm = osmLookupId(osmType, osmId);
+  if (!osm) return {};
+  const url =
+    "https://nominatim.openstreetmap.org/lookup?" +
+    new URLSearchParams({
+      osm_ids: osm,
+      format: "json",
+      extratags: "1",
+    });
+  try {
+    const res = await fetchWithRetry(url, {
+      headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+    });
+    await sleep(1100);
+    if (!res?.ok) return {};
+    const rows = (await res.json()) as Array<{
+      extratags?: Record<string, string>;
+    }>;
+    return rows[0]?.extratags ?? {};
+  } catch {
+    return {};
+  }
+}
+
+async function withOsmImageTags(activity: Activity): Promise<Activity> {
+  if (
+    activity.rawFacts.wikidata ||
+    activity.rawFacts.wikipedia ||
+    activity.rawFacts.wikimediaCommons
+  ) {
+    return activity;
+  }
+  const osmType = activity.rawFacts.osmType;
+  const osmId = activity.rawFacts.osmId;
+  if (!osmType || !osmId) return activity;
+
+  const extra = await nominatimOsmExtratags(osmType, osmId);
+  const rawFacts = { ...activity.rawFacts };
+  if (extra.wikidata) rawFacts.wikidata = extra.wikidata;
+  if (extra.wikipedia) rawFacts.wikipedia = extra.wikipedia;
+  if (extra.wikimedia_commons) rawFacts.wikimediaCommons = extra.wikimedia_commons;
+  return { ...activity, rawFacts };
+}
+
+async function collectOsmTaggedImageCandidates(
+  activity: Activity,
+): Promise<string[]> {
+  const urls: string[] = [];
+  const push = (url: string | null | undefined) => {
+    const n = url ? normalizeImageUrl(url) : null;
+    if (n && !isJunkImageUrl(n)) urls.push(n);
+  };
+
+  if (typeof activity.rawFacts.wikidata === "string") {
+    push(await wikidataP18Url(activity.rawFacts.wikidata));
+  }
+  if (typeof activity.rawFacts.wikimediaCommons === "string") {
+    push(commonsFileUrl(activity.rawFacts.wikimediaCommons));
+  }
+  if (typeof activity.rawFacts.wikipedia === "string") {
+    const page = parseWikipediaTag(activity.rawFacts.wikipedia);
+    if (page) {
+      const thumb = await wikipediaThumbnail(page);
+      if (thumb && titlesRelated(page, thumb.alt || page)) push(thumb.url);
+    }
+  }
+
+  const seen = new Set<string>();
+  return urls.filter((u) => (seen.has(u) ? false : (seen.add(u), true)));
+}
+
+function isOsmBacked(activity: Activity): boolean {
+  return (
+    activity.source === "openstreetmap" ||
+    Boolean(activity.rawFacts?.osmId)
+  );
+}
+
 async function tryCacheCandidates(
   candidates: string[],
 ): Promise<{ remote: string; card: string; detail: string } | null> {
@@ -653,10 +795,24 @@ export async function enrichActivityImages(
     const priorRemote =
       priorRaw && remoteLooksRelated(activity.title, priorRaw) ? priorRaw : null;
 
-    const candidates = await collectPlaceImageCandidates(activity.title, {
-      website,
-      prefer: priorRemote,
-    });
+    let candidates: string[] = [];
+    if (isOsmBacked(activity)) {
+      const tagged = await withOsmImageTags({ ...activity, rawFacts });
+      Object.assign(rawFacts, tagged.rawFacts);
+      const osmTagged = await collectOsmTaggedImageCandidates(tagged);
+      const site = website ? await collectSiteImageCandidates(website) : [];
+      const seen = new Set<string>();
+      for (const url of [priorRemote, ...osmTagged, ...site]) {
+        if (!url || seen.has(url) || isJunkImageUrl(url)) continue;
+        seen.add(url);
+        candidates.push(url);
+      }
+    } else {
+      candidates = await collectPlaceImageCandidates(activity.title, {
+        website,
+        prefer: priorRemote,
+      });
+    }
 
     await sleep(150);
     const cached = await tryCacheCandidates(candidates);

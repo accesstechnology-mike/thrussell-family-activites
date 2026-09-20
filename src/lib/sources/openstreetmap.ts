@@ -306,6 +306,14 @@ out center tags;
         ...(tags.phone || tags["contact:phone"]
           ? { phone: tags.phone || tags["contact:phone"]! }
           : {}),
+        ...(tags.wikidata ? { wikidata: tags.wikidata } : {}),
+        ...(tags.wikipedia ? { wikipedia: tags.wikipedia } : {}),
+        ...(tags.wikimedia_commons
+          ? { wikimediaCommons: tags.wikimedia_commons }
+          : {}),
+        ...(tags.website || tags["contact:website"]
+          ? { website: website }
+          : {}),
       },
     });
   }

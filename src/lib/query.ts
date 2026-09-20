@@ -1,5 +1,12 @@
+import { activityHasSource, activitySourceList } from "./dedupe";
 import { isFreeActivity } from "./free";
-import type { Activity, ActivitySource, ActivityStore, TerrainLevel } from "./types";
+import type {
+  Activity,
+  ActivitySource,
+  ActivitySourceRef,
+  ActivityStore,
+  TerrainLevel,
+} from "./types";
 
 export type ActivitySort = "drive" | "title" | "distance" | "recent";
 export type ActivityView = "card" | "full";
@@ -29,6 +36,7 @@ export type CardActivity = {
   id: string;
   source: ActivitySource;
   sourceUrl: string;
+  sources?: ActivitySourceRef[];
   title: string;
   summary: string;
   imageUrl: string | null;
@@ -115,6 +123,7 @@ export function toCardActivity(a: Activity): CardActivity {
     id: a.id,
     source: a.source,
     sourceUrl: a.sourceUrl,
+    sources: activitySourceList(a),
     title: a.title,
     summary: a.summary,
     imageUrl: a.imageUrl,
@@ -146,6 +155,7 @@ function matchesText(a: Activity, q: string): boolean {
     a.terrainNotes,
     ...a.features,
     ...a.categories,
+    ...activitySourceList(a).flatMap((s) => [s.title, s.source, s.sourceUrl]),
     ...Object.values(a.rawFacts),
   ]
     .filter(Boolean)
@@ -219,7 +229,9 @@ export function queryActivities(
   ];
   if (sourceNeedles.length) {
     const set = new Set(sourceNeedles);
-    activities = activities.filter((a) => set.has(a.source));
+    activities = activities.filter((a) =>
+      [...set].some((source) => activityHasSource(a, source)),
+    );
   }
 
   const terrainNeedles = [
@@ -272,7 +284,11 @@ export function catalogueFromStore(store: ActivityStore) {
     ...new Set(store.activities.flatMap((a) => a.features)),
   ].sort((a, b) => a.localeCompare(b));
   const sources = [
-    ...new Set(store.activities.map((a) => a.source)),
+    ...new Set(
+      store.activities.flatMap((a) =>
+        activitySourceList(a).map((s) => s.source),
+      ),
+    ),
   ].sort((a, b) => a.localeCompare(b));
   const terrains = [
     ...new Set(store.activities.map((a) => a.terrain)),

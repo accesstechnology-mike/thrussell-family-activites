@@ -59,7 +59,7 @@ export function agentApiContract(baseUrl = "") {
           sort: "drive|title|distance|recent",
           limit: "page size",
           offset: "pagination offset",
-          view: "card (default) | full (includes rawFacts + lastSyncedAt)",
+          view: "card (default) | full (includes rawFacts + lastSyncedAt). Card view includes sources[] for merged places.",
         },
       },
       {
