@@ -1,6 +1,9 @@
+import { haversineKm } from "./geo";
 import { decodeEntities } from "./html";
-import { haversineKm } from "./sources/listicle";
+import { activitySourceList } from "./source-refs";
 import type { Activity, ActivitySource, ActivitySourceRef } from "./types";
+
+export { activityHasSource, activitySourceList, sourceRef } from "./source-refs";
 
 /** Cluster start pins within ~450m (middle of the 250–500m brief). */
 export const CLUSTER_RADIUS_KM = 0.45;
@@ -418,28 +421,6 @@ function uniqueStrings(values: string[]): string[] {
     out.push(value);
   }
   return out;
-}
-
-export function sourceRef(activity: Activity): ActivitySourceRef {
-  return {
-    source: activity.source,
-    sourceUrl: activity.sourceUrl,
-    title: decodeEntities(activity.title),
-    id: activity.id,
-  };
-}
-
-export function activitySourceList(activity: Activity): ActivitySourceRef[] {
-  if (activity.sources?.length) return activity.sources;
-  return [sourceRef(activity)];
-}
-
-export function activityHasSource(
-  activity: Activity,
-  source: ActivitySource,
-): boolean {
-  if (activity.source === source) return true;
-  return activitySourceList(activity).some((s) => s.source === source);
 }
 
 export function mergeCluster(cluster: Activity[]): Activity {

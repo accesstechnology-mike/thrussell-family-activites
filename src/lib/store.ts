@@ -1,7 +1,7 @@
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { HOME_POSTCODE, MAX_DRIVE_MINUTES } from "./config";
-import { activitySourceList } from "./dedupe";
+import { activitySourceList } from "./source-refs";
 import { isFreeActivity } from "./free";
 import { queryActivities, type ActivityQuery } from "./query";
 import type { Activity, ActivityStore, SourceStatus } from "./types";

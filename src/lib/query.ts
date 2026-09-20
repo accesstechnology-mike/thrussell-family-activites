@@ -1,4 +1,4 @@
-import { activityHasSource, activitySourceList } from "./dedupe";
+import { activityHasSource, activitySourceList } from "./source-refs";
 import { isFreeActivity } from "./free";
 import type {
   Activity,

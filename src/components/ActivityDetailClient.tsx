@@ -9,7 +9,7 @@ import {
   readStoredFilters,
 } from "@/lib/filter-state";
 import { detailImageUrl } from "@/lib/image-urls";
-import { activitySourceList } from "@/lib/dedupe";
+import { activitySourceList } from "@/lib/source-refs";
 import type { Activity, DirectionsLinks, WeatherSnapshot } from "@/lib/types";
 
 type Props = {
