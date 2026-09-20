@@ -6,10 +6,9 @@ import {
 } from "../features";
 import { haversineKm } from "../geo";
 import {
-  extractPostcode,
-  geocodePlaceName,
-  geocodePostcode,
-} from "../geocode";
+  locationRawFacts,
+  resolvePageLocation,
+} from "../page-location";
 import type { Activity, ActivitySource } from "../types";
 
 export { haversineKm };
@@ -44,22 +43,12 @@ export async function itemsToActivities(
       .filter(Boolean)
       .join("\n");
 
-    let postcode =
-      item.postcodeHint ||
-      extractPostcode(item.summary) ||
-      extractPostcode(title);
-    let coords = postcode ? await geocodePostcode(postcode) : null;
-    if (!coords) {
-      const query = `${title}, ${opts.regionSuffix ?? "Yorkshire"}, UK`;
-      const place = await geocodePlaceName(query);
-      if (!place) continue;
-      coords = {
-        lat: place.lat,
-        lng: place.lng,
-        postcode: place.postcode ?? postcode ?? "",
-      };
-      postcode = place.postcode ?? postcode;
-    }
+    const resolved = await resolvePageLocation({
+      html: [item.postcodeHint, item.summary, title].filter(Boolean).join("\n"),
+      title,
+      regionSuffix: opts.regionSuffix ?? "Yorkshire",
+    });
+    if (!resolved) continue;
 
     const terrainInfo = inferTerrain(item.terrainHint ?? null, ownText);
     const features = extractFeatures(title, ownText);
@@ -81,9 +70,9 @@ export async function itemsToActivities(
       imageUrl: item.imageUrl ?? null,
       imageAlt: title,
       locationLabel: opts.regionSuffix ?? null,
-      postcode: postcode || coords.postcode || null,
-      what3words: null,
-      coordinates: { lat: coords.lat, lng: coords.lng },
+      postcode: resolved.postcode,
+      what3words: resolved.what3words,
+      coordinates: { lat: resolved.lat, lng: resolved.lng },
       parking,
       cost,
       isFree: null,
@@ -96,7 +85,7 @@ export async function itemsToActivities(
       categories: [opts.category],
       driveMinutes: null,
       lastSyncedAt: now,
-      rawFacts: {},
+      rawFacts: locationRawFacts(resolved),
     });
   }
 

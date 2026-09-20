@@ -149,6 +149,8 @@ async function enrichWalk(url: string, now: string): Promise<Activity | null> {
     lastSyncedAt: now,
     rawFacts: {
       amenities: amenities.join(", "),
+      coordSource: "page-latlng",
+      coordDetail: "json-ld",
       ...(terrainHints ? { walkType: terrainHints } : {}),
     },
   };

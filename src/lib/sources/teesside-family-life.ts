@@ -6,10 +6,9 @@ import {
   slugId,
 } from "../features";
 import {
-  extractPostcode,
-  geocodePlaceName,
-  geocodePostcode,
-} from "../geocode";
+  locationRawFacts,
+  resolvePageLocation,
+} from "../page-location";
 import type { Activity } from "../types";
 
 const API = "https://www.teessidefamilylife.co.uk/wp-json/wp/v2/posts";
@@ -99,18 +98,13 @@ async function toActivity(post: WpPost): Promise<Activity | null> {
   const body = stripTags(contentHtml);
   if (!looksLikeOuting(title, `${excerpt}\n${body}`)) return null;
 
-  let postcode = extractPostcode(body);
-  let coords = postcode ? await geocodePostcode(postcode) : null;
-  if (!coords) {
-    const place = await geocodePlaceName(`${title}, North Yorkshire, UK`);
-    if (!place) return null;
-    coords = {
-      lat: place.lat,
-      lng: place.lng,
-      postcode: place.postcode ?? postcode ?? "",
-    };
-    postcode = place.postcode ?? postcode;
-  }
+  const resolved = await resolvePageLocation({
+    html: contentHtml,
+    pageUrl: post.link,
+    title,
+    regionSuffix: "North Yorkshire",
+  });
+  if (!resolved) return null;
 
   const image =
     post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ?? null;
@@ -133,9 +127,9 @@ async function toActivity(post: WpPost): Promise<Activity | null> {
     imageUrl: image,
     imageAlt,
     locationLabel: "North Yorkshire",
-    postcode: postcode || coords.postcode || null,
-    what3words: null,
-    coordinates: { lat: coords.lat, lng: coords.lng },
+    postcode: resolved.postcode,
+    what3words: resolved.what3words,
+    coordinates: { lat: resolved.lat, lng: resolved.lng },
     parking: parkingMatch?.[0]?.trim() ?? null,
     cost: costMatch?.[0]?.trim() ?? null,
     isFree: null,
@@ -146,7 +140,7 @@ async function toActivity(post: WpPost): Promise<Activity | null> {
     categories: ["Teesside Family Life"],
     driveMinutes: null,
     lastSyncedAt: new Date().toISOString(),
-    rawFacts: { slug: post.slug },
+    rawFacts: { slug: post.slug, ...locationRawFacts(resolved) },
   };
 }
 

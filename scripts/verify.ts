@@ -7,7 +7,6 @@ import {
 import { getDriveTimesMinutes } from "../src/lib/drive-times";
 import {
   cleanPlacePhrase,
-  geocodePlaceName,
   geocodeQueryVariants,
   nominatimNameFitsQuery,
 } from "../src/lib/geocode";
@@ -16,6 +15,12 @@ import {
   isJunkImageUrl,
   looksLikeGraphicNotice,
 } from "../src/lib/images";
+import { extractOsGridRef, osGridToWgs84 } from "../src/lib/os-grid";
+import {
+  extractLocationHints,
+  extractPageLatLng,
+  resolvePageLocation,
+} from "../src/lib/page-location";
 import { haversineKm } from "../src/lib/sources/listicle";
 import {
   buildSuggestPool,
@@ -143,6 +148,22 @@ function assertPlaceMerge(fixtures: Activity[], store: ActivityStore) {
   );
 }
 
+/** Snippets from the live Where2walk start-point chrome (not invented). */
+const SKIPTON_PAGE_SNIPPET = `<script>var lat = 53.960328;
+  var lng = -1.9977950;</script>
+<div class="more-list"><h5>Start point</h5>
+<p>Location: <strong>Skipton</strong></p>
+<p>Grid ref: <strong>SE 003511</strong></p></div>`;
+
+const CALF_PAGE_SNIPPET = `<script>var lat = 54.23634;
+  var lng = -2.582474;</script>
+<div class="more-list"><h5>Start point</h5>
+<p>Location: <strong>Barbon</strong></p>
+<p>Grid ref: <strong>SD 628825</strong></p></div>`;
+
+const GRID_ONLY_SNIPPET =
+  `<p>Start point</p><p>Grid ref: <strong>SE 003511</strong></p>`;
+
 async function main() {
   const base = process.env.VERIFY_BASE_URL ?? "http://127.0.0.1:3000";
 
@@ -238,7 +259,65 @@ async function main() {
   if (!nominatimNameFitsQuery("Calf Top and Barbondale", "Calf Top")) {
     throw new Error("Calf Top should match the Calf Top / Barbondale title");
   }
-  console.log("geocode variant / match rules ok");
+  console.log("geocode variant / match rules ok (title geocode is last resort)");
+
+  const skiSnippet = extractPageLatLng(SKIPTON_PAGE_SNIPPET);
+  const calfSnippet = extractPageLatLng(CALF_PAGE_SNIPPET);
+  if (!skiSnippet || !calfSnippet) {
+    throw new Error("Failed to extract var lat/lng from Where2walk start snippets");
+  }
+  const skiHints = extractLocationHints(SKIPTON_PAGE_SNIPPET);
+  const calfHints = extractLocationHints(CALF_PAGE_SNIPPET);
+  if (skiHints.gridRef !== "SE 003 511" || calfHints.gridRef !== "SD 628 825") {
+    throw new Error(
+      `OS grid extract expected SE 003 511 / SD 628 825, got ${skiHints.gridRef} / ${calfHints.gridRef}`,
+    );
+  }
+  const skiFromPage = await resolvePageLocation({ html: SKIPTON_PAGE_SNIPPET });
+  const calfFromPage = await resolvePageLocation({ html: CALF_PAGE_SNIPPET });
+  if (skiFromPage?.coordSource !== "page-latlng") {
+    throw new Error(`Skipton snippet resolved via ${skiFromPage?.coordSource}, not page-latlng`);
+  }
+  if (calfFromPage?.coordSource !== "page-latlng") {
+    throw new Error(`Calf Top snippet resolved via ${calfFromPage?.coordSource}, not page-latlng`);
+  }
+  const gridOnly = await resolvePageLocation({ html: GRID_ONLY_SNIPPET });
+  if (gridOnly?.coordSource !== "os-grid") {
+    throw new Error(`Grid-only snippet resolved via ${gridOnly?.coordSource}, not os-grid`);
+  }
+  const skiGrid = osGridToWgs84(extractOsGridRef(SKIPTON_PAGE_SNIPPET) ?? "");
+  if (!skiGrid || haversineKm(skiFromPage, skiGrid) > 1) {
+    throw new Error("SE 003511 did not convert near the Skipton Moor page pin");
+  }
+  console.log(
+    `page location order ok: Skipton ${skiFromPage.coordSource} ${skiFromPage.lat},${skiFromPage.lng}; Calf ${calfFromPage.coordSource} ${calfFromPage.lat},${calfFromPage.lng}`,
+  );
+
+  const skiLivePage = await resolvePageLocation({
+    pageUrl: "https://where2walk.co.uk/walk/discover-walk-skipton-moor/",
+  });
+  const calfLivePage = await resolvePageLocation({
+    pageUrl: "https://where2walk.co.uk/walk/calf-top-barbondale-walk/",
+  });
+  if (!skiLivePage || skiLivePage.coordSource === "title-geocode") {
+    throw new Error(
+      `Live Skipton Moor used ${skiLivePage?.coordSource ?? "nothing"} — expected page data`,
+    );
+  }
+  if (!calfLivePage || calfLivePage.coordSource === "title-geocode") {
+    throw new Error(
+      `Live Calf Top used ${calfLivePage?.coordSource ?? "nothing"} — expected page data`,
+    );
+  }
+  if (haversineKm(skiLivePage, skiFromPage) > 0.3) {
+    throw new Error("Live Skipton Moor page pin drifted from the extracted start snippet");
+  }
+  if (haversineKm(calfLivePage, calfFromPage) > 0.3) {
+    throw new Error("Live Calf Top page pin drifted from the extracted start snippet");
+  }
+  console.log(
+    `live source pages ok: Skipton ${skiLivePage.coordSource}; Calf ${calfLivePage.coordSource}`,
+  );
 
   const interpreted = interpretOutingRequest(
     "stepping stones under 45 minutes near a cafe",
@@ -364,31 +443,34 @@ async function main() {
     throw new Error("Store missing Skipton Moor or Calf Top / Barbondale");
   }
 
-  const skiLive = await geocodePlaceName("Walk on Skipton Moor, Yorkshire, UK");
-  const calfLive = await geocodePlaceName("Calf Top and Barbondale, Yorkshire, UK");
-  if (!skiLive || !calfLive) {
-    throw new Error("Live Nominatim failed for Skipton Moor or Calf Top");
+  const skiSource = skiStored.rawFacts.coordSource;
+  const calfSource = calfStored.rawFacts.coordSource;
+  if (!skiSource || skiSource === "title-geocode") {
+    throw new Error(`Skipton Moor store still title-geocoded (${skiSource})`);
   }
-  if (haversineKm(skiStored.coordinates, skiLive) > 3) {
+  if (!calfSource || calfSource === "title-geocode") {
+    throw new Error(`Calf Top store still title-geocoded (${calfSource})`);
+  }
+  if (haversineKm(skiStored.coordinates, skiLivePage) > 0.5) {
     throw new Error(
-      `Skipton Moor store pin is ${haversineKm(skiStored.coordinates, skiLive).toFixed(1)}km from live Nominatim`,
+      `Skipton Moor store pin is ${haversineKm(skiStored.coordinates, skiLivePage).toFixed(1)}km from the source-page start`,
     );
   }
-  if (haversineKm(calfStored.coordinates, calfLive) > 5) {
+  if (haversineKm(calfStored.coordinates, calfLivePage) > 0.5) {
     throw new Error(
-      `Calf Top store pin is ${haversineKm(calfStored.coordinates, calfLive).toFixed(1)}km from live Nominatim`,
+      `Calf Top store pin is ${haversineKm(calfStored.coordinates, calfLivePage).toFixed(1)}km from the source-page start`,
     );
   }
-  if (haversineKm(store.origin, skiLive) < 20) {
-    throw new Error("Live Skipton Moor geocode is implausibly close to YO7 4SQ");
+  if (haversineKm(store.origin, skiLivePage) < 20) {
+    throw new Error("Skipton Moor page start is implausibly close to YO7 4SQ (local homonym)");
   }
-  if (haversineKm(store.origin, calfLive) < 40) {
-    throw new Error("Live Calf Top geocode is implausibly close to YO7 4SQ");
+  if (haversineKm(store.origin, calfLivePage) < 40) {
+    throw new Error("Calf Top page start is implausibly close to YO7 4SQ (local homonym)");
   }
 
   const osrm = await getDriveTimesMinutes(store.origin, [
-    { id: "ski", location: skiLive },
-    { id: "calf", location: calfLive },
+    { id: "ski", location: skiLivePage },
+    { id: "calf", location: calfLivePage },
   ]);
   if (osrm.ski == null || osrm.calf == null) {
     throw new Error("OSRM returned no drive times for the two walks");
@@ -404,7 +486,7 @@ async function main() {
     );
   }
   console.log(
-    `drive pins ok: Skipton Moor ${skiStored.driveMinutes} min (OSRM ${osrm.ski}); Calf Top ${calfStored.driveMinutes} min (OSRM ${osrm.calf})`,
+    `drive pins ok: Skipton Moor ${skiStored.driveMinutes} min (OSRM ${osrm.ski}, ${skiSource}); Calf Top ${calfStored.driveMinutes} min (OSRM ${osrm.calf}, ${calfSource})`,
   );
 
   console.log("verify passed");

@@ -5,12 +5,11 @@ import {
   parseDistanceMiles,
   slugId,
 } from "../features";
-import {
-  extractPostcode,
-  geocodePlaceName,
-  geocodePostcode,
-} from "../geocode";
 import { fetchText, metaContent, sleep, stripTags } from "../html";
+import {
+  locationRawFacts,
+  resolvePageLocation,
+} from "../page-location";
 import type { Activity } from "../types";
 
 const REGION_INDEX =
@@ -113,18 +112,12 @@ async function enrichWalk(url: string, now: string): Promise<Activity | null> {
     null;
   const ownText = [title, summary, parking, body.slice(0, 1800)].join("\n");
 
-  let postcode = extractPostcode(parking || "") || extractPostcode(body);
-  let coords = postcode ? await geocodePostcode(postcode) : null;
-  if (!coords) {
-    const place = await geocodePlaceName(`${title}, Yorkshire, UK`);
-    if (!place) return null;
-    coords = {
-      lat: place.lat,
-      lng: place.lng,
-      postcode: place.postcode ?? postcode ?? "",
-    };
-    postcode = place.postcode ?? postcode;
-  }
+  const resolved = await resolvePageLocation({
+    html: [parking, html].filter(Boolean).join("\n"),
+    title,
+    regionSuffix: "Yorkshire",
+  });
+  if (!resolved) return null;
 
   const terrainInfo = inferTerrain(null, ownText);
   const features = extractFeatures(title, summary, ownText);
@@ -141,9 +134,9 @@ async function enrichWalk(url: string, now: string): Promise<Activity | null> {
     imageUrl: image,
     imageAlt: title,
     locationLabel: null,
-    postcode: postcode || coords.postcode || null,
-    what3words: null,
-    coordinates: { lat: coords.lat, lng: coords.lng },
+    postcode: resolved.postcode,
+    what3words: resolved.what3words,
+    coordinates: { lat: resolved.lat, lng: resolved.lng },
     parking,
     cost: null,
     isFree: null,
@@ -154,7 +147,7 @@ async function enrichWalk(url: string, now: string): Promise<Activity | null> {
     categories: ["The Outdoor Guide"],
     driveMinutes: null,
     lastSyncedAt: now,
-    rawFacts: {},
+    rawFacts: locationRawFacts(resolved),
   };
 }
 

@@ -65,7 +65,7 @@ async function main() {
         : fresh.imageUrl,
       imageAlt: prev.imageAlt ?? fresh.imageAlt,
       driveMinutes: prev.driveMinutes,
-      rawFacts: { ...fresh.rawFacts, ...prev.rawFacts },
+      rawFacts: { ...prev.rawFacts, ...fresh.rawFacts },
     });
     updated += 1;
   }
