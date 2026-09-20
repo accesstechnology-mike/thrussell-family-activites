@@ -42,7 +42,7 @@ Structured filters on `/api/activities`: `q`, `feature`, `features`, `source`, `
 - **National Trust** / **English Heritage** — places near home
 - **OpenStreetMap** — zoos, attractions, museums, nature reserves near home (fills gaps walk blogs miss, e.g. Thirsk Birds of Prey Centre)
 
-Cross-source duplicates are collapsed by normalised place name + proximity (richer records win; Reluctant Explorers preferred when tied).
+Cross-source (and within-source) duplicates are clustered by start coordinates (~450m) plus shared name tokens, then merged into **one card per place**. National Trust / OSM / English Heritage win the place identity and pin; the richest walk write-up keeps the route notes. Every origin stays on `sources[]` with its original URL. Sibling photos are reused before the image pipeline scrapes `og:image` / Wikidata.
 
 Results are filtered by real **OSRM** drive time from the live geocode of `YO7 4SQ` (via postcodes.io). Activity cache: `data/activities.json`. Cloudflare-prone pages also keep a last-good HTML snapshot under `data/source-cache/` (`npm run sync:refresh-cache`).
 
@@ -70,6 +70,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 - `GET|POST /api/sync` — refresh from sources (also on a daily Vercel cron)
 - `GET /api/weather?activityId=` or `lat`/`lng` — weather only
+- `npm run merge:places` — re-cluster the stored catalogue and backfill missing photos
 
 ## Directions
 

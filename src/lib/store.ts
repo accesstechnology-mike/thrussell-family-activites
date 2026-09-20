@@ -1,6 +1,7 @@
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { HOME_POSTCODE, MAX_DRIVE_MINUTES } from "./config";
+import { activitySourceList } from "./source-refs";
 import { isFreeActivity } from "./free";
 import { queryActivities, type ActivityQuery } from "./query";
 import type { Activity, ActivityStore, SourceStatus } from "./types";
@@ -66,7 +67,13 @@ export async function listActivities(
 
 export async function getActivityById(id: string): Promise<Activity | null> {
   const store = await readStore();
-  return store.activities.find((a) => a.id === id) ?? null;
+  return (
+    store.activities.find((a) => a.id === id) ??
+    store.activities.find((a) =>
+      activitySourceList(a).some((s) => s.id === id),
+    ) ??
+    null
+  );
 }
 
 export function summariseStatuses(statuses: SourceStatus[]): string {

@@ -1,6 +1,9 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { enrichActivityImages } from "../src/lib/images";
+import {
+  activityImageNeedsRefresh,
+  enrichActivityImages,
+} from "../src/lib/images";
 import type { Activity, ActivityStore } from "../src/lib/types";
 
 async function main() {
@@ -16,11 +19,11 @@ async function main() {
     targets = store.activities.filter((a) => a.id.includes(only));
     if (!targets.length) throw new Error(`No activities matching ${only}`);
   } else {
-    targets = store.activities.filter((a) => {
-      if (!a.imageUrl) return true;
-      if (!a.imageUrl.startsWith("/media/")) return true;
-      return force;
-    });
+    const flagged: Activity[] = [];
+    for (const a of store.activities) {
+      if (force || (await activityImageNeedsRefresh(a))) flagged.push(a);
+    }
+    targets = flagged;
   }
 
   console.log(`Enriching images for ${targets.length} activities…`);

@@ -203,29 +203,22 @@ select {
   min-height: inherit;
   display: grid;
   place-items: center;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.18), transparent 40%),
-    linear-gradient(135deg, #6aa3c2, #5f8f4e 55%, #e0b23a);
-  color: rgba(247, 255, 244, 0.92);
-  font-family: var(--font-display);
+  background: #d5dbd3;
+  color: #5c6658;
+  font-family: var(--font-ui, inherit);
 }
 
-.card-media-fallback span {
-  font-size: 3.4rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+.card-media-fallback-label {
+  font-size: 0.82rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  color: #6a7366;
 }
 
 .detail-hero-fallback {
   min-height: 260px;
   padding: 1.5rem;
   text-align: center;
-}
-
-.detail-hero-fallback span {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
 }
 
 .card-badges {
@@ -520,6 +513,10 @@ select {
   margin-top: 1.1rem;
   display: grid;
   gap: 0.45rem;
+}
+
+.source-row .source-btn + .source-btn {
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .source-btn {

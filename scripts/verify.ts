@@ -1,11 +1,20 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import {
+  activitySourceList,
+  mergeDuplicateActivities,
+} from "../src/lib/dedupe";
 import { getDriveTimesMinutes } from "../src/lib/drive-times";
 import {
   cleanPlacePhrase,
   geocodeQueryVariants,
   nominatimNameFitsQuery,
 } from "../src/lib/geocode";
+import { HOME_POSTCODE } from "../src/lib/config";
+import {
+  isJunkImageUrl,
+  looksLikeGraphicNotice,
+} from "../src/lib/images";
 import { extractOsGridRef, osGridToWgs84 } from "../src/lib/os-grid";
 import {
   extractLocationHints,
@@ -18,7 +27,126 @@ import {
   interpretOutingRequest,
   rankSuggestions,
 } from "../src/lib/suggest";
-import type { ActivityStore } from "../src/lib/types";
+import type { Activity, ActivityStore } from "../src/lib/types";
+
+function cardsMatching(activities: Activity[], re: RegExp): Activity[] {
+  return activities.filter(
+    (a) =>
+      re.test(a.title) ||
+      activitySourceList(a).some((s) => re.test(s.title)),
+  );
+}
+
+function assertPlaceMerge(fixtures: Activity[], store: ActivityStore) {
+  if (store.originPostcode !== HOME_POSTCODE) {
+    throw new Error(`Home postcode must stay ${HOME_POSTCODE}`);
+  }
+
+  const { activities, stats } = mergeDuplicateActivities(fixtures);
+  const brimham = cardsMatching(activities, /brimham/i);
+  if (brimham.length !== 1) {
+    throw new Error(`Expected 1 Brimham card from fixtures, got ${brimham.length}`);
+  }
+  if ((brimham[0]!.sources?.length ?? 0) < 4) {
+    throw new Error(
+      `Brimham should keep origin links, got ${brimham[0]!.sources?.length}`,
+    );
+  }
+
+  const aysgarth = cardsMatching(activities, /aysgarth/i).filter((a) =>
+    /fall/i.test(a.title + activitySourceList(a).map((s) => s.title).join(" ")),
+  );
+  if (aysgarth.length < 1) {
+    throw new Error("Expected an Aysgarth Falls cluster");
+  }
+
+  const fountainsAbbey = cardsMatching(
+    activities,
+    /fountains abbey|studley royal/i,
+  );
+  const fountainsMain = fountainsAbbey.find(
+    (a) => (a.sources?.length ?? 0) >= 4,
+  );
+  if (!fountainsMain) {
+    throw new Error(
+      `Expected a merged Fountains/Studley card, got ${fountainsAbbey.length} matches`,
+    );
+  }
+
+  const fell = cardsMatching(activities, /fountains fell/i);
+  if (fell.length !== 1) {
+    throw new Error("Fountains Fell must stay a separate place");
+  }
+
+  const hardcastle = cardsMatching(activities, /hardcastle crags/i);
+  if (hardcastle.length !== 1) {
+    throw new Error(
+      `Expected 1 Hardcastle Crags card, got ${hardcastle.length}`,
+    );
+  }
+  const walkiees = activitySourceList(hardcastle[0]!).filter(
+    (s) => s.source === "walkiees",
+  );
+  if (walkiees.length < 2) {
+    throw new Error("Hardcastle should keep both Walkiees listings");
+  }
+
+  const seaLife = cardsMatching(activities, /sea life/i);
+  const seaCut = cardsMatching(activities, /sea cut/i);
+  if (!seaLife.length || !seaCut.length) {
+    throw new Error("SEA LIFE and Sea Cut fixtures missing");
+  }
+  if (seaLife.some((a) => seaCut.some((b) => a.id === b.id))) {
+    throw new Error("Scarborough SEA LIFE must not merge with Sea Cut");
+  }
+
+  const ribbleheadRoutes = cardsMatching(
+    activities,
+    /ribblehead to horton|dent station and ribblehead/i,
+  );
+  const ribbleheadShort = cardsMatching(activities, /ribblehead, a short walk|ribblehead viaduct/i);
+  if (
+    ribbleheadRoutes.length &&
+    ribbleheadShort.length &&
+    ribbleheadRoutes.some((a) => ribbleheadShort.some((b) => a.id === b.id))
+  ) {
+    throw new Error("Ribblehead mountain routes must not swallow the viaduct walk");
+  }
+
+  const kettlewellStep = cardsMatching(activities, /kettlewell stepping/i);
+  const kettlewellStar = cardsMatching(activities, /starbotton/i);
+  if (
+    kettlewellStep.length &&
+    kettlewellStar.length &&
+    kettlewellStep.some((a) => kettlewellStar.some((b) => a.id === b.id))
+  ) {
+    throw new Error("Different Kettlewell walks must not merge");
+  }
+
+  if (stats.after >= stats.before) {
+    throw new Error("Fixture merge should reduce card count");
+  }
+
+  const storeBrimham = cardsMatching(store.activities, /brimham/i);
+  if (storeBrimham.length !== 1) {
+    throw new Error(
+      `Store should show one Brimham card, got ${storeBrimham.length}`,
+    );
+  }
+  if ((storeBrimham[0]!.sources?.length ?? 0) < 4) {
+    throw new Error("Store Brimham card missing origin sources[]");
+  }
+  if (storeBrimham[0]!.driveMinutes == null) {
+    throw new Error("Canonical Brimham pin lost its YO7 4SQ drive time");
+  }
+  if (!storeBrimham[0]!.imageUrl) {
+    throw new Error("Canonical Brimham card should inherit a sibling photo");
+  }
+
+  console.log(
+    `place merge ok: fixtures ${stats.before}→${stats.after}; store ${store.activities.length} cards; Brimham sources=${storeBrimham[0]!.sources!.length}`,
+  );
+}
 
 /** Snippets from the live Where2walk start-point chrome (not invented). */
 const SKIPTON_PAGE_SNIPPET = `<script>var lat = 53.960328;
@@ -46,6 +174,71 @@ async function main() {
     throw new Error("Local store is empty — run npm run sync first");
   }
   console.log(`store ok: ${store.activities.length} activities`);
+
+  const fixturePath = path.join(process.cwd(), "src/lib/dedupe-fixtures.json");
+  const fixtures = JSON.parse(await readFile(fixturePath, "utf8")) as Activity[];
+  assertPlaceMerge(fixtures, store);
+
+  if (
+    !isJunkImageUrl(
+      "https://falconrycentre.co.uk/wp-content/uploads/Website-advert-1-scaled.jpg",
+    )
+  ) {
+    throw new Error("Venue adverts must be rejected as junk images");
+  }
+  if (
+    !isJunkImageUrl(
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Handicap_toilet_2.jpg",
+    ) ||
+    !isJunkImageUrl(
+      "https://www.holmsidepark.co.uk/wp-content/uploads/2026/09/Pumpkin-Patch-Event.jpg",
+    ) ||
+    !isJunkImageUrl(
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Pike_County_Pennsylvania_incorporated_and_unincorporated_areas_Pocono_Woodland_Lakes_highlighted.svg/map.png",
+    )
+  ) {
+    throw new Error("Toilet, flyer, and locator-map images must be junk");
+  }
+  const noticeCard = store.activities.find((a) =>
+    /thirsk birds of prey/i.test(a.title),
+  );
+  const poolCard = store.activities.find((a) =>
+    /thirsk swimming pool/i.test(a.title),
+  );
+  if (!noticeCard || !poolCard) {
+    throw new Error("Store missing Thirsk Birds of Prey or Swimming Pool");
+  }
+  const posterCard = path.join(
+    process.cwd(),
+    "public/media/8710e46b345bf0e4-card.webp",
+  );
+  try {
+    const posterBuf = await readFile(posterCard);
+    if (!(await looksLikeGraphicNotice(posterBuf))) {
+      throw new Error(
+        "Weather-warning poster should be detected as a graphic notice",
+      );
+    }
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code !== "ENOENT") throw err;
+  }
+  if (
+    noticeCard.rawFacts.imageRemote &&
+    (isJunkImageUrl(noticeCard.rawFacts.imageRemote) ||
+      /IMG_3413/i.test(noticeCard.rawFacts.imageRemote))
+  ) {
+    throw new Error("Thirsk Birds of Prey still points at a junk remote image");
+  }
+  for (const card of [noticeCard, poolCard]) {
+    if (!card.imageUrl?.startsWith("/media/")) continue;
+    const buf = await readFile(
+      path.join(process.cwd(), "public", card.imageUrl.replace(/^\//, "")),
+    );
+    if (await looksLikeGraphicNotice(buf)) {
+      throw new Error(`${card.title} still has a graphic notice as its card photo`);
+    }
+  }
+  console.log("image junk / notice filters ok");
 
   const skiVariants = geocodeQueryVariants("Walk on Skipton Moor, Yorkshire, UK");
   if (!skiVariants.some((v) => /^skipton moor\b/i.test(v))) {

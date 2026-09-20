@@ -67,11 +67,18 @@ export function normalizeImageUrl(raw: string, base?: string): string | null {
   }
 }
 
-function isJunkImageUrl(url: string): boolean {
+export function isJunkImageUrl(url: string): boolean {
   if (/\.pdf($|\?)/i.test(url)) return true;
   if (/ChatGPT-Image/i.test(url)) return true;
   if (/tripadvisor|trip-advisor/i.test(url)) return true;
   if (/(?:movie|film|teaser|poster|dvd|bluray)/i.test(url)) return true;
+  if (
+    /(?:advert|advertisement|warning|weather|notice|flyer|announcement|timetable|strong-?winds?|site-?map|venue-?map|centre-?map|center-?map|-map-|toilet|lavatory|restroom|bathroom|handicap|pumpkin|halloween|incorporated_and_unincorporated|highlighted\.svg|locator)/i.test(
+      url,
+    )
+  ) {
+    return true;
+  }
   if (/upload\.wikimedia\.org\/wikipedia\/en\//i.test(url)) return true;
   if (
     /(?:^|[/\-_])(?:logo|favicon|sprite|avatar|emoji|icon|badge|award|widget|banner)(?:[.\-_/?]|$)/i.test(
@@ -85,6 +92,67 @@ function isJunkImageUrl(url: string): boolean {
   if (/cropped-cropped-/i.test(url)) return true;
   if (/\/(?:32x32|16x16|48x48|64x64|180x180)\//i.test(url)) return true;
   if (/apple-icon|skbg\d|cropped-icon/i.test(url)) return true;
+  return false;
+}
+
+/** Event posters / weather notices: flat graphic yellow+red, not a place photo. */
+export async function looksLikeGraphicNotice(buf: Buffer): Promise<boolean> {
+  const { data, info } = await sharp(buf)
+    .resize(160, 100, { fit: "cover" })
+    .removeAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+  const n = info.width * info.height;
+  let warningYellow = 0;
+  let graphicRed = 0;
+  let graphicOrange = 0;
+  let nearWhite = 0;
+  let nearBlack = 0;
+  let midPhoto = 0;
+  for (let i = 0; i < data.length; i += 3) {
+    const r = data[i]!;
+    const g = data[i + 1]!;
+    const b = data[i + 2]!;
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    const sat = max === 0 ? 0 : (max - min) / max;
+    const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    if (lum > 225) nearWhite += 1;
+    else if (lum < 28) nearBlack += 1;
+    else if (sat < 0.45 && lum > 40 && lum < 210) midPhoto += 1;
+    if (r > 175 && g > 145 && b < 95 && sat > 0.45) warningYellow += 1;
+    if (r > 150 && g < 70 && b < 70) graphicRed += 1;
+    if (r > 180 && g > 70 && g < 170 && b < 80 && sat > 0.45) graphicOrange += 1;
+  }
+  const yellow = warningYellow / n;
+  const red = graphicRed / n;
+  const orange = graphicOrange / n;
+  const white = nearWhite / n;
+  const black = nearBlack / n;
+  const flat = white + black;
+  const photo = midPhoto / n;
+  // Dated weather / event posters: yellow warning type on black/white
+  // bands, often composited over a real photo (so "photo" can still be high).
+  if (yellow > 0.04 && red > 0.025 && (flat > 0.25 || black > 0.12)) return true;
+  if (yellow > 0.07 && (red > 0.03 || flat > 0.22)) return true;
+  if (yellow > 0.11) return true;
+  if (flat > 0.5 && red > 0.05 && photo < 0.25) return true;
+  if (white > 0.12 && black > 0.12 && red > 0.03 && yellow > 0.03) return true;
+  // Illustrated event flyers: cream/white field, cartoon colour, little photo.
+  if (flat > 0.45 && photo < 0.18 && (orange > 0.08 || yellow > 0.05 || red > 0.04)) {
+    return true;
+  }
+  // Wikipedia locator maps and line diagrams: mostly paper + ink, little photo.
+  if (flat > 0.7 && photo < 0.18) return true;
+  const quant = new Map<number, number>();
+  for (let i = 0; i < data.length; i += 3) {
+    const key =
+      ((data[i]! >> 4) << 8) | ((data[i + 1]! >> 4) << 4) | (data[i + 2]! >> 4);
+    quant.set(key, (quant.get(key) ?? 0) + 1);
+  }
+  const topShare = Math.max(...quant.values()) / n;
+  // Cartoon logos / clip-art headers: one huge flat fill (e.g. a drawn sky).
+  if (topShare > 0.55) return true;
   return false;
 }
 
@@ -146,6 +214,7 @@ async function isUsefulImageBuffer(buf: Buffer): Promise<boolean> {
   if (buf.length < MIN_BYTES) return false;
   const meta = await sharp(buf).metadata();
   if ((meta.width ?? 0) < 240 || (meta.height ?? 0) < 160) return false;
+  if (await looksLikeGraphicNotice(buf)) return false;
   const stats = await sharp(buf).stats();
   const maxStdev = Math.max(...stats.channels.map((c) => c.stdev));
   return maxStdev >= MIN_STDEV;
@@ -220,7 +289,7 @@ export async function cacheRemoteImage(
   }
 }
 
-function scoreImageCandidate(url: string): number {
+function scoreImageCandidate(url: string, title?: string): number {
   let score = 0;
   if (/lirp\.cdn-website\.com/i.test(url)) score += 40;
   if (/irp\.cdn-website\.com/i.test(url)) score += 30;
@@ -233,8 +302,22 @@ function scoreImageCandidate(url: string): number {
   if (/(?:cave|garden|grounds|waterfall|exterior|landscape|view|header)/i.test(url)) {
     score += 35;
   }
-  if (/(?:food|drink|shop|menu|puppaccino|christmas|elf|dog)/i.test(url)) {
+  if (/(?:bird|owl|eagle|hawk|falcon|vulture|prey|aviary)/i.test(url)) {
+    score += 35;
+  }
+  if (title) {
+    const hay = decodeURIComponent(url).toLowerCase();
+    score += titleTokens(title).filter((t) => hay.includes(t)).length * 25;
+  }
+  if (/(?:food|drink|shop|menu|puppaccino|christmas|elf|dog|-disc)/i.test(url)) {
     score -= 40;
+  }
+  if (
+    /(?:warning|weather|notice|advert|flyer|july|saturday|sunday|calendar|closed|timetable|map|pumpkin|halloween|toilet)/i.test(
+      url,
+    )
+  ) {
+    score -= 80;
   }
   if (isJunkImageUrl(url)) score -= 1000;
   return score;
@@ -264,11 +347,34 @@ const GENERIC_TITLE_TOKENS = new Set([
   "friendly",
   "kids",
   "yorkshire",
+  "swimming",
+  "pool",
+  "lakes",
+  "leisure",
+  "centre",
+  "center",
   "the",
   "and",
   "with",
   "from",
   "near",
+]);
+
+const ACTIVITY_TYPE_TOKENS = new Set([
+  "accessible",
+  "lead",
+  "smelting",
+  "smelter",
+  "mill",
+  "mills",
+  "quarry",
+  "sssi",
+  "beach",
+  "sands",
+  "zoo",
+  "aquarium",
+  "handicap",
+  "toilet",
 ]);
 
 function titleTokens(value: string): string[] {
@@ -290,17 +396,23 @@ function titlesRelated(place: string, pageTitle: string): boolean {
       .trim();
     return Boolean(norm) && hay.includes(norm);
   }
-  const overlap = tokens.filter((t) => hay.includes(t)).length;
-  if (overlap === 0) return false;
+  const overlap = tokens.filter((t) => hay.includes(t));
+  if (overlap.length === 0) return false;
+  const distinctive = tokens.filter((t) => !ACTIVITY_TYPE_TOKENS.has(t));
+  if (distinctive.length && !distinctive.some((t) => hay.includes(t))) {
+    return false;
+  }
   // Short place names must match all distinctive tokens (avoids "Ladybird" → beetle).
-  if (tokens.length <= 2) return overlap === tokens.length && hay.includes(tokens[0]!);
-  return overlap >= 2;
+  if (tokens.length <= 2) {
+    return overlap.length === tokens.length && hay.includes(tokens[0]!);
+  }
+  return overlap.length >= 2;
 }
 
 function wikiPageLooksGeographic(pageTitle: string): boolean {
-  // Reject obvious non-place Wikipedia targets (species, films, etc).
+  // Reject obvious non-place Wikipedia targets (species, films, locator maps).
   if (
-    /\b(coccinella|species|genus|aquarium|amaterske|septempunctata|movie|film|album|song|novel)\b/i.test(
+    /\b(coccinella|species|genus|aquarium|amaterske|septempunctata|movie|film|album|song|novel|incorporated|unincorporated|locator)\b/i.test(
       pageTitle,
     )
   ) {
@@ -323,23 +435,28 @@ function placeTitleVariants(title: string): string[] {
     .split(/\s*(?:,|\/|\band\b|\bto\b)\s*/i)
     .map((p) => p.trim())
     .filter((p) => p.length > 4);
-  return [...new Set([cleaned, stripped, ...parts].filter((v) => v.length > 4))];
+  return [
+    ...new Set([cleaned, stripped, ...parts].filter((v) => v.length > 4)),
+  ].filter((v) => titleTokens(v).length >= 2 || v === cleaned);
 }
 
-async function collectSiteImageCandidates(website: string): Promise<string[]> {
-  try {
-    const res = await fetch(website, {
-      headers: {
-        // Real browser UA — some venue sites serve empty shells to bot UAs.
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        Accept: "text/html,application/xhtml+xml",
-      },
-      redirect: "follow",
-    });
-    if (!res.ok) return [];
-    const html = await res.text();
-    const raw: string[] = [];
+const SITE_FETCH_HEADERS = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+  Accept: "text/html,application/xhtml+xml",
+};
+
+const PHOTO_PAGE =
+  /\/(?:visitor|about|gallery|meet|bird|animal|what-to-see|our-|photo|display|attraction|explore|plan-your|experience|sponsor)/i;
+const SKIP_PAGE =
+  /basket|cart|privacy|terms|cookie|login|account|checkout|gift|voucher|donation|policy|wp-content|mailto:|tel:/i;
+
+function extractImageUrlsFromHtml(
+  html: string,
+  website: string,
+  title?: string,
+): string[] {
+  const raw: string[] = [];
 
     const metaPatterns = [
       /property=["']og:image(?::secure_url)?["']\s+content=["']([^"']+)["']/gi,
@@ -380,7 +497,64 @@ async function collectSiteImageCandidates(website: string): Promise<string[]> {
       candidates.push(absolute);
     }
 
-    candidates.sort((a, b) => scoreImageCandidate(b) - scoreImageCandidate(a));
+  candidates.sort(
+    (a, b) => scoreImageCandidate(b, title) - scoreImageCandidate(a, title),
+  );
+  return candidates;
+}
+
+function photoPageLinks(html: string, website: string): string[] {
+  const origin = new URL(website).origin;
+  const links: string[] = [];
+  for (const m of html.matchAll(/href=["']([^"'#]+)["']/gi)) {
+    try {
+      const u = new URL(m[1]!, website);
+      if (u.origin !== origin) continue;
+      if (SKIP_PAGE.test(u.pathname + u.search)) continue;
+      if (!PHOTO_PAGE.test(u.pathname)) continue;
+      links.push(u.toString());
+    } catch {
+      // ignore bad hrefs
+    }
+  }
+  return [...new Set(links)].slice(0, 6);
+}
+
+async function fetchHtml(url: string): Promise<string | null> {
+  try {
+    const res = await fetch(url, {
+      headers: SITE_FETCH_HEADERS,
+      redirect: "follow",
+    });
+    if (!res.ok) return null;
+    return await res.text();
+  } catch {
+    return null;
+  }
+}
+
+async function collectSiteImageCandidates(
+  website: string,
+  title?: string,
+): Promise<string[]> {
+  try {
+    const html = await fetchHtml(website);
+    if (!html) return [];
+    const candidates = extractImageUrlsFromHtml(html, website, title);
+    const seen = new Set(candidates);
+    for (const page of photoPageLinks(html, website)) {
+      await sleep(120);
+      const pageHtml = await fetchHtml(page);
+      if (!pageHtml) continue;
+      for (const url of extractImageUrlsFromHtml(pageHtml, page, title)) {
+        if (seen.has(url)) continue;
+        seen.add(url);
+        candidates.push(url);
+      }
+    }
+    candidates.sort(
+      (a, b) => scoreImageCandidate(b, title) - scoreImageCandidate(a, title),
+    );
     return candidates;
   } catch {
     return [];
@@ -527,7 +701,7 @@ async function collectPlaceImageCandidates(
     /^https?:\/\//i.test(opts.website) &&
     !isListicleOrAggregatorUrl(opts.website)
   ) {
-    tiered.push(...(await collectSiteImageCandidates(opts.website)));
+    tiered.push(...(await collectSiteImageCandidates(opts.website, title)));
   }
 
   // Skip Wikipedia for ultra-short titles — those searches latch onto species /
@@ -536,6 +710,7 @@ async function collectPlaceImageCandidates(
 
   if (allowWiki) {
     for (const variant of variants.slice(0, 4)) {
+      if (titleTokens(variant).length < 2) continue;
       const wikiExact = await wikipediaThumbnail(variant);
       if (
         wikiExact &&
@@ -617,6 +792,149 @@ function activityWebsite(activity: Activity): string | null {
   );
 }
 
+function osmLookupId(osmType: string, osmId: string): string | null {
+  const prefix =
+    osmType === "relation" || osmType === "r"
+      ? "R"
+      : osmType === "way" || osmType === "w"
+        ? "W"
+        : osmType === "node" || osmType === "n"
+          ? "N"
+          : null;
+  if (!prefix || !/^\d+$/.test(osmId)) return null;
+  return `${prefix}${osmId}`;
+}
+
+function parseWikipediaTag(tag: string): string | null {
+  const trimmed = tag.trim();
+  if (!trimmed) return null;
+  const m = trimmed.match(/^(?:[a-z]{2,3}:)?(.+)$/i);
+  const title = m?.[1]?.replace(/_/g, " ").trim();
+  return title && title.length > 2 ? title : null;
+}
+
+function commonsFileUrl(fileTitle: string): string | null {
+  const name = fileTitle.replace(/^File:/i, "").trim();
+  if (!name || /\.pdf($|\?)/i.test(name) || /^Category:/i.test(fileTitle)) {
+    return null;
+  }
+  return normalizeImageUrl(
+    `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(name)}?width=1280`,
+  );
+}
+
+async function wikidataP18Url(qid: string): Promise<string | null> {
+  const id = qid.trim();
+  if (!/^Q\d+$/i.test(id)) return null;
+  const url =
+    "https://www.wikidata.org/w/api.php?" +
+    new URLSearchParams({
+      action: "wbgetclaims",
+      entity: id,
+      property: "P18",
+      format: "json",
+      origin: "*",
+    });
+  try {
+    const res = await fetchWithRetry(url, {
+      headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+    });
+    if (!res?.ok) return null;
+    const data = (await res.json()) as {
+      claims?: {
+        P18?: Array<{ mainsnak?: { datavalue?: { value?: string } } }>;
+      };
+    };
+    const file = data.claims?.P18?.[0]?.mainsnak?.datavalue?.value;
+    return file ? commonsFileUrl(file) : null;
+  } catch {
+    return null;
+  }
+}
+
+async function nominatimOsmExtratags(
+  osmType: string,
+  osmId: string,
+): Promise<Record<string, string>> {
+  const osm = osmLookupId(osmType, osmId);
+  if (!osm) return {};
+  const url =
+    "https://nominatim.openstreetmap.org/lookup?" +
+    new URLSearchParams({
+      osm_ids: osm,
+      format: "json",
+      extratags: "1",
+    });
+  try {
+    const res = await fetchWithRetry(url, {
+      headers: { "User-Agent": USER_AGENT, Accept: "application/json" },
+    });
+    await sleep(1100);
+    if (!res?.ok) return {};
+    const rows = (await res.json()) as Array<{
+      extratags?: Record<string, string>;
+    }>;
+    return rows[0]?.extratags ?? {};
+  } catch {
+    return {};
+  }
+}
+
+async function withOsmImageTags(activity: Activity): Promise<Activity> {
+  if (
+    activity.rawFacts.wikidata ||
+    activity.rawFacts.wikipedia ||
+    activity.rawFacts.wikimediaCommons
+  ) {
+    return activity;
+  }
+  const osmType = activity.rawFacts.osmType;
+  const osmId = activity.rawFacts.osmId;
+  if (!osmType || !osmId) return activity;
+
+  const extra = await nominatimOsmExtratags(osmType, osmId);
+  const rawFacts = { ...activity.rawFacts };
+  if (extra.wikidata) rawFacts.wikidata = extra.wikidata;
+  if (extra.wikipedia) rawFacts.wikipedia = extra.wikipedia;
+  if (extra.wikimedia_commons) rawFacts.wikimediaCommons = extra.wikimedia_commons;
+  if (extra.website && !rawFacts.website) rawFacts.website = extra.website;
+  return { ...activity, rawFacts };
+}
+
+async function collectOsmTaggedImageCandidates(
+  activity: Activity,
+): Promise<string[]> {
+  const urls: string[] = [];
+  const push = (url: string | null | undefined) => {
+    const n = url ? normalizeImageUrl(url) : null;
+    if (n && !isJunkImageUrl(n)) urls.push(n);
+  };
+
+  if (typeof activity.rawFacts.wikidata === "string") {
+    push(await wikidataP18Url(activity.rawFacts.wikidata));
+  }
+  if (typeof activity.rawFacts.wikimediaCommons === "string") {
+    push(commonsFileUrl(activity.rawFacts.wikimediaCommons));
+  }
+  if (typeof activity.rawFacts.wikipedia === "string") {
+    const page = parseWikipediaTag(activity.rawFacts.wikipedia);
+    if (page) {
+      const thumb = await wikipediaThumbnail(page);
+      if (thumb && titlesRelated(page, thumb.alt || page)) push(thumb.url);
+    }
+  }
+
+  const seen = new Set<string>();
+  return urls.filter((u) => (seen.has(u) ? false : (seen.add(u), true)));
+}
+
+function isOsmBacked(activity: Activity): boolean {
+  return (
+    activity.source === "openstreetmap" ||
+    Boolean(activity.rawFacts?.osmId)
+  );
+}
+
 async function tryCacheCandidates(
   candidates: string[],
 ): Promise<{ remote: string; card: string; detail: string } | null> {
@@ -639,24 +957,62 @@ export async function enrichActivityImages(
     const rawFacts = { ...activity.rawFacts };
     const current = activity.imageUrl;
 
-    if (current?.startsWith("/media/")) {
+    const priorIsJunk =
+      typeof rawFacts.imageRemote === "string" &&
+      (isJunkImageUrl(rawFacts.imageRemote) ||
+        !remoteLooksRelated(activity.title, rawFacts.imageRemote));
+    if (current?.startsWith("/media/") && !priorIsJunk) {
       const file = path.join(MEDIA_DIR, path.basename(current));
       if ((await exists(file)) && (await localCardIsGood(file))) {
         return activity;
       }
     }
 
-    const website = activityWebsite(activity);
+    let working = activity;
+    if (isOsmBacked(working)) {
+      working = await withOsmImageTags({ ...working, rawFacts });
+      Object.assign(rawFacts, working.rawFacts);
+    }
+
+    const website = activityWebsite({ ...working, rawFacts });
     const priorRaw =
       (current && !current.startsWith("/") ? current : null) ||
       (typeof rawFacts.imageRemote === "string" ? rawFacts.imageRemote : null);
     const priorRemote =
-      priorRaw && remoteLooksRelated(activity.title, priorRaw) ? priorRaw : null;
+      priorRaw &&
+      remoteLooksRelated(working.title, priorRaw) &&
+      !isJunkImageUrl(priorRaw)
+        ? priorRaw
+        : null;
 
-    const candidates = await collectPlaceImageCandidates(activity.title, {
-      website,
-      prefer: priorRemote,
-    });
+    let candidates: string[] = [];
+    if (isOsmBacked(working)) {
+      const osmTagged = await collectOsmTaggedImageCandidates({
+        ...working,
+        rawFacts,
+      });
+      const site = website
+        ? await collectSiteImageCandidates(website, working.title)
+        : [];
+      const wiki =
+        titleTokens(working.title).length >= 2
+          ? await collectPlaceImageCandidates(working.title, {
+              website: null,
+              prefer: null,
+            })
+          : [];
+      const seen = new Set<string>();
+      for (const url of [...site, ...osmTagged, ...wiki, priorRemote]) {
+        if (!url || seen.has(url) || isJunkImageUrl(url)) continue;
+        seen.add(url);
+        candidates.push(url);
+      }
+    } else {
+      candidates = await collectPlaceImageCandidates(working.title, {
+        website,
+        prefer: priorRemote,
+      });
+    }
 
     await sleep(150);
     const cached = await tryCacheCandidates(candidates);
@@ -671,6 +1027,13 @@ export async function enrichActivityImages(
       };
     }
 
+    if (current?.startsWith("/media/") && !priorIsJunk) {
+      const file = path.join(MEDIA_DIR, path.basename(current));
+      if ((await exists(file)) && (await localCardIsGood(file))) {
+        return activity;
+      }
+    }
+
     delete rawFacts.imageRemote;
     delete rawFacts.imageDetail;
     return {
@@ -680,6 +1043,22 @@ export async function enrichActivityImages(
       rawFacts,
     };
   });
+}
+
+export async function activityImageNeedsRefresh(
+  activity: Activity,
+): Promise<boolean> {
+  const remote =
+    typeof activity.rawFacts?.imageRemote === "string"
+      ? activity.rawFacts.imageRemote
+      : null;
+  if (remote && isJunkImageUrl(remote)) return true;
+  if (remote && !remoteLooksRelated(activity.title, remote)) return true;
+  if (!activity.imageUrl) return true;
+  if (!activity.imageUrl.startsWith("/media/")) return true;
+  const file = path.join(MEDIA_DIR, path.basename(activity.imageUrl));
+  if (!(await exists(file))) return true;
+  return !(await localCardIsGood(file));
 }
 
 export { detailImageUrl } from "./image-urls";

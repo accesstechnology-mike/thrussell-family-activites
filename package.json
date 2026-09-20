@@ -14,6 +14,7 @@
     "merge:osm": "tsx scripts/merge-osm-swimming.ts",
     "merge:beaches": "tsx scripts/merge-beaches.ts",
     "merge:walks": "tsx scripts/merge-walk-databases.ts",
+    "merge:places": "tsx scripts/merge-places.ts",
     "repair:geocodes": "tsx scripts/repair-geocodes.ts",
     "verify": "tsx scripts/verify.ts"
   },

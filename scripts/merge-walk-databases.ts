@@ -5,6 +5,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { MAX_DRIVE_MINUTES } from "../src/lib/config";
+import { activityHasSource, mergeDuplicateActivities } from "../src/lib/dedupe";
 import { getDriveTimesMinutes } from "../src/lib/drive-times";
 import { withFreeFlag } from "../src/lib/free";
 import { enrichActivityImages } from "../src/lib/images";
@@ -102,7 +103,13 @@ async function main() {
   const imagedById = new Map(imaged.map((a) => [a.id, a]));
   withinRange = withinRange.map((a) => imagedById.get(a.id) ?? a);
 
-  store.activities = withinRange.sort(
+  const { activities: mergedPlaces, stats } = mergeDuplicateActivities(
+    withinRange,
+  );
+  console.log(
+    `Place merge: ${stats.before} → ${stats.after} cards (${stats.clusters} clusters)`,
+  );
+  store.activities = mergedPlaces.sort(
     (a, b) => (a.driveMinutes ?? 0) - (b.driveMinutes ?? 0),
   );
   store.syncedAt = new Date().toISOString();
@@ -122,7 +129,7 @@ async function main() {
       source,
       ok: true,
       fetched: fetched.length,
-      kept: store.activities.filter((a) => a.source === source).length,
+      kept: store.activities.filter((a) => activityHasSource(a, source)).length,
       error: null,
       finishedAt: store.syncedAt,
     };

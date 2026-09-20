@@ -1,4 +1,5 @@
 import { HOME_POSTCODE, MAX_DRIVE_MINUTES } from "../config";
+import { activityHasSource, mergeDuplicateActivities } from "../dedupe";
 import { getDriveTimesMinutes } from "../drive-times";
 import { withFreeFlag } from "../free";
 import { enrichActivityImages } from "../images";
@@ -8,7 +9,6 @@ import type { Activity, SourceStatus, SyncResult } from "../types";
 import { fetchAllTrailsKids } from "./alltrails";
 import { fetchDogFriendly } from "./dog-friendly";
 import { fetchEnglishHeritage } from "./english-heritage";
-import { haversineKm, normalisedPlaceKey } from "./listicle";
 import { fetchLittleVikings } from "./little-vikings";
 import { fetchMuddyBootsMummy } from "./muddy-boots-mummy";
 import { fetchNationalTrust } from "./national-trust";
@@ -19,78 +19,6 @@ import { fetchTeessideFamilyLife } from "./teesside-family-life";
 import { fetchWalkiees } from "./walkiees";
 import { fetchWhere2walk } from "./where2walk";
 import { fetchYorkshireTots } from "./yorkshire-tots";
-
-function scoreActivity(a: Activity): number {
-  // Prefer detailed primary sources over listicle blurbs when places overlap.
-  const sourceBoost =
-    a.source === "reluctant-explorers"
-      ? 50
-      : a.source === "national-trust"
-        ? 20
-        : a.source === "yorkshire-tots"
-          ? 10
-          : a.source === "walkiees"
-            ? 8
-            : a.source === "outdoor-guide" || a.source === "where2walk"
-              ? 6
-              : a.source === "openstreetmap"
-                ? 5
-                : 0;
-  return (
-    sourceBoost +
-    (a.imageUrl ? 2 : 0) +
-    (a.parking ? 2 : 0) +
-    (a.what3words ? 4 : 0) +
-    (a.distanceMiles != null ? 1 : 0) +
-    Math.min(a.features.length, 6)
-  );
-}
-
-/** Collapse same place across sources by normalised title and/or proximity. */
-function dedupe(activities: Activity[]): Activity[] {
-  const kept: Activity[] = [];
-
-  for (const activity of activities) {
-    const key = normalisedPlaceKey(activity.title);
-    const duplicateIndex = kept.findIndex((existing) => {
-      const existingKey = normalisedPlaceKey(existing.title);
-      if (key && existingKey && key === existingKey) return true;
-      if (
-        key &&
-        existingKey &&
-        key !== existingKey &&
-        (key.includes(existingKey) || existingKey.includes(key)) &&
-        Math.min(key.length, existingKey.length) >= 10
-      ) {
-        return haversineKm(existing.coordinates, activity.coordinates) < 2;
-      }
-      return (
-        haversineKm(existing.coordinates, activity.coordinates) < 0.45 &&
-        tokenOverlap(existingKey, key) >= 0.5
-      );
-    });
-
-    if (duplicateIndex < 0) {
-      kept.push(activity);
-      continue;
-    }
-
-    if (scoreActivity(activity) > scoreActivity(kept[duplicateIndex]!)) {
-      kept[duplicateIndex] = activity;
-    }
-  }
-
-  return kept;
-}
-
-function tokenOverlap(a: string, b: string): number {
-  const as = new Set(a.split(" ").filter((t) => t.length > 2));
-  const bs = new Set(b.split(" ").filter((t) => t.length > 2));
-  if (!as.size || !bs.size) return 0;
-  let overlap = 0;
-  for (const t of as) if (bs.has(t)) overlap += 1;
-  return overlap / Math.max(as.size, bs.size);
-}
 
 async function runSource(
   source: SourceStatus["source"],
@@ -164,7 +92,7 @@ export async function syncAllSources(): Promise<SyncResult> {
   );
   const w2w = await runSource("where2walk", () => fetchWhere2walk());
 
-  const merged = dedupe(
+  const { activities: merged, stats: dedupeStats } = mergeDuplicateActivities(
     [
       ...tre.activities,
       ...nt.activities,
@@ -180,6 +108,9 @@ export async function syncAllSources(): Promise<SyncResult> {
       ...df.activities,
       ...w2w.activities,
     ].map(ensureIsFree),
+  );
+  console.log(
+    `Place merge: ${dedupeStats.before} listings → ${dedupeStats.after} cards (${dedupeStats.clusters} clusters, ${dedupeStats.listingsMerged} listings merged)`,
   );
 
   const driveTimes = await getDriveTimesMinutes(
@@ -217,7 +148,7 @@ export async function syncAllSources(): Promise<SyncResult> {
     w2w.status,
   ].map((status) => ({
     ...status,
-    kept: withImages.filter((a) => a.source === status.source).length,
+    kept: withImages.filter((a) => activityHasSource(a, status.source)).length,
   }));
 
   const store = {

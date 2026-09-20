@@ -1,0 +1,1229 @@
+[
+  {
+    "id": "walkiees-studley-royal-deer-park-walkiees-co-uk-dog-walks-yorkshire-studley-royal-deer-park",
+    "source": "walkiees",
+    "sourceUrl": "https://walkiees.co.uk/dog-walks/yorkshire/studley-royal-deer-park",
+    "title": "Studley Royal Deer Park",
+    "summary": "Walk through deer park, possible encounters with deer of varying sizes.",
+    "imageUrl": "/media/9be5ef148f8dd217-card.webp",
+    "imageAlt": "Studley Royal Deer Park",
+    "locationLabel": "Ripon",
+    "postcode": "HG4 3DY",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.117461355388976,
+      "lng": -1.576066428527838
+    },
+    "parking": "Free Parking",
+    "cost": "Free entry",
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "flat",
+    "terrainNotes": "Flat, Park",
+    "features": [
+      "animals",
+      "dog friendly"
+    ],
+    "categories": [
+      "Walkiees",
+      "Dog walk"
+    ],
+    "driveMinutes": 25,
+    "lastSyncedAt": "2026-08-16T10:58:24.379Z",
+    "rawFacts": {
+      "amenities": "Free Parking, Paid Parking, On Lead Areas, Pathed Routes, Animals On Route, Water On Route, Toilets, Refreshments Available",
+      "walkType": "Flat, Park",
+      "imageRemote": "https://walkiees.s3.amazonaws.com/walks/S/studley-royal-deer-park/_uncroppedRetina/studley-royal-deer-park.jpg",
+      "imageDetail": "/media/9be5ef148f8dd217-detail.webp"
+    }
+  },
+  {
+    "id": "dog-friendly-studley-royal-water-garden-www-dogfriendly-co-uk-days-out-listing-studley-royal-water-garden-37226",
+    "source": "dog-friendly",
+    "sourceUrl": "https://www.dogfriendly.co.uk/days-out/listing/studley-royal-water-garden-37226",
+    "title": "Studley Royal Water Garden",
+    "summary": "Studley Royal Water Garden Has Been Entered In The Dog Friendly Awards",
+    "imageUrl": "/media/ab8f320295c8f9d0-card.webp",
+    "imageAlt": "Studley Royal Water Garden",
+    "locationLabel": null,
+    "postcode": "HG4 3DY",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.109512,
+      "lng": -1.58186
+    },
+    "parking": "Car Parking Free Parking Park, Gardens or Nature Reserve Y House, Castles or Museum N Railway",
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "hilly",
+    "terrainNotes": null,
+    "features": [
+      "woodland",
+      "cafe / pub",
+      "dog friendly"
+    ],
+    "categories": [
+      "DogFriendly"
+    ],
+    "driveMinutes": 25,
+    "lastSyncedAt": "2026-08-16T11:03:11.126Z",
+    "rawFacts": {
+      "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/7/76/Studley_Royal%2C_Ripon.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "imageDetail": "/media/ab8f320295c8f9d0-detail.webp"
+    }
+  },
+  {
+    "id": "dog-friendly-nt-fountains-abbey-and-studley-royal-park-www-dogfriendly-co-uk-days-out-listing-nt-fountains-abbey-and-stu",
+    "source": "dog-friendly",
+    "sourceUrl": "https://www.dogfriendly.co.uk/days-out/listing/nt-fountains-abbey-and-studley-royal-park-50966",
+    "title": "NT Fountains Abbey and Studley Royal Park",
+    "summary": "NT Fountains Abbey and Studley Royal Park Has Been Entered In The Dog Friendly Awards",
+    "imageUrl": "/media/63dfa9032731ad93-card.webp",
+    "imageAlt": "NT Fountains Abbey and Studley Royal Park",
+    "locationLabel": null,
+    "postcode": "HG4 3DZ",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.109512,
+      "lng": -1.58186
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "hilly",
+    "terrainNotes": null,
+    "features": [
+      "ruins",
+      "woodland",
+      "cafe / pub",
+      "dog friendly"
+    ],
+    "categories": [
+      "DogFriendly"
+    ],
+    "driveMinutes": 25,
+    "lastSyncedAt": "2026-08-16T11:03:11.126Z",
+    "rawFacts": {
+      "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/8/83/Fountains_Mill_leat_and_mill_pond_-_geograph.org.uk_-_515754.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "imageDetail": "/media/63dfa9032731ad93-detail.webp"
+    }
+  },
+  {
+    "id": "dog-friendly-fountains-abbey-amp-studley-royal-water-garden-www-dogfriendly-co-uk-days-out-listing-fountains-abbey-and-s",
+    "source": "dog-friendly",
+    "sourceUrl": "https://www.dogfriendly.co.uk/days-out/listing/fountains-abbey-and-studley-royal-water-garden-36999",
+    "title": "Fountains Abbey &amp; Studley Royal Water Garden",
+    "summary": "Fountains Abbey & Studley Royal Water Garden Has Been Entered In The Dog Friendly Awards",
+    "imageUrl": null,
+    "imageAlt": "Fountains Abbey &amp; Studley Royal Water Garden",
+    "locationLabel": null,
+    "postcode": "HG4 3DY",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.1194096,
+      "lng": -1.5786509
+    },
+    "parking": "Car Parking Visitor centre: free",
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "hilly",
+    "terrainNotes": null,
+    "features": [
+      "ruins",
+      "woodland",
+      "cafe / pub",
+      "dog friendly"
+    ],
+    "categories": [
+      "DogFriendly"
+    ],
+    "driveMinutes": 26,
+    "lastSyncedAt": "2026-08-16T11:03:11.126Z",
+    "rawFacts": {}
+  },
+  {
+    "id": "national-trust-fountains-abbey-and-studley-royal-water-garden-134",
+    "source": "national-trust",
+    "sourceUrl": "https://www.nationaltrust.org.uk/visit/yorkshire/fountains-abbey-and-studley-royal-water-garden",
+    "title": "Fountains Abbey and Studley Royal Water Garden",
+    "summary": "Ancient abbey ruins and an awe-inspiring water garden and deer park. This World Heritage Site is a uniquely blended landscape full of secrets, curiosities and breath-taking views.",
+    "imageUrl": "/media/670798456281e91c-card.webp",
+    "imageAlt": "The ruins of Fountains Abbey from De Grey's walk viewing deck",
+    "locationLabel": "Ripon, North Yorkshire",
+    "postcode": "HG4 3DY",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.1096,
+      "lng": -1.58033
+    },
+    "parking": "Parking at the Visitor Centre and West Gate car park is free.",
+    "cost": "Prices See on map Fountains Abbey was once one of the wealthiest and largest monasteries in the country.",
+    "isFree": false,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [
+      "ruins",
+      "woodland",
+      "animals"
+    ],
+    "categories": [
+      "National Trust"
+    ],
+    "driveMinutes": 27,
+    "lastSyncedAt": "2026-07-29T09:58:36.583Z",
+    "rawFacts": {
+      "town": "Ripon",
+      "county": "North Yorkshire",
+      "imageRemote": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/fountains-abbey-and-studley-royal-water-garden/library/summer/the-ruins-of-fountains-abbey-from-de-greys-walk-viewing-deck.jpg",
+      "imageDetail": "/media/670798456281e91c-detail.webp"
+    }
+  },
+  {
+    "id": "where2walk-fountains-abbey-where2walk-co-uk-walk-fountains-abbey-studley-park",
+    "source": "where2walk",
+    "sourceUrl": "https://where2walk.co.uk/walk/fountains-abbey-studley-park/",
+    "title": "Fountains Abbey",
+    "summary": "Fountains Abbey is the best preserved abbey in the Yorkshire. This walk goes through the abbey ruins and in to the grounds, exploring them in some detail. The walk passes an excellent cafe before heading in to Studley Park. The Walk There is nothing rugged about Fountains Abbey or Studley Park. It is just a",
+    "imageUrl": "/media/b26f86f8e794e4f5-card.webp",
+    "imageAlt": "Inside the Cloisters",
+    "locationLabel": null,
+    "postcode": "HG4 3DY",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.1095856,
+      "lng": -1.5807205
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [
+      "ruins",
+      "cafe / pub",
+      "animals"
+    ],
+    "categories": [
+      "Where2walk"
+    ],
+    "driveMinutes": 28,
+    "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+    "rawFacts": {
+      "wpId": "2225",
+      "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2013/09/Fountains-Abbey-cloisters-from-inside.jpg",
+      "imageDetail": "/media/b26f86f8e794e4f5-detail.webp"
+    }
+  },
+  {
+    "id": "national-trust-brimham-rocks-52",
+    "source": "national-trust",
+    "sourceUrl": "https://www.nationaltrust.org.uk/visit/yorkshire/brimham-rocks",
+    "title": "Brimham Rocks",
+    "summary": "Explore dramatic moorland rock formations",
+    "imageUrl": "/media/d35de41bfdab011b-card.webp",
+    "imageAlt": "Visitors walk along a narrow path through Brimham Rocks, surrounded by distinctive stacked rock formations, green bracken and moorland vegetation under a partly cloudy sky.",
+    "locationLabel": "Harrogate, North Yorkshire",
+    "postcode": "HG3 4DW",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.081699,
+      "lng": -1.67613
+    },
+    "parking": "Parking: Ticketless parking machines accept card and coin payments.",
+    "cost": "Admission: Free for everyone.",
+    "isFree": false,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [
+      "ruins",
+      "woodland"
+    ],
+    "categories": [
+      "National Trust"
+    ],
+    "driveMinutes": 29,
+    "lastSyncedAt": "2026-07-29T09:58:36.583Z",
+    "rawFacts": {
+      "town": "Harrogate",
+      "county": "North Yorkshire",
+      "imageRemote": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/brimham-rocks/library/summer/explore-dramatic-moorland-rock-formations-at-brimham-rocks.jpg",
+      "imageDetail": "/media/d35de41bfdab011b-detail.webp"
+    }
+  },
+  {
+    "id": "openstreetmap-brimham-rocks-sssi-way-1456746416",
+    "source": "openstreetmap",
+    "sourceUrl": "https://www.openstreetmap.org/way/1456746416",
+    "title": "Brimham Rocks SSSI",
+    "summary": "Nature reserve",
+    "imageUrl": "/media/e0c95bb3c6e41e39-card.webp",
+    "imageAlt": "Brimham Rocks SSSI",
+    "locationLabel": null,
+    "postcode": null,
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.0780498,
+      "lng": -1.678156
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [],
+    "categories": [
+      "OpenStreetMap",
+      "Nature reserve"
+    ],
+    "driveMinutes": 29,
+    "lastSyncedAt": "2026-07-29T10:51:32.301Z",
+    "rawFacts": {
+      "osmType": "way",
+      "osmId": "1456746416",
+      "tourism": "nature_reserve",
+      "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/9/99/Brimham_Rocks_8.jpg",
+      "imageDetail": "/media/e0c95bb3c6e41e39-detail.webp"
+    }
+  },
+  {
+    "id": "outdoor-guide-brimham-rocks-walk-yorkshire-dales-theoutdoorguide-co-uk-walking-routes-walks-by-region-north-east-england",
+    "source": "outdoor-guide",
+    "sourceUrl": "https://theoutdoorguide.co.uk/walking-routes/walks-by-region/north-east-england/walks-in-north-yorkshire/brimham-rocks-harrogate/",
+    "title": "Brimham Rocks walk, Yorkshire Dales",
+    "summary": "This beautiful walk from the village of Pateley Bridge visits England\u2019s oldest sweet shop on its way to the gritstone formations of Brimham Rocks.",
+    "imageUrl": "/media/37cb3e1650fbf7f2-card.webp",
+    "imageAlt": "Brimham Rocks walk, Yorkshire Dales",
+    "locationLabel": null,
+    "postcode": "HG3 4DW",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.0776861,
+      "lng": -1.6829614
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [
+      "woodland",
+      "stream / river",
+      "dog friendly"
+    ],
+    "categories": [
+      "The Outdoor Guide"
+    ],
+    "driveMinutes": 31,
+    "lastSyncedAt": "2026-08-16T11:02:40.748Z",
+    "rawFacts": {
+      "imageRemote": "https://theoutdoorguide.co.uk/wp-content/uploads/2025/06/Brimham-Rocks-Feature.jpg",
+      "imageDetail": "/media/37cb3e1650fbf7f2-detail.webp"
+    }
+  },
+  {
+    "id": "outdoor-guide-national-trust-brimham-rocks-walk-yorkshire-theoutdoorguide-co-uk-walking-routes-walks-by-region-north-eas",
+    "source": "outdoor-guide",
+    "sourceUrl": "https://theoutdoorguide.co.uk/walking-routes/walks-by-region/north-east-england/walks-in-north-yorkshire/brimham-rocks-walk-yorkshire/",
+    "title": "National Trust Brimham Rocks walk, Yorkshire",
+    "summary": "This walk takes you around the boundary of Brimham Rocks in North Yorkshire, a collection of natural rock formations dating back 100 million years.",
+    "imageUrl": "/media/1f27ae9c8549e8db-card.webp",
+    "imageAlt": "National Trust Brimham Rocks walk, Yorkshire",
+    "locationLabel": null,
+    "postcode": "HG3 4DW",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.0770205,
+      "lng": -1.6828286
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [
+      "woodland",
+      "dog friendly"
+    ],
+    "categories": [
+      "The Outdoor Guide"
+    ],
+    "driveMinutes": 31,
+    "lastSyncedAt": "2026-08-16T11:02:40.748Z",
+    "rawFacts": {
+      "imageRemote": "https://theoutdoorguide.co.uk/wp-content/uploads/2025/06/NT-Brimham-Feature.jpg",
+      "imageDetail": "/media/1f27ae9c8549e8db-detail.webp"
+    }
+  },
+  {
+    "id": "where2walk-brimham-rocks-where2walk-co-uk-walk-brimham-rocks",
+    "source": "where2walk",
+    "sourceUrl": "https://where2walk.co.uk/walk/brimham-rocks/",
+    "title": "Brimham Rocks",
+    "summary": "It is great fun on Brimham Rocks. Rather than just visit though it is more enjoyable to make the visit in to a short but \u2018proper\u2019 walk. The rocks themselves are a series of sandstone boulders which you can scramble on. The Walk Brimham Rocks is definitely a \u2018must see\u2019  when visiting the Yorkshire Dales.",
+    "imageUrl": "/media/3d3037ecf37a8c5b-card.webp",
+    "imageAlt": "Brimham Rocks",
+    "locationLabel": null,
+    "postcode": "HG3 4DW",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.0776861,
+      "lng": -1.6829614
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": 60,
+    "terrain": "hilly",
+    "terrainNotes": null,
+    "features": [
+      "ruins",
+      "woodland",
+      "rocks to scramble"
+    ],
+    "categories": [
+      "Where2walk"
+    ],
+    "driveMinutes": 31,
+    "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+    "rawFacts": {
+      "wpId": "1597",
+      "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2019/08/Brimham-NT-visitor-centre-scaled.jpg",
+      "imageDetail": "/media/3d3037ecf37a8c5b-detail.webp"
+    }
+  },
+  {
+    "id": "alltrails-aysgarth-woods-and-waterfalls-circular-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+    "source": "alltrails",
+    "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+    "title": "Aysgarth Woods and Waterfalls Circular",
+    "summary": "This trail takes in lovely woodland paths and rolling farmland, with great views of Bolton Castle, plus one of the most spectacular attractions within the Dales, Aysgarth Falls on the River Ure. The waterfalls of High Force, Middle Force and Lower Force stretch along the river, and become even more spectacular after rain with the increased water falling over broad limestone slabs. A place of great inspiration, from Wordsworth to Turner and even a Hollywood film director, the falls are a...",
+    "imageUrl": "/media/b5f6dac577acdf78-card.webp",
+    "imageAlt": "Aysgarth Woods and Waterfalls Circular",
+    "locationLabel": "North Yorkshire",
+    "postcode": "DL8 4HR",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.303332,
+      "lng": -1.8590622
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": "Easy",
+    "features": [
+      "waterfall",
+      "ruins",
+      "woodland",
+      "stream / river"
+    ],
+    "categories": [
+      "AllTrails Kids"
+    ],
+    "driveMinutes": 36,
+    "lastSyncedAt": "2026-07-29T10:04:36.637Z",
+    "rawFacts": {
+      "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/1/13/Aysgarth_Falls_in_spate_-_geograph.org.uk_-_259569.jpg",
+      "imageDetail": "/media/b5f6dac577acdf78-detail.webp"
+    }
+  },
+  {
+    "id": "outdoor-guide-aysgarth-waterfall-accessible-walk-yorkshire-dales-theoutdoorguide-co-uk-walking-routes-walks-by-region-no",
+    "source": "outdoor-guide",
+    "sourceUrl": "https://theoutdoorguide.co.uk/walking-routes/walks-by-region/north-east-england/walks-in-north-yorkshire/aysgarth-waterfall-walk-yorkshire-dales/",
+    "title": "Aysgarth Waterfall accessible walk, Yorkshire Dales",
+    "summary": "This accessible walk that takes in the Aysgarth Waterfalls in the Yorkshire Dales has been visited by Debbie North, AccessTOG\u2019s route planner.",
+    "imageUrl": "/media/e9013b9bda5359c4-card.webp",
+    "imageAlt": "Aysgarth Waterfall accessible walk, Yorkshire Dales",
+    "locationLabel": null,
+    "postcode": "DL8 3TH",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.2938232,
+      "lng": -1.9820935
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [
+      "waterfall",
+      "woodland",
+      "pushchair friendly",
+      "dog friendly"
+    ],
+    "categories": [
+      "The Outdoor Guide"
+    ],
+    "driveMinutes": 45,
+    "lastSyncedAt": "2026-08-16T11:02:40.748Z",
+    "rawFacts": {
+      "imageRemote": "https://theoutdoorguide.co.uk/wp-content/uploads/2025/04/Aysgarth-Waterfall-Walk-feature-A.jpg",
+      "imageDetail": "/media/e9013b9bda5359c4-detail.webp"
+    }
+  },
+  {
+    "id": "where2walk-aysgarth-falls-where2walk-co-uk-walk-aysgarth-falls",
+    "source": "where2walk",
+    "sourceUrl": "https://where2walk.co.uk/walk/aysgarth-falls/",
+    "title": "Aysgarth Falls",
+    "summary": "Aysgarth Falls is a series of three waterfalls (Upper, Mid, Lower) on the River Ure in Wensleydale. The walk along the river is set in pretty woodland. However there are access points to the waters themselves at both the Upper Lower and Upper Falls, a viewing platform for the Middle falls. The Walk Aysgarth Falls",
+    "imageUrl": "/media/ac793abce13472ca-card.webp",
+    "imageAlt": "Aysgarth Upper Falls",
+    "locationLabel": null,
+    "postcode": "DL8 3SR",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.2908082,
+      "lng": -1.9842638
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": 2,
+    "terrain": "flat",
+    "terrainNotes": null,
+    "features": [
+      "waterfall",
+      "ruins",
+      "woodland",
+      "stream / river",
+      "pushchair friendly"
+    ],
+    "categories": [
+      "Where2walk"
+    ],
+    "driveMinutes": 45,
+    "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+    "rawFacts": {
+      "wpId": "2662",
+      "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2014/11/Aysgarth-Upper-Falls.jpg",
+      "imageDetail": "/media/ac793abce13472ca-detail.webp"
+    }
+  },
+  {
+    "id": "reluctant-explorers-aysgarth-falls-www-thereluctantexplorers-com-aysgarth-falls",
+    "source": "reluctant-explorers",
+    "sourceUrl": "https://www.thereluctantexplorers.com/aysgarth-falls",
+    "title": "Aysgarth Falls",
+    "summary": "Aysgarth Falls are located in Aysgarth in Wensleydale, the Yorkshire Dales. This family walk will take you to the waterfalls, and Freeholders Wood. Here, you'll find all the essential need to know facts, like where to park, where to eat and what you can do to keep the kids entertained!",
+    "imageUrl": "/media/86930a4f5b8d8f94-card.webp",
+    "imageAlt": "Aysgarth Falls",
+    "locationLabel": "Aysgarth, Wensleydale, North Yorkshire",
+    "postcode": null,
+    "what3words": "squeezed.lawn.quits",
+    "coordinates": {
+      "lat": 54.2943477,
+      "lng": -1.9837299
+    },
+    "parking": "Yorkshire Dales Centre, Aysgarth Falls.",
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": "Easy underfoot, these trails are clear and well maintained. The route is waymarked, and clearly marked on signposts at the Yorkshire Dales Centre.",
+    "features": [
+      "waterfall",
+      "woodland",
+      "cafe / pub"
+    ],
+    "categories": [
+      "Family Friendly Waterfall Walks"
+    ],
+    "driveMinutes": 46,
+    "lastSyncedAt": "2026-07-29T09:58:36.252Z",
+    "rawFacts": {
+      "Terrain": "Easy underfoot, these trails are clear and well maintained. The route is waymarked, and clearly marked on signposts at the Yorkshire Dales Centre.",
+      "Parking": "Yorkshire Dales Centre, Aysgarth Falls.",
+      "Public Transport": "Yes! There are buses running to Aysgarth, check the Dales Bus website for times as these are subject to seasonal changes.",
+      "Location": "Aysgarth, Wensleydale, North Yorkshire",
+      "Map": "OSExplorer OL30 affiliate link as an Ordnance Survey champion",
+      "What 3 Words": "squeezed.lawn.quits",
+      "Toilets/ Baby Change": "At Yorkshire Dales Centre Car Park",
+      "Nearest Cafe/ Amenities": "The Yorkshire Dales Centre, Aysgarth and at the Mill Race Tea Shop on the bridge in Aysgarth. The Yorkshire Dales Centre has a cafe which serves light bites, cakes, hot drinks and AWESOME Gelato. The Mill Race Teashop has a great selection of homemade bakes, light lunches and locally sourced products. The Aysgarth Falls Hotel has a great pub attached too.",
+      "imageRemote": "https://images.squarespace-cdn.com/content/v1/6008124718739e1ddbd633d7/e8c8bd5e-e488-44af-a3bd-abdc2ba14689/Aysgarth+Updated+2.jpg",
+      "imageDetail": "/media/86930a4f5b8d8f94-detail.webp"
+    }
+  },
+  {
+    "id": "openstreetmap-aysgarth-falls-visitor-centre-node-7787967481",
+    "source": "openstreetmap",
+    "sourceUrl": "https://www.yorkshiredales.org.uk/places/aysgarth_falls_national_park_centre/",
+    "title": "Aysgarth Falls visitor centre",
+    "summary": "Attraction. Operator: Yorkshire Dales National Park",
+    "imageUrl": "/media/6bd5a4a7440494cd-card.webp",
+    "imageAlt": "Aysgarth Falls visitor centre",
+    "locationLabel": null,
+    "postcode": null,
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.2945249,
+      "lng": -1.9834386
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": false,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [],
+    "categories": [
+      "OpenStreetMap",
+      "Attraction"
+    ],
+    "driveMinutes": 46,
+    "lastSyncedAt": "2026-07-29T10:51:32.301Z",
+    "rawFacts": {
+      "osmType": "node",
+      "osmId": "7787967481",
+      "tourism": "attraction",
+      "imageRemote": "https://www.yorkshiredales.org.uk/wp-content/uploads/sites/13/2019/06/The-Long-View-de-blued-scaled-250x167.jpg",
+      "imageDetail": "/media/6bd5a4a7440494cd-detail.webp"
+    }
+  },
+  {
+    "id": "walkiees-aysgarth-waterfalls-walkiees-co-uk-dog-walks-yorkshire-aysgarth-waterfalls",
+    "source": "walkiees",
+    "sourceUrl": "https://walkiees.co.uk/dog-walks/yorkshire/aysgarth-waterfalls",
+    "title": "Aysgarth Waterfalls",
+    "summary": "Take approx 1.5-2 hours. There are 3 beautiful waterfalls to see along the way.",
+    "imageUrl": "/media/a93c59952183bbf6-card.webp",
+    "imageAlt": "Aysgarth Waterfalls",
+    "locationLabel": "Centre, Leyburn",
+    "postcode": "DL8 3TH",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.2945633,
+      "lng": -1.9833361
+    },
+    "parking": "Paid Parking",
+    "cost": "Free entry",
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "hilly",
+    "terrainNotes": "Hilly, Forest",
+    "features": [
+      "waterfall",
+      "woodland",
+      "dog friendly"
+    ],
+    "categories": [
+      "Walkiees",
+      "Dog walk"
+    ],
+    "driveMinutes": 46,
+    "lastSyncedAt": "2026-08-16T10:58:24.379Z",
+    "rawFacts": {
+      "amenities": "Paid Parking, Off Lead Areas, On Lead Areas, Pathed Routes, Picnic Areas, Water On Route, Toilets, Refreshments Available",
+      "walkType": "Hilly, Forest",
+      "imageRemote": "https://walkiees.s3.amazonaws.com/walks/A/aysgarth-waterfalls/_uncroppedRetina/4BF4FB5D-74AE-4D08-8947-21FDFC08E1A2.jpeg",
+      "imageDetail": "/media/a93c59952183bbf6-detail.webp"
+    }
+  },
+  {
+    "id": "reluctant-explorers-kettlewell-stepping-stones-www-thereluctantexplorers-com-kettlewell-stepping-stones",
+    "source": "reluctant-explorers",
+    "sourceUrl": "https://www.thereluctantexplorers.com/kettlewell-stepping-stones",
+    "title": "Kettlewell Stepping Stones",
+    "summary": "This walk is a beautiful family friendly circular route that starts and ends in Kettlewell, the Yorkshire Dales. The walk boasts stepping stones, paddle spots and a play park! Here, you'll find all the essential need to know facts, like where to park, where to eat and what you can do to keep the kid",
+    "imageUrl": "/media/50637fe0f9ff25d6-card.webp",
+    "imageAlt": "Kettlewell Stepping Stones",
+    "locationLabel": "Kettlewell, Upper Wharfedale",
+    "postcode": null,
+    "what3words": "tight.contain.duplicate",
+    "coordinates": {
+      "lat": 54.1465447,
+      "lng": -2.050533
+    },
+    "parking": "Kettlewell, Yorkshire Dales Pay and Display",
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": 2,
+    "terrain": "gentle",
+    "terrainNotes": "Easy footpaths, easy terrain underfoot, little to no ascent. There is some (200 yards) of road walking. Whilst it is a very brief section, the road can be busy, so take care. NOTE: One of the stones has been displaced. Keep your eyes peeled for more. Update due June 2026.",
+    "features": [
+      "stepping stones",
+      "ice cream",
+      "play park",
+      "paddle",
+      "stream / river",
+      "cafe / pub"
+    ],
+    "categories": [
+      "Short Family Walks Under 2 Miles"
+    ],
+    "driveMinutes": 60,
+    "lastSyncedAt": "2026-07-29T09:58:36.252Z",
+    "rawFacts": {
+      "Distance": "2 miles (short but sweet!)",
+      "Terrain": "Easy footpaths, easy terrain underfoot, little to no ascent. There is some (200 yards) of road walking. Whilst it is a very brief section, the road can be busy, so take care. NOTE: One of the stones has been displaced. Keep your eyes peeled for more. Update due June 2026.",
+      "Parking": "Kettlewell, Yorkshire Dales Pay and Display",
+      "Public Transport": "There are buses that stop regularly at Kettlewell. Check out the Dales Bus website for more timetable information.",
+      "Location": "Kettlewell, Upper Wharfedale",
+      "Map": "OS Explorer OL30 Yorkshire Dales Northern and Central",
+      "What 3 Words": "tight.contain.duplicate (Kettlewell Car Park)",
+      "Toilets/ Baby Change": "Kettlewell Car Park.",
+      "Nearest Cafe/ Amenities": "Kettlewell has a Yorkshire Dales Ice Cream hut, 3 Pubs with beer gardens, and a Cafe.",
+      "imageRemote": "https://images.squarespace-cdn.com/content/v1/6008124718739e1ddbd633d7/b28dc57a-e580-4ef9-9e39-528808081080/Kettlewell+stepping+stones+-+Kid+Friendly+Walks+in+the+Yorkshire+Dales+4.jpg",
+      "imageDetail": "/media/50637fe0f9ff25d6-detail.webp"
+    }
+  },
+  {
+    "id": "reluctant-explorers-kettlewell-to-starbotton-circular-www-thereluctantexplorers-com-kettlewell-to-starbotton",
+    "source": "reluctant-explorers",
+    "sourceUrl": "https://www.thereluctantexplorers.com/kettlewell-to-starbotton",
+    "title": "Kettlewell to Starbotton Circular",
+    "summary": "This child friendly circular loop starts and ends in Kettlewell in the Yorkshire Dales. A top family walk in Yorkshire with paddling spots, wildflower meadows, ice cream and a play park!",
+    "imageUrl": "/media/702884bf60b465cb-card.webp",
+    "imageAlt": "Kettlewell to Starbotton Circular",
+    "locationLabel": "Kettlewell, Upper Wharfedale",
+    "postcode": null,
+    "what3words": "tight.contain.duplicate",
+    "coordinates": {
+      "lat": 54.146419,
+      "lng": -2.0507758
+    },
+    "parking": "Kettlewell, Yorkshire Dales authority pay and display car park. If you find the car park busy, don\u2019t contribute to antisocial parking. Have a plan B. Why not try down the road in Buckden and check out our Cray Gill waterfalls walk instead.",
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": 4.5,
+    "terrain": "gentle",
+    "terrainNotes": "Easy terrain but boots required. Clear identifiable footpaths and well signposted. Some ascent 700 feet. Extremely limited road walking (on quiet roads). Be aware there are lots of stiles on this walk. There are aften cows on this walk.",
+    "features": [
+      "waterfall",
+      "ice cream",
+      "play park",
+      "paddle",
+      "cafe / pub"
+    ],
+    "categories": [
+      "Family Friendly Walks around the Yorkshire Dales"
+    ],
+    "driveMinutes": 60,
+    "lastSyncedAt": "2026-07-29T09:58:36.252Z",
+    "rawFacts": {
+      "Distance": "4.5 miles",
+      "Terrain": "Easy terrain but boots required. Clear identifiable footpaths and well signposted. Some ascent 700 feet. Extremely limited road walking (on quiet roads). Be aware there are lots of stiles on this walk. There are aften cows on this walk.",
+      "Parking": "Kettlewell, Yorkshire Dales authority pay and display car park. If you find the car park busy, don\u2019t contribute to antisocial parking. Have a plan B. Why not try down the road in Buckden and check out our Cray Gill waterfalls walk instead.",
+      "Location": "Kettlewell, Upper Wharfedale",
+      "Map": "OL30 Explorer Yorkshire Dales Northern and Central affiliate link as an Ordnance Survey champion",
+      "What 3 Words": "tight.contain.duplicate (car park and start point)",
+      "Toilets/ Baby Change": "At Kettlewell pay and display car park.",
+      "Nearest Cafe/ Amenities": "In Kettlewell for pubs, cafes, ice cream and more.",
+      "imageRemote": "https://images.squarespace-cdn.com/content/v1/6008124718739e1ddbd633d7/48bb92b2-6eb4-40c7-8dfc-ec80eec80384/Starbotton+Updated+pictures.jpg",
+      "imageDetail": "/media/702884bf60b465cb-detail.webp"
+    }
+  },
+  {
+    "id": "where2walk-littondale-to-kettlewell-where2walk-co-uk-walk-arncliffe-littondale-to-kettlewell",
+    "source": "where2walk",
+    "sourceUrl": "https://where2walk.co.uk/walk/arncliffe-littondale-to-kettlewell/",
+    "title": "Littondale to Kettlewell",
+    "summary": "Start the walk from Littondale to Kettlewell in the pretty village of Arncliffe. Climb over the broad shoulder of Birks for a drink in Kettlewell before returning on excellent tracks back in to Littondale.",
+    "imageUrl": "/media/31f9efbed1d1bdc0-card.webp",
+    "imageAlt": "Littondale",
+    "locationLabel": null,
+    "postcode": null,
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.1487415,
+      "lng": -2.1234331
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "hilly",
+    "terrainNotes": null,
+    "features": [
+      "stream / river"
+    ],
+    "categories": [
+      "Where2walk"
+    ],
+    "driveMinutes": 62,
+    "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+    "rawFacts": {
+      "wpId": "2287",
+      "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2017/09/Halton-Gill-Perfect-lawned-path-scaled.jpg",
+      "imageDetail": "/media/31f9efbed1d1bdc0-detail.webp"
+    }
+  },
+  {
+    "id": "where2walk-fountains-fell-where2walk-co-uk-walk-fountains-fell",
+    "source": "where2walk",
+    "sourceUrl": "https://where2walk.co.uk/walk/fountains-fell/",
+    "title": "Fountains Fell",
+    "summary": "Climb Fountains Fell and its near neighbour Darnbrook Fell from the road linking Malham and Littondale. It is an easy climb, a rough crossing and an awkward descent. The Walk It seemed obvious to me to link these two Dales 30 hills in a single walk. After looking at the map it also seemed obvious",
+    "imageUrl": "/media/bb844edd7efee591-card.webp",
+    "imageAlt": "Fountains Fell summit",
+    "locationLabel": null,
+    "postcode": null,
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.1397866,
+      "lng": -2.2094676
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "hilly",
+    "terrainNotes": null,
+    "features": [
+      "trig point"
+    ],
+    "categories": [
+      "Where2walk"
+    ],
+    "driveMinutes": 71,
+    "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+    "rawFacts": {
+      "wpId": "17690",
+      "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2019/02/Fountains-Fell-Views-from-summit-scaled.jpg",
+      "imageDetail": "/media/bb844edd7efee591-detail.webp"
+    }
+  },
+  {
+    "id": "alltrails-ribblehead-viaduct-circular-www-alltrails-com-en-gb-england-north-yorkshire-kids",
+    "source": "alltrails",
+    "sourceUrl": "https://www.alltrails.com/en-gb/england/north-yorkshire/kids",
+    "title": "Ribblehead Viaduct Circular",
+    "summary": "Child-friendly trail in North Yorkshire on AllTrails: Ribblehead Viaduct Circular",
+    "imageUrl": "/media/54e9aa246df11b04-card.webp",
+    "imageAlt": "Ribblehead Viaduct Circular",
+    "locationLabel": "North Yorkshire",
+    "postcode": "LA6 3AU",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.2101724,
+      "lng": -2.3700923
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [],
+    "categories": [
+      "AllTrails Kids"
+    ],
+    "driveMinutes": 72,
+    "lastSyncedAt": "2026-07-29T10:04:36.637Z",
+    "rawFacts": {
+      "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Ribblehead_Viaduct_1.jpg/3840px-Ribblehead_Viaduct_1.jpg",
+      "imageDetail": "/media/54e9aa246df11b04-detail.webp"
+    }
+  },
+  {
+    "id": "where2walk-ribblehead-to-horton-via-ingleborough-where2walk-co-uk-walk-ribblehead-to-horton-walk",
+    "source": "where2walk",
+    "sourceUrl": "https://where2walk.co.uk/walk/ribblehead-to-horton-walk/",
+    "title": "Ribblehead to Horton via Ingleborough",
+    "summary": "Take the train from Horton and then walk from Ribblehead to Horton via Ingleborough. The path over Park Fell and Simon Fell is rarely used although the descent from Ingleborough to Horton is extremely popular. The Walk An interesting yet little used route up Ingleborough leaves Ribblehead a few hundred metres to the south of",
+    "imageUrl": "/media/3765de6eeff9a7bc-card.webp",
+    "imageAlt": "Park Fell Ingleborough",
+    "locationLabel": null,
+    "postcode": "LA6 3AS",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.2056394,
+      "lng": -2.3607303
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [],
+    "categories": [
+      "Where2walk"
+    ],
+    "driveMinutes": 73,
+    "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+    "rawFacts": {
+      "wpId": "14227",
+      "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2018/10/Park-Fell-Ingleborough-scaled.jpg",
+      "imageDetail": "/media/3765de6eeff9a7bc-detail.webp"
+    }
+  },
+  {
+    "id": "where2walk-dent-station-and-ribblehead-where2walk-co-uk-walk-dent-station-and-ribblehead",
+    "source": "where2walk",
+    "sourceUrl": "https://where2walk.co.uk/walk/dent-station-and-ribblehead/",
+    "title": "Dent Station and Ribblehead",
+    "summary": "The one way walk between Dent Station and Ribblehead passes through some of the best and most interesting landscape including 3 viaducts, the highest station in England and some remote moorland walking. The Walk The Settle to Carlisle railway provides a number of excellent one way walks. Hop on at one station, get off at",
+    "imageUrl": "/media/acae8e56533156b9-card.webp",
+    "imageAlt": "Dent Station and Ribblehead",
+    "locationLabel": null,
+    "postcode": "LA6 3AS",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.2056394,
+      "lng": -2.3607303
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "hilly",
+    "terrainNotes": null,
+    "features": [
+      "trig point"
+    ],
+    "categories": [
+      "Where2walk"
+    ],
+    "driveMinutes": 73,
+    "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+    "rawFacts": {
+      "wpId": "49375",
+      "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2021/11/Great-Knoutberry-Pennine-Bridleway.jpg",
+      "imageDetail": "/media/acae8e56533156b9-detail.webp"
+    }
+  },
+  {
+    "id": "where2walk-ribblehead-a-short-walk-where2walk-co-uk-walk-ribblehead-a-short-walk",
+    "source": "where2walk",
+    "sourceUrl": "https://where2walk.co.uk/walk/ribblehead-a-short-walk/",
+    "title": "Ribblehead, a short walk",
+    "summary": "The Ribblehead viaduct is one of the most impressive engineering projects in England. It is also sat in wonderful scenery and this short Ribblehead walk will do it full justice. The extension to Blea Moor tunnel only adds to it. The Walk Most people who park up at Ribblehead do so for two reasons. They",
+    "imageUrl": "/media/1449b708f1387528-card.webp",
+    "imageAlt": "Ribblehead, a short walk",
+    "locationLabel": null,
+    "postcode": "LA6 3AS",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.2056394,
+      "lng": -2.3607303
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "steep",
+    "terrainNotes": null,
+    "features": [],
+    "categories": [
+      "Where2walk"
+    ],
+    "driveMinutes": 73,
+    "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+    "rawFacts": {
+      "wpId": "38716",
+      "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2019/01/Ribblehead-Blea-Moor-1-scaled.jpg",
+      "imageDetail": "/media/1449b708f1387528-detail.webp"
+    }
+  },
+  {
+    "id": "where2walk-ingleborough-from-ribblehead-where2walk-co-uk-walk-ingleborough-via-ribblehead",
+    "source": "where2walk",
+    "sourceUrl": "https://where2walk.co.uk/walk/ingleborough-via-ribblehead/",
+    "title": "Ingleborough from Ribblehead",
+    "summary": "The climb of Ingleborough from Ribblehead starts on the steep slopes of Park Fell. From here the going is good. In addition take it the Dales 30 peak of Simon Fell before heading for the summit plateau of Ingleborough. The Walk In my opinion this is the second best route to the summit of Ingleborough.",
+    "imageUrl": "/media/4bdf4870ae1e4d9a-card.webp",
+    "imageAlt": "Ingleborough from Ribblehead",
+    "locationLabel": null,
+    "postcode": null,
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.1662868,
+      "lng": -2.3978702
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "steep",
+    "terrainNotes": null,
+    "features": [
+      "trig point"
+    ],
+    "categories": [
+      "Where2walk"
+    ],
+    "driveMinutes": 76,
+    "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+    "rawFacts": {
+      "wpId": "18377",
+      "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2018/05/Park-Fell-Ingleborough.jpg",
+      "imageDetail": "/media/4bdf4870ae1e4d9a-detail.webp"
+    }
+  },
+  {
+    "id": "openstreetmap-sea-life-scarborough-way-894235204",
+    "source": "openstreetmap",
+    "sourceUrl": "https://www.visitsealife.com/scarborough/",
+    "title": "SEA LIFE Scarborough",
+    "summary": "Aquarium. Operator: Sea Life",
+    "imageUrl": "/media/18615281c668fbc4-card.webp",
+    "imageAlt": "SEA LIFE Scarborough",
+    "locationLabel": "Scarborough",
+    "postcode": "YO12 6RP",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.3011743,
+      "lng": -0.409847
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": false,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [],
+    "categories": [
+      "OpenStreetMap",
+      "Aquarium"
+    ],
+    "driveMinutes": 85,
+    "lastSyncedAt": "2026-07-29T10:51:32.301Z",
+    "rawFacts": {
+      "osmType": "way",
+      "osmId": "894235204",
+      "tourism": "aquarium",
+      "imageRemote": "https://www.visitsealife.com/scarborough/media/bubn01tn/vat-sl.jpg",
+      "imageDetail": "/media/18615281c668fbc4-detail.webp"
+    }
+  },
+  {
+    "id": "openstreetmap-scarborough-sea-life-centre-way-101836220",
+    "source": "openstreetmap",
+    "sourceUrl": "https://www.openstreetmap.org/way/101836220",
+    "title": "Scarborough Sea Life Centre",
+    "summary": "Aquarium",
+    "imageUrl": "/media/f140f45d8613dd6b-card.webp",
+    "imageAlt": "Scarborough Sea Life Centre",
+    "locationLabel": null,
+    "postcode": null,
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.3012203,
+      "lng": -0.4099029
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": false,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [],
+    "categories": [
+      "OpenStreetMap",
+      "Aquarium"
+    ],
+    "driveMinutes": 85,
+    "lastSyncedAt": "2026-07-29T10:51:32.301Z",
+    "rawFacts": {
+      "osmType": "way",
+      "osmId": "101836220",
+      "tourism": "aquarium",
+      "imageRemote": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Sea_Life_Centre%2C_Scarborough%2C_Yorkshire_-_geograph.org.uk_-_4115549.jpg",
+      "imageDetail": "/media/f140f45d8613dd6b-detail.webp"
+    }
+  },
+  {
+    "id": "where2walk-scarborough-sea-cut-where2walk-co-uk-walk-scarborough-sea-cut",
+    "source": "where2walk",
+    "sourceUrl": "https://where2walk.co.uk/walk/scarborough-sea-cut/",
+    "title": "Scarborough Sea Cut",
+    "summary": "Starting from near Scalby follow the canal of the Scarborough Sea Cut as it heads inland. On reaching the River Derwent return via Raincliffe Woods to Scalby. The Walk The Scarborough Sea Cut is fed by small streams and becks draining water away from the moors on the western side of Scalby and Newby. In",
+    "imageUrl": "/media/c31e7d34c658747a-card.webp",
+    "imageAlt": "Raincliffe Woods",
+    "locationLabel": null,
+    "postcode": "YO12 6RP",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.3011933,
+      "lng": -0.4098011
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "hilly",
+    "terrainNotes": null,
+    "features": [
+      "play park",
+      "woodland",
+      "stream / river"
+    ],
+    "categories": [
+      "Where2walk"
+    ],
+    "driveMinutes": 85,
+    "lastSyncedAt": "2026-08-16T11:03:53.440Z",
+    "rawFacts": {
+      "wpId": "10049",
+      "imageRemote": "https://where2walk.co.uk/wp-content/uploads/2017/12/Shelter-in-Raincliffe-Woods-scaled.jpg",
+      "imageDetail": "/media/c31e7d34c658747a-detail.webp"
+    }
+  },
+  {
+    "id": "outdoor-guide-national-trust-fountains-abbey-accessible-walk-north-yorkshire-theoutdoorguide-co-uk-walking-routes-walks-",
+    "source": "outdoor-guide",
+    "sourceUrl": "https://theoutdoorguide.co.uk/walking-routes/walks-by-region/north-east-england/walks-in-north-yorkshire/fountain-abbey/",
+    "title": "National Trust Fountains Abbey accessible walk, North Yorkshire",
+    "summary": "Debbie North visits a National Trust property in Yorkshire and is open all year round. Almost 350,000 visitors enjoy the peace, solitude and beauty of the Fountains Estate every year.",
+    "imageUrl": "/media/8322e364b67c6e36-card.webp",
+    "imageAlt": "National Trust Fountains Abbey accessible walk, North Yorkshire",
+    "locationLabel": null,
+    "postcode": "YO22 4LL",
+    "what3words": null,
+    "coordinates": {
+      "lat": 54.4565686,
+      "lng": -0.5453746
+    },
+    "parking": null,
+    "cost": null,
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [
+      "ruins",
+      "woodland",
+      "dog friendly"
+    ],
+    "categories": [
+      "The Outdoor Guide"
+    ],
+    "driveMinutes": 88,
+    "lastSyncedAt": "2026-08-16T11:02:40.748Z",
+    "rawFacts": {
+      "imageRemote": "https://theoutdoorguide.co.uk/wp-content/uploads/2025/04/NT-Fountains-Estate-feature-A.jpg",
+      "imageDetail": "/media/8322e364b67c6e36-detail.webp"
+    }
+  },
+  {
+    "id": "national-trust-hardcastle-crags-165",
+    "source": "national-trust",
+    "sourceUrl": "https://www.nationaltrust.org.uk/visit/yorkshire/hardcastle-crags",
+    "title": "Hardcastle Crags",
+    "summary": "A spectacular wooded valley with 19th-century Gibson Mill at its heart",
+    "imageUrl": "/media/9c9cef5970dde159-card.webp",
+    "imageAlt": "A family walking near Gibson Mill at Hardcastle Crags, West Yorkshire",
+    "locationLabel": "Hebden Bridge, West Yorkshire",
+    "postcode": "HX7 7AW",
+    "what3words": null,
+    "coordinates": {
+      "lat": 53.758548,
+      "lng": -2.01806
+    },
+    "parking": "parking at Gibson Mill.",
+    "cost": "National Trust membership / admission may apply",
+    "isFree": false,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": null,
+    "features": [
+      "ruins",
+      "woodland"
+    ],
+    "categories": [
+      "National Trust"
+    ],
+    "driveMinutes": 90,
+    "lastSyncedAt": "2026-07-29T09:58:36.583Z",
+    "rawFacts": {
+      "town": "Hebden Bridge",
+      "county": "West Yorkshire",
+      "imageRemote": "https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/yorkshire/places/hardcastle-crags/library/summer/visitors-walking-gibson-mill-hardcastle-crags-yorkshire-1096280.jpg",
+      "imageDetail": "/media/9c9cef5970dde159-detail.webp"
+    }
+  },
+  {
+    "id": "walkiees-hardcastle-crags-walkiees-co-uk-dog-walks-yorkshire-west-hardcastle-crags",
+    "source": "walkiees",
+    "sourceUrl": "https://walkiees.co.uk/dog-walks/yorkshire-west/hardcastle-crags",
+    "title": "Hardcastle Crags",
+    "summary": "You will not be disappointed with this walk!! There is no live stock for your dogs to chase. Beautiful forest, amazing river and greenery. Perfect! Loads of places for your dog to explore to keep them happy its just really dog friendly. A title gem. Just be aware ( if traveling from Lancashire ) your sat Nav will take you to a short cut down a bumpy path but it's a dead end. So stay on the road until you see sign for Hard Castle crags in Hebdon bridge check out the village too if you have time. There's a dog caf\u00e9 that sells dog treats in Hebden bridge",
+    "imageUrl": "/media/d6f04fafdd612232-card.webp",
+    "imageAlt": "Hardcastle Crags",
+    "locationLabel": "Hebden Bridge",
+    "postcode": "HX7 7AL",
+    "what3words": null,
+    "coordinates": {
+      "lat": 53.75851108,
+      "lng": -2.01915635
+    },
+    "parking": "Paid Parking",
+    "cost": "Free entry",
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "hilly",
+    "terrainNotes": "Hilly, Forest",
+    "features": [
+      "ruins",
+      "woodland",
+      "stream / river",
+      "dog friendly"
+    ],
+    "categories": [
+      "Walkiees",
+      "Dog walk"
+    ],
+    "driveMinutes": 90,
+    "lastSyncedAt": "2026-08-16T10:58:24.379Z",
+    "rawFacts": {
+      "amenities": "Paid Parking, Off Lead Areas, Picnic Areas, Water On Route, Toilets, Refreshments Available",
+      "walkType": "Hilly, Forest",
+      "imageRemote": "https://walkiees.s3.amazonaws.com/walks/H/hardcastle-crags/_uncroppedRetina/1-hardcastle-crags-9317-ee.jpg",
+      "imageDetail": "/media/d6f04fafdd612232-detail.webp"
+    }
+  },
+  {
+    "id": "walkiees-hardcastle-crags-walkiees-co-uk-dog-walks-yorkshire-west-hardcastle-crags1",
+    "source": "walkiees",
+    "sourceUrl": "https://walkiees.co.uk/dog-walks/yorkshire-west/hardcastle-crags1",
+    "title": "Hardcastle Crags",
+    "summary": "Hardcastle Crags is based in Hebden Bridge, West Yorkshire. It is a National Trust woodland which is very well maintained. The walk is easy but can be a little precarious negotiating the stones which have been set out for steps. It is a circulator walk which is fabulous for dogs and incorporates a wonderful cafe at Gibson Mill (dog friendly on quieter days with seating outside if busy). There is a beautiful shallow river running through the woodland which is a haven for dogs. Highly recommend this walk!",
+    "imageUrl": "/media/66d1a496576ac25a-card.webp",
+    "imageAlt": "Hardcastle Crags",
+    "locationLabel": "Hebden Bridge",
+    "postcode": "HX7 7AL",
+    "what3words": null,
+    "coordinates": {
+      "lat": 53.7581763,
+      "lng": -2.0191192
+    },
+    "parking": "Paid Parking",
+    "cost": "Free entry",
+    "isFree": true,
+    "distanceMiles": null,
+    "terrain": "unknown",
+    "terrainNotes": "Forest",
+    "features": [
+      "woodland",
+      "stream / river",
+      "cafe / pub",
+      "dog friendly"
+    ],
+    "categories": [
+      "Walkiees",
+      "Dog walk"
+    ],
+    "driveMinutes": 91,
+    "lastSyncedAt": "2026-08-16T10:58:24.379Z",
+    "rawFacts": {
+      "amenities": "Paid Parking, Pathed Routes, Picnic Areas, Water On Route, Toilets, Refreshments Available",
+      "walkType": "Forest",
+      "imageRemote": "https://walkiees.s3.amazonaws.com/walks/H/hardcastle-crags1/_uncroppedRetina/1-hardcastle-crags1-9983-ee.jpg",
+      "imageDetail": "/media/66d1a496576ac25a-detail.webp"
+    }
+  }
+]
