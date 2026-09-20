@@ -5,10 +5,9 @@ import {
   slugId,
 } from "../features";
 import {
-  extractPostcode,
-  geocodePlaceName,
-  geocodePostcode,
-} from "../geocode";
+  locationRawFacts,
+  resolvePageLocation,
+} from "../page-location";
 import type { Activity } from "../types";
 
 const HUBS = [
@@ -138,22 +137,13 @@ async function enrichWalk(url: string): Promise<Activity | null> {
   const body = stripTags(html).slice(0, 6000);
   const ownText = [title, summary, body.slice(0, 1800)].join("\n");
 
-  let postcode = extractPostcode(body);
-  let coords = postcode ? await geocodePostcode(postcode) : null;
-  if (!coords) {
-    // Try a shorter place query from the slug when the SEO title is noisy.
-    const slugGuess = slugFromUrl(url).replace(/-/g, " ");
-    const place =
-      (await geocodePlaceName(`${slugGuess}, Yorkshire, UK`)) ||
-      (await geocodePlaceName(`${title}, Yorkshire, UK`));
-    if (!place) return null;
-    coords = {
-      lat: place.lat,
-      lng: place.lng,
-      postcode: place.postcode ?? postcode ?? "",
-    };
-    postcode = place.postcode ?? postcode;
-  }
+  const slugGuess = slugFromUrl(url).replace(/-/g, " ");
+  const resolved = await resolvePageLocation({
+    html,
+    title: title || slugGuess,
+    regionSuffix: "Yorkshire",
+  });
+  if (!resolved) return null;
 
   const terrainInfo = inferTerrain(null, ownText);
   const features = extractFeatures(title, summary, ownText, "yorkshire family walk");
@@ -168,9 +158,9 @@ async function enrichWalk(url: string): Promise<Activity | null> {
     imageUrl,
     imageAlt: title,
     locationLabel: null,
-    postcode: postcode || coords.postcode || null,
-    what3words: null,
-    coordinates: { lat: coords.lat, lng: coords.lng },
+    postcode: resolved.postcode,
+    what3words: resolved.what3words,
+    coordinates: { lat: resolved.lat, lng: resolved.lng },
     parking: extractParking(body),
     cost: extractCost(body),
     isFree: null,
@@ -181,7 +171,7 @@ async function enrichWalk(url: string): Promise<Activity | null> {
     categories: ["Yorkshire Tots"],
     driveMinutes: null,
     lastSyncedAt: now,
-    rawFacts: {},
+    rawFacts: locationRawFacts(resolved),
   };
 }
 

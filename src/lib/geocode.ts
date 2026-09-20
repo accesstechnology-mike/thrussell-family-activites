@@ -96,7 +96,9 @@ function haversineKm(a: LatLng, b: LatLng): number {
   return 2 * R * Math.asin(Math.sqrt(x));
 }
 
-/** Nominatim geocode with polite pacing and query fallbacks. */
+/** Nominatim geocode with polite pacing and query fallbacks.
+ * Last resort only — prefer resolvePageLocation (page lat/lng, OS grid, postcode, what3words).
+ */
 export async function geocodePlaceName(
   query: string,
   opts?: { maxVariants?: number; near?: LatLng; maxKm?: number },

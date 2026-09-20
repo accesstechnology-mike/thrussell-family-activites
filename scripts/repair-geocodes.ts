@@ -1,29 +1,33 @@
 /**
- * Re-pin place-name activities whose stored coordinates sit near home
- * but Nominatim now resolves the title much farther away (homonym bug).
- * Drive minutes are refreshed via the same OSRM table API as sync.
+ * Re-pin HTML-sourced walks from the public source page (start lat/lng,
+ * OS grid, postcode, what3words). Title→Nominatim is not used here.
+ * Drive minutes refresh via the same OSRM table API as sync.
  */
 import { MAX_DRIVE_MINUTES } from "../src/lib/config";
 import { getDriveTimesMinutes } from "../src/lib/drive-times";
-import { geocodePlaceName } from "../src/lib/geocode";
+import { sleep } from "../src/lib/html";
 import { getOrigin } from "../src/lib/origin";
+import {
+  locationRawFacts,
+  resolvePageLocation,
+} from "../src/lib/page-location";
 import { haversineKm } from "../src/lib/sources/listicle";
 import { readStore, writeStore } from "../src/lib/store";
-import type { ActivitySource } from "../src/lib/types";
+import type { Activity, ActivitySource } from "../src/lib/types";
 
-const PLACE_NAME_SOURCES = new Set<ActivitySource>([
+const PAGE_SOURCES = new Set<ActivitySource>([
   "where2walk",
   "outdoor-guide",
-  "muddy-boots-mummy",
-  "alltrails",
   "yorkshire-tots",
-  "little-vikings",
   "teesside-family-life",
   "dog-friendly",
 ]);
 
-const NEAR_HOME_KM = 20;
-const MOVED_KM = 15;
+const MOVED_KM = 0.15;
+
+function titleFilter(): string[] {
+  return process.argv.slice(2).filter((a) => !a.startsWith("-"));
+}
 
 async function main() {
   const store = await readStore();
@@ -31,53 +35,59 @@ async function main() {
   store.origin = origin.location;
   store.originPostcode = origin.postcode;
 
-  const suspects = store.activities.filter(
-    (a) =>
-      !a.postcode &&
-      PLACE_NAME_SOURCES.has(a.source) &&
-      haversineKm(origin.location, a.coordinates) < NEAR_HOME_KM,
-  );
+  const wanted = titleFilter().map((t) => t.toLowerCase());
+  const suspects = store.activities.filter((a) => {
+    if (!PAGE_SOURCES.has(a.source) || !a.sourceUrl) return false;
+    if (!wanted.length) return a.source === "where2walk";
+    return wanted.some((t) => a.title.toLowerCase().includes(t));
+  });
   console.log(
-    `Checking ${suspects.length} near-home place-name pins against Nominatim…`,
+    `Resolving ${suspects.length} source pages (page lat/lng → OS grid → postcode → what3words)…`,
   );
 
   const movedIds: string[] = [];
   for (const activity of suspects) {
-    const place = await geocodePlaceName(`${activity.title}, UK`, {
-      near: origin.location,
-    });
-    if (!place) {
+    const resolved = await resolvePageLocation({ pageUrl: activity.sourceUrl });
+    await sleep(200);
+    if (!resolved) {
       console.log(`  miss: ${activity.title}`);
       continue;
     }
-    const moved = haversineKm(activity.coordinates, place);
-    if (moved < MOVED_KM) {
-      console.log(`  keep ${moved.toFixed(1)}km: ${activity.title}`);
+    const moved = haversineKm(activity.coordinates, resolved);
+    const facts = locationRawFacts(resolved);
+    activity.rawFacts = { ...activity.rawFacts, ...facts };
+    if (resolved.postcode) activity.postcode = resolved.postcode;
+    if (resolved.what3words) activity.what3words = resolved.what3words;
+    if (moved < MOVED_KM && activity.rawFacts.coordSource === resolved.coordSource) {
+      console.log(
+        `  keep ${moved.toFixed(2)}km · ${resolved.coordSource}: ${activity.title}`,
+      );
       continue;
     }
     console.log(
-      `  moved ${moved.toFixed(1)}km: ${activity.title} → ${place.lat},${place.lng}`,
+      `  ${resolved.coordSource} ${moved.toFixed(2)}km: ${activity.title} → ${resolved.lat},${resolved.lng}`,
     );
-    activity.coordinates = { lat: place.lat, lng: place.lng };
-    if (place.postcode) activity.postcode = place.postcode;
+    activity.coordinates = { lat: resolved.lat, lng: resolved.lng };
     movedIds.push(activity.id);
   }
 
-  if (!movedIds.length) {
-    console.log("No homonym pins to update.");
+  const needDrive = new Set(movedIds);
+  if (!needDrive.size) {
+    await writeStore(store);
+    console.log("No pins moved; wrote coordSource facts.");
     return;
   }
 
   const driveTimes = await getDriveTimesMinutes(
     origin.location,
     store.activities
-      .filter((a) => movedIds.includes(a.id))
+      .filter((a) => needDrive.has(a.id))
       .map((a) => ({ id: a.id, location: a.coordinates })),
   );
 
   store.activities = store.activities
     .map((a) =>
-      movedIds.includes(a.id)
+      needDrive.has(a.id)
         ? { ...a, driveMinutes: driveTimes[a.id] ?? a.driveMinutes }
         : a,
     )
@@ -92,14 +102,18 @@ async function main() {
 
   for (const id of movedIds) {
     const row = store.activities.find((a) => a.id === id);
-    if (!row) {
-      console.log(`${id}: dropped (over ${MAX_DRIVE_MINUTES} min)`);
-      continue;
-    }
-    console.log(
-      `${row.title}: ${row.driveMinutes} min · ${row.coordinates.lat},${row.coordinates.lng}`,
-    );
+    logResult(id, row);
   }
+}
+
+function logResult(id: string, row: Activity | undefined) {
+  if (!row) {
+    console.log(`${id}: dropped (over ${MAX_DRIVE_MINUTES} min)`);
+    return;
+  }
+  console.log(
+    `${row.title}: ${row.driveMinutes} min · ${row.rawFacts.coordSource} · ${row.coordinates.lat},${row.coordinates.lng}`,
+  );
 }
 
 main().catch((err) => {
