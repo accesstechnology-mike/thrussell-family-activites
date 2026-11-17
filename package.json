@@ -19,7 +19,7 @@
     "verify": "tsx scripts/verify.ts"
   },
   "dependencies": {
-    "next": "16.4.3",
+    "next": "16.4.5",
     "playwright": "^1.62.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
